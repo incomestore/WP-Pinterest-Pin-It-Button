@@ -1,4 +1,4 @@
-wp-pinterest-pin-it-button
-==========================
+Pinterest "Pin It" Button WordPress Plugin
+==========================================
 
-Pinterest "Pin It" Button WordPress Plugin. Refactored from existing plugin at http://wordpress.org/extend/plugins/pinterest-pin-it-button/
+Refactored from existing plugin at http://wordpress.org/extend/plugins/pinterest-pin-it-button/
