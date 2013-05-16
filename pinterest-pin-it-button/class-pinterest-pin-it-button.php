@@ -1,32 +1,30 @@
 <?php
 /**
- * Plugin Name.
+ * Pinterest "Pin It" Button
  *
- * @package   PluginName
- * @author    Your Name <email@example.com>
- * @copyright 2013 Your Name or Company Name
+ * @package   PIB
+ * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @copyright 2011-2013 Phil Derksen
  * @license   GPL-2.0+
- * @link      http://example.com/plugin-name
+ * @link      http://pinterestplugin.com
  */
 
 /**
- * Plugin class.
+ * Main Pinterest_Pin_It_Button class
  *
- * TODO: Rename this class to a proper name for your plugin.
- *
- * @package PluginName
- * @author  Your Name <email@example.com>
+ * @package PIB
+ * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
-class PluginName {
+class Pinterest_Pin_It_Button {
 
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.0
+	 * @since   2.0.0
 	 *
 	 * @var     string
 	 */
-	protected $version = '1.0.0';
+	protected $version = '2.0.0';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -34,16 +32,16 @@ class PluginName {
 	 * Use this value (not the variable name) as the text domain when internationalizing strings of text. It should
 	 * match the Text Domain file header in the main plugin file.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'plugin-name';
+	protected $plugin_slug = 'pinterest-pin-it-button';
 
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 *
 	 * @var      object
 	 */
@@ -52,7 +50,7 @@ class PluginName {
 	/**
 	 * Slug of the plugin screen.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 *
 	 * @var      string
 	 */
@@ -61,7 +59,7 @@ class PluginName {
 	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
-	 * @since     1.0.0
+	 * @since     2.0.0
 	 */
 	private function __construct() {
 
@@ -87,7 +85,7 @@ class PluginName {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     1.0.0
+	 * @since     2.0.0
 	 *
 	 * @return    object    A single instance of this class.
 	 */
@@ -103,7 +101,7 @@ class PluginName {
 	/**
 	 * Fired when the plugin is activated.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
@@ -114,7 +112,7 @@ class PluginName {
 	/**
 	 * Fired when the plugin is deactivated.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Deactivate" action, false if WPMU is disabled or plugin is deactivated on an individual blog.
 	 */
@@ -125,7 +123,7 @@ class PluginName {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function load_plugin_textdomain() {
 		$domain = $this->plugin_slug;
@@ -138,7 +136,7 @@ class PluginName {
 	/**
 	 * Enqueue admin-specific style sheets.
 	 *
-	 * @since     1.0.0
+	 * @since     2.0.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -158,7 +156,7 @@ class PluginName {
 	/**
 	 * Enqueue admin-specific JavaScript.
 	 *
-	 * @since     1.0.0
+	 * @since     2.0.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -178,7 +176,7 @@ class PluginName {
 	/**
 	 * Enqueue public-facing style sheets.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), $this->version );
@@ -187,7 +185,7 @@ class PluginName {
 	/**
 	 * Enqueues public-facing script files.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), $this->version );
@@ -196,19 +194,13 @@ class PluginName {
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function add_plugin_admin_menu() {
-		/*
-		 * TODO:
-		 *
-		 * Change 'Page Title' to the title of your plugin admin page
-		 * Change 'Menu Text' to the text for menu item for the plugin settings page
-		 * Change 'plugin-name' to the name of your plugin
-		 */
+
 		$this->plugin_screen_hook_suffix = add_plugins_page(
-			__('Page Title', 'plugin-name'),
-			__('Menu Text', 'plugin-name'),
+			__('Pinterest "Pin It" Button Settings', 'pinterest-pin-it-button'),
+			__('Pin It Button', 'pinterest-pin-it-button'),
 			'read',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
@@ -218,7 +210,7 @@ class PluginName {
 	/**
 	 * Render the settings page for this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
@@ -231,7 +223,7 @@ class PluginName {
 	 *        WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
 	 *        Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function action_method_name() {
 		// TODO: Define your action hook callback here
@@ -244,7 +236,7 @@ class PluginName {
 	 *        WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
 	 *        Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
 	 *
-	 * @since    1.0.0
+	 * @since    2.0.0
 	 */
 	public function filter_method_name() {
 		// TODO: Define your filter hook callback here
