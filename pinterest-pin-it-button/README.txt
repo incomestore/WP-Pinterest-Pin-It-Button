@@ -1,10 +1,11 @@
-=== Plugin Name ===
-Contributors: username1, username2 (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
-Tags: comments, spam
-Requires at least: 3.3.1
-Tested up to: 3.3.1
-Stable tag: 1.0.0
+=== Pinterest "Pin It" Button ===
+Contributors: pderksen, nickyoung87
+Tags: pinterest, pin it, pin it button, social
+Requires at least: 3.5.1
+Tested up to: 3.6
+Stable tag: 2.0.0
+
+=== TODO ===
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
