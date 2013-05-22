@@ -2,11 +2,11 @@
 /**
  * Pinterest "Pin It" Button
  *
- * @package   PIB
- * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package PIB
+ * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @license GPL-2.0+
+ * @link    http://pinterestplugin.com
  * @copyright 2011-2013 Phil Derksen
- * @license   GPL-2.0+
- * @link      http://pinterestplugin.com
  */
 
 /**
@@ -199,8 +199,8 @@ class Pinterest_Pin_It_Button {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_plugins_page(
-			__('Pinterest "Pin It" Button Settings', 'pinterest-pin-it-button'),
-			__('Pin It Button', 'pinterest-pin-it-button'),
+			__('Pinterest "Pin It" Button Settings', $this->plugin_slug ),
+			__('Pin It Button', $this->plugin_slug ),
 			'read',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )

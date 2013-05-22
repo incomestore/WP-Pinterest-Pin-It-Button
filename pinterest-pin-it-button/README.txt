@@ -4,8 +4,10 @@ Tags: pinterest, pin it, pin it button, social
 Requires at least: 3.5.1
 Tested up to: 3.6
 Stable tag: 2.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-=== TODO ===
+=== [TODO] ===
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 

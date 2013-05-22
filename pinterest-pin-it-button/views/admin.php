@@ -5,11 +5,11 @@
  * This includes the header, options, and other information that should provide
  * The User Interface to the end user.
  *
- * @package    PluginName
- * @author     TODO
- * @license    GPL-2.0+
- * @link       TODO
- * @since      1.0.0
+ * @package PIB
+ * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @license GPL-2.0+
+ * @link    http://pinterestplugin.com
+ * @copyright 2011-2013 Phil Derksen
  */
 ?>
 <div class="wrap">

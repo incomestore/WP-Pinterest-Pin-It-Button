@@ -6,6 +6,7 @@
  * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  * @license GPL-2.0+
  * @link    http://pinterestplugin.com
+ * @copyright 2011-2013 Phil Derksen
  *
  * @wordpress-plugin
  * Plugin Name: Pinterest "Pin It" Button
@@ -14,11 +15,8 @@
  * Version: 2.0.0
  * Author: Phil Derksen, Nick Young
  * Author URI: http://philderksen.com
- * Author Email: pderksen@gmail.com
- * Text Domain: pinterest-pin-it-button
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path: /lang/
  */
 
 // If this file is called directly, abort.
