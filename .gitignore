@@ -40,3 +40,4 @@ Thumbs.db
 # PHPStorm/WebStorm files *
 ###########################
 .idea
+/nbproject/*
