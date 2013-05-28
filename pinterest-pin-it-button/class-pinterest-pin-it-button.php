@@ -148,7 +148,7 @@ class Pinterest_Pin_It_Button {
 
 		$screen = get_current_screen();
 		if ( $screen->id == $this->plugin_screen_hook_suffix ) {
-			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), $this->version );
+			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
 		}
 
 	}
@@ -179,7 +179,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), $this->version );
+		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
 	}
 
 	/**
