@@ -203,7 +203,7 @@ class Pinterest_Pin_It_Button {
 
 		// Add as main menu item
 		$this->plugin_screen_hook_suffix = add_menu_page(
-			__( 'Pinterest "Pin It" Button Settings', $this->plugin_slug ),
+			__( 'Pinterest "Pin It" Button Llite Settings', $this->plugin_slug ),
 			__( 'Pin It Button', $this->plugin_slug ),
 			'read',
 			$this->plugin_slug,
@@ -240,7 +240,7 @@ class Pinterest_Pin_It_Button {
 		// Add the first section to settings so we can add our fields to it
 		add_settings_section(
 			'pib_settings_general_section',
-			__( 'Button Style & Pin Count', 'pib' ),
+			__( 'General Settings', 'pib' ),
 			'pib_settings_general_section_callback',
 			'pib_settings_general'
 		);
@@ -249,7 +249,7 @@ class Pinterest_Pin_It_Button {
 			echo '<p>' . __( 'General settings section callback', 'pib' ) . '</p>';
 		}
 
-		// Add the first field to the first section
+		// TODO Add the first field to the first section
 		add_settings_field(
 			'first_field',
 			__( 'First field label', 'pib' ),
