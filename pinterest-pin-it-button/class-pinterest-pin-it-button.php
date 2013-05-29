@@ -64,7 +64,7 @@ class Pinterest_Pin_It_Button {
 	private function __construct() {
 
 		// Load plugin text domain
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -77,9 +77,12 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Initialize the settings.
+		add_action( 'admin_init', array( $this, 'initialize_settings' ) );
+
 		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
+		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
@@ -198,9 +201,10 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function add_plugin_admin_menu() {
 
-		$this->plugin_screen_hook_suffix = add_plugins_page(
-			__('Pinterest "Pin It" Button Settings', $this->plugin_slug ),
-			__('Pin It Button', $this->plugin_slug ),
+		// Add as main menu item
+		$this->plugin_screen_hook_suffix = add_menu_page(
+			__( 'Pinterest "Pin It" Button Settings', $this->plugin_slug ),
+			__( 'Pin It Button', $this->plugin_slug ),
 			'read',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
@@ -214,6 +218,55 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
+	}
+
+	/* ------------------------------------------------------------------------ *
+	 * Settings
+	 * // TODO Testing using Settings API
+	 * // TODO Move to own include eventually
+ 	 * ------------------------------------------------------------------------ */
+
+	/**
+	 * Initialize settings.
+	 *
+	 * @since    2.0.0
+	 */
+	public function initialize_settings() {
+		// If plugin settings don't exist, create them
+		if ( false == get_option( 'pib_settings_general' ) ) {
+			add_option( 'pib_settings_general' );
+		}
+
+		// Add the first section to settings so we can add our fields to it
+		add_settings_section(
+			'pib_settings_general_section',
+			__( 'Button Style & Pin Count', 'pib' ),
+			'pib_settings_general_section_callback',
+			'pib_settings_general'
+		);
+
+		function pib_settings_general_section_callback() {
+			echo '<p>' . __( 'General settings section callback', 'pib' ) . '</p>';
+		}
+
+		// Add the first field to the first section
+		add_settings_field(
+			'first_field',
+			__( 'First field label', 'pib' ),
+			'pib_first_field_callback',
+			'pib_settings_general',
+			'pib_settings_general_section'
+		);
+
+		function pib_first_field_callback() {
+			echo __( 'First field callback', 'pib' );
+		}
+
+		// Register settings fields with WordPress
+		register_setting(
+			'pib_settings_general',
+			'pib_settings_general'
+		);
 	}
 
 	/**
