@@ -62,7 +62,6 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function __construct() {
-
 		// Load plugin text domain
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -203,9 +202,9 @@ class Pinterest_Pin_It_Button {
 
 		// Add as main menu item
 		$this->plugin_screen_hook_suffix = add_menu_page(
-			__( 'Pinterest "Pin It" Button Llite Settings', $this->plugin_slug ),
+			__( 'Pinterest "Pin It" Button Lite Settings', $this->plugin_slug ),
 			__( 'Pin It Button', $this->plugin_slug ),
-			'read',
+			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
 		);
