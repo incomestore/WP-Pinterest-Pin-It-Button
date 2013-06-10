@@ -296,7 +296,7 @@ function pib_missing_callback() {
 function pib_get_settings() {
 	$general_settings =			is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
-	$style_settings =			is_array( get_option( 'pib_settings_atyles' ) ) ? get_option( 'pib_settings_styles' )  : array();
+	$style_settings =			is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
 	
 	return array_merge( $general_settings, $post_visibility_settings, $style_settings );
 }
