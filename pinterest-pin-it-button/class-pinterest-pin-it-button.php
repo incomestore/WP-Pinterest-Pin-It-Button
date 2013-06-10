@@ -65,11 +65,11 @@ class Pinterest_Pin_It_Button {
 		// Load plugin text domain
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		
-		// Initialize the settings.
-		//add_action( 'admin_init', array( $this, 'initialize_settings' ) );
-		$this->initialize_settings();
+		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
+		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
+		
 		// Add the options page and menu item.
-		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
+		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
