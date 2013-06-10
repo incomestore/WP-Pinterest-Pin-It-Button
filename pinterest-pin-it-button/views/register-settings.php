@@ -83,6 +83,7 @@ function pib_register_settings() {
 	    )
 	);
 	
+	/* If the options do not exist then create them for each section */
 	if ( false == get_option( 'pib_settings_general' ) ) {
 		add_option( 'pib_settings_general' );
 	}
@@ -95,6 +96,7 @@ function pib_register_settings() {
 		add_option( 'pib_settings_styles' );
 	}
 	
+	/* Add the General Settings section */
 	add_settings_section(
 		'pib_settings_general',
 		__( 'General Settings', 'pib' ),
@@ -121,6 +123,7 @@ function pib_register_settings() {
 		);
 	}
 	
+	/* Add the Post Visibility Settings section */
 	add_settings_section(
 		'pib_settings_post_visibility',
 		__( 'Post Visibility Settings', 'pib' ),
@@ -147,6 +150,7 @@ function pib_register_settings() {
 		);
 	}
 	
+	/* Add the Styles Settings section */
 	add_settings_section(
 		'pib_settings_styles',
 		__( 'Styles', 'pib' ),
@@ -173,6 +177,7 @@ function pib_register_settings() {
 		);
 	}
 	
+	/* Register all settings or we will get an error when trying to save */
 	register_setting( 'pib_settings_general',		'pib_settings_general',			'pib_settings_sanitize' );
 	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility',    'pib_settings_sanitize' );
 	register_setting( 'pib_settings_styles',		'pib_settings_styles',			'pib_settings_sanitize' );
@@ -180,6 +185,9 @@ function pib_register_settings() {
 }
 add_action('admin_init', 'pib_register_settings');
 
+/*
+ * Radio button callback function
+ */
 
 function pib_radio_callback( $args ) {
 	global $pib_options;
@@ -198,6 +206,9 @@ function pib_radio_callback( $args ) {
 
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
+/*
+ * Single checkbox callback function
+ */
 
 function pib_checkbox_callback( $args ) {
 	global $pib_options;
@@ -209,6 +220,10 @@ function pib_checkbox_callback( $args ) {
 	echo $html;
 }
 
+/*
+ * Multiple checkboxes callback function
+ */
+
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
 
@@ -219,6 +234,10 @@ function pib_multicheck_callback( $args ) {
 	endforeach;
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
+
+/*
+ * Select box callback function
+ */
 
 function pib_select_callback($args) {
 	global $pib_options;
@@ -236,6 +255,10 @@ function pib_select_callback($args) {
 	echo $html;
 }
 
+/*
+ * Textarea callback function
+ */
+
 function pib_textarea_callback( $args ) {
 	global $pib_options;
 
@@ -251,18 +274,29 @@ function pib_textarea_callback( $args ) {
 	echo $html;
 }
 
-function pib_missing_callback() {
-	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'pib' ), $args['id'] );
-}
-
-function pib_get_settings() {
-	$general_settings = is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
-	$post_visibility_settings = is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
-
-	return array_merge( $general_settings, $post_visibility_settings );
-}
+/*
+ * Function we can use to sanitize the input data and return it when saving options
+ */
 
 function pib_settings_sanitize( $input ) {
 	add_settings_error( 'pib-notices', '', __('Settings Updated', 'pib'), 'updated' );
 	return $input;
+}
+/*
+ *  Default callback function if correct one does not exist
+ */
+
+function pib_missing_callback() {
+	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'pib' ), $args['id'] );
+}
+
+/*
+ * Function used to return an array of all of the plugin settings
+ */
+function pib_get_settings() {
+	$general_settings =			is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
+	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
+	$style_settings =			is_array( get_option( 'pib_settings_atyles' ) ) ? get_option( 'pib_settings_styles' )  : array();
+	
+	return array_merge( $general_settings, $post_visibility_settings, $style_settings );
 }

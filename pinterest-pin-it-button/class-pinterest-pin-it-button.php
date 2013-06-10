@@ -233,44 +233,13 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function initialize_settings() {
-		// If plugin settings don't exist, create them
-		/*if ( false == get_option( 'pib_settings_general' ) ) {
-			add_option( 'pib_settings_general' );
-		}
-
-		// Add the first section to settings so we can add our fields to it
-		add_settings_section(
-			'pib_settings_general_section',
-			__( 'General Settings', 'pib' ),
-			'pib_settings_general_section_callback',
-			'pib_settings_general'
-		);
-
-		function pib_settings_general_section_callback() {
-			echo '<p>' . __( 'General settings section callback', 'pib' ) . '</p>';
-		}
-
-		// TODO Add the first field to the first section
-		add_settings_field(
-			'first_field',
-			__( 'First field label', 'pib' ),
-			'pib_first_field_callback',
-			'pib_settings_general',
-			'pib_settings_general_section'
-		);
-
-		function pib_first_field_callback() {
-			echo __( 'First field callback', 'pib' );
-		}
-
-		// Register settings fields with WordPress
-		register_setting(
-			'pib_settings_general',
-			'pib_settings_general'
-		);*/
+		// Load global PIB options
 		global $pib_options;
 		
+		// Include the file to register all of the plugin settings
 		include_once('views/register-settings.php');
+		
+		// Load global options settings
 		$pib_options = pib_get_settings();
 	}
 
