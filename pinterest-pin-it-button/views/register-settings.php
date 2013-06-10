@@ -165,7 +165,7 @@ function pib_register_settings() {
 				'id' => $option['id'],
 				'desc' => $option['desc'],
 				'name' => $option['name'],
-				'section' => 'general',
+				'section' => 'styles',
 				'size' => isset( $option['size'] ) ? $option['size'] : null,
 				'options' => isset( $option['options'] ) ? $option['options'] : '',
 				'std' => isset( $option['std'] ) ? $option['std'] : ''
@@ -173,12 +173,16 @@ function pib_register_settings() {
 		);
 	}
 	
+	register_setting( 'pib_settings_general',		'pib_settings_general',			'pib_settings_sanitize' );
+	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility',    'pib_settings_sanitize' );
+	register_setting( 'pib_settings_styles',		'pib_settings_styles',			'pib_settings_sanitize' );
+	
 }
 add_action('admin_init', 'pib_register_settings');
 
 
 function pib_radio_callback( $args ) {
-	global $piboptions;
+	global $pib_options;
 
 	foreach ( $args['options'] as $key => $option ) {
 		$checked = false;
@@ -256,4 +260,9 @@ function pib_get_settings() {
 	$post_visibility_settings = is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
 
 	return array_merge( $general_settings, $post_visibility_settings );
+}
+
+function pib_settings_sanitize( $input ) {
+	add_settings_error( 'pib-notices', '', __('Settings Updated', 'pib'), 'updated' );
+	return $input;
 }

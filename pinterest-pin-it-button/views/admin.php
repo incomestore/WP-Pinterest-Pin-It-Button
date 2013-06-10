@@ -15,7 +15,7 @@
 <div class="wrap">
 	<?php
 		global $pib_options;
-
+		
 		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 	?>
 	<?php screen_icon( 'edit' ); ?>
