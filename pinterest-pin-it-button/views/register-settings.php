@@ -2,9 +2,9 @@
 	/**
 	* Register Settings
 	*
-	* @package     
+	* @package PIB     
 	* @subpackage
-	* @copyright   Copyright (c) 2013, Nick Young
+	* @copyright   Copyright (c) 2013, 
 	* @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
 	* @since       1.0
     */
@@ -14,6 +14,7 @@
 
 function pib_register_settings() {
 	$pib_settings = array(
+	    /* General Settings */
 	    'general' => array(
 		   'button_behavior' => array(
 			  'id' => 'button_behavior',
@@ -38,6 +39,7 @@ function pib_register_settings() {
 			  )
 		   )
 	    ),
+	    /* Post Visibility Settings */
 	    'post_visibility' => array(
 		   'post_page_types' => array(
 			  'id' => 'post_page_types',
@@ -63,6 +65,21 @@ function pib_register_settings() {
 				 'excerpts' => __('On Post Excerpts', 'pib')
 			  )
 		   )
+	    ),
+	    /* Styles Settings */
+	    'styles' => array(
+		   'custom_css' => array(
+			  'id' => 'custom_css',
+			  'name' => __('Custom CSS', 'pib'),
+			  'desc' => '',
+			  'type' => 'textarea'
+		   ),
+		   'remove_div' => array(
+			  'id' => 'remove_div',
+			  'name' => __('Remove div container', 'pib'),
+			  'desc' => __('Remove div tag surrounding regular button ( &#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62; ). Already removed if other social sharing buttons enabled.', 'pib'),
+			  'type' => 'checkbox'
+		   )
 	    )
 	);
 	
@@ -72,6 +89,10 @@ function pib_register_settings() {
 	
 	if ( false == get_option('pib_settings_post_visibility') ) {
 		add_option( 'pib_settings_post_visibility' );
+	}
+	
+	if ( false == get_option('pib_settings_styles') ) {
+		add_option( 'pib_settings_styles' );
 	}
 	
 	add_settings_section(
@@ -119,6 +140,32 @@ function pib_register_settings() {
 				'desc' => $option['desc'],
 				'name' => $option['name'],
 				'section' => 'post_visibility',
+				'size' => isset( $option['size'] ) ? $option['size'] : null,
+				'options' => isset( $option['options'] ) ? $option['options'] : '',
+				'std' => isset( $option['std'] ) ? $option['std'] : ''
+			)
+		);
+	}
+	
+	add_settings_section(
+		'pib_settings_styles',
+		__( 'Styles', 'pib' ),
+		'__return_false',
+		'pib_settings_styles'
+	);
+	
+	foreach ( $pib_settings['styles'] as $option ) {
+		add_settings_field(
+			'pib_settings_styles[' . $option['id'] . ']',
+			$option['name'],
+			function_exists( 'pib_' . $option['type'] . '_callback' ) ? 'pib_' . $option['type'] . '_callback' : 'pib_missing_callback',
+			'pib_settings_styles',
+			'pib_settings_styles',
+			array(
+				'id' => $option['id'],
+				'desc' => $option['desc'],
+				'name' => $option['name'],
+				'section' => 'general',
 				'size' => isset( $option['size'] ) ? $option['size'] : null,
 				'options' => isset( $option['options'] ) ? $option['options'] : '',
 				'std' => isset( $option['std'] ) ? $option['std'] : ''
@@ -180,6 +227,21 @@ function pib_select_callback($args) {
 	endforeach;
 
 	$html .= '</select>';
+	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+
+	echo $html;
+}
+
+function pib_textarea_callback( $args ) {
+	global $pib_options;
+
+	if ( isset( $pib_options[ $args['id'] ] ) )
+		$value = $pib_options[ $args['id'] ];
+	else
+		$value = isset( $args['std'] ) ? $args['std'] : '';
+
+	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
+	$html = '<textarea class="" cols="120" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>';
 	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
