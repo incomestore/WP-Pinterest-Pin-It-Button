@@ -64,7 +64,10 @@ class Pinterest_Pin_It_Button {
 	private function __construct() {
 		// Load plugin text domain
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-
+		
+		// Initialize the settings.
+		//add_action( 'admin_init', array( $this, 'initialize_settings' ) );
+		$this->initialize_settings();
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
@@ -76,8 +79,7 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Initialize the settings.
-		add_action( 'admin_init', array( $this, 'initialize_settings' ) );
+		
 
 		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
@@ -232,7 +234,7 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function initialize_settings() {
 		// If plugin settings don't exist, create them
-		if ( false == get_option( 'pib_settings_general' ) ) {
+		/*if ( false == get_option( 'pib_settings_general' ) ) {
 			add_option( 'pib_settings_general' );
 		}
 
@@ -265,7 +267,11 @@ class Pinterest_Pin_It_Button {
 		register_setting(
 			'pib_settings_general',
 			'pib_settings_general'
-		);
+		);*/
+		global $pib_options;
+		
+		include_once('views/register-settings.php');
+		$pib_options = pib_get_settings();
 	}
 
 	/**

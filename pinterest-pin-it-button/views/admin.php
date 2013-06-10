@@ -13,7 +13,11 @@
  */
 ?>
 <div class="wrap">
+	<?php
+		global $pib_options;
 
+		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
+	?>
 	<?php screen_icon( 'edit' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
