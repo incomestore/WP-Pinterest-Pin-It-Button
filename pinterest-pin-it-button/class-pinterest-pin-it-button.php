@@ -2,18 +2,18 @@
 /**
  * Pinterest "Pin It" Button
  *
- * @package PIB
- * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
- * @license GPL-2.0+
- * @link    http://pinterestplugin.com
- * @copyright 2011-2013 Phil Derksen
+ * @package		PIB
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @license		GPL-2.0+
+ * @link		http://pinterestplugin.com
+ * @copyright	2011-2013 Phil Derksen
  */
 
 /**
  * Main Pinterest_Pin_It_Button class
  *
- * @package PIB
- * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package		PIB
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 class Pinterest_Pin_It_Button {
 
