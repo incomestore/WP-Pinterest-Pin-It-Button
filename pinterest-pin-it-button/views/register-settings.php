@@ -16,24 +16,24 @@ function pib_register_settings() {
 	$pib_settings = array(
 	    /* General Settings */
 	    'general' => array(
-		   'button_behavior' => array(
-			  'id' => 'button_behavior',
+		   'button_style' => array(
+			  'id' => 'button_style',
 			  'name' => __('Button behavior', 'pib'),
 			  'desc' => '',
 			  'type' => 'radio',
 			  'std' => 'no',
 			  'options' => array(
-				 'user_selects' => __('User selects image from popup', 'pib'),
-				 'pre_selected' => __('Image is pre-selected (defaults to first image in post)', 'pib')
+				 'user_selects_image' => __('User selects image from popup', 'pib'),
+				 'image_selected' => __('Image is pre-selected (defaults to first image in post)', 'pib')
 			  )
 		   ),
-		   'pin_count' => array(
-			  'id' => 'pin_count',
+		   'count_layout' => array(
+			  'id' => 'count_layout',
 			  'name' => __('Pin count', 'pib'),
 			  'desc' => '',
 			  'type' => 'select',
 			  'options' => array(
-				 'no_count' => __('No Count', 'pib'),
+				 'none' => __('No Count', 'pib'),
 				 'horizontal' => __('Horizontal', 'pib'),
 				 'vertical' => __('Vertical', 'pib')
 			  )
@@ -47,11 +47,11 @@ function pib_register_settings() {
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'blog_home' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
-				 'front_page' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
-				 'posts' => __('Indivdual Posts', 'pib'),
-				 'pages' => __('WordPress static "Pages"', 'pib'),
-				 'archives' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib')
+				 'display_home_page' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
+				 'display_front_page' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
+				 'display_posts' => __('Indivdual Posts', 'pib'),
+				 'display_pages' => __('WordPress static "Pages"', 'pib'),
+				 'display_archives' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib')
 			  )
 		   ),
 		   'post_page_placement' => array(
@@ -60,9 +60,9 @@ function pib_register_settings() {
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'above' => __('Above Content', 'pib'),
-				 'below' => __('Below Content', 'pib'),
-				 'excerpts' => __('On Post Excerpts', 'pib')
+				 'display_above_content' => __('Above Content', 'pib'),
+				 'display_below_content' => __('Below Content', 'pib'),
+				 'display_on_post_excerpts' => __('On Post Excerpts', 'pib')
 			  )
 		   )
 	    ),
@@ -297,6 +297,8 @@ function pib_get_settings() {
 	$general_settings =			is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
 	$style_settings =			is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
+	
+	echo 'Testing: ' . $general_settings['button_style'] . '<br />';
 	
 	return array_merge( $general_settings, $post_visibility_settings, $style_settings );
 }
