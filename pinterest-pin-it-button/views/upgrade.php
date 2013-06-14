@@ -9,6 +9,9 @@ function pib_v2_upgrade() {
 	// set which old values we don't need
 	$discard = array( 'share_btn_1', 'share_btn_2', 'share_btn_3', 'share_btn_4', 'uninstall_save_settings' );
 	
+	// Need to decipher which Post Visibility settings to update so we will use an array
+	$page_placement = array( 'display_above_content', 'display_below_content', 'display_on_post_excerpts' );
+	
 	if(get_option('pib_options')) {
 		$old_options = get_option('pib_options');
 		
@@ -25,14 +28,24 @@ function pib_v2_upgrade() {
 				continue;
 			} else if( 'custom_css' == $key || 'remove_div' == $key ) {
 				// Add to styles settings
-				echo "Styles Setting [$key]<br />";
+				$style_options[$key] = $value;
+				
 			} else if( !(false === strrpos( $key, 'display' )) ) {
-				echo "Post Visibilty Setting [$key]<br />";
 				// Add to Post Visibility settings
+				
+				// With the new options we have these setup as nested arrays so we need to check which one we are adding to
+				if( in_array( $key, $page_placement ) ) {
+					$post_visibility_options['post_page_placement'][$key] = $value;
+				} else {
+					$post_visibility_options['post_page_types'][$key] = $value;
+				}
+				
 			} else {
 				// Add to General Settings
-				echo "General Setting [$key]<br />";
+				$general_options[$key] = $value;
 			}
+			
+			// add update options here
 
 		}
 	}
