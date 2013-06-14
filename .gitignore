@@ -42,7 +42,7 @@ Thumbs.db
 .idea
 
 # Netbeans IDE *
-/nbproject/*
+/pinterest-pin-it-button/nbproject/*
 
 # MS Sync Toy dat file *
 SyncToy*.dat
