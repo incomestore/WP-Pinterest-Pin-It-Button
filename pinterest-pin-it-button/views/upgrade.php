@@ -1,5 +1,5 @@
 <?php
-	
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -46,7 +46,12 @@ function pib_v2_upgrade() {
 			}
 			
 			// add update options here
-
+			update_option( 'pib_settings_general', $general_options );
+			update_option( 'pib_settings_post_visibility', $post_visibility_options );
+			update_option( 'pib_settings_styles', $style_options );
+			
+			// Delete old options
+			delete_option( 'pib_options' );
 		}
 	}
 }
