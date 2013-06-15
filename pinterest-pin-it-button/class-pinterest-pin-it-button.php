@@ -62,8 +62,9 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function __construct() {
-		// Load plugin text domain
+		// TODO Load plugin text domain -- Translation not implemented for initial release.
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		// TODO Add file /lang/pinterest-pin-it-button.pot, uncomment load_plugin_textdomain below.
 		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
 		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
@@ -126,9 +127,11 @@ class Pinterest_Pin_It_Button {
 
 	/**
 	 * Load the plugin text domain for translation.
+	 * // TODO Translation not implemented for initial release
 	 *
 	 * @since    2.0.0
 	 */
+	/*
 	public function load_plugin_textdomain() {
 		$domain = $this->plugin_slug;
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
@@ -136,6 +139,7 @@ class Pinterest_Pin_It_Button {
 		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 	}
+	*/
 
 	/**
 	 * Enqueue admin-specific style sheets.
