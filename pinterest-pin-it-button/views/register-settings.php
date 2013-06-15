@@ -47,11 +47,26 @@ function pib_register_settings() {
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'display_home_page' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
-				 'display_front_page' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
-				 'display_posts' => __('Indivdual Posts', 'pib'),
-				 'display_pages' => __('WordPress static "Pages"', 'pib'),
-				 'display_archives' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib')
+				 'display_home_page' => array(
+					'label' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
+					'value' => 1
+				),
+				 'display_front_page' => array(
+					'label' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
+					'value' => 1
+				),
+				 'display_posts' => array(
+					'label' => __('Indivdual Posts', 'pib'),
+					'value' => 1
+				),
+				 'display_pages' => array(
+					'label' => __('WordPress static "Pages"', 'pib'),
+					'value' => 1
+				),
+				 'display_archives' => array(
+					'label' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib'),
+					'value' => 1
+				)
 			  )
 		   ),
 		   'post_page_placement' => array(
@@ -60,9 +75,18 @@ function pib_register_settings() {
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'display_above_content' => __('Above Content', 'pib'),
-				 'display_below_content' => __('Below Content', 'pib'),
-				 'display_on_post_excerpts' => __('On Post Excerpts', 'pib')
+				 'display_above_content' => array(
+					'label' => __('Above Content', 'pib'),
+					'value' => 1
+				),
+				 'display_below_content' => array(
+					'label' => __('Below Content', 'pib'),
+					'value' => 1
+				),
+				 'display_on_post_excerpts' => array(
+					'label' => __('On Post Excerpts', 'pib'),
+					'value' => 1
+				)
 			  )
 		   )
 	    ),
@@ -229,8 +253,8 @@ function pib_multicheck_callback( $args ) {
 
 	foreach( $args['options'] as $key => $option ):
 		if( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
-		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
 	endforeach;
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
