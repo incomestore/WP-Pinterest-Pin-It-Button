@@ -1,6 +1,6 @@
 <?php
 /**
- * Pinterest "Pin It" Button
+ * Pinterest "Pin It" Button Lite
  *
  * @package		PIB
  * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
@@ -9,7 +9,7 @@
  * @copyright	2011-2013 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Pinterest "Pin It" Button
+ * Plugin Name: Pinterest "Pin It" Button Lite
  * Plugin URI: http://pinterestplugin.com
  * Description: Add a Pinterest "Pin It" Button to your posts and pages allowing your readers easily pin your images. Includes shortcode and widget.
  * Version: 2.0.0
