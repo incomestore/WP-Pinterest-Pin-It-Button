@@ -7,107 +7,158 @@ Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-=== [TODO] ===
-
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Easily add a Pinterest "Pin It" Button to your site and encourage your visitors pin your awesome content!
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+###Pinterest "Pin It" Button Plugin Features:###
 
-A few notes about the sections above:
+* Let the reader select an image from a popup (Pinterest bookmarklet style)
+* (or) Specify the image to pin on each post (Pinterest default)
+* Show horizontal, vertical or no pin count (Pinterest counts per post/URL)
+* Show or hide the button on any post, page or category
+* Add custom CSS to align with other sharing buttons
+* Sidebar widget and shortcode options included
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+###More Features Available in Pro Version:###
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+* 30 Custom "Pin It" Button Designs to choose from
+* Hover "Pin It" button per image
+* Facebook, Twitter, Google +1 & LinkedIn sharing buttons included
+* Allow featured images to be pre-selected when pinning
+* Automatic Upgrades & Priority Support
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+[Click Here to Upgrade to "Pin It" Button Pro! &raquo;](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+
+###Raves###
+
+* "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
+* Top 10 Plugins for February 2012 (the only Pinterest one) -- [ManageWP](http://managewp.com/top-10-wordpress-plugins-of-the-month-february)
+* "If you want to make it easy for Pinterest users to pin your articles, consider using this 'Pin It' button plugin." -- [WP Tavern](http://www.wptavern.com/pin-it-is-the-new-bookmark)
+* "If you're looking for something simple and obtrusive, the Pinterest 'Pin It' Button will suit you." -- [WPMU.org](http://wpmu.org/pinterest-plugins-wordpress/)
+
+[See the "Pin It" Button in Action &raquo;](http://bruisesandbandaids.com/2011/newborn-photography-props/) (see bottom of post and image hover)
+
+[Click Here to Upgrade to "Pin It" Button Pro! &raquo;](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+**Finding and installing through the WordPress admin:**
 
-e.g.
+1. If searching for this plugin in your WordPress admin, search for "pin it button".
+1. Find the plugin that's labeled *Pinterest "Pin It" Button" with "Pin It" in quotes.
+1. Also look for my name as the author (*Phil Derksen*). There are other "Pin It" button plugins which is why this can be confusing.
+1. Click "Install Now", then Activate, then head to the new menu item on the left labeled "Pin It Button".
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+**Alternative installation methods:**
+
+* Download this plugin, then upload through the WordPress admin (Plugins > Add New > Upload)
+* Download this plugin, unzip the contents, then FTP upload to the `/wp-content/plugins/` directory
+
+Note: If you overwrite the plugin using an FTP upload, you may lose some saved settings.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+[FAQ maintained here &raquo;](http://pinterestplugin.com/pin-it-button-faq)
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1. Settings page
+2. Button display below a post
+3. Widget options
+4. Per page settings
+5. Advanced settings
 
 == Changelog ==
 
+= 1.4.3 =
+* Fixed bug where Create Pin popup wasn't working in some cases.
+
+= 1.4.2 =
+* Tested with WordPress 3.5.
+* Added: Option to save settings upon plugin uninstall.
+* Changed: Removed "Always show pin count" option as it's no longer supported by Pinterest.
+* Changed: Iframe option removed as it's no longer supported by Pinterest.
+* Changed: Moved some JavaScript files to load in the footer rather than the header to improve page speed load and compatibility with Pinterest code. Theme must implement wp_footer() to function properly.
+* Fixed: Count="vertical" shortcode fixed.
+* Fixed: Updated button CSS/styles to improve compatibility with more themes.
+* Fixed: Checks theme support for post thumbnails and adds if needed.
+* Fixed: Various minor bug fixes.
+
+= 1.4.1 =
+* Fixed: Various shortcode fixes.
+* Fixed: Moved some JavaScript files that were loaded in the footer to now load in the header to improve compatibility with themes not implementing wp_footer().
+* Fixed: Updated button CSS/styles to improve compatibility with more themes.
+
+= 1.4.0 =
+* Changed/Fixed: Iframe removed when button set to "User selects image". Fixes security issues and display errors on some web hosts.
+* Added: Displays new features available if upgrading "Pin It" Button Pro
+
+= 1.3.1 =
+* Changed: Modified button JavaScript to be in line with Pinterest's current button embed JavaScript
+* Changed: Split up internal code files for easier maintenance and updates
+* Fixed: Shortcode -- If the attributes "url", "image_url" and/or "description" aren't specified, it will try and use the post's custom page url, image url and/or description if found. If not found it will default to the post's url, first image in post and post title.
+* Fixed: Changed the way defaults are set upon install so it shouldn't override previous settings
+* Fixed: Uninstall now removes custom post meta fields
+
+= 1.3.0 =
+* Added: Added a Pin Count option (horizontal or vertical)
+* Added: Added new button style where image is pre-selected (like official Pinterest button)
+* Added: Added fields for specifying URL, image URL and description for new button style **image pre-selected**
+* Added: Added float option for alignment (none, left or right) to widget and shortcode
+* Added: Shortcode -- Can now remove div tag wrapper
+* Added: Widget -- Can now remove div tag wrapper
+* Changed: Moved "Follow" button widget to separate plugin: [Pinterest "Follow" Button](http://wordpress.org/extend/plugins/pinterest-follow-button/)
+* Changed: Both button styles now embed iframe (like official Pinterest button)
+* Changed: External JavaScript now loads in footer for better performance
+* Fixed: Fixed bug where front page was still showing button even when Front Page was unchecked
+* Fixed: Fixed bug where some settings weren't saved when upgrading the plugin
+* Fixed: Fixed bug where tag, author, date and search archive pages were not displaying the button
+
+= 1.2.1 =
+* Fixed: Fixed bug with hiding posts/pages/categories when upgrading from a previous version
+
+= 1.2.0 =
+* Added: Added option to hide button per page/post
+* Added: Added option to hide button per category
+* Added: Added widget to display "Pin It" button
+* Added: Added widget to display "Follow" on Pinterest button
+* Fixed: Fixed CSS where some blogs weren't displaying the button properly
+
+= 1.1.3 =
+* Added: Added option to hide button on individual posts and pages (on post/page editing screen)
+
+= 1.1.2 =
+* Fixed: Removed use of session state storing for now as it caused errors for some
+
+= 1.1.1 =
+* Fixed: Updated jQuery coding method to avoid JavaScript conflicts with other plugins and themes some were getting
+
+= 1.1.0 =
+* Added: Added custom CSS area for advanced layout and styling
+* Added: Added checkbox option to remove the button's surrounding `<div>` tag
+* Added: Button image and style updated to match Pinterest's current embed code
+* Fixed: Changed the way the button click is called to solve pinning issues in Internet Explorer
+
+= 1.0.2 =
+* Added: Added checkbox option to display/hide button on post excerpts
+* Fixed: "Pin It" links generated by the shortcode should not show up when viewing the post in RSS readers
+
+= 1.0.1 =
+* Added: Added checkbox option to display/hide button on "front page" (sometimes different than home page)
+
 = 1.0.0 =
-* A change since the previous version.
-* Another change.
+* Added: Added checkbox options to select what types of pages the button should appear on
+* Added: Display options above and below content are now checkboxes (one or both can be selected)
+* Added: Added shortcode [pinit] to display button within content
 
-= 0.5.0 =
-* List versions from most recent at top to oldest at bottom.
+= 0.1.2 =
+* Changed: Moved javascript that fires on button click to a separate file
 
-== Upgrade Notice ==
+= 0.1.1 =
+* Fixed style sheet reference
 
-= 1.0.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+= 0.1.0 =
+* Initial release
