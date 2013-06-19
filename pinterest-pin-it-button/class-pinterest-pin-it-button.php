@@ -80,8 +80,6 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		
-
 		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
 		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
