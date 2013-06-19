@@ -20,8 +20,8 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if ( ! defined( 'WPINC' ) ) {
+	die;
 }
 
 require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
