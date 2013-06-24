@@ -1,7 +1,9 @@
 <?php
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function pib_v2_upgrade() {
 	// Add code here to transfer all the options to new tab layout

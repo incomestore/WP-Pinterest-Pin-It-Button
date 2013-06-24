@@ -9,8 +9,10 @@
 	* @since       1.0
     */
 
-    // Exit if accessed directly
-    if ( !defined( 'ABSPATH' ) ) exit;
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function pib_register_settings() {
 	$pib_settings = array(
