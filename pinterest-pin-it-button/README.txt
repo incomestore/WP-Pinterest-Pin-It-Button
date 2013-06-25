@@ -46,14 +46,14 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 == Installation ==
 
-**Finding and installing through the WordPress admin:**
+= Finding and installing through the WordPress admin: =
 
 1. If searching for this plugin in your WordPress admin, search for "pin it button".
-1. Find the plugin that's labeled *Pinterest "Pin It" Button" with "Pin It" in quotes.
-1. Also look for my name as the author (*Phil Derksen*). There are other "Pin It" button plugins which is why this can be confusing.
+1. Find the plugin that's labeled **Pinterest "Pin It" Button"** with "Pin It" in quotes.
+1. Also look for my name as the author (**Phil Derksen**). There are other "Pin It" button plugins which is why this can be confusing.
 1. Click "Install Now", then Activate, then head to the new menu item on the left labeled "Pin It Button".
 
-**Alternative installation methods:**
+= Alternative installation methods: =
 
 * Download this plugin, then upload through the WordPress admin (Plugins > Add New > Upload)
 * Download this plugin, unzip the contents, then FTP upload to the `/wp-content/plugins/` directory
@@ -66,9 +66,9 @@ Note: If you overwrite the plugin using an FTP upload, you may lose some saved s
 
 If the "Pin It" button doesn't get triggered on click (and your browser is redirected to a pinterest.com URL), please make sure that there is not extra code that is hijacking the click event (for example, a Google Analytics onclick event).
 
-A popular known plugin that does this is *Google Analytics for WordPress*. Try unchecking one or both of these options: 1) Track outbound clicks & downloads, 2) Check Advanced Settings, then make sure "Track outbound clicks as pageviews" is un-checked.
+A popular known plugin that does this is **Google Analytics for WordPress**. Try unchecking one or both of these options: 1) Track outbound clicks & downloads, 2) Check Advanced Settings, then make sure "Track outbound clicks as pageviews" is un-checked.
 
-Your theme must implement *wp_footer()* in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
+Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
 [Full FAQ maintained here &raquo;](http://pinterestplugin.com/pin-it-button-faq)
 
