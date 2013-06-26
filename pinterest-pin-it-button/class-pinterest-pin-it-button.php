@@ -66,6 +66,24 @@ class Pinterest_Pin_It_Button {
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		// TODO Add file /lang/pinterest-pin-it-button.pot, uncomment load_plugin_textdomain below.
 		
+		echo "Constructor<br />";
+		
+		// Do upgrade if we need to
+		if ( !get_option( 'pib_version' ) ) {
+			echo "Creating option...<br />";
+			add_option( 'pib_version', $this->version );
+		} else {
+			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading
+			add_option( 'pib_old_version', get_option( 'pib_version' ) );
+			
+			// Only if the old version is less than the new version do we run our upgrade code
+			if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
+				add_action( 'init', array( $this, 'upgrade' ), 1 );
+			}
+			// update the current plugin version
+			update_option( 'pib_version', $this->version );
+		}
+		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
 		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
 		
@@ -269,5 +287,10 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function filter_method_name() {
 		// TODO: Define your filter hook callback here
+	}
+	
+	public function upgrade() {
+		echo "Upgrade Function<br />";
+		include( 'views/upgrade.php' );
 	}
 }

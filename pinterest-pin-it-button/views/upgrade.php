@@ -5,6 +5,17 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+function pib_do_all_upgrades() {
+	
+	$current_version = get_option( 'pib_old_version' );
+	
+	// if less than version 2 then upgrade
+	if( version_compare( $current_version, '2.0.0', '<' ))
+		   pib_v2_upgrade();
+	
+	delete_option( 'pib_old_version' );
+}
+
 function pib_v2_upgrade() {
 	// Add code here to transfer all the options to new tab layout
 	
@@ -57,3 +68,5 @@ function pib_v2_upgrade() {
 		}
 	}
 }
+
+pib_do_all_upgrades();
