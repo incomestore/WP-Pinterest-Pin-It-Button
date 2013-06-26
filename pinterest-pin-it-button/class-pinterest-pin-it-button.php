@@ -66,11 +66,8 @@ class Pinterest_Pin_It_Button {
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		// TODO Add file /lang/pinterest-pin-it-button.pot, uncomment load_plugin_textdomain below.
 		
-		echo "Constructor<br />";
-		
 		// Do upgrade if we need to
 		if ( !get_option( 'pib_version' ) ) {
-			echo "Creating option...<br />";
 			add_option( 'pib_version', $this->version );
 		} else {
 			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading
@@ -290,7 +287,6 @@ class Pinterest_Pin_It_Button {
 	}
 	
 	public function upgrade() {
-		echo "Upgrade Function<br />";
 		include( 'views/upgrade.php' );
 	}
 }
