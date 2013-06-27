@@ -1,13 +1,12 @@
 <?php
-	/**
-	* Post Meta Display
-	*
-	* @package PIB     
-	* @subpackage views
-	* @copyright   Copyright (c) 2013, Phil Derksen, Nick Young
-	* @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
-	* @since       2.0.0
-    */
+/**
+ * Post Meta Display
+ *
+ * @package		PIB
+ * @subpackage	Views
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ *
+ */
 
 // If this file is called directly, abort.
 	if ( ! defined( 'WPINC' ) ) {

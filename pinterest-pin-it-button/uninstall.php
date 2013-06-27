@@ -2,8 +2,8 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package PIB
- * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package		PIB
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
 // If uninstall, not called from WordPress, then exit

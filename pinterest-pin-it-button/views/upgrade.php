@@ -1,5 +1,8 @@
 <?php
 
+//TODO Add header here?
+//TODO Move to a new folder since it's not a view?
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
