@@ -96,9 +96,12 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		
 		// Add Post Meta stuff
-		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
+		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
-		
+
+		// Add plugin listing "Settings" and other action links
+		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
+
 		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
 		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
@@ -247,7 +250,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function post_meta() {
+	function display_post_meta() {
 		
 		// Add the meta boxes for both posts and pages
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'post', 'advanced', 'high');
@@ -299,12 +302,6 @@ class Pinterest_Pin_It_Button {
 		return $post_id;
 	}
 
-	/* ------------------------------------------------------------------------ *
-	 * Settings
-	 * // TODO Testing using Settings API
-	 * // TODO Move to own include eventually
- 	 * ------------------------------------------------------------------------ */
-
 	/**
 	 * Initialize settings.
 	 *
@@ -315,39 +312,28 @@ class Pinterest_Pin_It_Button {
 		global $pib_options;
 		
 		// Include the file to register all of the plugin settings
-		include_once('views/register-settings.php');
+		include_once( 'views/register-settings.php' );
 		
 		// Load global options settings
 		$pib_options = pib_get_settings();
 	}
 
-	/**
-	 * NOTE:  Actions are points in the execution of a page or process
-	 *        lifecycle that WordPress fires.
-	 *
-	 *        WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
-	 *        Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since    2.0.0
-	 */
-	public function action_method_name() {
-		// TODO: Define your action hook callback here
+	public function upgrade() {
+		include( 'views/upgrade.php' );
 	}
 
 	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
+	 * Add plugin listing "Settings" and other action links
 	 *
-	 *        WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *        Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since    2.0.0
+	 * @since    1.0.0
 	 */
-	public function filter_method_name() {
-		// TODO: Define your filter hook callback here
-	}
-	
-	public function upgrade() {
-		include( 'views/upgrade.php' );
+	function add_action_link( $links, $file ) {
+		static $this_plugin;
+		if ( empty( $this_plugin ) ) $this_plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
+		if ( $file == $this_plugin ) {
+			$settings_link = '<a href="' . admin_url( 'options-general.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'pib' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
+		return $links;
 	}
 }
