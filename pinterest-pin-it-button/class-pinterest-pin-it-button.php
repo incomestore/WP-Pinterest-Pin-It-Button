@@ -267,8 +267,36 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function save_post_meta() {
-		
+	function save_meta_data( $post_id ) {
+		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
+			return $post_id;
+
+		// Record sharing disable
+		if ( isset( $_POST['post_type'] ) && ( 'post' == $_POST['post_type'] || 'page' == $_POST['post_type'] ) ) {
+			if ( current_user_can( 'edit_post', $post_id ) ) {
+				if ( isset( $_POST['pib_sharing_status_hidden'] ) ) {
+					if ( !isset( $_POST['pib_enable_post_sharing'] ) ) {
+						update_post_meta( $post_id, 'pib_sharing_disabled', 1 );
+					}
+					else {
+						delete_post_meta( $post_id, 'pib_sharing_disabled' );
+					}
+
+					if ( isset( $_POST['pib_url_of_webpage'] ) && isset( $_POST['pib_url_of_img'] ) && isset( $_POST['pib_description'] )) {
+						update_post_meta( $post_id, 'pib_url_of_webpage', $_POST['pib_url_of_webpage'] );
+						update_post_meta( $post_id, 'pib_url_of_img', $_POST['pib_url_of_img'] );
+						update_post_meta( $post_id, 'pib_description', $_POST['pib_description'] );
+					}					
+					else {
+						delete_post_meta( $post_id, 'pib_url_of_webpage' );
+						delete_post_meta( $post_id, 'pib_url_of_img' );
+						delete_post_meta( $post_id, 'pib_description' );
+					}
+				}
+			}
+		}
+
+		return $post_id;
 	}
 
 	/* ------------------------------------------------------------------------ *
