@@ -94,7 +94,11 @@ class Pinterest_Pin_It_Button {
 		// Enqueue public style and scripts.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
+		
+		// Add Post Meta stuff
+		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
+		add_action( 'save_post', array( $this, 'save_meta_data') );
+		
 		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
 		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
@@ -236,6 +240,35 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
+	}
+	
+	/**
+	 * Render the post meta for this plugin.
+	 *
+	 * @since    2.0.0
+	 */
+	function post_meta() {
+		
+		// Add the meta boxes for both posts and pages
+		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'post', 'advanced', 'high');
+		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'page', 'advanced', 'high');
+	
+		// function to output the HTML for meta box
+		function add_meta_form( $post ) {
+			
+			wp_nonce_field( basename( __FILE__ ), 'pib_meta_nonce' );
+			
+			include( 'views/post-meta-display.php' );
+		}
+	}
+	
+	/**
+	 * Save the post meta for this plugin.
+	 *
+	 * @since    2.0.0
+	 */
+	function save_post_meta() {
+		
 	}
 
 	/* ------------------------------------------------------------------------ *
