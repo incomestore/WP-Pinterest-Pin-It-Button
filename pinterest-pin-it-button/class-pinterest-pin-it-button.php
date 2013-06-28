@@ -72,7 +72,7 @@ class Pinterest_Pin_It_Button {
 		}
 		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
-		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
+		add_action( 'init', array( $this, 'initialize_settings' ), 1 );
 		
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
@@ -88,6 +88,9 @@ class Pinterest_Pin_It_Button {
 		// Add Post Meta stuff
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
+		
+		// Load public facing code
+		add_action( 'init', array( $this, 'public_display' ) );
 		
 		// Load widget
 		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
@@ -295,6 +298,14 @@ class Pinterest_Pin_It_Button {
 		return $post_id;
 	}
 	
+	/**
+	 * Load public facing code
+	 *
+	 * @since    2.0.0
+	 */
+	function public_display() {
+		include( 'views/public.php' );
+	}
 	/**
 	 * Add widget
 	 *

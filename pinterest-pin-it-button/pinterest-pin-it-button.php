@@ -24,6 +24,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'PIB_BASE_URL', plugin_dir_url( __FILE__ ) );
+
 require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
