@@ -331,6 +331,7 @@ class Pinterest_Pin_It_Button {
 		
 		// Load global options settings
 		$pib_options = pib_get_settings();
+		
 	}
 
 	public function upgrade() {

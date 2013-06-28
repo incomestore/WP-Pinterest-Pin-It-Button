@@ -120,6 +120,7 @@ function pib_register_settings() {
 		add_option( 'pib_settings_styles' );
 	}
 	
+	
 	/* Add the General Settings section */
 	add_settings_section(
 		'pib_settings_general',
@@ -318,6 +319,29 @@ function pib_missing_callback() {
  * Function used to return an array of all of the plugin settings
  */
 function pib_get_settings() {
+	
+	// If this is the first time running we need to set the defaults
+	if ( !get_option( 'pib_has_run' ) ) {
+		
+		// set default post visibility options
+		$post_visibility = get_option( 'pib_settings_post_visibility' );
+		$post_visibility['post_page_types']['display_posts'] = 1;
+		$post_visibility['post_page_placement']['display_below_content'] = 1;
+		
+		update_option( 'pib_settings_post_visibility', $post_visibility );
+		
+		// set default general settings options
+		$general = get_option( 'pib_settings_general' );
+		$general['button_style'] = 'user_selects_image';
+		
+		update_option( 'pib_settings_general', $general );
+		
+		// add an option to let us know the initial settings have been run and we don't run them again
+		add_option( 'pib_has_run', 1 );
+		
+	}
+	
+	
 	$general_settings =			is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
 	$style_settings =			is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
