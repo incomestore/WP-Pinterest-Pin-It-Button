@@ -197,31 +197,6 @@
 		   }
 	    }	
 
-		//Determine if displayed on Category on the base of category edit Screen Option
-		/*****
-		 * 
-		 * WILL COME BACK TO THIS LATER WHEN I SETUP CATEGORY META
-		 * 
-		 * 
-		 ******/
-	    /*if ( is_archive() && ( (bool)$pib_options['display_archives'] ) ) {
-			$tag_extra_fields = get_option( PIB_CATEGORY_FIELDS );
-			$category_ids = get_all_category_ids();
-			foreach( $category_ids as $term_id ) {					 
-				if( !$tag_extra_fields[$term_id]['checkbox'] ) {
-
-					if( is_category($term_id) ) {
-						if ( (bool)$pib_options['display_above_content'] ) {
-							$content = pib_button_html() . $content;
-						}
-						if ( (bool)$pib_options['display_below_content'] ) {
-							$content .= pib_button_html();
-						}
-					}
-				}				
-			}
-		}*/
-
 		return $content;
 	}
 	add_filter( 'the_content', 'pib_render_content' );
@@ -246,41 +221,8 @@
 			  }
 		   }   
 
-			//Determine if displayed on Category on the base of category edit Screen Option
-				/*****
-			   * 
-			   * WILL COME BACK TO THIS LATER WHEN I SETUP CATEGORY META
-			   * 
-			   * 
-			   ******/
-			/*if( is_archive() && ( $pib_options['display_archives'] ) ) {
-
-			  $tag_extra_fields = get_option( PIB_CATEGORY_FIELDS );
-			  $category_ids = get_all_category_ids();
-			  foreach( $category_ids as $term_id ) {                     
-				 if( !$tag_extra_fields[$term_id]['checkbox'] ) {                            
-
-					if(is_category($term_id)) {	
-					    if ( $pib_options['display_above_content'] ) {
-						   $content = pib_sharebar_html( $postID ) . $content;
-					    }
-					    if ( $pib_options['display_below_content'] ) {
-						   $content .= pib_sharebar_html( $postID );
-					    }
-					}
-				 }
-			  }
-			}*/
 		}
 
 		return $content;
 	}
 	add_filter( 'the_excerpt', 'pib_render_content_excerpt' );
-
-	//Add thumbnail support to theme if needed
-	function pib_add_thumbnail_support() {
-		if ( !current_theme_supports( 'post-thumbnails' ) ) {
-			add_theme_support( 'post-thumbnails' );
-		}
-	}
-	add_action('init', 'pib_add_thumbnail_support');
