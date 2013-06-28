@@ -88,6 +88,9 @@ class Pinterest_Pin_It_Button {
 		// Add Post Meta stuff
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
+		
+		// Load widget
+		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
 
 		// Add plugin listing "Settings" and other action links
 		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
@@ -290,6 +293,17 @@ class Pinterest_Pin_It_Button {
 		}
 
 		return $post_id;
+	}
+	
+	/**
+	 * Add widget
+	 *
+	 * @since    2.0.0
+	 */
+	function pib_widget() {
+		include( 'views/widget.php' );
+		
+		register_widget( 'PIB_Widget' );
 	}
 
 	/**
