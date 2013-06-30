@@ -56,7 +56,7 @@ function pib_register_settings() {
 					'value' => 1
 				),
 				 'display_posts' => array(
-					'label' => __('Indivdual Posts', 'pib'),
+					'label' => __('Individual Posts', 'pib'),
 					'value' => 1
 				),
 				 'display_pages' => array(
