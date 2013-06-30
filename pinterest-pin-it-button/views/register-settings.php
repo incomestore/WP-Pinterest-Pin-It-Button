@@ -95,7 +95,7 @@ function pib_register_settings() {
 		   'custom_css' => array(
 			  'id' => 'custom_css',
 			  'name' => __('Custom CSS', 'pib'),
-			  'desc' => '',
+			  'desc' => __('Custom CSS should overwrite other CSS as it is rendered after all other CSS file references.', 'pib'),
 			  'type' => 'textarea'
 		   ),
 		   'remove_div' => array(
@@ -294,7 +294,11 @@ function pib_textarea_callback( $args ) {
 
 	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
 	$html = '<textarea class="" cols="120" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	//$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+
+	// Render and style description text underneath textarea if it exists
+	if ( !empty( $args['desc'] ) )
+		$html .= '<p class="description">' . $args['desc'] . '</p>';
 
 	echo $html;
 }
