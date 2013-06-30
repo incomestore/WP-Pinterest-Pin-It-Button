@@ -101,7 +101,7 @@ function pib_register_settings() {
 		   'remove_div' => array(
 			  'id' => 'remove_div',
 			  'name' => __('Remove div container', 'pib'),
-			  'desc' => __('Remove div tag surrounding regular button ( &#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62; ). Already removed if other social sharing buttons enabled.', 'pib'),
+			  'desc' => __('Remove div tag surrounding regular button (<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).', 'pib'),
 			  'type' => 'checkbox'
 		   )
 	    )
