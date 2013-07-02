@@ -230,6 +230,9 @@ class Pinterest_Pin_It_Button {
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
 		);
+		
+		// Add help menu page
+		add_submenu_page( $this->plugin_slug, __( 'Help', 'pib' ), __( 'Help', 'pib' ), 'manage_options', $this->plugin_slug . '_help', array( $this, 'display_help_page' ) );
 	}
 
 	/**
@@ -239,6 +242,10 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
+	}
+	
+	public function display_help_page() {
+		include_once( 'views/help.php' );
 	}
 	
 	/**
