@@ -92,6 +92,9 @@ class Pinterest_Pin_It_Button {
 		// Load public facing code
 		add_action( 'init', array( $this, 'public_display' ) );
 		
+		// Load the shortcode code
+		add_action( 'init', array( $this, 'pib_shortcode' ) );
+		
 		// Load widget
 		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
 
@@ -316,6 +319,17 @@ class Pinterest_Pin_It_Button {
 	function public_display() {
 		include( 'views/public.php' );
 	}
+	
+	/**
+	 * Load shortcode
+	 *
+	 * @since    2.0.0
+	 */
+	function pib_shortcode() {
+		include( 'views/shortcode.php' );
+	}
+	
+	
 	/**
 	 * Add widget
 	 *
