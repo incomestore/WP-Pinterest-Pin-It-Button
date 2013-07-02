@@ -17,9 +17,6 @@
 	function pib_add_public_css_js() {
 	    global $pib_options;
 
-	    //Add CSS to header
-		wp_enqueue_style( 'pinterest-pin-it-button', PIB_CSS_URL . 'pinterest-pin-it-button.css' );
-
 	    //Image pre-selected
 	    if  ( $pib_options['button_style'] == 'image_selected' ) {
 			wp_enqueue_script( 'pinterest-assets', 'http' . ( is_ssl() ? 's' : '' ) . '://assets.pinterest.com/js/pinit.js', null, '', true ); 
