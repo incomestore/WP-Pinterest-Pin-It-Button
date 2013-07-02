@@ -27,8 +27,11 @@
 	    //User selects image (default)
 	    //$pib_options['button_style'] == 'user_selects_image' (or blank)
 	    else {
-		   //Fire off Pinterest's pinmarklet.js
-		   wp_enqueue_script( 'pin-it-button-user-selects-image', PIB_JS_URL . 'pin-it-button-user-selects-image.js', array( 'jquery' ), '', true );
+
+		   	//TODO Modify to use Pinterest's pinit.js file for user selects image option - PD 7/2/2013
+
+			//Old way of firing off Pinterest's pinmarklet (before the added the proper code to their pinit.js)
+			wp_enqueue_script( 'pin-it-button-user-selects-image', PIB_JS_URL . 'pin-it-button-user-selects-image.js', array( 'jquery' ), '', true );
 	    }
 	}
 	add_action( 'wp_enqueue_scripts', 'pib_add_public_css_js' );
@@ -48,6 +51,8 @@
 
 	//Function for rendering "Pin It" button base html
 
+	//TODO Remove any reference to "no-iframe" and the output table html - PD 7/2/2013
+
 	function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 		global $pib_options;
 
@@ -61,6 +66,10 @@
 
 		//Set button image URL    
 		//Default non-sprite button image url from Pinterest
+
+		//TODO If plain pin it button image is still needed reference:
+		// //assets.pinterest.com/images/pidgets/pin_it_button.png - PD 7/2/2013
+
 		$btn_img_url = '//assets.pinterest.com/images/PinExt.png';
 
 	    //Image pre-selected
