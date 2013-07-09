@@ -18,24 +18,24 @@ function pib_register_settings() {
 	    'general' => array(
 		   'button_style' => array(
 			  'id' => 'button_style',
-			  'name' => __('Button behavior', 'pib'),
+			  'name' => __( 'Button behavior', 'pib' ),
 			  'desc' => '',
 			  'type' => 'radio',
 			  'std' => 'no',
 			  'options' => array(
-				 'user_selects_image' => __('User selects image from popup', 'pib'),
-				 'image_selected' => __('Image is pre-selected (defaults to first image in post)', 'pib')
+				 'user_selects_image' => __( 'User selects image from popup', 'pib' ),
+				 'image_selected' => __( 'Image is pre-selected (defaults to first image in post)', 'pib' )
 			  )
 		   ),
 		   'count_layout' => array(
 			  'id' => 'count_layout',
-			  'name' => __('Pin count', 'pib'),
+			  'name' => __( 'Pin count', 'pib' ),
 			  'desc' => '',
 			  'type' => 'select',
 			  'options' => array(
-				 'none' => __('No Count', 'pib'),
-				 'horizontal' => __('Horizontal', 'pib'),
-				 'vertical' => __('Vertical', 'pib')
+				 'none' => __( 'No Count', 'pib' ),
+				 'horizontal' => __( 'Horizontal', 'pib' ),
+				 'vertical' => __( 'Vertical', 'pib' )
 			  )
 		   )
 	    ),
@@ -43,48 +43,48 @@ function pib_register_settings() {
 	    'post_visibility' => array(
 		   'post_page_types' => array(
 			  'id' => 'post_page_types',
-			  'name' => __('Post/Page Types', 'pib'),
+			  'name' => __( 'Post/Page Types', 'pib' ),
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_home_page' => array(
-					'label' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
+					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'pib' ),
 					'value' => 1
 				),
 				 'display_front_page' => array(
-					'label' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
+					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
 					'value' => 1
 				),
 				 'display_posts' => array(
-					'label' => __('Individual Posts', 'pib'),
+					'label' => __( 'Individual Posts', 'pib' ),
 					'value' => 1
 				),
 				 'display_pages' => array(
-					'label' => __('WordPress static "Pages"', 'pib'),
+					'label' => __( 'WordPress static "Pages"', 'pib' ),
 					'value' => 1
 				),
 				 'display_archives' => array(
-					'label' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib'),
+					'label' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'pib' ),
 					'value' => 1
 				)
 			  )
 		   ),
 		   'post_page_placement' => array(
 			  'id' => 'post_page_placement',
-			  'name' => __('Post/Page Placement', 'pib'),
+			  'name' => __( 'Post/Page Placement', 'pib' ),
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_above_content' => array(
-					'label' => __('Above Content', 'pib'),
+					'label' => __( 'Above Content', 'pib' ),
 					'value' => 1
 				),
 				 'display_below_content' => array(
-					'label' => __('Below Content', 'pib'),
+					'label' => __( 'Below Content', 'pib' ),
 					'value' => 1
 				),
 				 'display_on_post_excerpts' => array(
-					'label' => __('On Post Excerpts', 'pib'),
+					'label' => __( 'On Post Excerpts', 'pib' ),
 					'value' => 1
 				)
 			  )
@@ -94,14 +94,20 @@ function pib_register_settings() {
 	    'styles' => array(
 		   'custom_css' => array(
 			  'id' => 'custom_css',
-			  'name' => __('Custom CSS', 'pib'),
-			  'desc' => __('Custom CSS should overwrite other CSS as it is rendered after all other CSS file references.', 'pib'),
+			  'name' => __( 'Custom CSS', 'pib' ),
+			  'desc' => __( 'Custom CSS should overwrite other CSS as it is rendered after all other CSS file references.', 'pib' ),
 			  'type' => 'textarea'
 		   ),
 		   'remove_div' => array(
 			  'id' => 'remove_div',
-			  'name' => __('Remove div container', 'pib'),
-			  'desc' => __('Remove div tag surrounding regular button (<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).', 'pib'),
+			  'name' => __( 'Remove div container', 'pib' ),
+			  'desc' => __( 'Remove div tag surrounding regular button (<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).', 'pib' ),
+			  'type' => 'checkbox'
+		   ),
+		   'disable_css' => array(
+			  'id' => 'disable_css',
+			  'name' => __( 'Disable CSS File Reference', 'pib' ),
+			  'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
 			  'type' => 'checkbox'
 		   )
 	    )
