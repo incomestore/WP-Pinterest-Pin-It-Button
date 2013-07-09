@@ -239,6 +239,9 @@ class Pinterest_Pin_It_Button {
 		
 		// Add help menu page
 		add_submenu_page( $this->plugin_slug, __( 'Help', 'pib' ), __( 'Help', 'pib' ), 'manage_options', $this->plugin_slug . '_help', array( $this, 'display_help_page' ) );
+		
+		// Add Upgrade to Pro page
+		add_submenu_page( $this->plugin_slug, __( 'Upgrade to Pro', 'pib' ), __( 'Upgrade to Pro', 'pib' ), 'manage_options', $this->plugin_slug . '_upgrade_to_pro', array( $this, 'display_upgrade_to_pro' ) );
 	}
 
 	/**
@@ -252,6 +255,10 @@ class Pinterest_Pin_It_Button {
 	
 	public function display_help_page() {
 		include_once( 'views/help.php' );
+	}
+	
+	public function display_upgrade_to_pro() {
+		include_once( 'views/upgrade-to-pro.php' );
 	}
 	
 	/**
