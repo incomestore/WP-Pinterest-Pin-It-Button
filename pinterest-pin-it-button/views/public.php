@@ -47,19 +47,11 @@
 	add_action( 'wp_head', 'pib_add_custom_css' );
 
 	//Function for rendering "Pin It" button base html
-
-	//TODO Remove any reference to "no-iframe" and the output table html - PD 7/2/2013
-
 	function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 		global $pib_options;
 
 		$btn_class = '';
 		$btn_img_url = '';
-
-	    //Specify no-iframe class for all but Stock button
-	    if ( ( $pib_options['button_style'] != 'image_selected' ) ) {
-		   $btn_class .= 'pin-it-button-no-iframe';
-	    }
 
 		//Set button image URL    
 		//Default non-sprite button image url from Pinterest
@@ -86,7 +78,6 @@
 	    //rel="nobox" is to prevent lightbox popup
 
 		$inner_btn_html = '<img border="0" class="pib-count-img" src="' . $btn_img_url . '" title="Pin It" />';
-		$full_btn_html = '';
 
 	    //Link href always needs all the parameters in it for the count bubble to work
 	    //Note: leave "http:" here - will break some setups otherwise
@@ -98,33 +89,8 @@
 		   'count-layout="' . $count_layout . '" class="' . $btn_class . '" rel="nobox">' .
 		   $inner_btn_html . '</a>';
 
-		//Count bubble HTML for non-iframe buttons (if count layout specified)
-	    if (
-		   ( ( $pib_options['button_style'] == 'user_selects_image' ) ) &&
-		   ( $count_layout != 'none' )
-		  ) {
 
-			if ( $count_layout == 'horizontal' ) {
-
-				$full_btn_html = '<table class="pib-count-table pib-count-table-horizontal"><tbody><tr>' . "\n" .
-					'<td>' . $link_html . '</td>' . "\n" .
-					'<td class="pib-count-cell"><div class="pib-count-bubble"></div></td>' . "\n" .
-					'</tr></tbody></table>' . "\n";
-			}
-			elseif ( $count_layout == 'vertical' ) {
-
-				$full_btn_html = '<table class="pib-count-table pib-count-table-vertical"><tbody><tr>' . "\n" .
-					'<td class="pib-count-cell"><div class="pib-count-bubble"></div></td>' . "\n" .
-					'</tr><tr>' . "\n" .
-					'<td>' . $link_html . '</td>' . "\n" .
-					'</tr></tbody></table>' . "\n";
-			}
-		}
-		else {
-			$full_btn_html = $link_html;
-		}
-
-	    return $full_btn_html;
+	    return $link_html;
 	}
 
 	//Button HTML to render
