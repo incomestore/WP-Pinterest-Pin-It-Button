@@ -2,13 +2,18 @@
 
 /* Pinterest "Pin It" Button Public CSS */
 
-/* DIV surrounding button */
-.pin-it-btn-wrapper,
-.pin-it-btn-wrapper-shortcode,
-.pin-it-btn-wrapper-widget {
+	/***
+	*
+	*	DIV surrounding button 
+	*
+	***/
+div.pin-it-btn-wrapper,
+div.pin-it-btn-wrapper-shortcode,
+div.pin-it-btn-wrapper-widget {
+	border: none;
 }
 
-.pin-it-btn-wrapper {
+div.pin-it-btn-wrapper {
     padding-bottom: 10px;
 }
 
@@ -25,132 +30,102 @@
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-.pib-float-left {
+div.pib-float-left {
     float: left;
 }
 
-.pib-float-right {
+div.pib-float-right {
     float: right;
 }
 
-/* DIV surrounding Share Bar */
-/* Need to override WP styles with !important tags */
-
-.pib-sharebar {
-	padding: 10px 0 5px;
-	margin: 0;
-	width: 100% !important;
-}
-
-.pib-sharebar ul,
-.pib-sharebar li {
-    margin: 0 !important;
-    padding: 0 !important;
-	list-style: none;
-	border: none;
-	background: none;
-    text-indent: 0;    
-}
-
-.pib-sharebar li {
-	float: left;
-	margin: 0 5px 5px 0 !important;
-	display: block;
-}
-
-.pib-sharebar li:before {
-    content: none !important;
-}
-
-.pib-sharebar li.pib-sharebar-pinterest a {
-    vertical-align: top !important;
-}
-
-/*** BEGIN Count Bubble CSS ***/
-/* Need to override theme styles as much as possible with !important tags */
+	/***
+	*
+	*	Count Bubble CSS
+	*
+	***/
 
 table.pib-count-table {
-	border: 0 !important;
-	border-collapse: collapse !important;
-	border-spacing: 0 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	vertical-align: top !important;
-	width: auto !important;
+	border: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	width: auto;
 }
 
 table.pib-count-table td {
-	border: 0 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	vertical-align: top !important;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
 }
 
 table.pib-count-table-horizontal td {
-	text-align: left !important;
+	text-align: left;
 }
 
 table.pib-count-table-vertical td {
-	text-align: center !important;
+	text-align: center;
 }
 
 a.pin-it-button-no-iframe,
 a.pin-it-button-no-iframe:hover {
-    background: none !important;
-    border: 0 !important;
-    text-decoration: none !important;
-    width: auto !important;    
+    background: none;
+    border: 0;
+    text-decoration: none;
+    width: auto;    
 }
 
 img.pib-count-img {
-	border: 0 !important;
-	margin: 0 !important;
-	max-width: none !important;
-	padding: 0 !important;
-    width: auto !important;
-    -webkit-box-shadow: 0 0 0 !important; 
-    box-shadow: 0 0 0 !important; 
+	border: 0;
+	margin: 0;
+	max-width: none;
+	padding: 0;
+    width: auto;
+    -webkit-box-shadow: 0 0 0; 
+    box-shadow: 0 0 0; 
 }
 
 .pib-count-cell {
 	display: none; /* Initially hidden */
-	position: relative !important;
+	position: relative;
 }
 
 table.pib-count-table-horizontal td.pib-count-cell {
-	padding-left: 4px !important;
+	padding-left: 4px;
 }
 
 table.pib-count-table-vertical td.pib-count-cell {
-	padding-bottom: 4px !important;
+	padding-bottom: 4px;
 }
 
 .pib-count-bubble {
-	background-color: #FCF9F9 !important;
-	border: 1px solid #C9C5C5 !important;
-	border-radius: 1px !important;
-	color: #777 !important;
-	display: inline-block !important;
-	position: relative !important;
-	vertical-align: top !important;
+	background-color: #FCF9F9;
+	border: 1px solid #C9C5C5;
+	border-radius: 1px;
+	color: #777;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
 }
 
 table.pib-count-table-horizontal .pib-count-bubble {
-	height: 10px !important;
-	font: 10px/10px Arial, Helvetica, sans-serif !important;
-	margin: 0 !important;
-	padding: 3px 5px 4px 5px !important;
-	text-align: left !important;
-	width: auto !important;
+	height: 10px;
+	font: 10px/10px Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 3px 5px 4px 5px;
+	text-align: left;
+	width: auto;
 }
 
 table.pib-count-table-vertical .pib-count-bubble {
-	font: 12px/12px Arial, Helvetica, sans-serif !important;
-	height: 21px !important;
-	margin: 0 !important;
-	padding: 9px 0 0 0 !important;
-	text-align: center !important;
-	width: 39px !important;
+	font: 12px/12px Arial, Helvetica, sans-serif;
+	height: 21px;
+	margin: 0;
+	padding: 9px 0 0 0;
+	text-align: center;
+	width: 39px;
 }
 
 .pib-count-bubble:after,
