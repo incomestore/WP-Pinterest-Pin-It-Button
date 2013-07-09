@@ -19,7 +19,7 @@
 
 	    //Image pre-selected
 	    if  ( $pib_options['button_style'] == 'image_selected' ) {
-			wp_enqueue_script( 'pinterest-assets', 'http' . ( is_ssl() ? 's' : '' ) . '://assets.pinterest.com/js/pinit.js', null, '', true ); 
+			wp_enqueue_script( 'pinterest-assets', '//assets.pinterest.com/js/pinit.js', null, false, true );
 	    }
 	    //User selects image (default)
 	    //$pib_options['button_style'] == 'user_selects_image' (or blank)
