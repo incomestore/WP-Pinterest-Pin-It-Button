@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Main Pinterest_Pin_It_Button class
  *
- * @package		PIB
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package PIB
+ * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
+
 class Pinterest_Pin_It_Button {
 
 	/**

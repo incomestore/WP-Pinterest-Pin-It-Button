@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Post Meta Display
  *
- * @package		PIB
- * @subpackage	Views
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package    PIB
+ * @subpackage Views
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  *
  */
 
@@ -14,9 +15,9 @@
 	}
 
 	global $pib_options;
-	
+
 	$button_style = ( $pib_options['button_style'] == 'user_selects_image' ) ? 'User selects image' : 'Image pre-selected';
-	
+
 	$pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
 	$pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
 	$pib_url_of_img = get_post_meta( $post->ID, 'pib_url_of_img', true);
@@ -45,7 +46,7 @@
 		<input type="checkbox" name="pib_enable_post_sharing" id="pib_enable_post_sharing" <?php checked( empty( $pib_sharing_checked ) || ($pib_sharing_checked === false) ); ?> /> <label for="pib_enable_post_sharing">Show "Pin It" button on this post/page.</label>
 	</p>
 	<p>
-		If checked displays the button for this post/page (if Individual Posts (for posts) or WordPress Static "Pages" (for pages) is also checked in "Pin It" Button Settings). 
+		If checked displays the button for this post/page (if Individual Posts (for posts) or WordPress Static "Pages" (for pages) is also checked in "Pin It" Button Settings).
 		If unchecked the button will always be hidden for this post/page.
 	</p>
 	<input type="hidden" name="pib_sharing_status_hidden" value="1" />

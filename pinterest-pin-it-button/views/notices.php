@@ -3,9 +3,9 @@
 /**
  *  Admin Notices
  *
- * @package		PIB
- * @subpackage		Views
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package    PIB
+ * @subpackage Views
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
 function pib_register_admin_notices() {

@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Represents the view for the widget component of the plugin.
  *
  * This includes the header, options, and other information that should provide
  * The User Interface to the end user.
  *
- * @package		PIB
- * @subpackage	Views
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package    PIB
+ * @subpackage Views
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
 class PIB_Widget extends WP_Widget {
