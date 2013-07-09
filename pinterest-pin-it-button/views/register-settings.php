@@ -308,7 +308,7 @@ function pib_textarea_callback( $args ) {
  */
 
 function pib_settings_sanitize( $input ) {
-	add_settings_error( 'pib-notices', '', __('Settings Updated', 'pib'), 'updated' );
+	//add_settings_error( 'pib-notices', '', __('Settings Updated', 'pib'), 'updated' );
 	return $input;
 }
 /*

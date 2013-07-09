@@ -31,7 +31,7 @@
 	</h2>
 
 	<div id="tab_container">
-		<?php // TODO settings_errors(); ? ?>
+		<?php get_settings_errors( 'pib-notices' );  ?>
 
 		<form method="post" action="options.php">
 			<?php

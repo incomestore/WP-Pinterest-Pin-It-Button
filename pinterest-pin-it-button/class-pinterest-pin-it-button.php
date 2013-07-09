@@ -76,6 +76,9 @@ class Pinterest_Pin_It_Button {
 		
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
+		
+		// Load the admin notices
+		add_action( 'init', array( $this, 'add_notices' ) );
 
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -382,5 +385,9 @@ class Pinterest_Pin_It_Button {
 			array_unshift( $links, $settings_link );
 		}
 		return $links;
+	}
+	
+	function add_notices() {
+		include_once( 'views/notices.php' );
 	}
 }
