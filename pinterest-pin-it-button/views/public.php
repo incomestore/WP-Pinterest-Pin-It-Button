@@ -27,58 +27,65 @@
 	}
 	add_action( 'wp_head', 'pib_add_custom_css' );
 
-	//Function for rendering "Pin It" button base html
+	// Function for rendering "Pin It" button base html.
+	// HTML comes from Pinterest Widget Builder 7/10/2013.
+	// http://business.pinterest.com/widget-builder/#do_pin_it_button
+	// Sample HTML from widget builder:
+	/*
+	<a href="//pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above">
+		<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
+	</a>
+	*/
 	function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 		global $pib_options;
-
-		$btn_class = '';
 
 		// Use updated backup button image URL from Pinterest.
 		$btn_img_url = '//assets.pinterest.com/images/pidgets/pin_it_button.png';
 
-	    //Image pre-selected
-	    if ( $pib_options['button_style'] == 'image_selected' ) {
-			//Official iframe + image pre-selected (original embed code from Pinterest, use their class name)
-			$btn_class .= ' pin-it-button';
-	    }
-	    //User selects image (default)
-	    //$pib_options['button_style'] == 'user_selects_image' (or blank)
-	    else {    
-		   $btn_class .= ' pin-it-button-user-selects-image';
-	    }
+		// Add "Pin It" title attribute.
+		$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" />';
 
-	    //HTML from Pinterest Goodies 3/19/2012
-	    //<a href="http://pinterest.com/pin/create/button/?url=[PAGE]&media=[IMG]&description=[DESC]" class="pin-it-button" count-layout="horizontal">
-	    //<img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
-	    //rel="nobox" is to prevent lightbox popup
+		// Set data attribute for button style.
+		if ( $pib_options['button_style'] == 'image_selected' )
+			$data_pin_do = 'buttonPin'; // image pre-selected
+		else
+			$data_pin_do = 'buttonBookmark'; // user selects image (default)
 
-		$inner_btn_html = '<img border="0" class="pib-count-img" src="' . $btn_img_url . '" title="Pin It" />';
+		// Set data attribute for count bubble style.
+		if ( $count_layout == 'horizontal' )
+			$data_pin_config = 'beside';
+		elseif ( $count_layout == 'vertical' )
+			$data_pin_config = 'above';
+		else
+			$data_pin_config = 'none';
 
-	    //Link href always needs all the parameters in it for the count bubble to work
-	    //Note: leave "http:" here - will break some setups otherwise
-	    $link_href = 'http://pinterest.com/pin/create/button/?url=' . rawurlencode( $post_url ) . '&media=' . rawurlencode( $image_url ) . 
-		   '&description='. rawurlencode( $description );
+		// Link href always needs all the parameters in it for the count bubble to work.
+		// Pinterest points out to use protocol-agnostic URL for popup.
+	    $link_href = '//pinterest.com/pin/create/button/' .
+			'?url='         . rawurlencode( $post_url ) .
+			'&media='       . rawurlencode( $image_url ) .
+			'&description=' . rawurlencode( $description );
 
-		//Full link html with attributes
+		// Full link html with data attributes.
+		// Add rel="nobox" to prevent lightbox popup.
 	    $link_html = '<a href="' . $link_href . '" ' .
-		   'count-layout="' . $count_layout . '" class="' . $btn_class . '" rel="nobox">' .
-		   $inner_btn_html . '</a>';
-
+			'data-pin-do="' . $data_pin_do . '" ' .
+			'data-pin-config="' . $data_pin_config . '" ' .
+			'rel="nobox">' .
+			$inner_btn_html . '</a>';
 
 	    return $link_html;
 	}
 
-	//Button HTML to render
-
+	// Button HTML to render.
 	function pib_button_html() {
 	    global $pib_options;
 		global $post;
 	    $postID = $post->ID;
 
 	    //Return nothing if sharing disabled on current post
-		if ( get_post_meta( $postID, 'pib_sharing_disabled', 1 ) ) {			
+		if ( get_post_meta( $postID, 'pib_sharing_disabled', 1 ) )
 			return '';
-		}
 
 	    //Set post url, image url and description from current post meta
 		$post_url = get_post_meta( $postID, 'pib_url_of_webpage', true );
@@ -87,7 +94,8 @@
 
 
 	    //Set post url to current post if still blank
-	    if ( empty( $post_url ) ) { $post_url = get_permalink( $postID ); }
+	    if ( empty( $post_url ) )
+			$post_url = get_permalink( $postID );
 
 	    //Set image url to first image if still blank
 	    if ( empty( $image_url ) ) {
@@ -95,7 +103,7 @@
 		   $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
 		   //$first_img = $matches [1] [0];
 		   //$image_url = $first_img;
-		   $image_url = $$matches [1] [0];
+		   $image_url = $matches [1] [0];
 	    }
 
 	    //Set description to post title if still blank
@@ -104,16 +112,12 @@
 		$count_layout = $pib_options['count_layout'];
 
 	    $base_btn = pib_button_base( $post_url, $image_url, $description, $count_layout );
-		
 
-	    //Don't wrap with div if using other sharing buttons or "remove div" is checked
-	    if ( (bool)$pib_options['remove_div'] ) {
-		   return $base_btn;
-	    }
-	    else {
-		   //Surround with div tag
-		   return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>';
-	    }
+	    // Don't wrap with div if using other sharing buttons or "remove div" is checked.
+	    if ( (bool)$pib_options['remove_div'] )
+			return $base_btn;
+	    else
+			return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
 	}
 
 
