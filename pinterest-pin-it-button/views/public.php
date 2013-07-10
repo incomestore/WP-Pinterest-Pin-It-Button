@@ -14,26 +14,6 @@
 	define( 'PIB_CSS_URL', PIB_BASE_URL . 'css/' );
 	define( 'PIB_JS_URL', PIB_BASE_URL . 'js/' );
 
-	//Add Public CSS/JS
-	function pib_add_public_css_js() {
-	    global $pib_options;
-
-	    //Image pre-selected
-	    if  ( $pib_options['button_style'] == 'image_selected' ) {
-			wp_enqueue_script( 'pinterest-assets', '//assets.pinterest.com/js/pinit.js', null, false, true );
-	    }
-	    //User selects image (default)
-	    //$pib_options['button_style'] == 'user_selects_image' (or blank)
-	    else {
-
-		   	//TODO Modify to use Pinterest's pinit.js file for user selects image option - PD 7/2/2013
-
-			//Old way of firing off Pinterest's pinmarklet (before the added the proper code to their pinit.js)
-			wp_enqueue_script( 'pin-it-button-user-selects-image', PIB_JS_URL . 'pin-it-button-user-selects-image.js', array( 'jquery' ), '', true );
-	    }
-	}
-	add_action( 'wp_enqueue_scripts', 'pib_add_public_css_js' );
-
 	//Add Custom CSS
 	function pib_add_custom_css() {
 	    global $pib_options;

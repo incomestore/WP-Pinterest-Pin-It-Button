@@ -210,7 +210,8 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function enqueue_styles() {
 		global $pib_options;
-		
+
+		// Check to see if setting to disable is true first.
 		if( !$pib_options['disable_css'] ) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
 		}
@@ -222,8 +223,8 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function enqueue_scripts() {
-		//TODO Not using public.js yet
-		//wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), $this->version );
+		// Enqueue Pinterest JS plugin boilerplate style.
+		wp_enqueue_script( $this->plugin_slug . '-pinterest-script', '//assets.pinterest.com/js/pinit.js', array(), $this->version, true );
 	}
 
 	/**
