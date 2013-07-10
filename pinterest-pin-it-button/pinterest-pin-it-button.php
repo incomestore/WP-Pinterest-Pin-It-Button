@@ -24,12 +24,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PIB_BASE_NAME', plugin_basename( __FILE__ ) );	    // pinterest-pin-it-button/pinterest-pin-it-button.php
-define( 'PIB_BASE_DIR_SHORT', dirname( PIB_BASE_NAME ) );	// pinterest-pin-it-button
-define( 'PIB_BASE_DIR_LONG', dirname( __FILE__ ) );			// ../wp-content/plugins/pinterest-pin-it-button (physical file path)
-define( 'PIB_BASE_URL', plugin_dir_url( __FILE__ ) );		// http://mysite.com/wp-content/plugins/pinterest-pin-it-button/
-define( 'PIB_CSS_URL', PIB_BASE_URL . 'css/' );
-define( 'PIB_JS_URL', PIB_BASE_URL . 'js/' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 
