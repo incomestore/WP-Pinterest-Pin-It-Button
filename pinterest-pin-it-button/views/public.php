@@ -10,9 +10,6 @@
  * @subpackage Views
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
-	
-	define( 'PIB_CSS_URL', PIB_BASE_URL . 'css/' );
-	define( 'PIB_JS_URL', PIB_BASE_URL . 'js/' );
 
 	//Add Custom CSS
 	function pib_add_custom_css() {
