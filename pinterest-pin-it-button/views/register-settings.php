@@ -38,6 +38,12 @@ function pib_register_settings() {
 				 'horizontal' => __( 'Horizontal', 'pib' ),
 				 'vertical' => __( 'Vertical', 'pib' )
 			  )
+		   ),
+		   'uninstall_save_settings' => array(
+			  'id' => 'uninstall_save_settings',
+			  'name' => __( 'Admin Settings', 'pib' ),
+			  'desc' => __( '<strong>Save settings</strong> when uninstalling this plugin? Useful when upgrading to Pro or re-installing later.', 'pib' ),
+			  'type' => 'checkbox'
 		   )
 	    ),
 	    /* Post Visibility Settings */
@@ -344,6 +350,7 @@ function pib_get_settings() {
 		// set default general settings options
 		$general = get_option( 'pib_settings_general' );
 		$general['button_style'] = 'user_selects_image';
+		$general['uninstall_save_settings'] = 1;
 		
 		update_option( 'pib_settings_general', $general );
 		
