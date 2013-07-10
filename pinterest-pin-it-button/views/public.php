@@ -32,15 +32,9 @@
 		global $pib_options;
 
 		$btn_class = '';
-		$btn_img_url = '';
 
-		//Set button image URL    
-		//Default non-sprite button image url from Pinterest
-
-		//TODO If plain pin it button image is still needed reference:
-		// //assets.pinterest.com/images/pidgets/pin_it_button.png - PD 7/2/2013
-
-		$btn_img_url = '//assets.pinterest.com/images/PinExt.png';
+		// Use updated backup button image URL from Pinterest.
+		$btn_img_url = '//assets.pinterest.com/images/pidgets/pin_it_button.png';
 
 	    //Image pre-selected
 	    if ( $pib_options['button_style'] == 'image_selected' ) {
