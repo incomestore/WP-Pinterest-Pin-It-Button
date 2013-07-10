@@ -105,10 +105,6 @@ class Pinterest_Pin_It_Button {
 
 		// Add plugin listing "Settings" and other action links
 		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
-
-		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
-		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
