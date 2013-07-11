@@ -55,11 +55,11 @@ function pib_register_settings() {
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_home_page' => array(
-					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'pib' ),
+					'label' => __( 'Blog Home Page (or Latest posts page)', 'pib' ),
 					'value' => 1
 				),
 				 'display_front_page' => array(
-					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
+					'label' => __( 'Front Page (different from Home page only if set in Settings > Reading)', 'pib' ),
 					'value' => 1
 				),
 				 'display_posts' => array(
@@ -67,11 +67,11 @@ function pib_register_settings() {
 					'value' => 1
 				),
 				 'display_pages' => array(
-					'label' => __( 'WordPress static "Pages"', 'pib' ),
+					'label' => __( 'Individual Pages (WordPress static pages)', 'pib' ),
 					'value' => 1
 				),
 				 'display_archives' => array(
-					'label' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'pib' ),
+					'label' => __( 'Archive Pages (includes Category, Tag, Author, and date-based pages)', 'pib' ),
 					'value' => 1
 				)
 			  )
@@ -91,7 +91,7 @@ function pib_register_settings() {
 					'value' => 1
 				),
 				 'display_on_post_excerpts' => array(
-					'label' => __( 'On Post Excerpts', 'pib' ),
+					'label' => __( 'Include in Post Excerpts', 'pib' ),
 					'value' => 1
 				)
 			  )
