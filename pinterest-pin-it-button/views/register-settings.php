@@ -15,6 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 function pib_register_settings() {
 	$pib_settings = array(
+
 	    /* General Settings */
 	    'general' => array(
 		   'button_style' => array(
@@ -46,6 +47,7 @@ function pib_register_settings() {
 			  'type' => 'checkbox'
 		   )
 	    ),
+
 	    /* Post Visibility Settings */
 	    'post_visibility' => array(
 		   'post_page_types' => array(
@@ -97,18 +99,20 @@ function pib_register_settings() {
 			  )
 		   )
 	    ),
+
 	    /* Styles Settings */
 	    'styles' => array(
 		   'custom_css' => array(
 			  'id' => 'custom_css',
 			  'name' => __( 'Custom CSS', 'pib' ),
-			  'desc' => __( 'Custom CSS should overwrite other CSS as it is rendered after all other CSS file references.', 'pib' ),
+			  'desc' => __( 'Custom CSS can be used to override other CSS style rules.', 'pib' ) . '<br />' .
+			     sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), admin_url( 'admin.php?page=pinterest-pin-it-button_help' ) ),
 			  'type' => 'textarea'
 		   ),
 		   'remove_div' => array(
 			  'id' => 'remove_div',
 			  'name' => __( 'Remove DIV Container', 'pib' ),
-			  'desc' => __( 'Remove DIV tag surrounding regular button (<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).', 'pib' ),
+			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).',
 			  'type' => 'checkbox'
 		   ),
 		   'disable_css' => array(
