@@ -233,21 +233,36 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function add_plugin_admin_menu() {
+		$base_page_title = __( 'Pinterest "Pin It" Button Lite', 'pib' );
 
-		// Add as main menu item
+		// Add main menu item
 		$this->plugin_screen_hook_suffix = add_menu_page(
-			__( 'Pinterest "Pin It" Button Lite Settings', $this->plugin_slug ),
-			__( 'Pin It Button', $this->plugin_slug ),
+			$base_page_title . __( ' Settings', 'pib' ),
+			__( 'Pin It Button', 'pib' ),
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
 		);
 		
-		// Add help menu page
-		add_submenu_page( $this->plugin_slug, __( 'Help', 'pib' ), __( 'Help', 'pib' ), 'manage_options', $this->plugin_slug . '_help', array( $this, 'display_help_page' ) );
+		// Add Help submenu page
+		add_submenu_page(
+			$this->plugin_slug,
+			$base_page_title . __( ' Help', 'pib' ),
+			__( 'Help', 'pib' ),
+			'manage_options',
+			$this->plugin_slug . '_help',
+			array( $this, 'display_help_page' )
+		);
 		
-		// Add Upgrade to Pro page
-		add_submenu_page( $this->plugin_slug, __( 'Upgrade to Pro', 'pib' ), __( 'Upgrade to Pro', 'pib' ), 'manage_options', $this->plugin_slug . '_upgrade_to_pro', array( $this, 'display_upgrade_to_pro' ) );
+		// Add Upgrade to Pro submenu page
+		add_submenu_page(
+			$this->plugin_slug,
+			__( 'Upgrade to Pinterest "Pin It" Button Pro', 'pib' ),
+			__( 'Upgrade to Pro', 'pib' ),
+			'manage_options',
+			$this->plugin_slug . '_upgrade_to_pro',
+			array( $this, 'display_upgrade_to_pro' )
+		);
 	}
 
 	/**
