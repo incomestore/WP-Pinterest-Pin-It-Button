@@ -10,3 +10,10 @@
  * @subpackage Views
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
+?>
+
+<div class="wrap">
+	<?php screen_icon( 'tools' ); ?>
+	<h2><?php _e( 'Help for Pinterest "Pin It" Button Lite', 'pib' ) ?></h2><br/>
+
+</div><!-- .wrap -->
