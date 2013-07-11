@@ -19,30 +19,30 @@ function pib_register_settings() {
 	    'general' => array(
 		   'button_style' => array(
 			  'id' => 'button_style',
-			  'name' => __( 'Button behavior', 'pib' ),
+			  'name' => __( 'Button Type', 'pib' ),
 			  'desc' => '',
 			  'type' => 'radio',
 			  'std' => 'no',
 			  'options' => array(
-				 'user_selects_image' => __( 'User selects image from popup', 'pib' ),
-				 'image_selected' => __( 'Image is pre-selected (defaults to first image in post)', 'pib' )
+				 'user_selects_image' => __( 'User selects image from popup (any image)', 'pib' ),
+				 'image_selected' => __( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' )
 			  )
 		   ),
 		   'count_layout' => array(
 			  'id' => 'count_layout',
-			  'name' => __( 'Pin count', 'pib' ),
+			  'name' => __( 'Pin Count', 'pib' ),
 			  'desc' => '',
 			  'type' => 'select',
 			  'options' => array(
-				 'none' => __( 'No Count', 'pib' ),
-				 'horizontal' => __( 'Horizontal', 'pib' ),
-				 'vertical' => __( 'Vertical', 'pib' )
+				 'none' => __( 'Not Shown', 'pib' ),
+				 'horizontal' => __( 'Beside the Button', 'pib' ),
+				 'vertical' => __( 'Above the Button', 'pib' )
 			  )
 		   ),
 		   'uninstall_save_settings' => array(
 			  'id' => 'uninstall_save_settings',
-			  'name' => __( 'Admin Settings', 'pib' ),
-			  'desc' => __( '<strong>Save settings</strong> when uninstalling this plugin? Useful when upgrading to Pro or re-installing later.', 'pib' ),
+			  'name' => __( 'Save Settings', 'pib' ),
+			  'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading to Pro or re-installing.', 'pib' ),
 			  'type' => 'checkbox'
 		   )
 	    ),
