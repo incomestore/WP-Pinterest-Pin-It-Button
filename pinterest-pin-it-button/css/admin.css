@@ -1,1 +1,5 @@
 /* This stylesheet is used to style the admin option form of the plugin. */
+
+#icon-pib-icon32 {
+	background: transparent url('../assets/pinterest-button-icon-med.png') no-repeat;
+}
