@@ -54,11 +54,8 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function __construct() {
-		// TODO Load plugin text domain -- Translation not implemented for initial release.
-		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-		// TODO Add file /lang/pinterest-pin-it-button.pot, uncomment load_plugin_textdomain below.
-		
-		// Do upgrade if we need to
+
+	// Do upgrade if we need to
 		if ( !get_option( 'pib_version' ) ) {
 			add_option( 'pib_version', $this->version );
 		} else {
@@ -144,22 +141,6 @@ class Pinterest_Pin_It_Button {
 	public static function deactivate( $network_wide ) {
 		// TODO: Define deactivation functionality here
 	}
-
-	/**
-	 * Load the plugin text domain for translation.
-	 * // TODO Translation not implemented for initial release
-	 *
-	 * @since    2.0.0
-	 */
-	/*
-	public function load_plugin_textdomain() {
-		$domain = $this->plugin_slug;
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
-	}
-	*/
 
 	/**
 	 * Enqueue admin-specific style sheets.
