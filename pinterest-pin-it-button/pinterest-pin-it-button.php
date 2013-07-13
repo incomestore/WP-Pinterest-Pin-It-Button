@@ -27,8 +27,4 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 
-// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
-register_activation_hook( __FILE__, array( 'Pinterest_Pin_It_Button', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Pinterest_Pin_It_Button', 'deactivate' ) );
-
 Pinterest_Pin_It_Button::get_instance();
