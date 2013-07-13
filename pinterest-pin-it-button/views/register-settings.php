@@ -57,11 +57,11 @@ function pib_register_settings() {
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_home_page' => array(
-					'label' => __( 'Blog Home Page (or Latest posts page)', 'pib' ),
+					'label' => __( 'Home Page (or latest posts page)', 'pib' ),
 					'value' => 1
 				),
 				 'display_front_page' => array(
-					'label' => __( 'Front Page (different from Home page only if set in Settings > Reading)', 'pib' ),
+					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
 					'value' => 1
 				),
 				 'display_posts' => array(
