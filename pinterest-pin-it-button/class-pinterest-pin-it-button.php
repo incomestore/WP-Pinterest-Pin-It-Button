@@ -200,7 +200,8 @@ class Pinterest_Pin_It_Button {
 			__( 'Pin It Button', 'pib' ),
 			'manage_options',
 			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
+			array( $this, 'display_plugin_admin_page' ),
+			plugins_url( 'assets/pinterest-button-icon-small.png', __FILE__ )
 		);
 		
 		// Add Help submenu page
