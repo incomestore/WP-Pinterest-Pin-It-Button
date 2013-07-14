@@ -30,7 +30,6 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 	</h2>
 
 	<div id="tab_container">
-		<?php get_settings_errors( 'pib-notices' );  ?>
 
 		<form method="post" action="options.php">
 			<?php
