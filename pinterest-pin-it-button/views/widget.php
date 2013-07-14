@@ -108,7 +108,7 @@ class PIB_Widget extends WP_Widget {
 		<div class="pib-widget-text-fields">
             <p>
                 <?php _e( 'Button style is inherited from setting saved in' ); ?>
-                    <a href="<?php echo admin_url( 'admin.php?page=' . PIB_BASE_NAME ); ?>"><?php _e( '"Pin It" Button Settings' ); ?></a>
+                    <a href="<?php echo admin_url( 'admin.php?page=pinterest-pin-it-button' ); ?>"><?php _e( '"Pin It" Button Settings' ); ?></a>
             </p>
             <p>
 				<?php _e( 'Current style' ) ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
