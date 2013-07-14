@@ -107,39 +107,45 @@ class PIB_Widget extends WP_Widget {
 		</p>
 		<div class="pib-widget-text-fields">
             <p>
-                <?php _e('Button style is inherited from setting saved in'); ?>
-                    <a href="<?php echo admin_url( 'admin.php?page=' . PIB_BASE_NAME ); ?>"><?php _e('"Pin It" Button Settings'); ?></a>
+                <?php _e( 'Button style is inherited from setting saved in' ); ?>
+                    <a href="<?php echo admin_url( 'admin.php?page=' . PIB_BASE_NAME ); ?>"><?php _e( '"Pin It" Button Settings' ); ?></a>
             </p>
             <p>
-				<?php _e('Current style') ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
+				<?php _e( 'Current style' ) ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
             </p>
 			<p>
-				<label for="<?php echo $this->get_field_id('pib_url_of_webpage_widget'); ?>"><?php _e('URL of the web page to be pinned'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('pib_url_of_webpage_widget'); ?>" name="<?php echo $this->get_field_name('pib_url_of_webpage_widget'); ?>" type="text" value="<?php echo esc_attr($pib_url_of_webpage_widget); ?>" />
-                <span class="description"><?php _e('Required for "image pre-selected". Defaults to home page for "user selects image".'); ?></span>
+				<label for="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>"><?php _e( 'URL of the web page to be pinned' ); ?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_webpage_widget' ); ?>"
+					   type="text" value="<?php echo esc_attr( $pib_url_of_webpage_widget ); ?>" />
+                <span class="description"><?php _e( 'Required for "image pre-selected". Defaults to home page for "user selects image".'); ?></span>
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id('pib_url_of_img_widget'); ?>"><?php _e('URL of the image to be pinned'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('pib_url_of_img_widget'); ?>" name="<?php echo $this->get_field_name('pib_url_of_img_widget'); ?>" type="text" value="<?php echo esc_attr($pib_url_of_img_widget); ?>" />
-                <span class="description"><?php _e('Required for "image pre-selected". Not used for "user selects image".'); ?></span>
+				<label for="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>"><?php _e( 'URL of the image to be pinned' ); ?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_img_widget' ); ?>"
+					   type="text" value="<?php echo esc_attr( $pib_url_of_img_widget ); ?>" />
+                <span class="description"><?php _e( 'Required for "image pre-selected". Not used for "user selects image".' ); ?></span>
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id('pib_description_widget'); ?>"><?php _e('Description of the pin (optional)'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('pib_description_widget'); ?>" name="<?php echo $this->get_field_name('pib_description_widget'); ?>" type="text" value="<?php echo esc_attr($pib_description_widget); ?>" />
+				<label for="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>"><?php _e( 'Description of the pin (optional)' ); ?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_description_widget' ); ?>"
+					   type="text" value="<?php echo esc_attr( $pib_description_widget ); ?>" />
 			</p>
 		</div>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('float'); ?>"><?php _e('Align (float)'); ?>:</label> 
-			<select name="<?php echo $this->get_field_name('float'); ?>" id="<?php echo $this->get_field_id('float'); ?>">
-				<option value="none" <?php selected( $instance['float'], 'none' ); ?>><?php _e('none (default)'); ?></option>
-				<option value="left" <?php selected( $instance['float'], 'left' ); ?>><?php _e('left'); ?></option>
-				<option value="right" <?php selected( $instance['float'], 'right' ); ?>><?php _e('right'); ?></option>
+			<label for="<?php echo $this->get_field_id( 'float' ); ?>"><?php _e( 'Align (float)' ); ?>:</label>
+			<select name="<?php echo $this->get_field_name( 'float' ); ?>" id="<?php echo $this->get_field_id( 'float' ); ?>">
+				<option value="none" <?php selected( $instance['float'], 'none' ); ?>><?php _e( 'none (default)' ); ?></option>
+				<option value="left" <?php selected( $instance['float'], 'left' ); ?>><?php _e( 'left' ); ?></option>
+				<option value="right" <?php selected( $instance['float'], 'right' ); ?>><?php _e( 'right' ); ?></option>
 			</select>
 		</p>
 		<p>
-			<input class="checkbox" <?php checked($instance['remove_div'], true) ?> id="<?php echo $this->get_field_id('remove_div'); ?>" name="<?php echo $this->get_field_name('remove_div'); ?>" type="checkbox"/>
-			<label for="<?php echo $this->get_field_id('remove_div'); ?>"><?php _e('Remove div tag surrounding this widget button (also removes <strong>float</strong> setting)'); ?></label>
+			<input class="checkbox" <?php checked($instance['remove_div'], true) ?> id="<?php echo $this->get_field_id( 'remove_div' ); ?>"
+				   name="<?php echo $this->get_field_name( 'remove_div' ); ?>" type="checkbox"/>
+			<label for="<?php echo $this->get_field_id( 'remove_div' ); ?>">
+				<?php _e( 'Remove div tag surrounding this widget button (also removes <strong>float</strong> setting)' ); ?>
+			</label>
 		</p>
         <?php
 	}
