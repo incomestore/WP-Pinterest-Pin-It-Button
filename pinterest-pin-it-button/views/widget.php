@@ -111,7 +111,7 @@ class PIB_Widget extends WP_Widget {
                     <a href="<?php echo admin_url( 'admin.php?page=' . PIB_BASE_NAME ); ?>"><?php _e('"Pin It" Button Settings'); ?></a>
             </p>
             <p>
-				<?php _e('Current style') ?>: <strong style="color: red;"><?php echo $pib_button_style_widget; ?></strong>
+				<?php _e('Current style') ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
             </p>
 			<p>
 				<label for="<?php echo $this->get_field_id('pib_url_of_webpage_widget'); ?>"><?php _e('URL of the web page to be pinned'); ?></label>
