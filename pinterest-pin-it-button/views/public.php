@@ -11,13 +11,16 @@
 	//Add Custom CSS
 	function pib_add_custom_css() {
 	    global $pib_options;
+	    
+	    // Only add the custom CSS if it actually exists
+	    if( !empty( $pib_options['custom_css'] ) ) {
+			$custom_css = trim( $pib_options['custom_css'] );
 
-	    $custom_css = trim( $pib_options['custom_css'] );
-
-	    echo "\n" .
-		   '<style type="text/css">' . "\n" .
-		   $custom_css . "\n" . //Put custom css
-		   '</style>' . "\n";
+			echo "\n" .
+			    '<style type="text/css">' . "\n" .
+			    $custom_css . "\n" . //Put custom css
+			    '</style>' . "\n";
+	    }
 	}
 	add_action( 'wp_head', 'pib_add_custom_css' );
 
@@ -108,7 +111,7 @@
 	    $base_btn = pib_button_base( $post_url, $image_url, $description, $count_layout );
 
 	    // Don't wrap with div if using other sharing buttons or "remove div" is checked.
-	    if ( (bool)$pib_options['remove_div'] )
+	    if ( !empty( $pib_options['remove_div'] ) )
 			return $base_btn;
 	    else
 			return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
@@ -123,21 +126,21 @@
 
 	    //Determine if button displayed on current page from main admin settings
 	    if (
-		   ( is_home() && ( (bool)$pib_options['post_page_types']['display_home_page'] ) ) ||
-		   ( is_front_page() && ( (bool)$pib_options['post_page_types']['display_front_page'] ) ) ||
-			( is_single() && ( (bool)$pib_options['post_page_types']['display_posts'] ) ) ||
-		   ( is_page() && ( (bool)$pib_options['post_page_types']['display_pages'] ) && !is_front_page() ) ||
+		   ( is_home() && ( !empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
+		   ( is_front_page() && ( !empty( $pib_options['post_page_types']['display_front_page'] ) ) ) ||
+			( is_single() && ( !empty( $pib_options['post_page_types']['display_posts'] ) ) ) ||
+		   ( is_page() && ( !empty( $pib_options['post_page_types']['display_pages'] ) ) && !is_front_page() ) ||
 		
 		   //archive pages besides categories (tag, author, date, search)
 		   //http://codex.wordpress.org/Conditional_Tags
-		   ( is_archive() && ( (bool)$pib_options['post_page_types']['display_archives'] ) && 
+		   ( is_archive() && ( !empty( $pib_options['post_page_types']['display_archives'] ) ) && 
 			  ( is_tag() || is_author() || is_date() || is_search() ) 
 		   )
 		  ) {
-		   if ( (bool)$pib_options['post_page_placement']['display_above_content'] ) {
+		   if ( !empty( $pib_options['post_page_placement']['display_above_content'] ) ) {
 			  $content = pib_button_html() . $content;
 		   }
-		   if ( (bool)$pib_options['post_page_placement']['display_below_content'] ) {
+		   if ( !empty( $pib_options['post_page_placement']['display_below_content'] ) ) {
 			  $content .= pib_button_html();
 		   }
 	    }	
@@ -153,15 +156,15 @@
 	    global $post;
 		$postID = $post->ID;
 
-	    if ( $pib_options['post_page_placement']['display_on_post_excerpts'] ) {
+	    if ( !empty( $pib_options['post_page_placement']['display_on_post_excerpts'] ) ) {
 		   if (
-			  ( is_home() && ( $pib_options['post_page_types']['display_home_page'] ) ) ||
-			  ( is_front_page() && ( $pib_options['post_page_types']['display_front_page'] ) )           
+			  ( is_home() && ( !empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
+			  ( is_front_page() && ( !empty( $pib_options['post_page_types']['display_front_page'] ) ) )           
 			 ) {
-			  if ( $pib_options['post_page_placement']['display_above_content'] ) {
+			  if ( !empty( $pib_options['post_page_placement']['display_above_content'] ) ) {
 				 $content = pib_button_html() . $content;
 			  }
-			  if ( $pib_options['post_page_placement']['display_below_content'] ) {
+			  if ( !empty( $pib_options['post_page_placement']['display_below_content'] ) ) {
 				 $content .= pib_button_html();
 			  }
 		   }   
