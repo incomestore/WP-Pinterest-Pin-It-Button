@@ -13,12 +13,12 @@ function pib_button_shortcode_html( $attr ) {
     */
     
     extract( shortcode_atts( array(
-					'count' => 'none',
-					'url' => '',
-					'image_url' => '',
+					'count'       => 'none',
+					'url'         => '',
+					'image_url'   => '',
 					'description' => '',
-					'float' => 'none',
-					'remove_div' => false
+					'float'       => 'none',
+					'remove_div'  => false
 				), $attr ) );
 
     if ( empty( $url ) ) {
