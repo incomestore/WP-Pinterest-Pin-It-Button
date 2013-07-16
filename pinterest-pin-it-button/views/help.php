@@ -14,7 +14,11 @@
 
 <div class="wrap">
 	<?php screen_icon( 'pib-icon32' ); ?>
-	<h2><?php _e( 'Help for Pinterest "Pin It" Button Lite', 'pib' ); ?></h2>
+	<h2><?php _e( 'Pinterest "Pin It" Button Lite Help', 'pib' ); ?></h2>
+
+	<p>
+		Plugin version: <strong><?php echo '[plugin_version]'; ?></strong>
+	</p>
 
 	<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
 
