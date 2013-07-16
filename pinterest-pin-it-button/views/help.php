@@ -16,6 +16,13 @@
 	<?php screen_icon( 'pib-icon32' ); ?>
 	<h2><?php _e( 'Help for Pinterest "Pin It" Button Lite', 'pib' ); ?></h2>
 
+	<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
+
+	<p>
+		<?php _e( 'You may individually override what website address (URL), image and description will be pinned for each post.', 'pib' ); ?>
+		<?php _e( 'These fields are located towards the bottom of the post/page edit screen.', 'pib' ); ?>
+	</p>
+
 	<h3 class="title"><?php _e( 'CSS Style Overrides', 'pib' ); ?></h3>
 
 	<p>
