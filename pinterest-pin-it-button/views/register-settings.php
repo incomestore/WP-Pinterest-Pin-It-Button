@@ -313,7 +313,7 @@ function pib_textarea_callback( $args ) {
 	//$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	// Render and style description text underneath textarea if it exists
-	if ( !empty( $args['desc'] ) )
+	if ( ! empty( $args['desc'] ) )
 		$html .= '<p class="description">' . $args['desc'] . '</p>';
 
 	echo $html;
