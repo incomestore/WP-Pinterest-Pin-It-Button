@@ -31,6 +31,9 @@
 	<?php _e( 'These 3 text fields will be used only if the button style is "image pre-selected".', 'pib' ); ?>
 </p>
 <p>
+	<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $button_style; ?></strong>
+</p>
+<p>
 	<label for="pib_url_of_webpage"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label><br />
 	<input type="text" class="widefat" name="pib_url_of_webpage" id="pib_url_of_webpage" value="<?php echo $pib_url_of_webpage; ?>" />
 	<span class="description"><?php _e( 'Defaults to current post/page URL if left blank.', 'pib' ); ?></span>
@@ -50,9 +53,9 @@
 	<label for="pib_enable_post_sharing"><?php _e( 'Show "Pin It" button on this post/page', 'pib' ); ?></label>
 </p>
 <p>
-	<?php _e( 'If checked displays the button for this post/page (if Individual Posts (for posts) or WordPress Static "Pages" (for pages) is also checked in "Pin It" Button Settings).', 'pib' ); ?>
+	<span class="description"><?php _e( 'If checked displays the button for this post (if Individual Posts selected) or this page (if Individual Pages selected) in the main "Pin It" button settings.', 'pib' ); ?></span>
 </p>
 <p>
-	<?php _e( 'If unchecked the button will always be hidden for this post/page.', 'pib' ); ?>
+	<span class="description"><?php _e( 'If unchecked the button will always be hidden for this post/page.', 'pib' ); ?></span>
 </p>
 <input type="hidden" name="pib_sharing_status_hidden" value="1" />
