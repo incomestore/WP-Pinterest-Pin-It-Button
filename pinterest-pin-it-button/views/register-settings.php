@@ -53,7 +53,7 @@ function pib_register_settings() {
 		   'post_page_types' => array(
 			  'id' => 'post_page_types',
 			  'name' => __( 'Post/Page Types', 'pib' ),
-			  'desc' => '',
+			  'desc' => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_home_page' => array(
@@ -81,7 +81,8 @@ function pib_register_settings() {
 		   'post_page_placement' => array(
 			  'id' => 'post_page_placement',
 			  'name' => __( 'Post/Page Placement', 'pib' ),
-			  'desc' => '',
+			  'desc' => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
+			  	sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'display_above_content' => array(

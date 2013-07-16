@@ -19,7 +19,7 @@
 	<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
 
 	<p>
-		<?php _e( 'You may individually override what website address (URL), image and description will be pinned for each post.', 'pib' ); ?>
+		<?php _e( 'You may individually override what website address (URL), image and description will be pinned for each post or page.', 'pib' ); ?>
 		<?php _e( 'These fields are located towards the bottom of the post/page edit screen.', 'pib' ); ?>
 	</p>
 
