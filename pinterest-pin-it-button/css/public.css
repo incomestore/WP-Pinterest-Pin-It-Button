@@ -48,10 +48,16 @@ div.pin-it-btn-wrapper-widget a:hover {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-div.pib-float-left {
-    float: left;
+/* Align left/right/center options */
+
+.pib-align-left {
+	text-align: left;
 }
 
-div.pib-float-right {
-    float: right;
+.pib-align-right {
+	text-align: right;
+}
+
+.pib-align-center {
+	text-align: center;
 }
