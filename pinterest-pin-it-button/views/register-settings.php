@@ -129,11 +129,11 @@ function pib_register_settings() {
 		add_option( 'pib_settings_general' );
 	}
 	
-	if ( false == get_option('pib_settings_post_visibility') ) {
+	if ( false == get_option( 'pib_settings_post_visibility' ) ) {
 		add_option( 'pib_settings_post_visibility' );
 	}
 	
-	if ( false == get_option('pib_settings_styles') ) {
+	if ( false == get_option( 'pib_settings_styles' ) ) {
 		add_option( 'pib_settings_styles' );
 	}
 	
@@ -220,12 +220,12 @@ function pib_register_settings() {
 	}
 	
 	/* Register all settings or we will get an error when trying to save */
-	register_setting( 'pib_settings_general',		'pib_settings_general',			'pib_settings_sanitize' );
-	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility',    'pib_settings_sanitize' );
-	register_setting( 'pib_settings_styles',		'pib_settings_styles',			'pib_settings_sanitize' );
+	register_setting( 'pib_settings_general',         'pib_settings_general',         'pib_settings_sanitize' );
+	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility', 'pib_settings_sanitize' );
+	register_setting( 'pib_settings_styles',          'pib_settings_styles',          'pib_settings_sanitize' );
 	
 }
-add_action('admin_init', 'pib_register_settings');
+add_action( 'admin_init', 'pib_register_settings' );
 
 /*
  * Radio button callback function

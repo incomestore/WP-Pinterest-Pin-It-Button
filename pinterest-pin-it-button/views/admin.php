@@ -40,8 +40,10 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 				settings_fields( 'pib_settings_post_visibility' );
 				do_settings_sections( 'pib_settings_post_visibility' );
 			} elseif ( $active_tab == 'styles' ) {
-				settings_fields('pib_settings_styles' );
-				do_settings_sections('pib_settings_styles' );
+				settings_fields( 'pib_settings_styles' );
+				do_settings_sections( 'pib_settings_styles' );
+			} else {
+				// Do nothing
 			}
 
 			submit_button();
