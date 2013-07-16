@@ -26,7 +26,7 @@
 		<?php _e( 'to display within template or theme files.', 'pib' ); ?>
 	</p>
 
-	<h4>Available Shortcode Parameters (Lite & Pro)</h4>
+	<h4>Available Attributes (Lite & Pro)</h4>
 
 	<table class="widefat importers" cellspacing="0">
 		<thead>
@@ -77,7 +77,7 @@
 		</tbody>
 	</table>
 
-	<h4>Available Shortcode Parameters (Pro Only)</h4>
+	<h4>Available Attributes (Pro Only)</h4>
 
 	<table class="widefat importers" cellspacing="0">
 		<thead>
