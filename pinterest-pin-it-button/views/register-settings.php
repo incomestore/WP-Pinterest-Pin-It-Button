@@ -255,7 +255,7 @@ function pib_radio_callback( $args ) {
 function pib_checkbox_callback( $args ) {
 	global $pib_options;
 
-	$checked = isset( $pib_options[$args['id']]) ? checked( 1, $pib_options[$args['id']], false ) : '';
+	$checked = isset( $pib_options[$args['id']] ) ? checked( 1, $pib_options[$args['id']], false ) : '';
 	$html = '<input type="checkbox" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="1" ' . $checked . '/>';
 	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
@@ -286,7 +286,7 @@ function pib_select_callback($args) {
 	$html = '<select id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"/>';
 
 	foreach ( $args['options'] as $option => $name ) :
-		$selected = isset( $pib_options[ $args['id'] ] ) ? selected( $option, $pib_options[$args['id']], false ) : '';
+		$selected = isset( $pib_options[$args['id']] ) ? selected( $option, $pib_options[$args['id']], false ) : '';
 		$html .= '<option value="' . $option . '" ' . $selected . '>' . $name . '</option>';
 	endforeach;
 
@@ -308,7 +308,7 @@ function pib_textarea_callback( $args ) {
 	else
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
-	$size = isset( $args['size'] ) && !is_null($args['size']) ? $args['size'] : 'regular';
+	$size = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
 	$html = '<textarea class="" cols="120" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>';
 	//$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
