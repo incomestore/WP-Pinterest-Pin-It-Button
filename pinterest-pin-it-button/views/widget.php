@@ -94,7 +94,7 @@ class PIB_Widget extends WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title (optional):', 'pib' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title (optional)', 'pib' ); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
@@ -114,19 +114,19 @@ class PIB_Widget extends WP_Widget {
 				<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
             </p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_webpage_widget' ); ?>"
 					   type="text" value="<?php echo esc_attr( $pib_url_of_webpage_widget ); ?>" />
                 <span class="description"><?php _e( 'Required for "image pre-selected". Defaults to home page for "user selects image".', 'pib' ); ?></span>
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>"><?php _e( 'URL of the image to be pinned', 'pib' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>"><?php _e( 'URL of the image to be pinned', 'pib' ); ?>:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_img_widget' ); ?>"
 					   type="text" value="<?php echo esc_attr( $pib_url_of_img_widget ); ?>" />
                 <span class="description"><?php _e( 'Required for "image pre-selected". Not used for "user selects image".', 'pib' ); ?></span>
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>"><?php _e( 'Description of the pin (optional)', 'pib' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>"><?php _e( 'Description of the pin (optional)', 'pib' ); ?>:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_description_widget' ); ?>"
 					   type="text" value="<?php echo esc_attr( $pib_description_widget ); ?>" />
 			</p>
