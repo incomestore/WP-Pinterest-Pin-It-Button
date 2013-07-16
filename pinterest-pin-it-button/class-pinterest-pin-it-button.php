@@ -170,7 +170,7 @@ class Pinterest_Pin_It_Button {
 		global $pib_options;
 
 		// Check to see if setting to disable is true first.
-		if( ! empty( $pib_options['disable_css'] ) ) {
+		if( empty( $pib_options['disable_css'] ) ) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
 		}
 	}
