@@ -100,7 +100,13 @@
 		   $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
 		   //$first_img = $matches [1] [0];
 		   //$image_url = $first_img;
-		   $image_url = $matches [1] [0];
+		   
+		   // Make sure the was an image match and if not set the image url to be blank
+		   if ( !( 0 == $output || false == $output ) ) 
+			   $image_url = $matches [1] [0];
+		   else
+			   $image_url = '';
+			  
 	    }
 
 	    //Set description to post title if still blank
