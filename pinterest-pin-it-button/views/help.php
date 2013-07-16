@@ -13,7 +13,7 @@
 ?>
 
 <div class="wrap">
-	<?php screen_icon( 'tools' ); ?>
-	<h2><?php _e( 'Help for Pinterest "Pin It" Button Lite', 'pib' ) ?></h2><br/>
+	<?php screen_icon( 'pib-icon32' ); ?>
+	<h2><?php _e( 'Help for Pinterest "Pin It" Button Lite', 'pib' ) ?></h2>
 
 </div><!-- .wrap -->
