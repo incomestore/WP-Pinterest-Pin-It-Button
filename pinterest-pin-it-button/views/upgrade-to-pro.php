@@ -14,6 +14,6 @@
 
 <div class="wrap">
 	<?php screen_icon( 'pib-icon32' ); ?>
-	<h2><?php _e( 'Upgrade to Pinterest "Pin It" Button Pro', 'pib' ) ?></h2>
+	<h2><?php _e( 'Upgrade to Pinterest "Pin It" Button Pro', 'pib' ); ?></h2>
 
 </div><!-- .wrap -->
