@@ -121,6 +121,17 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
+	 * Return localized base plugin title.
+	 *
+	 * @since     2.0.0
+	 *
+	 * @return    string
+	 */
+	public static function get_plugin_title() {
+		return __( 'Pinterest "Pin It" Button Lite', 'pib' );
+	}
+
+	/**
 	 * Enqueue admin-specific style sheets.
 	 *
 	 * @since     2.0.0
@@ -191,11 +202,9 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function add_plugin_admin_menu() {
-		$base_page_title = __( 'Pinterest "Pin It" Button Lite', 'pib' );
-
 		// Add main menu item
 		$this->plugin_screen_hook_suffix = add_menu_page(
-			$base_page_title . __( ' Settings', 'pib' ),
+			$this->get_plugin_title() . __( ' Settings', 'pib' ),
 			__( 'Pin It Button', 'pib' ),
 			'manage_options',
 			$this->plugin_slug,
@@ -206,7 +215,7 @@ class Pinterest_Pin_It_Button {
 		// Add Help submenu page
 		add_submenu_page(
 			$this->plugin_slug,
-			$base_page_title . __( ' Help', 'pib' ),
+			$this->get_plugin_title() . __( ' Help', 'pib' ),
 			__( 'Help', 'pib' ),
 			'manage_options',
 			$this->plugin_slug . '_help',
@@ -315,7 +324,6 @@ class Pinterest_Pin_It_Button {
 	function pib_shortcode() {
 		include( 'views/shortcode.php' );
 	}
-	
 	
 	/**
 	 * Add widget
