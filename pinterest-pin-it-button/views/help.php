@@ -17,7 +17,7 @@
 	<h2><?php _e( 'Pinterest "Pin It" Button Lite Help', 'pib' ); ?></h2>
 
 	<p>
-		Plugin version: <strong><?php echo '[plugin_version]'; ?></strong>
+		Plugin version: <strong><?php echo $this->version; ?></strong>
 	</p>
 
 	<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
