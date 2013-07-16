@@ -242,7 +242,7 @@ function pib_radio_callback( $args ) {
 		elseif( isset( $args['std'] ) && $args['std'] == $key && ! isset( $pib_options[ $args['id'] ] ) )
 			$checked = true;
 
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
 		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	}
 
@@ -265,13 +265,12 @@ function pib_checkbox_callback( $args ) {
 /*
  * Multiple checkboxes callback function
  */
-
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
 
 	foreach( $args['options'] as $key => $option ):
 		if( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked( $option, $enabled, false ) . '/>&nbsp;';
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked( $option, $enabled, false ) . '/>&nbsp;';
 		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
 	endforeach;
 	echo '<p class="description">' . $args['desc'] . '</p>';
