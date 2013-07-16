@@ -358,7 +358,7 @@ class Pinterest_Pin_It_Button {
 		static $this_plugin;
 		if ( empty( $this_plugin ) ) $this_plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
 		if ( $file == $this_plugin ) {
-			$settings_link = '<a href="' . admin_url( 'options-general.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'pib' ) . '</a>';
+			$settings_link = '<a href="' . admin_url( 'admin.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'pib' ) . '</a>';
 			array_unshift( $links, $settings_link );
 		}
 		return $links;
