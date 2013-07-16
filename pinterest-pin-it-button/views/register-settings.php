@@ -242,7 +242,7 @@ function pib_radio_callback( $args ) {
 		elseif( isset( $args['std'] ) && $args['std'] == $key && ! isset( $pib_options[ $args['id'] ] ) )
 			$checked = true;
 
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked(true, $checked, false) . '/>&nbsp;';
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
 		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	}
 
@@ -255,7 +255,7 @@ function pib_radio_callback( $args ) {
 function pib_checkbox_callback( $args ) {
 	global $pib_options;
 
-	$checked = isset($pib_options[$args['id']]) ? checked(1, $pib_options[$args['id']], false) : '';
+	$checked = isset( $pib_options[$args['id']]) ? checked( 1, $pib_options[$args['id']], false ) : '';
 	$html = '<input type="checkbox" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="1" ' . $checked . '/>';
 	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
@@ -271,7 +271,7 @@ function pib_multicheck_callback( $args ) {
 
 	foreach( $args['options'] as $key => $option ):
 		if( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked( $option, $enabled, false ) . '/>&nbsp;';
 		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
 	endforeach;
 	echo '<p class="description">' . $args['desc'] . '</p>';
@@ -292,7 +292,7 @@ function pib_select_callback($args) {
 	endforeach;
 
 	$html .= '</select>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> ' . $args['desc'] . '</label>';
 
 	echo $html;
 }
