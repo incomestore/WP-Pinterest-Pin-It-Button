@@ -24,6 +24,10 @@ if( $general['uninstall_save_settings'] ) {
 	delete_option( 'pib_settings_styles' );
 	delete_option( 'pib_settings_misc' );
 	delete_option( 'pib_has_run' );
+	delete_option( 'pib_version' );
+	
+	// delete widget options
+	delete_option( 'widget_pib_button' );
 	
 	// Delete post meta
 	delete_post_meta_by_key( 'pib_sharing_disabled' );

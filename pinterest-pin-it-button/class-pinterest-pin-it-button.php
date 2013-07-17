@@ -65,6 +65,9 @@ class Pinterest_Pin_It_Button {
 			// Only if the old version is less than the new version do we run our upgrade code
 			if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
 				add_action( 'init', array( $this, 'upgrade' ), 1 );
+			} else {
+				// delete our holder for the old version of PIB
+				delete_option( 'pib_old_version' );
 			}
 			// update the current plugin version
 			update_option( 'pib_version', $this->version );
