@@ -103,8 +103,8 @@ class Pinterest_Pin_It_Button {
 		// Load widget
 		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
 
-		// Add plugin listing "Settings" and other action links
-		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
+		// Add plugin listing "Settings" action link.
+		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
 	}
 
 	/**
@@ -365,19 +365,21 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
-	 * Add plugin listing "Settings" and other action links
+	 * Add Settings action link to left of existing action links on plugin listing page.
 	 *
-	 * @since    1.0.0
+	 * @since   2.0.0
+	 *
+	 * @param   array  $links  Default plugin action links
+	 * @return  array  $links  Amended plugin action links
 	 */
-	function add_action_link( $links, $file ) {
-		static $this_plugin;
-		if ( empty( $this_plugin ) ) $this_plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
-		if ( $file == $this_plugin ) {
-			$settings_link = '<a href="' . admin_url( 'admin.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'pib' ) . '</a>';
-			array_unshift( $links, $settings_link );
-		}
+	public function settings_link( $links ) {
+
+		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( array( 'page' => $this->plugin_slug ), admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
+		array_unshift( $links, $setting_link );
+
 		return $links;
 	}
+
 	
 	function add_notices() {
 		include_once( 'views/notices.php' );
