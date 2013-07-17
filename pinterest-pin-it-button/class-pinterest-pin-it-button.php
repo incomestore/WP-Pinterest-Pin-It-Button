@@ -281,6 +281,13 @@ class Pinterest_Pin_It_Button {
 	function save_meta_data( $post_id ) {
 		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
 			return $post_id;
+		
+		// An array to hold all of our post meta ids so we can run them through a loop
+		$post_meta_fields = array(
+			'pib_url_of_webpage',
+			'pib_url_of_img',
+			'pib_description'
+		);
 
 		// Record sharing disable
 		if ( isset( $_POST['post_type'] ) && ( 'post' == $_POST['post_type'] || 'page' == $_POST['post_type'] ) ) {
@@ -292,16 +299,14 @@ class Pinterest_Pin_It_Button {
 					else {
 						delete_post_meta( $post_id, 'pib_sharing_disabled' );
 					}
-
-					if ( isset( $_POST['pib_url_of_webpage'] ) && isset( $_POST['pib_url_of_img'] ) && isset( $_POST['pib_description'] )) {
-						update_post_meta( $post_id, 'pib_url_of_webpage', $_POST['pib_url_of_webpage'] );
-						update_post_meta( $post_id, 'pib_url_of_img', $_POST['pib_url_of_img'] );
-						update_post_meta( $post_id, 'pib_description', $_POST['pib_description'] );
-					}					
-					else {
-						delete_post_meta( $post_id, 'pib_url_of_webpage' );
-						delete_post_meta( $post_id, 'pib_url_of_img' );
-						delete_post_meta( $post_id, 'pib_description' );
+					
+					// Loop through our array and make sure it is posted and not empty in order to update it, otherwise we delete it
+					foreach( $post_meta_fields as $pmf ) {
+						if( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
+							update_post_meta( $post_id, $pmf, $_POST[$pmf] );
+						} else {
+							delete_post_meta( $post_id, $pmf );
+						}
 					}
 				}
 			}
