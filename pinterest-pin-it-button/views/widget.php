@@ -35,7 +35,7 @@ class PIB_Widget extends WP_Widget {
 		$pib_url_of_img_widget = $instance['pib_url_of_img_widget'];		
 		$pib_description_widget = $instance['pib_description_widget'];
 		$count_layout = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
-		$float = empty( $instance['float'] ) ? 'none' : $instance['float'];
+		$align = empty( $instance['align'] ) ? 'none' : $instance['align'];
 		$pib_remove_div = (bool)$instance['remove_div'];
         
 		$base_btn = pib_button_base( $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
@@ -51,16 +51,19 @@ class PIB_Widget extends WP_Widget {
 		}
 		else {
 			//Surround with div tag
-			$float_class = '';
+			$align_class = '';
 			
-			if ( $float == 'left' ) {
-				$float_class = 'pib-float-left';
+			if ( $align == 'left' ) {
+				$align_class = 'pib-align-left';
 			}
-			elseif ( $float == 'right' ) {
-				$float_class = 'pib-float-right';
+			elseif ( $align == 'right' ) {
+				$align_class = 'pib-align-right';
+			}
+			elseif ( $align == 'center' ) {
+				$align_class = 'pib-align-center';
 			}
 		
-			echo '<div class="pin-it-btn-wrapper-widget ' . $float_class . '">' . $base_btn . '</div>';
+			echo '<div class="pin-it-btn-wrapper-widget ' . $align_class . '">' . $base_btn . '</div>';
 		}
 		
 		echo $after_widget;
@@ -69,13 +72,13 @@ class PIB_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$new_instance = wp_parse_args( (array)$new_instance, array( 'count_layout' => 'none', 'title' => '', 
-			'pib_count_button_radio' => 'user_selects_image', 'float' => 'none' ) );
+			'pib_count_button_radio' => 'user_selects_image', 'align' => 'none' ) );
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['pib_url_of_webpage_widget'] = strip_tags( $new_instance['pib_url_of_webpage_widget'] );
 		$instance['pib_url_of_img_widget'] = strip_tags( $new_instance['pib_url_of_img_widget'] );
 		$instance['pib_description_widget'] = strip_tags( $new_instance['pib_description_widget'] );		
 		$instance['count_layout'] = $new_instance['count_layout'];
-		$instance['float'] = $new_instance['float'];
+		$instance['align'] = $new_instance['align'];
         $instance['remove_div'] = ( $new_instance['remove_div'] ? 1 : 0 );
         
 		return $instance;
@@ -85,7 +88,7 @@ class PIB_Widget extends WP_Widget {
         global $pib_options;
         
 		$instance = wp_parse_args( (array) $instance, array( 'count_layout' => 'none', 'title' => '', 
-			'pib_count_button_radio' => 'user_selects_image', 'float' => 'none' ) );
+			'pib_count_button_radio' => 'user_selects_image', 'align' => 'none' ) );
 		$title = strip_tags($instance['title']);
 		$pib_url_of_webpage_widget = strip_tags( $instance['pib_url_of_webpage_widget'] );
 		$pib_url_of_img_widget = strip_tags( $instance['pib_url_of_img_widget'] );
@@ -133,12 +136,12 @@ class PIB_Widget extends WP_Widget {
 		</div>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'float' ); ?>"><?php _e( 'Alignment', 'pib' ); ?>:</label>
-			<select name="<?php echo $this->get_field_name( 'float' ); ?>" id="<?php echo $this->get_field_id( 'float' ); ?>">
-				<option value="none" <?php selected( $instance['float'], 'none' ); ?>><?php _e( 'None', 'pib' ); ?></option>
-				<option value="left" <?php selected( $instance['float'], 'left' ); ?>><?php _e( 'Left', 'pib' ); ?></option>
-				<option value="right" <?php selected( $instance['float'], 'right' ); ?>><?php _e( 'Right', 'pib' ); ?></option>
-				<option value="center" <?php selected( $instance['float'], 'center' ); ?>><?php _e( 'Center', 'pib' ); ?></option>
+			<label for="<?php echo $this->get_field_id( 'align' ); ?>"><?php _e( 'Alignment', 'pib' ); ?>:</label>
+			<select name="<?php echo $this->get_field_name( 'align' ); ?>" id="<?php echo $this->get_field_id( 'align' ); ?>">
+				<option value="none" <?php selected( $instance['align'], 'none' ); ?>><?php _e( 'None', 'pib' ); ?></option>
+				<option value="left" <?php selected( $instance['align'], 'left' ); ?>><?php _e( 'Left', 'pib' ); ?></option>
+				<option value="right" <?php selected( $instance['align'], 'right' ); ?>><?php _e( 'Right', 'pib' ); ?></option>
+				<option value="center" <?php selected( $instance['align'], 'center' ); ?>><?php _e( 'Center', 'pib' ); ?></option>
 			</select>
 		</p>
 		<p>

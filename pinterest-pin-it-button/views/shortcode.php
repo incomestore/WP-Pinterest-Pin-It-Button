@@ -17,7 +17,7 @@ function pib_button_shortcode_html( $attr ) {
 					'url'         => '',
 					'image_url'   => '',
 					'description' => '',
-					'float'       => 'none',
+					'align'       => 'none',
 					'remove_div'  => false
 				), $attr ) );
 
@@ -47,22 +47,25 @@ function pib_button_shortcode_html( $attr ) {
     
 	$base_btn = pib_button_base( $url, $image_url, $description, $count );
     
-    //Don't wrap with div or use float left/right if "remove div" is checked
+    //Don't wrap with div or set float class if "remove div" is checked
 	if ( $remove_div ) {
 		return $base_btn;
 	}
 	else {
 		//Surround with div tag
-		$float_class = '';
+		$align_class = '';
 		
-		if ( $float == 'left' ) {
-			$float_class = 'pib-float-left';
+		if ( $align == 'left' ) {
+			$align_class = 'pib-align-left';
 		}
-		elseif ( $float == 'right' ) {
-			$float_class = 'pib-float-right';
+		elseif ( $align == 'right' ) {
+			$align_class = 'pib-align-right';
+		}
+		elseif ( $align == 'center' ) {
+			$align_class = 'pib-align-center';
 		}
 	
-		return '<div class="pin-it-btn-wrapper-shortcode ' . $float_class . '">' . $base_btn . '</div>';
+		return '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
 	}
 }
 
