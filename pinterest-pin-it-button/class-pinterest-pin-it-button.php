@@ -195,7 +195,7 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function enqueue_scripts() {
 		// Enqueue Pinterest JS plugin boilerplate style. Don't set a version.
-		wp_enqueue_script( $this->plugin_slug . '-pinterest-script', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+		wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
 	}
 
 	/**
