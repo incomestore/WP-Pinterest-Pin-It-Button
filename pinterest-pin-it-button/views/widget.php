@@ -35,7 +35,7 @@ class PIB_Widget extends WP_Widget {
 		$pib_url_of_img_widget = $instance['pib_url_of_img_widget'];		
 		$pib_description_widget = $instance['pib_description_widget'];
 		$count_layout = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
-		$align = empty( $instance['align'] ) ? 'none' : $instance['align'];
+		$align = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
 		$pib_remove_div = (bool)$instance['remove_div'];
         
 		$base_btn = pib_button_base( $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
@@ -78,7 +78,7 @@ class PIB_Widget extends WP_Widget {
 		$instance['pib_url_of_img_widget'] = strip_tags( $new_instance['pib_url_of_img_widget'] );
 		$instance['pib_description_widget'] = strip_tags( $new_instance['pib_description_widget'] );		
 		$instance['count_layout'] = $new_instance['count_layout'];
-		$instance['align'] = $new_instance['align'];
+		$instance['button_align'] = $new_instance['align'];
         $instance['remove_div'] = ( $new_instance['remove_div'] ? 1 : 0 );
         
 		return $instance;
@@ -138,10 +138,10 @@ class PIB_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'align' ); ?>"><?php _e( 'Alignment', 'pib' ); ?>:</label>
 			<select name="<?php echo $this->get_field_name( 'align' ); ?>" id="<?php echo $this->get_field_id( 'align' ); ?>">
-				<option value="none" <?php selected( $instance['align'], 'none' ); ?>><?php _e( 'None', 'pib' ); ?></option>
-				<option value="left" <?php selected( $instance['align'], 'left' ); ?>><?php _e( 'Left', 'pib' ); ?></option>
-				<option value="right" <?php selected( $instance['align'], 'right' ); ?>><?php _e( 'Right', 'pib' ); ?></option>
-				<option value="center" <?php selected( $instance['align'], 'center' ); ?>><?php _e( 'Center', 'pib' ); ?></option>
+				<option value="none" <?php selected( $instance['button_align'], 'none' ); ?>><?php _e( 'None', 'pib' ); ?></option>
+				<option value="left" <?php selected( $instance['button_align'], 'left' ); ?>><?php _e( 'Left', 'pib' ); ?></option>
+				<option value="right" <?php selected( $instance['button_align'], 'right' ); ?>><?php _e( 'Right', 'pib' ); ?></option>
+				<option value="center" <?php selected( $instance['button_align'], 'center' ); ?>><?php _e( 'Center', 'pib' ); ?></option>
 			</select>
 		</p>
 		<p>
