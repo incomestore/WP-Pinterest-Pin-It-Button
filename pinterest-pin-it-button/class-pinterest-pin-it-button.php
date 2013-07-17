@@ -169,8 +169,7 @@ class Pinterest_Pin_It_Button {
 
 		$screen = get_current_screen();
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
-			//TODO Not using admin.js yet
-			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
+			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
 
 	}
