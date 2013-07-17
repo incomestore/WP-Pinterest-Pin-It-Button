@@ -36,7 +36,7 @@ class PIB_Widget extends WP_Widget {
 		$pib_description_widget = $instance['pib_description_widget'];
 		$count_layout           = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
 		$align                  = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
-		$pib_remove_div         = (bool)$instance['remove_div'];
+		$pib_remove_div         = (bool) $instance['remove_div'];
         
 		$base_btn = pib_button_base( $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
 		
@@ -50,7 +50,7 @@ class PIB_Widget extends WP_Widget {
 			echo $base_btn;
 		}
 		else {
-			//Surround with div tag
+			
 			$align_class = '';
 			
 			if ( 'left' == $align ) {
@@ -62,7 +62,8 @@ class PIB_Widget extends WP_Widget {
 			elseif ( 'center' == $align ) {
 				$align_class = 'pib-align-center';
 			}
-		
+			
+			// Surround with div tag
 			echo '<div class="pin-it-btn-wrapper-widget ' . $align_class . '">' . $base_btn . '</div>';
 		}
 		
@@ -71,29 +72,38 @@ class PIB_Widget extends WP_Widget {
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$new_instance = wp_parse_args( (array)$new_instance, array( 'count_layout' => 'none', 'title' => '', 
-			'pib_count_button_radio' => 'user_selects_image', 'align' => 'none' ) );
-		$instance['title'] = strip_tags($new_instance['title']);
+		
+		$instance['title']                     = strip_tags($new_instance['title']);
 		$instance['pib_url_of_webpage_widget'] = strip_tags( $new_instance['pib_url_of_webpage_widget'] );
-		$instance['pib_url_of_img_widget'] = strip_tags( $new_instance['pib_url_of_img_widget'] );
-		$instance['pib_description_widget'] = strip_tags( $new_instance['pib_description_widget'] );		
-		$instance['count_layout'] = $new_instance['count_layout'];
-		$instance['button_align'] = $new_instance['align'];
-        $instance['remove_div'] = ( $new_instance['remove_div'] ? 1 : 0 );
+		$instance['pib_url_of_img_widget']     = strip_tags( $new_instance['pib_url_of_img_widget'] );
+		$instance['pib_description_widget']    = strip_tags( $new_instance['pib_description_widget'] );		
+		$instance['count_layout']              = $new_instance['count_layout'];
+		$instance['button_align']              = $new_instance['align'];
+        $instance['remove_div']                = ( $new_instance['remove_div'] ? 1 : 0 );
         
 		return $instance;
 	}
 
 	function form( $instance ) {
         global $pib_options;
+		
+		$default = array(
+			'title' => '',
+			'count_layout' => 'none',
+			'pib_url_of_webpage_widget' => '',
+			'pib_url_of_img_widget' => '',
+			'pib_description_widget' => '',
+			'button_align' => 'none',
+			'remove_div' => 0
+		);
         
-		$instance = wp_parse_args( (array) $instance, array( 'count_layout' => 'none', 'title' => '', 
-			'pib_count_button_radio' => 'user_selects_image', 'align' => 'none' ) );
-		$title = strip_tags($instance['title']);
+		$instance = wp_parse_args( (array) $instance, $default );
+		
+		$title                     = strip_tags($instance['title']);
 		$pib_url_of_webpage_widget = strip_tags( $instance['pib_url_of_webpage_widget'] );
-		$pib_url_of_img_widget = strip_tags( $instance['pib_url_of_img_widget'] );
-		$pib_description_widget = strip_tags( $instance['pib_description_widget'] );
-		$pib_button_style_widget = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
+		$pib_url_of_img_widget     = strip_tags( $instance['pib_url_of_img_widget'] );
+		$pib_description_widget    = strip_tags( $instance['pib_description_widget'] );
+		$pib_button_style_widget   = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 		?>
 
 		<p>
