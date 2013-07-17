@@ -148,7 +148,7 @@ class Pinterest_Pin_It_Button {
 		}
 
 		$screen = get_current_screen();
-		if ( $screen->id == $this->plugin_screen_hook_suffix ) {
+		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
 		}
 
@@ -168,7 +168,7 @@ class Pinterest_Pin_It_Button {
 		}
 
 		$screen = get_current_screen();
-		if ( $screen->id == $this->plugin_screen_hook_suffix ) {
+		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
 			//TODO Not using admin.js yet
 			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
@@ -206,7 +206,7 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function add_plugin_admin_menu() {
 		// Add main menu item
-		$this->plugin_screen_hook_suffix = add_menu_page(
+		$this->plugin_screen_hook_suffix[] = add_menu_page(
 			$this->get_plugin_title() . __( ' Settings', 'pib' ),
 			__( 'Pin It Button', 'pib' ),
 			'manage_options',
@@ -216,7 +216,7 @@ class Pinterest_Pin_It_Button {
 		);
 		
 		// Add Help submenu page
-		add_submenu_page(
+		$this->plugin_screen_hook_suffix[] = add_submenu_page(
 			$this->plugin_slug,
 			$this->get_plugin_title() . __( ' Help', 'pib' ),
 			__( 'Help', 'pib' ),
@@ -226,7 +226,7 @@ class Pinterest_Pin_It_Button {
 		);
 		
 		// Add Upgrade to Pro submenu page
-		add_submenu_page(
+		$this->plugin_screen_hook_suffix[] = add_submenu_page(
 			$this->plugin_slug,
 			__( 'Upgrade to Pinterest "Pin It" Button Pro', 'pib' ),
 			__( 'Upgrade to Pro', 'pib' ),
