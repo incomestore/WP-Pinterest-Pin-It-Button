@@ -56,7 +56,7 @@ class Pinterest_Pin_It_Button {
 	private function __construct() {
 
 	// Do upgrade if we need to
-		if ( !get_option( 'pib_version' ) ) {
+		if ( ! get_option( 'pib_version' ) ) {
 			add_option( 'pib_version', $this->version );
 		} else {
 			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading
@@ -278,7 +278,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	function save_meta_data( $post_id ) {
-		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
 		
 		// An array to hold all of our post meta ids so we can run them through a loop
