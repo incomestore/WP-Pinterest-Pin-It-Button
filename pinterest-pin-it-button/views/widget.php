@@ -21,7 +21,7 @@ class PIB_Widget extends WP_Widget {
 
 	function widget( $args, $instance ) {
         global $pib_options;
-		extract($args);
+		extract( $args );
 		
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );		
         
@@ -32,11 +32,11 @@ class PIB_Widget extends WP_Widget {
             $pib_url_of_webpage_widget = get_home_url();
         }
         
-		$pib_url_of_img_widget = $instance['pib_url_of_img_widget'];		
+		$pib_url_of_img_widget  = $instance['pib_url_of_img_widget'];		
 		$pib_description_widget = $instance['pib_description_widget'];
-		$count_layout = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
-		$align = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
-		$pib_remove_div = (bool)$instance['remove_div'];
+		$count_layout           = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
+		$align                  = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
+		$pib_remove_div         = (bool)$instance['remove_div'];
         
 		$base_btn = pib_button_base( $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
 		
@@ -53,13 +53,13 @@ class PIB_Widget extends WP_Widget {
 			//Surround with div tag
 			$align_class = '';
 			
-			if ( $align == 'left' ) {
+			if ( 'left' == $align ) {
 				$align_class = 'pib-align-left';
 			}
-			elseif ( $align == 'right' ) {
+			elseif ( 'right' == $align ) {
 				$align_class = 'pib-align-right';
 			}
-			elseif ( $align == 'center' ) {
+			elseif ( 'center' == $align ) {
 				$align_class = 'pib-align-center';
 			}
 		

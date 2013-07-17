@@ -32,7 +32,7 @@ function pib_button_shortcode_html( $attr ) {
         $image_url = get_post_meta( $postID, 'pib_url_of_img', true);
         if ( empty( $image_url ) ) {
             //Get url of img and compare width and height
-            $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+            $output    = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
             $first_img = $matches [1] [0];        
             $image_url = $first_img;
         }
@@ -55,13 +55,13 @@ function pib_button_shortcode_html( $attr ) {
 		//Surround with div tag
 		$align_class = '';
 		
-		if ( $align == 'left' ) {
+		if ( 'left' == $align ) {
 			$align_class = 'pib-align-left';
 		}
-		elseif ( $align == 'right' ) {
+		elseif ( 'right' == $align ) {
 			$align_class = 'pib-align-right';
 		}
-		elseif ( $align == 'center' ) {
+		elseif ( 'center' == $align ) {
 			$align_class = 'pib-align-center';
 		}
 	
