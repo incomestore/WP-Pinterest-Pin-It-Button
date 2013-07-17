@@ -59,17 +59,17 @@ class Pinterest_Pin_It_Button {
 		if ( ! get_option( 'pib_version' ) ) {
 			add_option( 'pib_version', $this->version );
 		} else {
-			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading
+			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading.
 			add_option( 'pib_old_version', get_option( 'pib_version' ) );
 			
-			// Only if the old version is less than the new version do we run our upgrade code
+			// Only if the old version is less than the new version do we run our upgrade code.
 			if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
 				add_action( 'init', array( $this, 'upgrade' ), 1 );
 			} else {
-				// delete our holder for the old version of PIB
+				// Delete our holder for the old version of PIB.
 				delete_option( 'pib_old_version' );
 			}
-			// update the current plugin version
+			// Update the current plugin version.
 			update_option( 'pib_version', $this->version );
 		}
 		
@@ -79,7 +79,7 @@ class Pinterest_Pin_It_Button {
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 		
-		// Load the admin notices
+		// Load the admin notices.
 		add_action( 'init', array( $this, 'add_notices' ) );
 
 		// Enqueue admin styles and scripts.
@@ -89,18 +89,18 @@ class Pinterest_Pin_It_Button {
 		// Enqueue public style and scripts.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		
-		// Add Post Meta stuff
+
+		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
 		
-		// Load public facing code
+		// Load public facing code.
 		add_action( 'init', array( $this, 'public_display' ) );
 		
-		// Load the shortcode code
+		// Load the shortcode code.
 		add_action( 'init', array( $this, 'pib_shortcode' ) );
 		
-		// Load widget
+		// Load widget.
 		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
 
 		// Add plugin listing "Settings" action link.
