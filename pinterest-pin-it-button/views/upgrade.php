@@ -8,6 +8,29 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( ! get_option( 'pib_version' ) ) {
+	add_option( 'pib_version', $this->version );
+} else {
+	add_option( 'pib_old_version', get_option( 'pib_version' ) );
+}
+
+// If this option exists then the plugin is before version 2.0.0
+if( get_option( 'pib_options' ) ) {
+	add_option( 'pib_old_version', '1.4.3' );
+	update_option( 'pib_has_run', 1 );
+}
+
+// Only if the old version is less than the new version do we run our upgrade code.
+if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
+	// need to update pib_has_run so that we don;t load the defaults in too
+	update_option( 'pib_has_run', 1 );
+	pib_do_all_upgrades();
+} else {
+	// Delete our holder for the old version of PIB.
+	delete_option( 'pib_old_version' );
+}
+	
+
 function pib_do_all_upgrades() {
 	
 	$current_version = get_option( 'pib_old_version' );
@@ -17,13 +40,14 @@ function pib_do_all_upgrades() {
 		   pib_v2_upgrade();
 	
 	delete_option( 'pib_old_version' );
+	
 }
 
 function pib_v2_upgrade() {
 	// Add code here to transfer all the options to new tab layout
 	
 	// set which old values we don't need
-	$discard = array( 'share_btn_1', 'share_btn_2', 'share_btn_3', 'share_btn_4', 'uninstall_save_settings' );
+	$discard = array( 'share_btn_1', 'share_btn_2', 'share_btn_3', 'share_btn_4' );
 	
 	// Need to decipher which Post Visibility settings to update so we will use an array
 	$page_placement = array( 'display_above_content', 'display_below_content', 'display_on_post_excerpts' );
