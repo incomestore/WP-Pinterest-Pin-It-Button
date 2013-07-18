@@ -21,8 +21,8 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 	<?php screen_icon( 'pib-icon32' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-	<div class="pib-settings-body">
-		<div class="pib-settings-body-content">
+	<div id="pib-settings">
+		<div id="pib-settings-content">
 
 			<h2 class="nav-tab-wrapper">
 				<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
@@ -57,7 +57,7 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 
 		</div>
 
-		<div class="pib-settings-sidebar">
+		<div id="pib-settings-sidebar">
 
 			<?php include( 'admin-sidebar.php' ); ?>
 

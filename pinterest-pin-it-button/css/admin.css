@@ -8,16 +8,16 @@
 
 /* Layout the page similar to the built-in post edit screen. */
 
-.pib-settings-body {
+#pib-settings {
 	margin-right: 300px;
 }
 
-.pib-settings-body-content {
+#pib-settings-content {
 	width: 100%;
 	float: left;
 }
 
-.pib-settings-sidebar {
+#pib-settings-sidebar {
 	float: right;
 	margin-right: -300px;
 	width: 280px;
