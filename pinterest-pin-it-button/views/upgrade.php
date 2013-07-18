@@ -46,7 +46,7 @@ function pib_v2_upgrade() {
 				// Add to styles settings
 				$style_options[$key] = $value;
 				
-			} else if( !(false === strrpos( $key, 'display' )) ) {
+			} else if( ! ( false === strrpos( $key, 'display' ) ) ) {
 				// Add to Post Visibility settings
 				
 				// With the new options we have these setup as nested arrays so we need to check which one we are adding to
@@ -68,6 +68,7 @@ function pib_v2_upgrade() {
 			
 			// Delete old options
 			delete_option( 'pib_options' );
+			delete_option( 'pib_hide_pointer' );
 		}
 	}
 }

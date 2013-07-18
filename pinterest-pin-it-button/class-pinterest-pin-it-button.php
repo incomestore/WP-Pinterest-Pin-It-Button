@@ -55,12 +55,17 @@ class Pinterest_Pin_It_Button {
 	 */
 	private function __construct() {
 
-	// Do upgrade if we need to
+		
+		// Run our upgrade checks first
+		
+		
 		if ( ! get_option( 'pib_version' ) ) {
 			add_option( 'pib_version', $this->version );
-		} else {
+		}
+		
+		if( get_option( 'pib_options' ) ) {
 			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading.
-			add_option( 'pib_old_version', get_option( 'pib_version' ) );
+			add_option( 'pib_old_version', '1.4.3' );
 			
 			// Only if the old version is less than the new version do we run our upgrade code.
 			if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
