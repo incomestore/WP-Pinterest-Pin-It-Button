@@ -129,16 +129,15 @@ class Pinterest_Pin_It_Button {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
+		if ( ! isset( $this->plugin_screen_hook_suffix ) )
 			return;
-		}
 
 		$screen = get_current_screen();
+
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
+			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
 		}
-
 	}
 
 	/**
@@ -149,16 +148,15 @@ class Pinterest_Pin_It_Button {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
-
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
+		if ( ! isset( $this->plugin_screen_hook_suffix ) )
 			return;
-		}
 
 		$screen = get_current_screen();
+
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
+			// Main plugin admin JS. Tackon plugin version.
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
-
 	}
 
 	/**
