@@ -107,7 +107,7 @@ function pib_register_settings() {
 			  'id' => 'custom_css',
 			  'name' => __( 'Custom CSS', 'pib' ),
 			  'desc' => __( 'Custom CSS can be used to override other CSS style rules.', 'pib' ) . '<br />' .
-			     sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), admin_url( 'admin.php?page=pinterest-pin-it-button_help' ) ),
+			     sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), add_query_arg( 'page', PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ),
 			  'type' => 'textarea'
 		   ),
 		   'remove_div' => array(
