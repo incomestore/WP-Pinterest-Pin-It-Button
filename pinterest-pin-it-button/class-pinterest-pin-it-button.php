@@ -320,7 +320,7 @@ class Pinterest_Pin_It_Button {
 	}
 	
 	/**
-	 * Add widget
+	 * Add and register widget
 	 *
 	 * @since    2.0.0
 	 */
@@ -328,6 +328,15 @@ class Pinterest_Pin_It_Button {
 		include( 'views/widget.php' );
 		
 		register_widget( 'PIB_Widget' );
+	}
+
+	/**
+	 * Add notices
+	 *
+	 * @since    2.0.0
+	 */
+	function add_notices() {
+		include_once( 'views/notices.php' );
 	}
 
 	/**
@@ -365,10 +374,5 @@ class Pinterest_Pin_It_Button {
 		array_unshift( $links, $setting_link );
 
 		return $links;
-	}
-
-	
-	function add_notices() {
-		include_once( 'views/notices.php' );
 	}
 }
