@@ -55,6 +55,8 @@ class Pinterest_Pin_It_Button {
 	 */
 	private function __construct() {
 
+		// define a constant so we can use our plugin slug elsewhere
+		define( 'PLUGIN_SLUG', $this->plugin_slug );
 		
 		// Run our upgrade checks first and update our version option
 		add_action( 'init', array( $this, 'upgrade' ), 1 );
