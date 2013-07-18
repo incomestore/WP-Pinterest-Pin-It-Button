@@ -14,56 +14,51 @@
 global $pib_options;
 $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 
-// TODO Testing usage of Bootstrap to keep fluid layout with right sidebar.
+// Additional div containers and CSS classes to keep fluid layout with right sidebar.
 ?>
 
 <div class="wrap">
 	<?php screen_icon( 'pib-icon32' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span9">
+	<div class="pib-settings-body">
+		<div class="pib-settings-body-content">
 
+			<h2 class="nav-tab-wrapper">
+				<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+					<?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'pib' ); ?></a>
+				<a href="<?php echo add_query_arg( 'tab', 'post_visibility', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+					<?php echo $active_tab == 'post_visibility' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Post Visibility', 'pib' ); ?></a>
+				<a href="<?php echo add_query_arg( 'tab', 'styles', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+					<?php echo $active_tab == 'styles' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Styles', 'pib' ); ?></a>
+			</h2>
 
-	<h2 class="nav-tab-wrapper">
-		<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
-			<?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'pib' ); ?></a>
-		<a href="<?php echo add_query_arg( 'tab', 'post_visibility', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
-			<?php echo $active_tab == 'post_visibility' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Post Visibility', 'pib' ); ?></a>
-		<a href="<?php echo add_query_arg( 'tab', 'styles', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
-			<?php echo $active_tab == 'styles' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Styles', 'pib' ); ?></a>
-	</h2>
+			<div id="tab_container">
 
-	<div id="tab_container">
+				<form method="post" action="options.php">
+					<?php
+					if ( $active_tab == 'general' ) {
+						settings_fields( 'pib_settings_general' );
+						do_settings_sections( 'pib_settings_general' );
+					} elseif ( $active_tab == 'post_visibility' ) {
+						settings_fields( 'pib_settings_post_visibility' );
+						do_settings_sections( 'pib_settings_post_visibility' );
+					} elseif ( $active_tab == 'styles' ) {
+						settings_fields( 'pib_settings_styles' );
+						do_settings_sections( 'pib_settings_styles' );
+					} else {
+						// Do nothing
+					}
 
-		<form method="post" action="options.php">
-			<?php
-			if ( $active_tab == 'general' ) {
-				settings_fields( 'pib_settings_general' );
-				do_settings_sections( 'pib_settings_general' );
-			} elseif ( $active_tab == 'post_visibility' ) {
-				settings_fields( 'pib_settings_post_visibility' );
-				do_settings_sections( 'pib_settings_post_visibility' );
-			} elseif ( $active_tab == 'styles' ) {
-				settings_fields( 'pib_settings_styles' );
-				do_settings_sections( 'pib_settings_styles' );
-			} else {
-				// Do nothing
-			}
+					submit_button();
+					?>
+				</form>
+			</div><!-- #tab_container-->
 
-			submit_button();
-			?>
-		</form>
-	</div><!-- #tab_container-->
+		</div>
 
-
-			</div>
-			<div class="span3">
-
-				[Sidebar]
-
-			</div>
+		<div class="pib-settings-sidebar">
+			[Sidebar]
 		</div>
 	</div>
 

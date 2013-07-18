@@ -148,20 +148,8 @@ class Pinterest_Pin_It_Button {
 		$screen = get_current_screen();
 
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
-			// TODO Testing reference to Bootstrap.
-			// Reference Bootstrap minified base CSS on CDN. Don't tack on WP or plugin version.
-			//wp_enqueue_style( $this->plugin_slug .'-bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css', array(), null );
-
-			// Custom minimal bootstrap.css build. Tack on plugin version.
-			// bootstrap1.css: grid system, layouts only
-			wp_enqueue_style( $this->plugin_slug .'-bootstrap', plugins_url( 'css/bootstrap1.css', __FILE__ ), array(), $this->version );
-
 			// Plugin admin CSS. Tack on plugin version.
-			//wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
-			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array( $this->plugin_slug .'-bootstrap' ), $this->version );
-
-			// Bootstrap responsive minified CSS goes after plugin admin CSS. Don't tack on WP or plugin version.
-			//wp_enqueue_style( $this->plugin_slug .'-bootstrap-responsive', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css', array( $this->plugin_slug .'-admin-styles' ), null );
+			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
 		}
 	}
 
@@ -179,15 +167,10 @@ class Pinterest_Pin_It_Button {
 		$screen = get_current_screen();
 
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
-			// TODO Testing reference to Bootstrap.
-			// Reference Bootstrap minified JS. Don't tack on WP or plugin version.
-			//wp_enqueue_script( $this->plugin_slug . '-bootstrap', '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js', array( 'jquery' ), null, false );
-
 			// Main plugin admin JS. Tackon plugin version.
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
 	}
-
 
 	/**
 	 * Enqueue public-facing style sheets.

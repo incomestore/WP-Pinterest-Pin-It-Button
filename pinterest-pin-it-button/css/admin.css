@@ -4,7 +4,23 @@
 	background: transparent url('../assets/pinterest-button-icon-med.png') no-repeat;
 }
 
-/* Bootstrap CSS overrides */
-.container-fluid {
-	padding-left: 0;
+/* Start pib-settings styles */
+
+/* Layout the page similar to the built-in post edit screen. */
+
+.pib-settings-body {
+	margin-right: 300px;
 }
+
+.pib-settings-body-content {
+	width: 100%;
+	float: left;
+}
+
+.pib-settings-sidebar {
+	float: right;
+	margin-right: -300px;
+	width: 280px;
+}
+
+/* End pib-settings styles */
