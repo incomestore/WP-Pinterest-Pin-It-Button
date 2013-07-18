@@ -14,11 +14,17 @@
 global $pib_options;
 $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 
+// TODO Testing usage of Bootstrap to keep fluid layout with right sidebar.
 ?>
 
 <div class="wrap">
 	<?php screen_icon( 'pib-icon32' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span9">
+
 
 	<h2 class="nav-tab-wrapper">
 		<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
@@ -50,4 +56,15 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 			?>
 		</form>
 	</div><!-- #tab_container-->
+
+
+			</div>
+			<div class="span3">
+
+				[Sidebar]
+
+			</div>
+		</div>
+	</div>
+
 </div><!-- .wrap -->
