@@ -3,3 +3,8 @@
 #icon-pib-icon32 {
 	background: transparent url('../assets/pinterest-button-icon-med.png') no-repeat;
 }
+
+/* Bootstrap CSS overrides */
+.container-fluid {
+	padding-left: 0;
+}
