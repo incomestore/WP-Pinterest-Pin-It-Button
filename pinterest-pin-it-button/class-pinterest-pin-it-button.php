@@ -56,30 +56,12 @@ class Pinterest_Pin_It_Button {
 	private function __construct() {
 
 		
-		// Run our upgrade checks first
-		
-		
-		if ( ! get_option( 'pib_version' ) ) {
-			add_option( 'pib_version', $this->version );
-		}
-		
-		if( get_option( 'pib_options' ) ) {
-			// Create an option to use while we go through the upgrade process, this is deleted immediately after we are finished upgrading.
-			add_option( 'pib_old_version', '1.4.3' );
-			
-			// Only if the old version is less than the new version do we run our upgrade code.
-			if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
-				add_action( 'init', array( $this, 'upgrade' ), 1 );
-			} else {
-				// Delete our holder for the old version of PIB.
-				delete_option( 'pib_old_version' );
-			}
-			// Update the current plugin version.
-			update_option( 'pib_version', $this->version );
-		}
+		// Run our upgrade checks first and update our version option
+		add_action( 'init', array( $this, 'upgrade' ), 1 );
+		update_option( 'pib_version', $this->version );
 		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
-		add_action( 'init', array( $this, 'initialize_settings' ), 1 );
+		add_action( 'init', array( $this, 'initialize_settings' ), 2 );
 		
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
