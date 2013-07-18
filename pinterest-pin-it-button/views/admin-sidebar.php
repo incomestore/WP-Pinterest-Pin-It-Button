@@ -9,4 +9,6 @@
  */
 ?>
 
-[sidebar goes here]
+<p>Just a button:</p>
+
+<a href="#fakelink" class="btn btn-large btn-block btn-primary">Click Me!</a>

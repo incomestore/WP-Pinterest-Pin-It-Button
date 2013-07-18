@@ -4,8 +4,6 @@
 	background: transparent url('../assets/pinterest-button-icon-med.png') no-repeat;
 }
 
-/* Start pib-settings styles */
-
 /* Layout the page similar to the built-in post edit screen. */
 
 #pib-settings {
@@ -23,4 +21,8 @@
 	width: 280px;
 }
 
-/* End pib-settings styles */
+/* Bring in Bootstrap 2.3.2 styles needed. */
+
+
+
+/* Bring in Flat UI Free styles needed. */
