@@ -58,7 +58,9 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 		</div>
 
 		<div class="pib-settings-sidebar">
-			[Sidebar]
+
+			<?php include( 'admin-sidebar.php' ); ?>
+
 		</div>
 	</div>
 
