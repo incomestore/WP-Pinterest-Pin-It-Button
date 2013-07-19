@@ -114,8 +114,8 @@ class Pinterest_Pin_It_Button {
 	 */
 	private function setup_constants() {
 		// Plugin slug.
-		if ( ! defined( 'PLUGIN_SLUG' ) )
-			define( 'PLUGIN_SLUG', $this->plugin_slug );
+		if ( ! defined( 'PIB_PLUGIN_SLUG' ) )
+			define( 'PIB_PLUGIN_SLUG', $this->plugin_slug );
 
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
