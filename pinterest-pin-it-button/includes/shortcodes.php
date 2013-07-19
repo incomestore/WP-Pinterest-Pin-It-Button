@@ -47,8 +47,12 @@ function pib_pinit_shortcode( $attr ) {
         if ( empty( $image_url ) ) {
             //Get url of img and compare width and height
             $output    = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-            $first_img = $matches [1] [0];        
-            $image_url = $first_img;
+			
+			if ( ! ( 0 == $output || false == $output ) ) {
+				$image_url = $matches [1] [0];
+			} else {
+				$image_url = '';
+			}
         }
     }
     
