@@ -17,7 +17,7 @@
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<p>
-		Plugin version: <strong><?php echo $this->version; ?></strong>
+		Plugin version: <strong><?php echo PIB_VERSION; ?></strong>
 	</p>
 
 	<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>

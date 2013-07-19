@@ -55,13 +55,10 @@ class Pinterest_Pin_It_Button {
 	 */
 	private function __construct() {
 
-		// define a constant so we can use our plugin slug elsewhere
-		define( 'PLUGIN_SLUG', $this->plugin_slug );
-
-		// Constant for Pro upgrade link
-		define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
+		// Setup constants.
+		$this->setup_constants();
 		
-		// Run our upgrade checks first and update our version option
+		// Run our upgrade checks first and update our version option.
 		add_action( 'init', array( $this, 'upgrade' ), 1 );
 		update_option( 'pib_version', $this->version );
 		
@@ -113,6 +110,26 @@ class Pinterest_Pin_It_Button {
 		}
 
 		return self::$instance;
+	}
+
+	/**
+	 * Setup plugin constants.
+	 *
+	 * @since     2.0.0
+	 */
+	private function setup_constants() {
+
+		// Plugin slug.
+		if ( ! defined( 'PLUGIN_SLUG' ) )
+			define( 'PLUGIN_SLUG', $this->plugin_slug );
+
+		// Pro upgrade base link
+		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
+			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
+
+		// Plugin version
+		if ( ! defined( 'PIB_VERSION' ) )
+			define( 'PIB_VERSION', $this->version );
 	}
 
 	/**
