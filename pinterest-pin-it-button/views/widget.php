@@ -11,6 +11,10 @@
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
+
 class PIB_Widget extends WP_Widget {
 	
 	function __construct() {

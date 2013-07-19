@@ -1,12 +1,8 @@
 <?php
 
-//TODO Add header here?
-//TODO Move to a new folder since it's not a view?
-
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
 
 if ( ! get_option( 'pib_version' ) ) {
 	add_option( 'pib_version', $this->version );
@@ -15,7 +11,7 @@ if ( ! get_option( 'pib_version' ) ) {
 }
 
 // If this option exists then the plugin is before version 2.0.0
-if( get_option( 'pib_options' ) ) {
+if ( get_option( 'pib_options' ) ) {
 	add_option( 'pib_old_version', '1.4.3' );
 	update_option( 'pib_has_run', 1 );
 }
@@ -29,7 +25,6 @@ if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
 	// Delete our holder for the old version of PIB.
 	delete_option( 'pib_old_version' );
 }
-	
 
 function pib_do_all_upgrades() {
 	

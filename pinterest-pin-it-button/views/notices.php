@@ -8,6 +8,10 @@
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
+
 function pib_register_admin_notices() {
 	
 	// The first check will show message if general tab is updated. The addiitional check is if the plugin page is first clicked on and the 'tab' has not been set yet

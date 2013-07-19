@@ -19,11 +19,9 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
-
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
 
 require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 

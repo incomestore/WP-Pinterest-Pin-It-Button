@@ -8,19 +8,18 @@
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
-// If this file is called directly, abort.
-	if ( ! defined( 'WPINC' ) ) {
-		die;
-	}
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
 
-	global $pib_options;
+global $pib_options;
 
-	$button_style = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
+$button_style = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 
-	$pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
-	$pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
-	$pib_url_of_img = get_post_meta( $post->ID, 'pib_url_of_img', true);
-	$pib_description = get_post_meta( $post->ID, 'pib_description', true);
+$pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
+$pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
+$pib_url_of_img = get_post_meta( $post->ID, 'pib_url_of_img', true);
+$pib_description = get_post_meta( $post->ID, 'pib_description', true);
 ?>
 
 <p>

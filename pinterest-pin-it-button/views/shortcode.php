@@ -1,5 +1,9 @@
 <?php
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
+
 function pib_button_shortcode_html( $attr ) {
 	global $pib_options;
 	global $post;
