@@ -253,7 +253,7 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
-	 * Render the settings page for this plugin.
+	 * Render the settings pages for this plugin.
 	 *
 	 * @since    2.0.0
 	 */
@@ -274,7 +274,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function display_post_meta() {
+	public function display_post_meta() {
 		
 		// Add the meta boxes for both posts and pages
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'post', 'advanced', 'high');
@@ -294,7 +294,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function save_meta_data( $post_id ) {
+	public function save_meta_data( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
 		
@@ -336,7 +336,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function public_display() {
+	public function public_display() {
 		include( 'views/public.php' );
 	}
 	
@@ -345,7 +345,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function pib_shortcode() {
+	public function pib_shortcode() {
 		include( 'views/shortcode.php' );
 	}
 	
@@ -354,7 +354,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function pib_widget() {
+	public function pib_widget() {
 		include( 'views/widget.php' );
 		
 		register_widget( 'PIB_Widget' );
@@ -365,7 +365,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	function add_notices() {
+	public function add_notices() {
 		include_once( 'views/notices.php' );
 	}
 
