@@ -7,7 +7,7 @@
 /* Layout the page similar to the built-in post edit screen. */
 
 #pib-settings {
-	margin-right: 300px;
+	margin-right: 310px;
 }
 
 #pib-settings-content {
@@ -17,8 +17,8 @@
 
 #pib-settings-sidebar {
 	float: right;
-	margin-right: -300px;
-	width: 280px;
+	margin-right: -310px;
+	width: 290px;
 }
 
 /*** Overrides to Bootstrap 2.3.2 styles. ***/
