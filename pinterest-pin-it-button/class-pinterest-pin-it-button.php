@@ -84,8 +84,7 @@ class Pinterest_Pin_It_Button {
 		add_action( 'save_post', array( $this, 'save_meta_data') );
 		
 		// Load widget.
-		//add_action( 'widgets_init', array( $this, 'pib_widget' ) );
-		//add_action( 'widgets_init', array( $this, 'register_widgets' ) );
+		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
@@ -147,7 +146,9 @@ class Pinterest_Pin_It_Button {
 		$pib_options = pib_get_settings();
 
 		// Common includes.
+		// TODO Make constant for plugin dir? Why only needed for widgets.php?
 		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );
+		
 		include_once( 'includes/misc-functions.php' );
 
 		// Admin-only includes.
@@ -348,17 +349,9 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since    2.0.0
 	 */
-	/*
-	public function pib_widget() {
-		include_once( 'includes/widgets.php' );
-		register_widget( 'PIB_Widget' );
-	}
-	*/
-	/*
 	public function register_widgets() {
 		register_widget( 'PIB_Widget' );
 	}
-	*/
 
 	/**
 	 * Add Settings action link to left of existing action links on plugin listing page.
