@@ -117,13 +117,13 @@ class Pinterest_Pin_It_Button {
 		if ( ! defined( 'PLUGIN_SLUG' ) )
 			define( 'PLUGIN_SLUG', $this->plugin_slug );
 
-		// Pro upgrade base link.
-		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
-			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
-
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
 			define( 'PIB_VERSION', $this->version );
+
+		// Pro upgrade base link.
+		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
+			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
 	}
 
 	/**
@@ -151,6 +151,7 @@ class Pinterest_Pin_It_Button {
 		$pib_options = pib_get_settings();
 
 		// Common includes.
+		include_once( 'includes/misc-functions.php' );
 		//include_once( 'includes/widgets.php' );
 
 		// Admin-only includes.
