@@ -4,23 +4,63 @@
 	background: transparent url('../assets/pinterest-button-icon-med.png') no-repeat;
 }
 
-/* Start pib-settings styles */
-
 /* Layout the page similar to the built-in post edit screen. */
 
-.pib-settings-body {
+#pib-settings {
 	margin-right: 300px;
 }
 
-.pib-settings-body-content {
+#pib-settings-content {
 	width: 100%;
 	float: left;
 }
 
-.pib-settings-sidebar {
+#pib-settings-sidebar {
 	float: right;
 	margin-right: -300px;
 	width: 280px;
 }
 
-/* End pib-settings styles */
+/*** Overrides to Bootstrap 2.3.2 styles. ***/
+
+
+/*** Overrides/additions to Flat UI Free styles. ***/
+
+/* Base font from flat-ui.css */
+
+#pib-settings-sidebar {
+	font-family: "Lato", sans-serif; /* from body tag */
+}
+
+/* Sidebar container taken from tile class. */
+
+#pib-settings-sidebar .sidebar-container {
+	background-color: #eff0f2;
+	border-radius: 6px;
+	font-size: 15px;
+	margin-bottom: 18px;
+	padding: 14px;
+	position: relative;
+	text-align: left;
+}
+
+#pib-settings-sidebar h3 {
+	font-size: 20px;
+	margin: 0 0 20px 0;
+	text-align: center;
+}
+
+#pib-settings-sidebar ul li {
+	margin-bottom: 8px;
+}
+
+#pib-settings-sidebar ul li i {
+	margin-right: 5px;
+}
+
+#pib-settings-sidebar .last-blurb {
+	font-size: 17px;
+	line-height: 1.4em;
+	margin-bottom: 25px;
+	text-align: center;
+}
