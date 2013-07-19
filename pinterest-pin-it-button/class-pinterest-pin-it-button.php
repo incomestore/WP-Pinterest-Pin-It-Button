@@ -70,7 +70,7 @@ class Pinterest_Pin_It_Button {
 		update_option( 'pib_version', $this->version );
 		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
-		add_action( 'init', array( $this, 'initialize_settings' ), 2 );
+		//add_action( 'init', array( $this, 'initialize_settings' ), 2 );
 		
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
@@ -144,7 +144,14 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function includes() {
+		// Load global PIB options.
+		global $pib_options;
 
+		// Include the file to register all of the plugin settings.
+		include_once( 'views/register-settings.php' );
+
+		// Load global options settings.
+		$pib_options = pib_get_settings();
 	}
 
 	/**
@@ -378,23 +385,6 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function add_notices() {
 		include_once( 'views/notices.php' );
-	}
-
-	/**
-	 * Initialize settings.
-	 *
-	 * @since    2.0.0
-	 */
-	public function initialize_settings() {
-		// Load global PIB options
-		global $pib_options;
-		
-		// Include the file to register all of the plugin settings
-		include_once( 'views/register-settings.php' );
-		
-		// Load global options settings
-		$pib_options = pib_get_settings();
-		
 	}
 
 	public function upgrade() {
