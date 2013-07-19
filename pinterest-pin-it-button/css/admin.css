@@ -25,7 +25,18 @@
 
 /* Overrides/additions to Flat UI Free styles. */
 
-/* Outlined box taken from tagsinput container class. */
+/* Sidebar container taken from tile class. */
+
+#pib-settings .sidebar-container {
+	background-color: #eff0f2;
+	border-radius: 6px;
+	margin-bottom: 18px;
+	padding: 14px;
+	position: relative;
+	text-align: center;
+}
+
+/* Outlined box container taken from tagsinput class. */
 
 #pib-settings .outlined-box {
 	background: white;
