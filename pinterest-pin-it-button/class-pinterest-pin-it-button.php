@@ -58,26 +58,19 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function __construct() {
-
 		// Setup constants.
 		$this->setup_constants();
 
+		// Run our upgrade checks first and update our version option.
+		add_action( 'init', array( $this, 'upgrade_plugin' ), 1 );
+		update_option( 'pib_version', $this->version );
+
 		// Include required files.
 		$this->includes();
-		
-		// Run our upgrade checks first and update our version option.
-		add_action( 'init', array( $this, 'upgrade' ), 1 );
-		update_option( 'pib_version', $this->version );
-		
-		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
-		//add_action( 'init', array( $this, 'initialize_settings' ), 2 );
-		
+
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 		
-		// Load the admin notices.
-		add_action( 'init', array( $this, 'add_notices' ) );
-
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -90,14 +83,9 @@ class Pinterest_Pin_It_Button {
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
 		
-		// Load public facing code.
-		add_action( 'init', array( $this, 'public_display' ) );
-		
-		// Load the shortcode code.
-		add_action( 'init', array( $this, 'pib_shortcode' ) );
-		
 		// Load widget.
-		add_action( 'widgets_init', array( $this, 'pib_widget' ) );
+		//add_action( 'widgets_init', array( $this, 'pib_widget' ) );
+		//add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
@@ -139,6 +127,15 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
+	 * Run upgrade plugin process.
+	 *
+	 * @since     2.0.0
+	 */
+	public function upgrade_plugin() {
+		include_once( 'includes/upgrade-plugin.php' );
+	}
+
+	/**
 	 * Include required files (admin and frontend).
 	 *
 	 * @since     2.0.0
@@ -148,10 +145,22 @@ class Pinterest_Pin_It_Button {
 		global $pib_options;
 
 		// Include the file to register all of the plugin settings.
-		include_once( 'views/register-settings.php' );
+		include_once( 'includes/register-settings.php' );
 
 		// Load global options settings.
 		$pib_options = pib_get_settings();
+
+		// Common includes.
+		//include_once( 'includes/widgets.php' );
+
+		// Admin-only includes.
+		if ( is_admin() ) {
+			include_once( 'includes/admin-notices.php' );
+		} else {
+			// Frontend-only includes.
+			include_once( 'includes/shortcodes.php' );
+			include_once( 'views/public.php' );
+		}
 	}
 
 	/**
@@ -256,7 +265,7 @@ class Pinterest_Pin_It_Button {
 			__( 'Help', 'pib' ),
 			'manage_options',
 			$this->plugin_slug . '_help',
-			array( $this, 'display_help_page' )
+			array( $this, 'display_admin_help_page' )
 		);
 		
 		// Add Upgrade to Pro submenu page
@@ -271,7 +280,7 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
-	 * Render the settings pages for this plugin.
+	 * Render the admin pages for this plugin.
 	 *
 	 * @since    2.0.0
 	 */
@@ -279,8 +288,8 @@ class Pinterest_Pin_It_Button {
 		include_once( 'views/admin.php' );
 	}
 	
-	public function display_help_page() {
-		include_once( 'views/help.php' );
+	public function display_admin_help_page() {
+		include_once( 'views/admin-help.php' );
 	}
 	
 	public function display_upgrade_to_pro() {
@@ -293,7 +302,6 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function display_post_meta() {
-		
 		// Add the meta boxes for both posts and pages
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'post', 'advanced', 'high');
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'page', 'advanced', 'high');
@@ -348,48 +356,23 @@ class Pinterest_Pin_It_Button {
 
 		return $post_id;
 	}
-	
+
 	/**
-	 * Load public facing code
+	 * Add and register widgets.
 	 *
 	 * @since    2.0.0
 	 */
-	public function public_display() {
-		include_once( 'views/public.php' );
-	}
-	
-	/**
-	 * Load shortcode
-	 *
-	 * @since    2.0.0
-	 */
-	public function pib_shortcode() {
-		include_once( 'views/shortcode.php' );
-	}
-	
-	/**
-	 * Add and register widget
-	 *
-	 * @since    2.0.0
-	 */
+	/*
 	public function pib_widget() {
-		include_once( 'views/widget.php' );
-		
+		include_once( 'includes/widgets.php' );
 		register_widget( 'PIB_Widget' );
 	}
-
-	/**
-	 * Add notices
-	 *
-	 * @since    2.0.0
-	 */
-	public function add_notices() {
-		include_once( 'views/notices.php' );
+	*/
+	/*
+	public function register_widgets() {
+		register_widget( 'PIB_Widget' );
 	}
-
-	public function upgrade() {
-		include_once( 'views/upgrade.php' );
-	}
+	*/
 
 	/**
 	 * Add Settings action link to left of existing action links on plugin listing page.
@@ -400,7 +383,6 @@ class Pinterest_Pin_It_Button {
 	 * @return  array  $links  Amended plugin action links
 	 */
 	public function settings_link( $links ) {
-
 		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
 		array_unshift( $links, $setting_link );
 

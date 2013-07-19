@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Register Settings
+ * Register all settings needed for the Settings API.
  *
  * @package    PIB
- * @subpackage Views
+ * @subpackage Includes
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 

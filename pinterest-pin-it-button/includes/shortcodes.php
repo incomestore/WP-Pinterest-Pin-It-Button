@@ -1,10 +1,18 @@
 <?php
 
+/**
+ * Define plugin shortcodes.
+ *
+ * @package    PIB
+ * @subpackage Includes
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ */
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
-function pib_button_shortcode_html( $attr ) {
+function pib_pinit_shortcode( $attr ) {
 	global $pib_options;
 	global $post;
     $postID = $post->ID;
@@ -27,6 +35,7 @@ function pib_button_shortcode_html( $attr ) {
 
     if ( empty( $url ) ) {
         $url = get_post_meta( $postID, 'pib_url_of_webpage', true);
+
         if ( empty( $url ) ) {
             $url = get_permalink( $postID );
         }
@@ -34,6 +43,7 @@ function pib_button_shortcode_html( $attr ) {
     
     if ( empty( $image_url ) ) {
         $image_url = get_post_meta( $postID, 'pib_url_of_img', true);
+
         if ( empty( $image_url ) ) {
             //Get url of img and compare width and height
             $output    = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
@@ -44,6 +54,7 @@ function pib_button_shortcode_html( $attr ) {
     
     if ( empty( $description ) ) {
         $description = get_post_meta( $postID, 'pib_description', true);
+
         if ( empty( $description ) ) {
             $description = get_the_title( $postID );
         }
@@ -72,3 +83,5 @@ function pib_button_shortcode_html( $attr ) {
 		return '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
 	}
 }
+
+add_shortcode( 'pinit', 'pib_pinit_shortcode' );

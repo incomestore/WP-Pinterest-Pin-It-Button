@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  Admin Notices
+ *  Admin settings page update notices.
  *
  * @package    PIB
- * @subpackage Views
+ * @subpackage Includes
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
@@ -36,4 +36,5 @@ function pib_register_admin_notices() {
 	settings_errors( 'pib-notices' );
 	
 }
+
 add_action( 'admin_notices', 'pib_register_admin_notices' );

@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Run the upgrade process from version 1.x of the plugin to current.
+ *
+ * @package    PIB
+ * @subpackage Includes
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ */
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) )
 	exit;
