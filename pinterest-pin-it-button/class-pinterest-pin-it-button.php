@@ -151,7 +151,7 @@ class Pinterest_Pin_It_Button {
 		$pib_options = pib_get_settings();
 
 		// Common includes.
-		//include_once( 'includes/widgets.php' );
+		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );
 
 		// Admin-only includes.
 		if ( is_admin() ) {

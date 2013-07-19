@@ -165,3 +165,8 @@ class PIB_Widget extends WP_Widget {
         <?php
 	}
 }
+
+function register_pib_widgets() {
+	register_widget( 'PIB_Widget' );
+}
+add_action( 'widgets_init', 'register_pib_widgets' );
