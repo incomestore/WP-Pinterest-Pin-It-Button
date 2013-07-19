@@ -57,6 +57,9 @@ class Pinterest_Pin_It_Button {
 
 		// define a constant so we can use our plugin slug elsewhere
 		define( 'PLUGIN_SLUG', $this->plugin_slug );
+
+		// Constant for Pro upgrade link
+		define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
 		
 		// Run our upgrade checks first and update our version option
 		add_action( 'init', array( $this, 'upgrade' ), 1 );
