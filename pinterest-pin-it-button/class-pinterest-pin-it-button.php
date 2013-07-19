@@ -120,10 +120,6 @@ class Pinterest_Pin_It_Button {
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
 			define( 'PIB_VERSION', $this->version );
-
-		// Pro upgrade base link.
-		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
-			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
 	}
 
 	/**
@@ -306,6 +302,9 @@ class Pinterest_Pin_It_Button {
 	 * Save the post meta for this plugin.
 	 *
 	 * @since    2.0.0
+	 *
+	 * @param   int  $post_id
+	 * @return  int  $post_id
 	 */
 	public function save_meta_data( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
