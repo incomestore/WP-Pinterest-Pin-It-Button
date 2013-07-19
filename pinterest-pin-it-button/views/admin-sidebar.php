@@ -31,5 +31,5 @@ if ( ! defined( 'ABSPATH' ) )
 		Get all of these and more with Pinterest "Pin It" Button Pro!
 	</p>
 
-	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-primary" target="_blank">Upgrade to Pro</a>
+	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-primary" target="_blank">Upgrade to Pro Now</a>
 </div>
