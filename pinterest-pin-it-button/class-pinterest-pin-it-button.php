@@ -114,12 +114,8 @@ class Pinterest_Pin_It_Button {
 	 */
 	private function setup_constants() {
 		// Plugin slug.
-		if ( ! defined( 'PLUGIN_SLUG' ) )
-			define( 'PLUGIN_SLUG', $this->plugin_slug );
-
-		// Pro upgrade base link.
-		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
-			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
+		if ( ! defined( 'PIB_PLUGIN_SLUG' ) )
+			define( 'PIB_PLUGIN_SLUG', $this->plugin_slug );
 
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
@@ -152,6 +148,7 @@ class Pinterest_Pin_It_Button {
 
 		// Common includes.
 		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );
+		include_once( 'includes/misc-functions.php' );
 
 		// Admin-only includes.
 		if ( is_admin() ) {
@@ -305,6 +302,9 @@ class Pinterest_Pin_It_Button {
 	 * Save the post meta for this plugin.
 	 *
 	 * @since    2.0.0
+	 *
+	 * @param   int  $post_id
+	 * @return  int  $post_id
 	 */
 	public function save_meta_data( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
