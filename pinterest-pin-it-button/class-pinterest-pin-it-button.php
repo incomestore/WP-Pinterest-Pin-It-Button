@@ -285,7 +285,7 @@ class Pinterest_Pin_It_Button {
 			
 			wp_nonce_field( basename( __FILE__ ), 'pib_meta_nonce' );
 			
-			include( 'views/post-meta-display.php' );
+			include_once( 'views/post-meta-display.php' );
 		}
 	}
 	
@@ -337,7 +337,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function public_display() {
-		include( 'views/public.php' );
+		include_once( 'views/public.php' );
 	}
 	
 	/**
@@ -346,7 +346,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function pib_shortcode() {
-		include( 'views/shortcode.php' );
+		include_once( 'views/shortcode.php' );
 	}
 	
 	/**
@@ -355,7 +355,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function pib_widget() {
-		include( 'views/widget.php' );
+		include_once( 'views/widget.php' );
 		
 		register_widget( 'PIB_Widget' );
 	}
@@ -387,7 +387,7 @@ class Pinterest_Pin_It_Button {
 	}
 
 	public function upgrade() {
-		include( 'views/upgrade.php' );
+		include_once( 'views/upgrade.php' );
 	}
 
 	/**
