@@ -72,10 +72,3 @@ function pib_button_shortcode_html( $attr ) {
 		return '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
 	}
 }
-
-//Share Bar HTML to render
-
-function pib_sharebar_shortcode_html( $attr ) {
-	return pib_button_shortcode_html( $attr );
-}
-add_shortcode( 'pinit', 'pib_sharebar_shortcode_html' );

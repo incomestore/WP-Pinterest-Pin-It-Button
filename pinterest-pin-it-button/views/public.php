@@ -17,7 +17,7 @@ function pib_add_custom_css() {
 	global $pib_options;
 
 	// Only add the custom CSS if it actually exists.
-	if( ! empty( $pib_options['custom_css'] ) ) {
+	if ( ! empty( $pib_options['custom_css'] ) ) {
 		$custom_css = trim( $pib_options['custom_css'] );
 
 		echo "\n" .
@@ -124,11 +124,10 @@ function pib_button_html() {
 		return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
 }
 
-//Render share bar on pages with regular content.
+//Render button HTML on pages with regular content.
 function pib_render_content( $content ) {
 	global $pib_options;
 	global $post;
-	$postID = $post->ID;
 
 	//Determine if button displayed on current page from main admin settings
 	if (
@@ -155,11 +154,10 @@ function pib_render_content( $content ) {
 }
 add_filter( 'the_content', 'pib_render_content' );
 
-// Render share bar on pages with excerpts if option checked.
+// Render button HTML on pages with excerpts if option checked.
 function pib_render_content_excerpt( $content ) {
 	global $pib_options;
 	global $post;
-	$postID = $post->ID;
 
 	if ( ! empty( $pib_options['post_page_placement']['display_on_post_excerpts'] ) ) {
 	   if (

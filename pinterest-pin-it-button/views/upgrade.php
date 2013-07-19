@@ -17,7 +17,7 @@ if ( get_option( 'pib_options' ) ) {
 }
 
 // Only if the old version is less than the new version do we run our upgrade code.
-if( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
+if ( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
 	// need to update pib_has_run so that we don;t load the defaults in too
 	update_option( 'pib_has_run', 1 );
 	pib_do_all_upgrades();
@@ -31,7 +31,7 @@ function pib_do_all_upgrades() {
 	$current_version = get_option( 'pib_old_version' );
 	
 	// if less than version 2 then upgrade
-	if( version_compare( $current_version, '2.0.0', '<' ))
+	if ( version_compare( $current_version, '2.0.0', '<' ))
 		   pib_v2_upgrade();
 	
 	delete_option( 'pib_old_version' );
@@ -40,15 +40,12 @@ function pib_do_all_upgrades() {
 
 function pib_v2_upgrade() {
 	// Add code here to transfer all the options to new tab layout
-	
-	// set which old values we don't need
-	$discard = array( 'share_btn_1', 'share_btn_2', 'share_btn_3', 'share_btn_4' );
-	
+
 	// Need to decipher which Post Visibility settings to update so we will use an array
 	$page_placement = array( 'display_above_content', 'display_below_content', 'display_on_post_excerpts' );
 	
-	if(get_option('pib_options')) {
-		$old_options = get_option('pib_options');
+	if ( get_option('pib_options' ) ) {
+		$old_options = get_option( 'pib_options' );
 		
 		// get the new options so we can update them accordingly
 		$general_options = get_option( 'pib_settings_general' );
@@ -57,19 +54,19 @@ function pib_v2_upgrade() {
 		
 		// Do I need to add the new options here if they don't exist?
 		
-		foreach($old_options as $key => $value) {
+		foreach ($old_options as $key => $value) {
 			
-			if( in_array( $key, $discard ) ) {
+			if ( in_array( $key, $discard ) ) {
 				continue;
-			} else if( 'custom_css' == $key || 'remove_div' == $key ) {
+			} else if ( 'custom_css' == $key || 'remove_div' == $key ) {
 				// Add to styles settings
 				$style_options[$key] = $value;
 				
-			} else if( ! ( false === strrpos( $key, 'display' ) ) ) {
+			} else if ( ! ( false === strrpos( $key, 'display' ) ) ) {
 				// Add to Post Visibility settings
 				
 				// With the new options we have these setup as nested arrays so we need to check which one we are adding to
-				if( in_array( $key, $page_placement ) ) {
+				if ( in_array( $key, $page_placement ) ) {
 					$post_visibility_options['post_page_placement'][$key] = $value;
 				} else {
 					$post_visibility_options['post_page_types'][$key] = $value;

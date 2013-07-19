@@ -14,7 +14,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) )
 $general = get_option( 'pib_settings_general' );
 
 // If the the option to save settings is checked then do nothing, otherwise delete all options and post meta
-if( $general['uninstall_save_settings'] ) {
+if ( $general['uninstall_save_settings'] ) {
 	// Do nothing
 } else {
 	// Delete options

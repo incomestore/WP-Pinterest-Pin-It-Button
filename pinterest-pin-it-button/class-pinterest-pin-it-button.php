@@ -200,7 +200,7 @@ class Pinterest_Pin_It_Button {
 		global $pib_options;
 
 		// Check to see if setting to disable is true first.
-		if( empty( $pib_options['disable_css'] ) ) {
+		if ( empty( $pib_options['disable_css'] ) ) {
 			wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
 		}
 	}
@@ -317,8 +317,8 @@ class Pinterest_Pin_It_Button {
 					}
 					
 					// Loop through our array and make sure it is posted and not empty in order to update it, otherwise we delete it
-					foreach( $post_meta_fields as $pmf ) {
-						if( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
+					foreach ( $post_meta_fields as $pmf ) {
+						if ( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
 							update_post_meta( $post_id, $pmf, $_POST[$pmf] );
 						} else {
 							delete_post_meta( $post_id, $pmf );
