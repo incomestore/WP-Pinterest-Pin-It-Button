@@ -267,16 +267,6 @@ class Pinterest_Pin_It_Button {
 			$this->plugin_slug . '_help',
 			array( $this, 'display_admin_help_page' )
 		);
-		
-		// Add Upgrade to Pro submenu page
-		$this->plugin_screen_hook_suffix[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Upgrade to Pinterest "Pin It" Button Pro', 'pib' ),
-			__( 'Upgrade to Pro', 'pib' ),
-			'manage_options',
-			$this->plugin_slug . '_upgrade_to_pro',
-			array( $this, 'display_upgrade_to_pro' )
-		);
 	}
 
 	/**
@@ -291,11 +281,7 @@ class Pinterest_Pin_It_Button {
 	public function display_admin_help_page() {
 		include_once( 'views/admin-help.php' );
 	}
-	
-	public function display_upgrade_to_pro() {
-		include_once( 'views/upgrade-to-pro.php' );
-	}
-	
+
 	/**
 	 * Render the post meta for this plugin.
 	 *
