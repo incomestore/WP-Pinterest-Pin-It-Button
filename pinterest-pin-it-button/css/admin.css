@@ -21,8 +21,18 @@
 	width: 280px;
 }
 
-/* Bring in Bootstrap 2.3.2 styles needed. */
+/* Overrides to Bootstrap 2.3.2 styles. */
 
+/* Overrides/additions to Flat UI Free styles. */
 
+/* Outlined box taken from tagsinput container class. */
 
-/* Bring in Flat UI Free styles needed. */
+#pib-settings .outlined-box {
+	background: white;
+	border: 2px solid #1abc9c;
+	border-radius: 6px;
+	margin-bottom: 18px;
+	padding: 6px 1px 1px 6px;
+	overflow-y: auto;
+	text-align: left;
+}
