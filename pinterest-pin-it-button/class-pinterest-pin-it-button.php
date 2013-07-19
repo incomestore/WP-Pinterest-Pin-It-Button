@@ -61,6 +61,9 @@ class Pinterest_Pin_It_Button {
 
 		// Setup constants.
 		$this->setup_constants();
+
+		// Include required files.
+		$this->includes();
 		
 		// Run our upgrade checks first and update our version option.
 		add_action( 'init', array( $this, 'upgrade' ), 1 );
@@ -122,18 +125,26 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function setup_constants() {
-
 		// Plugin slug.
 		if ( ! defined( 'PLUGIN_SLUG' ) )
 			define( 'PLUGIN_SLUG', $this->plugin_slug );
 
-		// Pro upgrade base link
+		// Pro upgrade base link.
 		if ( ! defined( 'PIB_UPGRADE_URL_BASE' ) )
 			define( 'PIB_UPGRADE_URL_BASE', 'http://pinterestplugin.com/pin-it-button-pro/' );
 
-		// Plugin version
+		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
 			define( 'PIB_VERSION', $this->version );
+	}
+
+	/**
+	 * Include required files (admin and frontend).
+	 *
+	 * @since     2.0.0
+	 */
+	private function includes() {
+
 	}
 
 	/**
