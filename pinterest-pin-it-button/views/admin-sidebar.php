@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) )
 		<li><i class="fui-check"></i> Hover "Pin It" button option</li>
 		<li><i class="fui-check"></i> 30 custom "Pin It" button designs</li>
 		<li><i class="fui-check"></i> Twitter, Facebook & G+ buttons</li>
-		<li><i class="fui-check"></i> Use with featured images</li>
-		<li><i class="fui-check"></i> Use with custom post types</li>
+		<li><i class="fui-check"></i> Featured image support</li>
+		<li><i class="fui-check"></i> Custom post type support</li>
 		<li><i class="fui-check"></i> Upload your own button designs</li>
 		<li><i class="fui-check"></i> Priority support & auto updates</li>
 	</ul>
