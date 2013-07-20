@@ -341,7 +341,7 @@ function pib_missing_callback() {
 function pib_get_settings() {
 	
 	// If this is the first time running we need to set the defaults
-	if ( !get_option( 'pib_has_run' ) ) {
+	if ( !get_option( 'pib_upgrade_has_run' ) ) {
 		
 		// set default post visibility options
 		$post_visibility = get_option( 'pib_settings_post_visibility' );
@@ -358,7 +358,7 @@ function pib_get_settings() {
 		update_option( 'pib_settings_general', $general );
 		
 		// add an option to let us know the initial settings have been run and we don't run them again
-		add_option( 'pib_has_run', 1 );
+		add_option( 'pib_upgrade_has_run', 1 );
 		
 	}
 	

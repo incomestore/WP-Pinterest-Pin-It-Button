@@ -236,7 +236,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function enqueue_scripts() {
-		// Enqueue Pinterest JS plugin boilerplate style. Don't set a version.
+		// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
 		wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
 	}
 

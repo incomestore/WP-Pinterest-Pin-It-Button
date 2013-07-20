@@ -21,13 +21,13 @@ if ( ! get_option( 'pib_version' ) ) {
 // If this option exists then the plugin is before version 2.0.0
 if ( get_option( 'pib_options' ) ) {
 	add_option( 'pib_old_version', '1.4.3' );
-	update_option( 'pib_has_run', 1 );
+	update_option( 'pib_upgrade_has_run', 1 );
 }
 
 // Only if the old version is less than the new version do we run our upgrade code.
 if ( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
-	// need to update pib_has_run so that we don;t load the defaults in too
-	update_option( 'pib_has_run', 1 );
+	// need to update pib_upgrade_has_run so that we don;t load the defaults in too
+	update_option( 'pib_upgrade_has_run', 1 );
 	pib_do_all_upgrades();
 } else {
 	// Delete our holder for the old version of PIB.
