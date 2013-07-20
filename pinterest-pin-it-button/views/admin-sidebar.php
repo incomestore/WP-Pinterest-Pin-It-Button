@@ -11,25 +11,25 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) )
 	exit;
-
 ?>
 
 <div class="sidebar-container">
-	<h3>Need More Options?</h3>
+	<h3><?php _e( 'Need More Options?', 'pib' ); ?></h3>
 
 	<ul>
-		<li><i class="fui-check"></i> Hover "Pin It" button option</li>
-		<li><i class="fui-check"></i> 30 custom "Pin It" button designs</li>
-		<li><i class="fui-check"></i> Twitter, Facebook & G+ buttons</li>
-		<li><i class="fui-check"></i> Featured image support</li>
-		<li><i class="fui-check"></i> Custom post type support</li>
-		<li><i class="fui-check"></i> Upload your own button designs</li>
-		<li><i class="fui-check"></i> Priority support & auto updates</li>
+		<li><i class="fui-check"></i> <?php _e( 'Image Hover "Pin It" button', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( 'Featured image support', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( 'Custom post type support', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
+		<li><i class="fui-check"></i> <?php _e( 'Priority support & auto updates', 'pib' ); ?></li>
 	</ul>
 
 	<p class="last-blurb">
-		Get all of these and more with Pinterest "Pin It" Button Pro!
+		<?php _e( 'Get all of these and more with Pinterest "Pin It" Button Pro!', 'pib' ); ?>
 	</p>
 
-	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-primary" target="_blank">Upgrade to Pro Now</a>
+	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-primary" target="_blank">
+		<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 </div>
