@@ -119,6 +119,10 @@ class Pinterest_Pin_It_Button {
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
 			define( 'PIB_VERSION', $this->version );
+
+		// Plugin version.
+		if ( ! defined( 'PIB_PLUGIN_TITLE' ) )
+			define( 'PIB_PLUGIN_TITLE', $this->get_plugin_title() );
 	}
 
 	/**
