@@ -17,6 +17,8 @@
 
 #pib-settings-sidebar {
 	float: right;
+	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag */
+	margin-top: 9px;
 	margin-right: -310px;
 	width: 290px;
 }
@@ -25,12 +27,6 @@
 
 
 /*** Overrides/additions to Flat UI Free styles. ***/
-
-/* Base font from flat-ui.css */
-
-#pib-settings-sidebar {
-	font-family: "Lato", sans-serif; /* from body tag */
-}
 
 /* Sidebar container taken from tile class. */
 

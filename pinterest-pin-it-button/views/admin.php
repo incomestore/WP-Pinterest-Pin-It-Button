@@ -22,11 +22,12 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 ?>
 
 <div class="wrap">
-	<?php screen_icon( 'pib-icon32' ); ?>
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<div id="pib-settings">
 		<div id="pib-settings-content">
+
+			<?php screen_icon( 'pib-icon32' ); ?>
+			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<h2 class="nav-tab-wrapper">
 				<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
