@@ -193,7 +193,7 @@ class Pinterest_Pin_It_Button {
 			// Plugin admin custom Bootstrap CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-bootstrap', plugins_url( 'css/bootstrap-custom.css', __FILE__ ), array(), $this->version );
 
-			// Plugin admin custom Flat UI Free CSS. Tack on plugin version.
+			// Plugin admin custom Flat UI CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-flat-ui', plugins_url( 'css/flat-ui-custom.css', __FILE__ ), array( $this->plugin_slug .'-bootstrap' ), $this->version );
 
 			// Plugin admin CSS. Tack on plugin version.

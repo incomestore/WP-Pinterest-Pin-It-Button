@@ -29,21 +29,15 @@
 	width: 290px;
 }
 
-/* Notice after install. Overwrites Bootstrap .alert styles. Takes from some Flat UI styles. */
+/* Notice after install. Base is Flat UI. Overrides some styles. */
 
 #pib-install-notice {
-	color: #ffffff;
-	font-size: 16.996px;
-	/* 17px */
+	padding: 10px 30px 12px 30px;
+}
 
-	text-decoration: none;
-	text-shadow: none;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+#pib-install-notice .btn {
+	font-weight: normal;
+	margin: 0 15px;
 }
 
 /* Sidebar container. Taken from Flat UI .tile class. */

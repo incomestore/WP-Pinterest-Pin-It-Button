@@ -1,11 +1,15 @@
 <?php
 
+/* Show this notice on any admin page until any of the following:
+ * 1) The link in the notice is clicked.
+ * 2) The close link ("x") is clicked.
+ * 3) The main pin it button admin page is viewed.
+ */
 
 ?>
 
-<div id="pib-install-notice" class="alert palette-alizarin">
+<div id="pib-install-notice" class="alert alert-error">
 	<?php echo PIB_PLUGIN_TITLE . __( ' is now installed.', 'pib' ); ?>
-	<a href="#"><?php _e( 'Go to Button Setup', 'pib' ); ?></a>
-	<a href="#" class="close" data-dismiss="alert">&times;</a>
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<a href="#" class="btn btn-small btn-danger btn-wide"><?php _e( 'Go to Button Setup', 'pib' ); ?></a>
+	<button type="button" class="close fui-cross" data-dismiss="alert"></button>
 </div>
