@@ -417,3 +417,12 @@ you can use the generic selector below, but it's slower:
 	border-right-width: 6px;
 	border-left-width: 6px;
 }
+
+/* Additional Flat UI palettes. */
+
+.palette-alizarin {
+	background-color: #e74c3c;
+}
+.palette-pomegranate {
+	background-color: #c0392b;
+}

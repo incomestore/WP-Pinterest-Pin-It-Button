@@ -23,6 +23,8 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 
 <div class="wrap">
 
+	<?php include( 'admin-install-notice.php' ); ?>
+
 	<div id="pib-settings">
 		<div id="pib-settings-content">
 
