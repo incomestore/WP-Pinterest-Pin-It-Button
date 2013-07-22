@@ -4,11 +4,8 @@
 	background: transparent url('../assets/pinterest-icon-32.png') no-repeat;
 }
 
-/* Base font from Flat UI body tag. */
-
-#pib-settings-sidebar,
-#pib-install-notice {
-	font-family: "Lato", sans-serif;
+#pib-settings-sidebar {
+	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag. */
 }
 
 /* Layout the page similar to the built-in post edit screen. */
@@ -60,15 +57,4 @@
 	line-height: 1.4em;
 	margin-bottom: 25px;
 	text-align: center;
-}
-
-/* Notice after install. Base is Flat UI. Overrides some styles. */
-
-#pib-install-notice {
-	padding: 10px 30px 12px 30px;
-}
-
-#pib-install-notice .btn {
-	font-weight: normal;
-	margin: 0 0 0 15px;
 }
