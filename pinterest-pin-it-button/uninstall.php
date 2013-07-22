@@ -24,6 +24,7 @@ if ( $general['uninstall_save_settings'] ) {
 	delete_option( 'pib_settings_misc' );
 	delete_option( 'pib_upgrade_has_run' );
 	delete_option( 'pib_version' );
+	delete_option( 'pib_show_admin_install_notice' );
 	
 	// delete widget options
 	delete_option( 'widget_pib_button' );

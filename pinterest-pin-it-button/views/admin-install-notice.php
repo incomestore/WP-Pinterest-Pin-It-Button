@@ -1,10 +1,16 @@
 <?php
 
-/* Show this notice on any admin page until any of the following:
- * 1) The link in the notice is clicked.
- * 2) The close link ("x") is clicked.
- * 3) The main pin it button admin page is viewed.
+/**
+ * Show notice after plugin install/activate in admin dashboard until user acknowledges.
+ *
+ * @package    PIB
+ * @subpackage Views
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
 
 ?>
 

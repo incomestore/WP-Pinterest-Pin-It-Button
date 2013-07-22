@@ -13,8 +13,7 @@ if ( ! defined( 'ABSPATH' ) )
 	exit;
 
 function pib_register_admin_notices() {
-	
-	// The first check will show message if general tab is updated. The addiitional check is if the plugin page is first clicked on and the 'tab' has not been set yet
+	// The first check will show message if general tab is updated. The additional check is if the plugin page is first clicked on and the 'tab' has not been set yet.
 	
 	if ( ( isset( $_GET['tab'] ) && 'general' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] )
 			|| ( !isset( $_GET['tab'] ) && 'true' == isset( $_GET['settings-updated'] ) ) ) {
@@ -34,7 +33,6 @@ function pib_register_admin_notices() {
 	}
 	
 	settings_errors( 'pib-notices' );
-	
 }
 
 add_action( 'admin_notices', 'pib_register_admin_notices' );

@@ -88,6 +88,9 @@ class Pinterest_Pin_It_Button {
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
+
+		// Show install notice after activate.
+		add_action( 'admin_notices', array( $this, 'show_install_notice' ) );
 	}
 
 	/**
@@ -123,6 +126,18 @@ class Pinterest_Pin_It_Button {
 		// Plugin version.
 		if ( ! defined( 'PIB_PLUGIN_TITLE' ) )
 			define( 'PIB_PLUGIN_TITLE', $this->get_plugin_title() );
+	}
+
+	/**
+	 * Fired when the plugin is activated.
+	 *
+	 * @since    2.0.0
+	 *
+	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
+	 */
+	public static function activate( $network_wide ) {
+		// Add value to indicate that we should show admin install notice.
+		update_option( 'pib_show_admin_install_notice', 1 );
 	}
 
 	/**
@@ -370,5 +385,19 @@ class Pinterest_Pin_It_Button {
 		array_unshift( $links, $setting_link );
 
 		return $links;
+	}
+
+	/**
+	 * Show notice after plugin install/activate in admin dashboard until user acknowledges.
+	 *
+	 * @since   2.0.0
+	 */
+	public function show_install_notice() {
+		// TODO Show install notice if stored value is true/1 and NOT on PIB settings page.
+		// TODO Change value to false/0 if on PIB settings page or "hide" clicked.
+
+		if ( get_option( 'pib_show_admin_install_notice' ) == 1 ) {
+			include_once( 'views/admin-install-notice.php' );
+		}
 	}
 }

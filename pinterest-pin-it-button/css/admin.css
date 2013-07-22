@@ -29,17 +29,6 @@
 	width: 290px;
 }
 
-/* Notice after install. Base is Flat UI. Overrides some styles. */
-
-#pib-install-notice {
-	padding: 10px 30px 12px 30px;
-}
-
-#pib-install-notice .btn {
-	font-weight: normal;
-	margin: 0 0 0 15px;
-}
-
 /* Sidebar container. Taken from Flat UI .tile class. */
 
 #pib-settings-sidebar .sidebar-container {
@@ -71,4 +60,15 @@
 	line-height: 1.4em;
 	margin-bottom: 25px;
 	text-align: center;
+}
+
+/* Notice after install. Base is Flat UI. Overrides some styles. */
+
+#pib-install-notice {
+	padding: 10px 30px 12px 30px;
+}
+
+#pib-install-notice .btn {
+	font-weight: normal;
+	margin: 0 0 0 15px;
 }
