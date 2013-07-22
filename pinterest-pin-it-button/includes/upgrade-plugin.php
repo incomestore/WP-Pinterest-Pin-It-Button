@@ -64,9 +64,7 @@ function pib_v2_upgrade() {
 		
 		foreach ($old_options as $key => $value) {
 			
-			if ( in_array( $key, $discard ) ) {
-				continue;
-			} else if ( 'custom_css' == $key || 'remove_div' == $key ) {
+			if ( 'custom_css' == $key || 'remove_div' == $key ) {
 				// Add to styles settings
 				$style_options[$key] = $value;
 				
