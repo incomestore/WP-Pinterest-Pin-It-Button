@@ -89,13 +89,13 @@ class PIB_Widget extends WP_Widget {
         global $pib_options;
 		
 		$default = array(
-			'title' => '',
-			'count_layout' => 'none',
+			'title'                     => '',
+			'count_layout'              => 'none',
 			'pib_url_of_webpage_widget' => '',
-			'pib_url_of_img_widget' => '',
-			'pib_description_widget' => '',
-			'button_align' => 'none',
-			'remove_div' => 0
+			'pib_url_of_img_widget'     => '',
+			'pib_description_widget'    => '',
+			'button_align'              => 'none',
+			'remove_div'                => 0
 		);
         
 		$instance = wp_parse_args( (array) $instance, $default );
@@ -104,7 +104,6 @@ class PIB_Widget extends WP_Widget {
 		$pib_url_of_webpage_widget = strip_tags( $instance['pib_url_of_webpage_widget'] );
 		$pib_url_of_img_widget     = strip_tags( $instance['pib_url_of_img_widget'] );
 		$pib_description_widget    = strip_tags( $instance['pib_description_widget'] );
-		$pib_button_style_widget   = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 		?>
 
 		<p>
@@ -120,24 +119,15 @@ class PIB_Widget extends WP_Widget {
 			</select>
 		</p>
 		<div class="pib-widget-text-fields">
-            <p>
-                <?php _e( 'Button style is inherited from setting saved in', 'pib' ); ?>
-				<?php echo sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( '"Pin It" Button Settings', 'pib' ) ); ?>.
-            </p>
-            <p>
-				<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $pib_button_style_widget; ?></strong>
-            </p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_webpage_widget' ); ?>"
 					   type="text" value="<?php echo esc_attr( $pib_url_of_webpage_widget ); ?>" />
-                <span class="description"><?php _e( 'Required for "image pre-selected". Defaults to home page for "user selects image".', 'pib' ); ?></span>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>"><?php _e( 'URL of the image to be pinned', 'pib' ); ?>:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'pib_url_of_img_widget' ); ?>" name="<?php echo $this->get_field_name( 'pib_url_of_img_widget' ); ?>"
 					   type="text" value="<?php echo esc_attr( $pib_url_of_img_widget ); ?>" />
-                <span class="description"><?php _e( 'Required for "image pre-selected". Not used for "user selects image".', 'pib' ); ?></span>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'pib_description_widget' ); ?>"><?php _e( 'Description of the pin (optional)', 'pib' ); ?>:</label>
