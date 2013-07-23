@@ -43,7 +43,7 @@ class PIB_Widget extends WP_Widget {
 		
 		echo $before_widget;
         
-		if ( $title ) {
+		if ( ! empty( $title ) ) {
 			echo $before_title . $title . $after_title;
         }
 		
