@@ -81,6 +81,7 @@ class PIB_Widget extends WP_Widget {
 		$instance['count_layout']              = $new_instance['count_layout'];
 		$instance['button_align']              = $new_instance['align'];
         $instance['remove_div']                = ( $new_instance['remove_div'] ? 1 : 0 );
+		$instance['button_type']               = $new_instance['button_type'];
         
 		return $instance;
 	}
@@ -91,6 +92,7 @@ class PIB_Widget extends WP_Widget {
 		$default = array(
 			'title'                     => '',
 			'count_layout'              => 'none',
+			'button_type'               => 'user_selects_image',
 			'pib_url_of_webpage_widget' => '',
 			'pib_url_of_img_widget'     => '',
 			'pib_description_widget'    => '',
@@ -104,6 +106,7 @@ class PIB_Widget extends WP_Widget {
 		$pib_url_of_webpage_widget = strip_tags( $instance['pib_url_of_webpage_widget'] );
 		$pib_url_of_img_widget     = strip_tags( $instance['pib_url_of_img_widget'] );
 		$pib_description_widget    = strip_tags( $instance['pib_description_widget'] );
+		$pib_button_type_widget    = $instance['button_type'];
 		?>
 
 		<p>
@@ -117,6 +120,17 @@ class PIB_Widget extends WP_Widget {
 				<option value="horizontal" <?php selected( $instance['count_layout'], 'horizontal' ); ?>><?php _e( 'Beside the Button', 'pib' ); ?></option>
 				<option value="vertical" <?php selected( $instance['count_layout'], 'vertical' ); ?>><?php _e( 'Above the Button', 'pib' ); ?></option>
 			</select>
+		</p>
+		<p>
+			Button Type
+		</p>
+		<p>
+			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="user_selects_image" id="<?php echo $this->get_field_id( 'user_selects_image' ); ?>" <?php checked( $pib_button_type_widget, 'user_selects_image' ); ?> />
+			<label for="<?php echo $this->get_field_id( 'user_selects_image' ); ?>"><?php _e( 'User selects image from popup (any image)', 'pib' ); ?></label>
+		</p>
+		<p>	
+			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_pre_selected" id="<?php echo $this->get_field_id( 'image_pre_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_pre_selected' ); ?> />
+			<label for="<?php echo $this->get_field_id( 'image_pre_selected' ); ?>"><?php _e( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' ); ?></label>
 		</p>
 		<div class="pib-widget-text-fields">
 			<p>
