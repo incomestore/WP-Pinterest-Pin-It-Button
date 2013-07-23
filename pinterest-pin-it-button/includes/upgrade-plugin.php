@@ -80,7 +80,12 @@ function pib_v2_upgrade() {
 				
 			} else {
 				// Add to General Settings
-				$general_options[$key] = $value;
+				// we are changing 'button_style' to 'button_type' going forward
+				if( 'button_style' == $key ) {
+					$general_options['button_type'] = $value;
+				} else {
+					$general_options[$key] = $value;
+				}
 			}
 			
 			// add update options here

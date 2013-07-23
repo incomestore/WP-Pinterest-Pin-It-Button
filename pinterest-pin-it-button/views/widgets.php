@@ -29,7 +29,7 @@ class PIB_Widget extends WP_Widget {
         $pib_url_of_webpage_widget = $instance['pib_url_of_webpage_widget'];
         
         //Set URL to home page if button style is "user selects image"
-        if ( empty( $pib_url_of_webpage_widget ) && ( $pib_options['button_style'] == 'user_selects_image' ) ) {
+        if ( empty( $pib_url_of_webpage_widget ) && ( $pib_options['button_type'] == 'user_selects_image' ) ) {
             $pib_url_of_webpage_widget = get_home_url();
         }
         

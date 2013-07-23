@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 global $pib_options;
 
-$button_style = ( $pib_options['button_style'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
+$button_type = ( $pib_options['button_type'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 
 $pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
 $pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
@@ -30,7 +30,7 @@ $pib_description = get_post_meta( $post->ID, 'pib_description', true);
 	<?php _e( 'These 3 text fields will be used only if the button style is "image pre-selected".', 'pib' ); ?>
 </p>
 <p>
-	<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $button_style; ?></strong>
+	<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $button_type; ?></strong>
 </p>
 <p>
 	<label for="pib_url_of_webpage"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label><br />

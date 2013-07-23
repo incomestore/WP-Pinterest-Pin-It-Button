@@ -17,8 +17,8 @@ function pib_register_settings() {
 
 	    /* General Settings */
 	    'general' => array(
-		   'button_style' => array(
-			  'id' => 'button_style',
+		   'button_type' => array(
+			  'id' => 'button_type',
 			  'name' => __( 'Button Type', 'pib' ),
 			  'desc' => '',
 			  'type' => 'radio',
@@ -352,7 +352,7 @@ function pib_get_settings() {
 		
 		// set default general settings options
 		$general = get_option( 'pib_settings_general' );
-		$general['button_style'] = 'user_selects_image';
+		$general['button_type'] = 'user_selects_image';
 		$general['uninstall_save_settings'] = 1;
 		
 		update_option( 'pib_settings_general', $general );

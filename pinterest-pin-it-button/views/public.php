@@ -47,7 +47,7 @@ function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" />';
 
 	// Set data attribute for button style.
-	if ( $pib_options['button_style'] == 'image_selected' )
+	if ( $pib_options['button_type'] == 'image_selected' )
 		$data_pin_do = 'buttonPin'; // image pre-selected
 	else
 		$data_pin_do = 'buttonBookmark'; // user selects image (default)
