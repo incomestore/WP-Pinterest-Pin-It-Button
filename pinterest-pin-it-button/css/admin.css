@@ -4,6 +4,10 @@
 	background: transparent url('../assets/pinterest-icon-32.png') no-repeat;
 }
 
+#pib-settings-sidebar {
+	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag. */
+}
+
 /* Layout the page similar to the built-in post edit screen. */
 
 #pib-settings {
@@ -17,18 +21,12 @@
 
 #pib-settings-sidebar {
 	float: right;
-	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag */
 	margin-top: 9px;
 	margin-right: -310px;
 	width: 290px;
 }
 
-/*** Overrides to Bootstrap 2.3.2 styles. ***/
-
-
-/*** Overrides/additions to Flat UI Free styles. ***/
-
-/* Sidebar container taken from tile class. */
+/* Sidebar container. Taken from Flat UI .tile class. */
 
 #pib-settings-sidebar .sidebar-container {
 	background-color: #eff0f2;
