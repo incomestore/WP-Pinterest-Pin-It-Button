@@ -79,6 +79,9 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Add admin notice after plugin activation.
+		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
+
 		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
@@ -189,7 +192,7 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
-	 * Enqueue admin-specific style sheets.
+	 * Enqueue admin-specific style sheets for this plugin's admin pages only.
 	 *
 	 * @since     2.0.0
 	 *
@@ -207,18 +210,10 @@ class Pinterest_Pin_It_Button {
 			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array( $this->plugin_slug .'-flat-ui' ), $this->version );
 		} else {
-
-			//TODO install notice?
-
-			// TODO Show install notice if stored value is true/1 and NOT on PIB settings page.
-			// TODO Change value to false/0 if on PIB settings page or "hide" clicked.
-
+			// Enqueue install notice CSS if stored value is true/1 and NOT on PIB settings page.
 			if ( get_option( 'pib_show_admin_install_notice' ) == 1 ) {
 				// Admin install notice CSS only. Tack on plugin version.
 				wp_enqueue_style( $this->plugin_slug .'-admin-install-notice-styles', plugins_url( 'css/admin-install-notice.css', __FILE__ ), array(), $this->version );
-
-				// Show install notice in correct admin notices area.
-				add_action( 'admin_notices', array( $this, 'show_install_notice' ) );
 			}
 		}
 	}
@@ -390,7 +385,7 @@ class Pinterest_Pin_It_Button {
 		return $links;
 	}
 
-	// TODO Comments
+	// TODO Comments for viewing_this_plugin
 
 	private function viewing_this_plugin() {
 		if ( ! isset( $this->plugin_screen_hook_suffix ) )
@@ -409,15 +404,18 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since   2.0.0
 	 */
-	public function show_install_notice() {
-		// TODO Show install notice if stored value is true/1 and NOT on PIB settings page.
-		// TODO Change value to false/0 if on PIB settings page or "hide" clicked.
+	public function admin_install_notice() {
+		// Show install notice if stored value is true/1 and NOT on PIB settings page.
 
-		//if ( get_option( 'pib_show_admin_install_notice' ) == 1 ) {
-			// Admin install notice CSS only. Tack on plugin version.
-			//wp_enqueue_style( $this->plugin_slug .'-admin-install-notice-styles', plugins_url( 'css/admin-install-notice.css', __FILE__ ), array(), $this->version );
-
+		if ( ! $this->viewing_this_plugin() && get_option( 'pib_show_admin_install_notice' ) == 1 ) {
 			include_once( 'views/admin-install-notice.php' );
-		//}
+
+			// TODO Delete stored notice value if on PIB settings page or "hide" clicked.
+			// delete_option( 'pib_show_admin_install_notice' );
+		}
+
+		// Delete stored notice value if on PIB settings page.
+		if ( $this->viewing_this_plugin() )
+			delete_option( 'pib_show_admin_install_notice' );
 	}
 }
