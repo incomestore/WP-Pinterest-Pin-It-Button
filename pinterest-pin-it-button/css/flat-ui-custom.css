@@ -1,3 +1,9 @@
+/*** Flat UI styles only ***/
+
+/* Some elements of this plugin are derived from the Flat UI design framework at
+ * http://designmodo.github.io/Flat-UI/ and http://designmodo.com/flat/
+ */
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
 @font-face {
 	font-family: "Flat-UI-Icons";
