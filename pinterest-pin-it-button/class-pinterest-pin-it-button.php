@@ -79,7 +79,7 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Add admin notice after plugin activation.
+		// Add admin notice after plugin activation. Also check if should be hidden.
 		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
 
 		// Add Post Meta stuff.
@@ -369,8 +369,8 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since   2.0.0
 	 *
-	 * @param   array  $links  Default plugin action links
-	 * @return  array  $links  Amended plugin action links
+	 * @param   array  $links  Default plugin action links.
+	 * @return  array  $links  Amended plugin action links.
 	 */
 	public function settings_link( $links ) {
 		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
@@ -379,8 +379,13 @@ class Pinterest_Pin_It_Button {
 		return $links;
 	}
 
-	// TODO Comments for viewing_this_plugin
-
+	/**
+	 * Check if viewing one of this plugin's admin pages.
+	 *
+	 * @since   2.0.0
+	 *
+	 * @return  bool
+	 */
 	private function viewing_this_plugin() {
 		if ( ! isset( $this->plugin_screen_hook_suffix ) )
 			return false;
@@ -395,21 +400,23 @@ class Pinterest_Pin_It_Button {
 
 	/**
 	 * Show notice after plugin install/activate in admin dashboard until user acknowledges.
+	 * Also check if user chooses to hide it.
 	 *
 	 * @since   2.0.0
 	 */
 	public function admin_install_notice() {
-		// Show install notice if stored value is true/1 and NOT on PIB settings page.
+		// Exit all of this is stored value is false/0 or not set.
+		if ( false == get_option( 'pib_show_admin_install_notice' ) )
+			return;
 
-		if ( ! $this->viewing_this_plugin() && get_option( 'pib_show_admin_install_notice' ) == 1 ) {
-			include_once( 'views/admin-install-notice.php' );
-
-			// TODO Delete stored notice value if on PIB settings page or "hide" clicked.
-			// delete_option( 'pib_show_admin_install_notice' );
+		// Delete stored value if "hide" button click detected (custom querystring value set to 1).
+		// or if on a PIB admin page. Then exit.
+		if ( ! empty( $_REQUEST['pib-dismiss-install-nag'] ) || $this->viewing_this_plugin() ) {
+			delete_option( 'pib_show_admin_install_notice' );
+			return;
 		}
 
-		// Delete stored notice value if on PIB settings page.
-		if ( $this->viewing_this_plugin() )
-			delete_option( 'pib_show_admin_install_notice' );
+		// At this point show install notice.
+		include_once( 'views/admin-install-notice.php' );
 	}
 }
