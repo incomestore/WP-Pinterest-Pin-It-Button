@@ -26,7 +26,7 @@ function pib_pro_upgrade_url( $medium ) {
 	// $medium examples: 'sidebar_link', 'banner_image'
 
 	$url = add_query_arg( array(
-		'utm_source'   => 'pib_lite',
+		'utm_source'   => 'pib_lite_2',
 		'utm_medium'   => $medium,
 		'utm_campaign' => 'pro_upgrade'
 	), $base_url );
@@ -62,7 +62,7 @@ function pib_rss_news() {
 			// Loop through each feed item and display each item as a hyperlink.
 			foreach ( $rss_items as $item ): ?>
 				<?php $post_url = add_query_arg( array(
-									'utm_source'   => 'pib_lite',
+									'utm_source'   => 'pib_lite_2',
 									'utm_medium'   => 'sidebar_link',
 									'utm_campaign' => 'blog_post_link'
 								), esc_url( $item->get_permalink() ) ); ?>
