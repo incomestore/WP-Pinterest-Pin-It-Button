@@ -23,14 +23,14 @@ $pib_description = get_post_meta( $post->ID, 'pib_description', true);
 ?>
 
 <p>
-	<?php _e( 'Button style is inherited from setting saved in', 'pib' ); ?>
+	<?php _e( 'The button type is inherited from the main settings.', 'pib' ); ?>
 	<?php echo sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( '"Pin It" Button Settings', 'pib' ) ); ?>.
 </p>
 <p>
-	<?php _e( 'These 3 text fields will be used only if the button style is "image pre-selected".', 'pib' ); ?>
+	<?php _e( 'These 3 text fields will be used only if the button type is "image pre-selected".', 'pib' ); ?>
 </p>
 <p>
-	<?php _e( 'Current style', 'pib' ) ?>: <strong><?php echo $button_type; ?></strong>
+	<?php _e( 'Current Button Type:', 'pib' ) ?> <strong><?php echo $button_type; ?></strong>
 </p>
 <p>
 	<label for="pib_url_of_webpage"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label><br />
