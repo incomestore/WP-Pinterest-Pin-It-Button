@@ -209,7 +209,7 @@ class Pinterest_Pin_It_Button {
 			return;
 
 		$screen = get_current_screen();
-
+		
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
 			// Main plugin admin JS. Tackon plugin version.
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
@@ -265,6 +265,9 @@ class Pinterest_Pin_It_Button {
 			$this->plugin_slug . '_help',
 			array( $this, 'display_admin_help_page' )
 		);
+		
+		// Add widgets to our screen array so we can add our CSS and JS to it later
+		$this->plugin_screen_hook_suffix[] = 'widgets';
 	}
 
 	/**
