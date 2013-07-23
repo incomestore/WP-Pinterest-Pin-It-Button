@@ -79,6 +79,9 @@ class Pinterest_Pin_It_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Add admin notice after plugin activation. Also check if should be hidden.
+		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
+
 		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
@@ -119,6 +122,22 @@ class Pinterest_Pin_It_Button {
 		// Plugin version.
 		if ( ! defined( 'PIB_VERSION' ) )
 			define( 'PIB_VERSION', $this->version );
+
+		// Plugin version.
+		if ( ! defined( 'PIB_PLUGIN_TITLE' ) )
+			define( 'PIB_PLUGIN_TITLE', $this->get_plugin_title() );
+	}
+
+	/**
+	 * Fired when the plugin is activated.
+	 *
+	 * @since    2.0.0
+	 *
+	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
+	 */
+	public static function activate( $network_wide ) {
+		// Add value to indicate that we should show admin install notice.
+		update_option( 'pib_show_admin_install_notice', 1 );
 	}
 
 	/**
@@ -173,23 +192,19 @@ class Pinterest_Pin_It_Button {
 	}
 
 	/**
-	 * Enqueue admin-specific style sheets.
+	 * Enqueue admin-specific style sheets for this plugin's admin pages only.
 	 *
 	 * @since     2.0.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-		if ( ! isset( $this->plugin_screen_hook_suffix ) )
-			return;
 
-		$screen = get_current_screen();
-
-		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
+		if ( $this->viewing_this_plugin() ) {
 			// Plugin admin custom Bootstrap CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-bootstrap', plugins_url( 'css/bootstrap-custom.css', __FILE__ ), array(), $this->version );
 
-			// Plugin admin custom Flat UI Free CSS. Tack on plugin version.
+			// Plugin admin custom Flat UI CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-flat-ui', plugins_url( 'css/flat-ui-custom.css', __FILE__ ), array( $this->plugin_slug .'-bootstrap' ), $this->version );
 
 			// Plugin admin CSS. Tack on plugin version.
@@ -205,12 +220,8 @@ class Pinterest_Pin_It_Button {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
-		if ( ! isset( $this->plugin_screen_hook_suffix ) )
-			return;
 
-		$screen = get_current_screen();
-		
-		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) ) {
+		if ( $this->viewing_this_plugin() ) {
 			// Main plugin admin JS. Tackon plugin version.
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
@@ -361,13 +372,54 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since   2.0.0
 	 *
-	 * @param   array  $links  Default plugin action links
-	 * @return  array  $links  Amended plugin action links
+	 * @param   array  $links  Default plugin action links.
+	 * @return  array  $links  Amended plugin action links.
 	 */
 	public function settings_link( $links ) {
 		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
 		array_unshift( $links, $setting_link );
 
 		return $links;
+	}
+
+	/**
+	 * Check if viewing one of this plugin's admin pages.
+	 *
+	 * @since   2.0.0
+	 *
+	 * @return  bool
+	 */
+	private function viewing_this_plugin() {
+		if ( ! isset( $this->plugin_screen_hook_suffix ) )
+			return false;
+
+		$screen = get_current_screen();
+
+		if ( in_array( $screen->id, $this->plugin_screen_hook_suffix ) )
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * Show notice after plugin install/activate in admin dashboard until user acknowledges.
+	 * Also check if user chooses to hide it.
+	 *
+	 * @since   2.0.0
+	 */
+	public function admin_install_notice() {
+		// Exit all of this is stored value is false/0 or not set.
+		if ( false == get_option( 'pib_show_admin_install_notice' ) )
+			return;
+
+		// Delete stored value if "hide" button click detected (custom querystring value set to 1).
+		// or if on a PIB admin page. Then exit.
+		if ( ! empty( $_REQUEST['pib-dismiss-install-nag'] ) || $this->viewing_this_plugin() ) {
+			delete_option( 'pib_show_admin_install_notice' );
+			return;
+		}
+
+		// At this point show install notice.
+		include_once( 'views/admin-install-notice.php' );
 	}
 }

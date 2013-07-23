@@ -30,6 +30,6 @@ if ( ! defined( 'ABSPATH' ) )
 		<?php _e( 'Get all of these and more with Pinterest "Pin It" Button Pro!', 'pib' ); ?>
 	</p>
 
-	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-primary btn-danger" target="_blank">
+	<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-danger" target="_blank">
 		<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 </div>
