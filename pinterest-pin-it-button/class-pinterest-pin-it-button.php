@@ -209,12 +209,6 @@ class Pinterest_Pin_It_Button {
 
 			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array( $this->plugin_slug .'-flat-ui' ), $this->version );
-		} else {
-			// Enqueue install notice CSS if stored value is true/1 and NOT on PIB settings page.
-			if ( get_option( 'pib_show_admin_install_notice' ) == 1 ) {
-				// Admin install notice CSS only. Tack on plugin version.
-				wp_enqueue_style( $this->plugin_slug .'-admin-install-notice-styles', plugins_url( 'css/admin-install-notice.css', __FILE__ ), array(), $this->version );
-			}
 		}
 	}
 
