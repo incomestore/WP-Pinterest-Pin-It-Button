@@ -26,37 +26,56 @@
 	width: 290px;
 }
 
-/* Sidebar container. Taken from Flat UI .tile class. */
+/* Sidebar container. Taken from Flat UI .tile & popover classes. */
 
 #pib-settings-sidebar .sidebar-container {
-	background-color: #eff0f2;
+	background-color: #edeff1;
 	border-radius: 6px;
 	font-size: 15px;
 	margin-bottom: 18px;
-	padding: 14px;
+	padding: 0;
 	position: relative;
 	text-align: left;
 }
 
-#pib-settings-sidebar h3 {
+#pib-settings-sidebar .sidebar-title {
+	background-color: #bcc3ca;
+	color: #ffffff;
 	font-size: 20px;
-	margin: 0 0 20px 0;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 20px 11px;
 	text-align: center;
+	line-height: 18px;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
 }
 
-#pib-settings-sidebar ul li {
+#pib-settings-sidebar .sidebar-content {
+	padding: 14px;
+}
+
+#pib-settings-sidebar .sidebar-content ul {
+	margin-top: 0;
+}
+
+#pib-settings-sidebar .sidebar-content ul li {
 	margin-bottom: 8px;
 }
 
-#pib-settings-sidebar ul li i {
+#pib-settings-sidebar .sidebar-content ul li i {
 	margin-right: 5px;
 }
 
-#pib-settings-sidebar .last-blurb {
+#pib-settings-sidebar .sidebar-content .last-blurb {
 	font-size: 17px;
 	line-height: 1.4em;
 	margin-bottom: 25px;
 	text-align: center;
 }
+
+
 
 .pib-widget-text-fields { display: none; }
