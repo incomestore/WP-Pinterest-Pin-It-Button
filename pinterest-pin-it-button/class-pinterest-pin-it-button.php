@@ -166,7 +166,7 @@ class Pinterest_Pin_It_Button {
 
 		// Common includes.
 		// TODO Make constant for plugin dir? Why only needed for widgets.php?
-		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );
+		include_once( dirname( __FILE__ ) . '/views/widgets.php' );
 
 		include_once( 'includes/misc-functions.php' );
 
@@ -276,6 +276,9 @@ class Pinterest_Pin_It_Button {
 			$this->plugin_slug . '_help',
 			array( $this, 'display_admin_help_page' )
 		);
+		
+		// Add widgets to our screen array so we can add our CSS and JS to it later
+		$this->plugin_screen_hook_suffix[] = 'widgets';
 	}
 
 	/**
