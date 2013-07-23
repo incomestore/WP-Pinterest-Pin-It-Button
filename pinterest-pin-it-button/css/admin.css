@@ -4,8 +4,9 @@
 	background: transparent url('../assets/pinterest-icon-32.png') no-repeat;
 }
 
-#pib-settings-sidebar {
-	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag. */
+a.pib-external-link {
+	background: transparent url('../assets/icon-external-link.gif') center right no-repeat;
+	padding-right: 17px;
 }
 
 /* Layout the page similar to the built-in post edit screen. */
@@ -26,6 +27,10 @@
 	width: 290px;
 }
 
+#pib-settings-sidebar {
+	font-family: "Lato", sans-serif; /* Base font from Flat UI body tag. */
+}
+
 /* Sidebar container. Taken from Flat UI .tile & popover classes. */
 
 #pib-settings-sidebar .sidebar-container {
@@ -38,19 +43,28 @@
 	text-align: left;
 }
 
-#pib-settings-sidebar .sidebar-title {
+#pib-settings-sidebar .sidebar-title-large {
 	background-color: #bcc3ca;
+	border-bottom: 1px solid #ebebeb;
 	color: #ffffff;
 	font-size: 20px;
 	font-weight: 700;
+	line-height: 18px;
 	margin: 0;
 	padding: 10px 20px 11px;
 	text-align: center;
-	line-height: 18px;
-	border-bottom: 1px solid #ebebeb;
 	-webkit-border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
+}
+
+#pib-settings-sidebar .sidebar-title-small {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 18px;
+	margin: 0;
+	padding: 10px 14px 5px;
+	text-align: center;
 }
 
 #pib-settings-sidebar .sidebar-content {
@@ -69,13 +83,24 @@
 	margin-right: 5px;
 }
 
-#pib-settings-sidebar .sidebar-content .last-blurb {
-	font-size: 17px;
+#pib-settings-sidebar .sidebar-content p {
 	line-height: 1.4em;
+	margin: 0 0 10px;
+}
+
+#pib-settings-sidebar .sidebar-content p.last-blurb {
+	font-size: 17px;
 	margin-bottom: 25px;
 	text-align: center;
 }
 
+#pib-settings-sidebar .sidebar-content p.rating-text {
+	text-align: center;
+}
+
+#pib-settings-sidebar .sidebar-content.pib-rss-news ul {
+	font-size: 14px;
+}
 
 
 .pib-widget-text-fields { display: none; }

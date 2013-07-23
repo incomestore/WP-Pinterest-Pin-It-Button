@@ -187,3 +187,16 @@
 .btn.btn-danger.active {
 	background-color: #c44133;
 }
+.btn.btn-inverse {
+	background-color: #34495e;
+}
+.btn.btn-inverse:hover,
+.btn.btn-inverse:focus,
+.btn-group:focus .btn.btn-inverse.dropdown-toggle {
+	background-color: #415b76;
+}
+.btn.btn-inverse:active,
+.btn-group.open .btn.btn-inverse.dropdown-toggle,
+.btn.btn-inverse.active {
+	background-color: #2c3e50;
+}
