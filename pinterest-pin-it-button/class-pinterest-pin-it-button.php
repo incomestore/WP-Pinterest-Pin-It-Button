@@ -155,7 +155,7 @@ class Pinterest_Pin_It_Button {
 	 * @since     2.0.0
 	 */
 	private function includes() {
-		// Load global PIB options.
+		// Load global options.
 		global $pib_options;
 
 		// Include the file to register all of the plugin settings.
