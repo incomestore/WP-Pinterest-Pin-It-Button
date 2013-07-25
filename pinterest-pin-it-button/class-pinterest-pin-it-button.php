@@ -276,9 +276,6 @@ class Pinterest_Pin_It_Button {
 			$this->plugin_slug . '_help',
 			array( $this, 'display_admin_help_page' )
 		);
-		
-		// Add widgets to our screen array so we can add our CSS and JS to it later
-		$this->plugin_screen_hook_suffix[] = 'widgets';
 	}
 
 	/**
