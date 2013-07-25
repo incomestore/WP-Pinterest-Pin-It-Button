@@ -161,10 +161,10 @@ class Pinterest_Pin_It_Button {
 		// Load global options settings.
 		$pib_options = pib_get_settings();
 
-		// Common includes.
-		// TODO Make constant for plugin dir? Why only needed for widgets.php?
-		include_once( dirname( __FILE__ ) . '/views/widgets.php' );
+		// Include widgets file if on widgets admin or public.
+		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );
 
+		// Other common includes.
 		include_once( 'includes/misc-functions.php' );
 
 		// Admin-only includes.
