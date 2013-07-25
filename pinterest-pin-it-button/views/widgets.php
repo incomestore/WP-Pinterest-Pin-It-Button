@@ -14,13 +14,20 @@ if ( ! defined( 'ABSPATH' ) )
 
 class PIB_Widget extends WP_Widget {
 	
-	function __construct() {
-		$widget_ops = array( 'classname' => 'pib-clearfix', 'description' => __( 'Add a Pinterest "Pin It" button to your sidebar with this widget.', 'pib' ) );
-		$control_ops = array( 'width' => 400 );  //doesn't use height
-		parent::__construct( 'pib_button', 'Pinterest "Pin It" Button', $widget_ops, $control_ops );
+	public function __construct() {
+		parent::__construct(
+			'pib-button-widget',
+			__( 'Pinterest "Pin It" Button', 'pib' ),
+			array(
+				'classname'		=>	'pib-clearfix', // Wrap widget with "clear fix" CSS trick.
+				'description'	=>	__( 'Add a Pinterest "Pin It" button to your sidebar with this widget.', 'pib' )
+			),
+			// Widen widget admin area.
+			array( 'width' => 400 )
+		);
 	}
 
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
         global $pib_options;
 		extract( $args );
 		
@@ -80,7 +87,7 @@ class PIB_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		
 		$instance['title']                     = strip_tags($new_instance['title']);
@@ -95,7 +102,7 @@ class PIB_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
         global $pib_options;
 		
 		$default = array(
@@ -179,7 +186,4 @@ class PIB_Widget extends WP_Widget {
 	}
 }
 
-function register_pib_widgets() {
-	register_widget( 'PIB_Widget' );
-}
-add_action( 'widgets_init', 'register_pib_widgets' );
+add_action( 'widgets_init', create_function( '', 'register_widget("PIB_Widget");' ) );

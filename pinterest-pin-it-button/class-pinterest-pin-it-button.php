@@ -85,9 +85,6 @@ class Pinterest_Pin_It_Button {
 		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
-		
-		// Load widget.
-		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
@@ -353,15 +350,6 @@ class Pinterest_Pin_It_Button {
 		}
 
 		return $post_id;
-	}
-
-	/**
-	 * Add and register widgets.
-	 *
-	 * @since    2.0.0
-	 */
-	public function register_widgets() {
-		register_widget( 'PIB_Widget' );
 	}
 
 	/**
