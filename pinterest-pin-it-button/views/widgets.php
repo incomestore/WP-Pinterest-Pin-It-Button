@@ -134,11 +134,11 @@ class PIB_Widget extends WP_Widget {
 			Button Type
 		</p>
 		<p>
-			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="user_selects_image" id="<?php echo $this->get_field_id( 'user_selects_image' ); ?>" <?php checked( $pib_button_type_widget, 'user_selects_image' ); ?> />
+			<input class="pib-widget-toggle" type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="user_selects_image" id="<?php echo $this->get_field_id( 'user_selects_image' ); ?>" <?php checked( $pib_button_type_widget, 'user_selects_image' ); ?> />
 			<label for="<?php echo $this->get_field_id( 'user_selects_image' ); ?>"><?php _e( 'User selects image from popup (any image)', 'pib' ); ?></label>
 		</p>
 		<p>	
-			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_selected" id="<?php echo $this->get_field_id( 'image_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_selected' ); ?> />
+			<input class="pib-widget-toggle pib-widget-pre-selected" type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_selected" id="<?php echo $this->get_field_id( 'image_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_selected' ); ?> />
 			<label for="<?php echo $this->get_field_id( 'image_selected' ); ?>"><?php _e( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' ); ?></label>
 		</p>
 		<div class="pib-widget-text-fields">
