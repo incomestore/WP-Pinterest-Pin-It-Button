@@ -5,7 +5,7 @@
 		
 		// Show/Hide the input boxes for the widget
 		function toggleWidgetArea() {
-			if( $( "#widget-pib_button-2-image_pre_selected" ).attr( "checked" ) == 'checked' ) {
+			if( $( "#widget-pib_button-2-image_selected" ).attr( "checked" ) == 'checked' ) {
 				$( ".pib-widget-text-fields" ).show();
 			}
 

@@ -38,8 +38,17 @@ class PIB_Widget extends WP_Widget {
 		$count_layout           = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
 		$align                  = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
 		$pib_remove_div         = (bool) $instance['remove_div'];
+		$button_type            = $instance['button_type'];
+		
+		// If the button type is set for users to select image then we need to overwrite any values from the widget that are used
+		// for displaying a a pre-selected image. These are not erased from the widget, but are just overwritten here.
+		if ( 'user_selects_image' == $button_type ) {
+			$pib_url_of_webpage_widget = '';
+			$pib_url_of_img_widget     = '';
+			$pib_description_widget    = '';
+		}
         
-		$base_btn = pib_button_base( $pib_options['button_type'], $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
+		$base_btn = pib_button_base( $button_type, $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
 		
 		echo $before_widget;
         
@@ -129,8 +138,8 @@ class PIB_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'user_selects_image' ); ?>"><?php _e( 'User selects image from popup (any image)', 'pib' ); ?></label>
 		</p>
 		<p>	
-			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_pre_selected" id="<?php echo $this->get_field_id( 'image_pre_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_pre_selected' ); ?> />
-			<label for="<?php echo $this->get_field_id( 'image_pre_selected' ); ?>"><?php _e( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' ); ?></label>
+			<input type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_selected" id="<?php echo $this->get_field_id( 'image_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_selected' ); ?> />
+			<label for="<?php echo $this->get_field_id( 'image_selected' ); ?>"><?php _e( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' ); ?></label>
 		</p>
 		<div class="pib-widget-text-fields">
 			<p>
