@@ -39,7 +39,7 @@ class PIB_Widget extends WP_Widget {
 		$align                  = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
 		$pib_remove_div         = (bool) $instance['remove_div'];
         
-		$base_btn = pib_button_base( $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
+		$base_btn = pib_button_base( $pib_options['button_type'], $pib_url_of_webpage_widget, $pib_url_of_img_widget, $pib_description_widget, $count_layout );
 		
 		echo $before_widget;
         

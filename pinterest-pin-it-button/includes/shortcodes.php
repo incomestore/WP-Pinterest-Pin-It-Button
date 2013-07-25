@@ -64,7 +64,7 @@ function pib_pinit_shortcode( $attr ) {
         }
     }
     
-	$base_btn = pib_button_base( $url, $image_url, $description, $count );
+	$base_btn = pib_button_base( $pib_options['button_type'], $url, $image_url, $description, $count );
     
     //Don't wrap with div or set float class if "remove div" is checked
 	if ( $remove_div ) {

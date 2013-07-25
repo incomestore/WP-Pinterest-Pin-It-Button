@@ -37,7 +37,7 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
 </a>
 */
-function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
+function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout ) {
 	global $pib_options;
 
 	// Use updated backup button image URL from Pinterest.
@@ -47,7 +47,7 @@ function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" />';
 
 	// Set data attribute for button style.
-	if ( $pib_options['button_type'] == 'image_selected' )
+	if ( $button_type == 'image_selected' )
 		$data_pin_do = 'buttonPin'; // image pre-selected
 	else
 		$data_pin_do = 'buttonBookmark'; // user selects image (default)
@@ -78,7 +78,7 @@ function pib_button_base( $post_url, $image_url, $description, $count_layout ) {
 	return $link_html;
 }
 
-// Button HTML to render.
+// Button HTML to render for pages, posts, and excerpts
 function pib_button_html() {
 	global $pib_options;
 	global $post;
@@ -115,7 +115,7 @@ function pib_button_html() {
 
 	$count_layout = $pib_options['count_layout'];
 
-	$base_btn = pib_button_base( $post_url, $image_url, $description, $count_layout );
+	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout );
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
 	if ( ! empty( $pib_options['remove_div'] ) )
