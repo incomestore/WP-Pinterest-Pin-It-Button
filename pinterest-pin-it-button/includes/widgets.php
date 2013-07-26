@@ -20,7 +20,7 @@ class PIB_Widget extends WP_Widget {
 			__( 'Pinterest "Pin It" Button', 'pib' ),
 			array(
 				'classname'		=>	'pib-clearfix', // Wrap widget with "clear fix" CSS trick.
-				'description'	=>	__( 'Add a Pinterest "Pin It" button to your sidebar with this widget.', 'pib' )
+				'description'	=>	__( 'Add a Pinterest "Pin It" button to any widget area.', 'pib' )
 			),
 			// Widen widget admin area.
 			array( 'width' => 400 )
