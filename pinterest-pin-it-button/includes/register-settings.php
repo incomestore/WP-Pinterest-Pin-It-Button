@@ -344,15 +344,16 @@ function pib_get_settings() {
 	if ( !get_option( 'pib_upgrade_has_run' ) ) {
 		
 		// set default post visibility options
-		$post_visibility = get_option( 'pib_settings_post_visibility' );
-		$post_visibility['post_page_types']['display_posts'] = 1;
+		$post_visibility                                                 = get_option( 'pib_settings_post_visibility' );
+		$post_visibility['post_page_types']['display_posts']             = 1;
 		$post_visibility['post_page_placement']['display_below_content'] = 1;
 		
 		update_option( 'pib_settings_post_visibility', $post_visibility );
 		
 		// set default general settings options
-		$general = get_option( 'pib_settings_general' );
-		$general['button_type'] = 'user_selects_image';
+		$general                            = get_option( 'pib_settings_general' );
+		$general['button_type']             = 'user_selects_image';
+		$general['count_layout']            = 'none';
 		$general['uninstall_save_settings'] = 1;
 		
 		update_option( 'pib_settings_general', $general );
@@ -363,9 +364,9 @@ function pib_get_settings() {
 	}
 	
 	
-	$general_settings =			is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
+	$general_settings         = is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
-	$style_settings =			is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
+	$style_settings           = is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
 	
 	return array_merge( $general_settings, $post_visibility_settings, $style_settings );
 }
