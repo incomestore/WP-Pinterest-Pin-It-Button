@@ -137,8 +137,9 @@ class PIB_Widget extends WP_Widget {
 				<option value="vertical" <?php selected( $instance['count_layout'], 'vertical' ); ?>><?php _e( 'Above the Button', 'pib' ); ?></option>
 			</select>
 		</p>
+
 		<p>
-			Button Type
+			Button Type:
 		</p>
 		<p>
 			<input class="pib-widget-toggle" type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="user_selects_image" id="<?php echo $this->get_field_id( 'user_selects_image' ); ?>" <?php checked( $pib_button_type_widget, 'user_selects_image' ); ?> />
@@ -148,6 +149,11 @@ class PIB_Widget extends WP_Widget {
 			<input class="pib-widget-toggle pib-widget-pre-selected" type="radio" name="<?php echo $this->get_field_name( 'button_type' ); ?>" value="image_selected" id="<?php echo $this->get_field_id( 'image_selected' ); ?>" <?php checked( $pib_button_type_widget, 'image_selected' ); ?> />
 			<label for="<?php echo $this->get_field_id( 'image_selected' ); ?>"><?php _e( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' ); ?></label>
 		</p>
+
+		<p class="description">
+			<?php _e( 'These 3 text fields will be used only if the button type is "image pre-selected".', 'pib' ); ?>
+		</p>
+
 		<div class="pib-widget-text-fields">
 			<p>
 				<label for="<?php echo $this->get_field_id( 'pib_url_of_webpage_widget' ); ?>"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label>
@@ -175,6 +181,7 @@ class PIB_Widget extends WP_Widget {
 				<option value="center" <?php selected( $instance['button_align'], 'center' ); ?>><?php _e( 'Center', 'pib' ); ?></option>
 			</select>
 		</p>
+
 		<p>
 			<input class="checkbox" <?php checked($instance['remove_div'], true) ?> id="<?php echo $this->get_field_id( 'remove_div' ); ?>"
 				   name="<?php echo $this->get_field_name( 'remove_div' ); ?>" type="checkbox"/>
