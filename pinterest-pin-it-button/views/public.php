@@ -39,7 +39,10 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 */
 function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout ) {
 	global $pib_options;
-
+	global $post;
+	$postID = $post->ID;
+	
+	
 	// Use updated backup button image URL from Pinterest.
 	$btn_img_url = '//assets.pinterest.com/images/pidgets/pin_it_button.png';
 
@@ -59,6 +62,25 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		$data_pin_config = 'above';
 	else
 		$data_pin_config = 'none';
+	
+	//Set post url to current post if still blank
+	if ( empty( $post_url ) )
+		$post_url = get_permalink( $postID );
+
+	//Set image url to first image if still blank
+	if ( empty( $image_url ) ) {
+	   //Get url of img and compare width and height
+	   $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+
+	   // Make sure the was an image match and if not set the image url to be blank
+	   if ( !( 0 == $output || false == $output ) )
+		   $image_url = $matches [1] [0];
+	   else
+		   $image_url = '';
+	}
+
+	//Set description to post title if still blank
+	if ( empty( $description ) ) { $description = get_the_title( $postID ); }
 
 	// Link href always needs all the parameters in it for the count bubble to work.
 	// Pinterest points out to use protocol-agnostic URL for popup.
@@ -92,26 +114,6 @@ function pib_button_html() {
 	$post_url = get_post_meta( $postID, 'pib_url_of_webpage', true );
 	$image_url = get_post_meta( $postID, 'pib_url_of_img', true );
 	$description = get_post_meta( $postID, 'pib_description', true );
-
-
-	//Set post url to current post if still blank
-	if ( empty( $post_url ) )
-		$post_url = get_permalink( $postID );
-
-	//Set image url to first image if still blank
-	if ( empty( $image_url ) ) {
-	   //Get url of img and compare width and height
-	   $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-
-	   // Make sure the was an image match and if not set the image url to be blank
-	   if ( !( 0 == $output || false == $output ) )
-		   $image_url = $matches [1] [0];
-	   else
-		   $image_url = '';
-	}
-
-	//Set description to post title if still blank
-	if ( empty( $description ) ) { $description = get_the_title( $postID ); }
 
 	$count_layout = $pib_options['count_layout'];
 
