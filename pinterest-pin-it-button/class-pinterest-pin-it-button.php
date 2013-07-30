@@ -66,7 +66,7 @@ class Pinterest_Pin_It_Button {
 		update_option( 'pib_version', $this->version );
 
 		// Include required files.
-		$this->includes();
+		add_action( 'init', array( $this, 'includes' ), 2 );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
@@ -151,7 +151,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since     2.0.0
 	 */
-	private function includes() {
+	public function includes() {
 		// Load global options.
 		global $pib_options;
 
