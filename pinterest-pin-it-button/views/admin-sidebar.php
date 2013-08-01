@@ -20,10 +20,11 @@ if ( ! defined( 'ABSPATH' ) )
 		<ul>
 			<li><i class="fui-check"></i> <?php _e( 'Image Hover "Pin It" button', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Featured image support', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Custom post type support', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Add button under each image', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Priority support & auto updates', 'pib' ); ?></li>
 		</ul>
 
