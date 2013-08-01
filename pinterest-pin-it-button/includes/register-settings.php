@@ -331,7 +331,7 @@ function pib_settings_sanitize( $input ) {
  *  Default callback function if correct one does not exist
  */
 
-function pib_missing_callback() {
+function pib_missing_callback( $args ) {
 	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'pib' ), $args['id'] );
 }
 
