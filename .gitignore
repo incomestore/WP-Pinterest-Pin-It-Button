@@ -41,8 +41,10 @@ Thumbs.db
 ###########################
 .idea
 
-# Netbeans IDE *
-/pinterest-pin-it-button/nbproject/*
-
 # MS Sync Toy dat file *
+########################
 SyncToy*.dat
+
+# Netbeans IDE *
+################
+/pinterest-pin-it-button/nbproject/*
