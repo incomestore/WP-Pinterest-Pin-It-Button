@@ -42,7 +42,7 @@ function pib_register_settings() {
 		   'uninstall_save_settings' => array(
 			  'id' => 'uninstall_save_settings',
 			  'name' => __( 'Save Settings', 'pib' ),
-			  'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading to Pro or re-installing.', 'pib' ),
+			  'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
 			  'type' => 'checkbox'
 		   )
 	    ),
