@@ -130,7 +130,10 @@ function pib_button_html() {
 function pib_render_content( $content ) {
 	global $pib_options;
 	global $post;
-
+	
+	if( ! is_main_query() )
+		return $content;
+	
 	//Determine if button displayed on current page from main admin settings
 	if (
 	   ( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
@@ -160,7 +163,10 @@ add_filter( 'the_content', 'pib_render_content' );
 function pib_render_content_excerpt( $content ) {
 	global $pib_options;
 	global $post;
-
+	
+	if( ! is_main_query() )
+		return $content;
+	
 	if ( ! empty( $pib_options['post_page_placement']['display_on_post_excerpts'] ) ) {
 	   if (
 		  ( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
