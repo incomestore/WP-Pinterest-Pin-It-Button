@@ -18,29 +18,29 @@ function pib_register_settings() {
 	    /* General Settings */
 	    'general' => array(
 		   'button_type' => array(
-			  'id' => 'button_type',
-			  'name' => __( 'Button Type', 'pib' ),
-			  'desc' => '',
-			  'type' => 'radio',
-			  'std' => 'no',
+			  'id'      => 'button_type',
+			  'name'    => __( 'Button Type', 'pib' ),
+			  'desc'    => '',
+			  'type'    => 'radio',
+			  'std'     => 'no',
 			  'options' => array(
 				 'user_selects_image' => __( 'User selects image from popup (any image)', 'pib' ),
-				 'image_selected' => __( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' )
+				 'image_selected'     => __( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' )
 			  )
 		   ),
 		   'count_layout' => array(
-			  'id' => 'count_layout',
+			  'id'   => 'count_layout',
 			  'name' => __( 'Pin Count', 'pib' ),
 			  'desc' => '',
 			  'type' => 'select',
 			  'options' => array(
-				 'none' => __( 'Not Shown', 'pib' ),
+				 'none'       => __( 'Not Shown', 'pib' ),
 				 'horizontal' => __( 'Beside the Button', 'pib' ),
-				 'vertical' => __( 'Above the Button', 'pib' )
+				 'vertical'   => __( 'Above the Button', 'pib' )
 			  )
 		   ),
 		   'uninstall_save_settings' => array(
-			  'id' => 'uninstall_save_settings',
+			  'id'   => 'uninstall_save_settings',
 			  'name' => __( 'Save Settings', 'pib' ),
 			  'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
 			  'type' => 'checkbox'
@@ -50,7 +50,7 @@ function pib_register_settings() {
 	    /* Post Visibility Settings */
 	    'post_visibility' => array(
 		   'post_page_types' => array(
-			  'id' => 'post_page_types',
+			  'id'   => 'post_page_types',
 			  'name' => __( 'Post/Page Types', 'pib' ),
 			  'desc' => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
 			  'type' => 'multicheck',
@@ -78,11 +78,11 @@ function pib_register_settings() {
 			  )
 		   ),
 		   'post_page_placement' => array(
-			  'id' => 'post_page_placement',
-			  'name' => __( 'Post/Page Placement', 'pib' ),
-			  'desc' => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
-			  	sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
-			  'type' => 'multicheck',
+			  'id'      => 'post_page_placement',
+			  'name'    => __( 'Post/Page Placement', 'pib' ),
+			  'desc'    => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
+						   sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
+			  'type'    => 'multicheck',
 			  'options' => array(
 				 'display_above_content' => array(
 					'label' => __( 'Above Content', 'pib' ),
@@ -103,20 +103,20 @@ function pib_register_settings() {
 	    /* Styles Settings */
 	    'styles' => array(
 		   'custom_css' => array(
-			  'id' => 'custom_css',
+			  'id'   => 'custom_css',
 			  'name' => __( 'Custom CSS', 'pib' ),
 			  'desc' => __( 'Custom CSS can be used to override other CSS style rules.', 'pib' ) . '<br />' .
-			     sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ),
+					    sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ),
 			  'type' => 'textarea'
 		   ),
 		   'remove_div' => array(
-			  'id' => 'remove_div',
+			  'id'   => 'remove_div',
 			  'name' => __( 'Remove DIV Container', 'pib' ),
 			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars('<div class="pin-it-btn-wrapper"></div>') . '</code>).',
 			  'type' => 'checkbox'
 		   ),
 		   'disable_css' => array(
-			  'id' => 'disable_css',
+			  'id'   => 'disable_css',
 			  'name' => __( 'Disable CSS File Reference', 'pib' ),
 			  'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
 			  'type' => 'checkbox'
@@ -154,13 +154,13 @@ function pib_register_settings() {
 			'pib_settings_general',
 			'pib_settings_general',
 			array(
-				'id' => $option['id'],
-				'desc' => $option['desc'],
-				'name' => $option['name'],
+				'id'      => $option['id'],
+				'desc'    => $option['desc'],
+				'name'    => $option['name'],
 				'section' => 'general',
-				'size' => isset( $option['size'] ) ? $option['size'] : null,
+				'size'    => isset( $option['size'] ) ? $option['size'] : null,
 				'options' => isset( $option['options'] ) ? $option['options'] : '',
-				'std' => isset( $option['std'] ) ? $option['std'] : ''
+				'std'     => isset( $option['std'] ) ? $option['std'] : ''
 			)
 		);
 	}
@@ -181,13 +181,13 @@ function pib_register_settings() {
 			'pib_settings_post_visibility',
 			'pib_settings_post_visibility',
 			array(
-				'id' => $option['id'],
-				'desc' => $option['desc'],
-				'name' => $option['name'],
+				'id'      => $option['id'],
+				'desc'    => $option['desc'],
+				'name'    => $option['name'],
 				'section' => 'post_visibility',
-				'size' => isset( $option['size'] ) ? $option['size'] : null,
+				'size'    => isset( $option['size'] ) ? $option['size'] : null,
 				'options' => isset( $option['options'] ) ? $option['options'] : '',
-				'std' => isset( $option['std'] ) ? $option['std'] : ''
+				'std'     => isset( $option['std'] ) ? $option['std'] : ''
 			)
 		);
 	}
@@ -208,13 +208,13 @@ function pib_register_settings() {
 			'pib_settings_styles',
 			'pib_settings_styles',
 			array(
-				'id' => $option['id'],
-				'desc' => $option['desc'],
-				'name' => $option['name'],
+				'id'      => $option['id'],
+				'desc'    => $option['desc'],
+				'name'    => $option['name'],
 				'section' => 'styles',
-				'size' => isset( $option['size'] ) ? $option['size'] : null,
+				'size'    => isset( $option['size'] ) ? $option['size'] : null,
 				'options' => isset( $option['options'] ) ? $option['options'] : '',
-				'std' => isset( $option['std'] ) ? $option['std'] : ''
+				'std'     => isset( $option['std'] ) ? $option['std'] : ''
 			)
 		);
 	}
