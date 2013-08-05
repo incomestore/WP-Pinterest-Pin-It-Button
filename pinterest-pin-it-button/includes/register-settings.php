@@ -112,7 +112,7 @@ function pib_register_settings() {
 		   'remove_div' => array(
 			  'id' => 'remove_div',
 			  'name' => __( 'Remove DIV Container', 'pib' ),
-			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>&#060;div class="pin-it-btn-wrapper"&#62;&#60;/div&#62;</code>).',
+			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars('<div class="pin-it-btn-wrapper"></div>') . '</code>).',
 			  'type' => 'checkbox'
 		   ),
 		   'disable_css' => array(
