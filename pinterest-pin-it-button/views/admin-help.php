@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) )
 	<div id="pib-settings">
 		<div id="pib-settings-content">
 
-			<?php screen_icon( 'pib-icon32' ); ?>
+			<?php screen_icon( 'pinterest-32' ); ?>
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<p>
