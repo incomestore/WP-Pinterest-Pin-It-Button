@@ -230,7 +230,6 @@ add_action( 'admin_init', 'pib_register_settings' );
 /*
  * Radio button callback function
  */
-
 function pib_radio_callback( $args ) {
 	global $pib_options;
 
@@ -248,10 +247,10 @@ function pib_radio_callback( $args ) {
 
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
+
 /*
  * Single checkbox callback function
  */
-
 function pib_checkbox_callback( $args ) {
 	global $pib_options;
 
@@ -279,7 +278,6 @@ function pib_multicheck_callback( $args ) {
 /*
  * Select box callback function
  */
-
 function pib_select_callback($args) {
 	global $pib_options;
 
@@ -299,7 +297,6 @@ function pib_select_callback($args) {
 /*
  * Textarea callback function
  */
-
 function pib_textarea_callback( $args ) {
 	global $pib_options;
 
@@ -322,15 +319,14 @@ function pib_textarea_callback( $args ) {
 /*
  * Function we can use to sanitize the input data and return it when saving options
  */
-
 function pib_settings_sanitize( $input ) {
 	add_settings_error( 'pib-notices', '', '', '' );
 	return $input;
 }
+
 /*
  *  Default callback function if correct one does not exist
  */
-
 function pib_missing_callback( $args ) {
 	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'pib' ), $args['id'] );
 }
@@ -360,9 +356,7 @@ function pib_get_settings() {
 		
 		// add an option to let us know the initial settings have been run and we don't run them again
 		add_option( 'pib_upgrade_has_run', 1 );
-		
 	}
-	
 	
 	$general_settings         = is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
