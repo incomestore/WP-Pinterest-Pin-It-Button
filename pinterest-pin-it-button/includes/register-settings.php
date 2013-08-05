@@ -55,26 +55,11 @@ function pib_register_settings() {
 			  'desc' => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'display_home_page' => array(
-					'label' => __( 'Home Page (or latest posts page)', 'pib' ),
-					'value' => 1
-				),
-				 'display_front_page' => array(
-					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
-					'value' => 1
-				),
-				 'display_posts' => array(
-					'label' => __( 'Individual Posts', 'pib' ),
-					'value' => 1
-				),
-				 'display_pages' => array(
-					'label' => __( 'Individual Pages (WordPress static pages)', 'pib' ),
-					'value' => 1
-				),
-				 'display_archives' => array(
-					'label' => __( 'Archive Pages (includes Category, Tag, Author, and date-based pages)', 'pib' ),
-					'value' => 1
-				)
+				 'display_home_page'  => __( 'Home Page (or latest posts page)', 'pib' ),
+				 'display_front_page' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
+				 'display_posts'      => __( 'Individual Posts', 'pib' ),
+				 'display_pages'      => __( 'Individual Pages (WordPress static pages)', 'pib' ),
+				 'display_archives'   => __( 'Archive Pages (includes Category, Tag, Author, and date-based pages)', 'pib' )
 			  )
 		   ),
 		   'post_page_placement' => array(
@@ -84,18 +69,9 @@ function pib_register_settings() {
 						   sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
 			  'type'    => 'multicheck',
 			  'options' => array(
-				 'display_above_content' => array(
-					'label' => __( 'Above Content', 'pib' ),
-					'value' => 1
-				),
-				 'display_below_content' => array(
-					'label' => __( 'Below Content', 'pib' ),
-					'value' => 1
-				),
-				 'display_on_post_excerpts' => array(
-					'label' => __( 'Include in Post Excerpts', 'pib' ),
-					'value' => 1
-				)
+				 'display_above_content'    => __( 'Above Content', 'pib' ),
+				 'display_below_content'    => __( 'Below Content', 'pib' ),
+				 'display_on_post_excerpts' => __( 'Include in Post Excerpts', 'pib' )
 			  )
 		   )
 	    ),
@@ -264,14 +240,19 @@ function pib_checkbox_callback( $args ) {
 /*
  * Multiple checkboxes callback function
  */
+/*
+ * Multiple checkboxes callback function
+ */
+
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
 
-	foreach ( $args['options'] as $key => $option ):
+	foreach ( $args['options'] as $key => $option ) {
 		if ( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked( $option['value'], isset( $enabled ), false ) . '/>&nbsp;';
-		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
-	endforeach;
+		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+	}
+
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
 
