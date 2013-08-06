@@ -63,13 +63,13 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	else
 		$data_pin_config = 'none';
 	
-	//Set post url to current post if still blank
+	// Set post url to current post if still blank.
 	if ( empty( $post_url ) )
 		$post_url = get_permalink( $postID );
 
-	//Set image url to first image if still blank
+	// Set image url to first image if still blank.
 	if ( empty( $image_url ) ) {
-	   //Get url of img and compare width and height
+	   // Get url of img and compare width and height.
 	   $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
 
 	   // Make sure the was an image match and if not set the image url to be blank
@@ -79,8 +79,9 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		   $image_url = '';
 	}
 
-	//Set description to post title if still blank
-	if ( empty( $description ) ) { $description = get_the_title( $postID ); }
+	// Set description to post title if still blank.
+	if ( empty( $description ) )
+		$description = get_the_title( $postID );
 
 	// Link href always needs all the parameters in it for the count bubble to work.
 	// Pinterest points out to use protocol-agnostic URL for popup.
@@ -100,7 +101,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	return $link_html;
 }
 
-// Button HTML to render for pages, posts, and excerpts
+// Button HTML to render for pages, posts, and excerpts.
 function pib_button_html() {
 	global $pib_options;
 	global $post;
