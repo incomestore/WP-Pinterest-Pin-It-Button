@@ -123,6 +123,10 @@ class Pinterest_Pin_It_Button {
 		// Plugin title.
 		if ( ! defined( 'PIB_PLUGIN_TITLE' ) )
 			define( 'PIB_PLUGIN_TITLE', $this->get_plugin_title() );
+
+		// Plugin Folder URL.
+		if ( ! defined( 'PIB_PLUGIN_URL' ) )
+			define( 'PIB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	}
 
 	/**
