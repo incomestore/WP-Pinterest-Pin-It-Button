@@ -222,9 +222,11 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function enqueue_admin_scripts() {
 
+		// No admin.js needed yet so commented out.
+
 		if ( $this->viewing_this_plugin() ) {
 			// Main plugin admin JS. Tackon plugin version.
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
+			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
 	}
 
