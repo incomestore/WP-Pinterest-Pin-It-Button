@@ -240,9 +240,6 @@ function pib_checkbox_callback( $args ) {
 /*
  * Multiple checkboxes callback function
  */
-/*
- * Multiple checkboxes callback function
- */
 
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
