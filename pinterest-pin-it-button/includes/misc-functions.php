@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) )
  * @since     2.0.0
  *
  * @param   string  $medium  Google Analytics "medium" tracking value
- * @return  string  $url     Full Google Analytics campaign URL
+ * @return  string           Full Google Analytics campaign URL
  */
 function pib_pro_upgrade_url( $medium ) {
 	$base_url = 'http://pinterestplugin.com/pin-it-button-pro/';
