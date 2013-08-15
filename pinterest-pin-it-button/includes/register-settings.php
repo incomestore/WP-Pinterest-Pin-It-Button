@@ -221,7 +221,7 @@ function pib_radio_callback( $args ) {
 		return;
 	}
 
-	$html = '';
+	$html = "\n";
 
 	foreach ( $args['options'] as $key => $option ) {
 		$checked = false;
@@ -231,13 +231,13 @@ function pib_radio_callback( $args ) {
 		elseif ( isset( $args['std'] ) && $args['std'] == $key && ! isset( $pib_options[ $args['id'] ] ) )
 			$checked = true;
 
-		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
-		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>' . "\n";
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>' . "\n";
 	}
 
 	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
-		$html .= '<p class="description">' . $args['desc'] . '</p>';
+		$html .= '<p class="description">' . $args['desc'] . '</p>' . "\n";
 
 	echo $html;
 }
@@ -249,8 +249,8 @@ function pib_checkbox_callback( $args ) {
 	global $pib_options;
 
 	$checked = isset( $pib_options[$args['id']] ) ? checked( 1, $pib_options[$args['id']], false ) : '';
-	$html = '<input type="checkbox" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="1" ' . $checked . '/>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html = "\n" . '<input type="checkbox" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="1" ' . $checked . '/>' . "\n";
+	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>' . "\n";
 
 	echo $html;
 }
@@ -268,17 +268,17 @@ function pib_multicheck_callback( $args ) {
 		return;
 	}
 
-	$html = '';
+	$html = "\n";
 
 	foreach ( $args['options'] as $key => $option ) {
 		if ( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
-		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>' . "\n";
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>' . "\n";
 	}
 
 	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
-		$html .= '<p class="description">' . $args['desc'] . '</p>';
+		$html .= '<p class="description">' . $args['desc'] . '</p>' . "\n";
 
 	echo $html;
 }
@@ -295,18 +295,18 @@ function pib_select_callback( $args ) {
 		return;
 	}
 
-	$html = '<select id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"/>';
+	$html = "\n" . '<select id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"/>' . "\n";
 
 	foreach ( $args['options'] as $option => $name ) :
 		$selected = isset( $pib_options[$args['id']] ) ? selected( $option, $pib_options[$args['id']], false ) : '';
-		$html .= '<option value="' . $option . '" ' . $selected . '>' . $name . '</option>';
+		$html .= '<option value="' . $option . '" ' . $selected . '>' . $name . '</option>' . "\n";
 	endforeach;
 
-	$html .= '</select>';
+	$html .= '</select>' . "\n";
 
 	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
-		$html .= '<p class="description">' . $args['desc'] . '</p>';
+		$html .= '<p class="description">' . $args['desc'] . '</p>' . "\n";
 
 	echo $html;
 }
@@ -323,11 +323,11 @@ function pib_textarea_callback( $args ) {
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
 	// Ignoring size at the moment.
-	$html = '<textarea class="large-text" cols="50" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>';
+	$html = "\n" . '<textarea class="large-text" cols="50" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>' . "\n";
 
 	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
-		$html .= '<p class="description">' . $args['desc'] . '</p>';
+		$html .= '<p class="description">' . $args['desc'] . '</p>' . "\n";
 
 	echo $html;
 }
