@@ -29,10 +29,10 @@ function pib_register_settings() {
 			  )
 		   ),
 		   'count_layout' => array(
-			  'id'   => 'count_layout',
-			  'name' => __( 'Pin Count', 'pib' ),
-			  'desc' => '',
-			  'type' => 'select',
+			  'id'      => 'count_layout',
+			  'name'    => __( 'Pin Count', 'pib' ),
+			  'desc'    => '',
+			  'type'    => 'select',
 			  'options' => array(
 				 'none'       => __( 'Not Shown', 'pib' ),
 				 'horizontal' => __( 'Beside the Button', 'pib' ),
@@ -40,20 +40,20 @@ function pib_register_settings() {
 			  )
 		   ),
 		   'uninstall_save_settings' => array(
-			  'id'   => 'uninstall_save_settings',
-			  'name' => __( 'Save Settings', 'pib' ),
-			  'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
-			  'type' => 'checkbox'
+			  'id'      => 'uninstall_save_settings',
+			  'name'    => __( 'Save Settings', 'pib' ),
+			  'desc'    => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
+			  'type'    => 'checkbox'
 		   )
 	    ),
 
 	    /* Post Visibility Settings */
 	    'post_visibility' => array(
 		   'post_page_types' => array(
-			  'id'   => 'post_page_types',
-			  'name' => __( 'Post/Page Types', 'pib' ),
-			  'desc' => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
-			  'type' => 'multicheck',
+			  'id'      => 'post_page_types',
+			  'name'    => __( 'Post/Page Types', 'pib' ),
+			  'desc'    => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
+			  'type'    => 'multicheck',
 			  'options' => array(
 				 'display_home_page'  => __( 'Home Page (or latest posts page)', 'pib' ),
 				 'display_front_page' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
@@ -215,6 +215,14 @@ function pib_get_settings_field_args( $option, $section ) {
 function pib_radio_callback( $args ) {
 	global $pib_options;
 
+	// Return empty string if no options.
+	if ( empty( $args['options'] ) ) {
+		echo '';
+		return;
+	}
+
+	$html = '';
+
 	foreach ( $args['options'] as $key => $option ) {
 		$checked = false;
 
@@ -223,11 +231,15 @@ function pib_radio_callback( $args ) {
 		elseif ( isset( $args['std'] ) && $args['std'] == $key && ! isset( $pib_options[ $args['id'] ] ) )
 			$checked = true;
 
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
-		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>&nbsp;';
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	}
 
-	echo '<p class="description">' . $args['desc'] . '</p>';
+	// Render and style description text underneath if it exists.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<p class="description">' . $args['desc'] . '</p>';
+
+	echo $html;
 }
 
 /*
@@ -250,20 +262,38 @@ function pib_checkbox_callback( $args ) {
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
 
-	foreach ( $args['options'] as $key => $option ) {
-		if ( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
-		echo '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+	// Return empty string if no options.
+	if ( empty( $args['options'] ) ) {
+		echo '';
+		return;
 	}
 
-	echo '<p class="description">' . $args['desc'] . '</p>';
+	$html = '';
+
+	foreach ( $args['options'] as $key => $option ) {
+		if ( isset( $pib_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
+		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
+	}
+
+	// Render and style description text underneath if it exists.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<p class="description">' . $args['desc'] . '</p>';
+
+	echo $html;
 }
 
 /*
  * Select box callback function
  */
-function pib_select_callback($args) {
+function pib_select_callback( $args ) {
 	global $pib_options;
+
+	// Return empty string if no options.
+	if ( empty( $args['options'] ) ) {
+		echo '';
+		return;
+	}
 
 	$html = '<select id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"/>';
 
@@ -273,7 +303,10 @@ function pib_select_callback($args) {
 	endforeach;
 
 	$html .= '</select>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> ' . $args['desc'] . '</label>';
+
+	// Render and style description text underneath if it exists.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<p class="description">' . $args['desc'] . '</p>';
 
 	echo $html;
 }
@@ -289,9 +322,10 @@ function pib_textarea_callback( $args ) {
 	else
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
+	// Ignoring size at the moment.
 	$html = '<textarea class="large-text" cols="50" rows="10" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']">' . esc_textarea( $value ) . '</textarea>';
 
-	// Render and style description text underneath textarea if it exists.
+	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
 		$html .= '<p class="description">' . $args['desc'] . '</p>';
 
