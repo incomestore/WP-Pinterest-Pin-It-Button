@@ -332,6 +332,43 @@ function pib_textarea_callback( $args ) {
 	echo $html;
 }
 
+/**
+ * Number callback function
+ */
+function pib_number_callback( $args ) {
+	global $pib_options;
+
+	if ( isset( $pib_options[ $args['id'] ] ) )
+		$value = $pib_options[ $args['id'] ];
+	else
+		$value = isset( $args['std'] ) ? $args['std'] : '';
+
+	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
+	$html = '<input type="number" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" step="1" value="' . esc_attr( $value ) . '"/>';
+	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+
+	echo $html;
+}
+
+
+/**
+ * Textbox callback function
+ */
+function pib_text_callback( $args ) {
+	global $pib_options;
+
+	if ( isset( $pib_options[ $args['id'] ] ) )
+		$value = $pib_options[ $args['id'] ];
+	else
+		$value = isset( $args['std'] ) ? $args['std'] : '';
+
+	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
+	$html = '<input type="text" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>';
+	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+
+	echo $html;
+}
+
 /*
  * Function we can use to sanitize the input data and return it when saving options
  */
