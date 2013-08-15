@@ -148,7 +148,7 @@ function pib_register_settings() {
 			function_exists( 'pib_' . $option['type'] . '_callback' ) ? 'pib_' . $option['type'] . '_callback' : 'pib_missing_callback',
 			'pib_settings_post_visibility',
 			'pib_settings_post_visibility',
-			pib_get_settings_field_args( $option, 'post_visibilty' )
+			pib_get_settings_field_args( $option, 'post_visibility' )
 		);
 	}
 	
