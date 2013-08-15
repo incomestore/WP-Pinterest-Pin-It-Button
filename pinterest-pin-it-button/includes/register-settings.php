@@ -202,7 +202,7 @@ function pib_get_settings_field_args( $option, $section ) {
 
 	// Link label to input using 'label_for' argument if text, textarea, password, select, or variations of.
 	// Just add to existing settings args array if needed.
-	if ( in_array( $option['type'], array( 'text', 'select', 'textarea', 'password' ) ) ) {
+	if ( in_array( $option['type'], array( 'text', 'select', 'textarea', 'password', 'number' ) ) ) {
 		$settings_args = array_merge( $settings_args, array( 'label_for' => 'pib_settings_' . $section . '[' . $option['id'] . ']' ) );
 	}
 
@@ -344,12 +344,14 @@ function pib_number_callback( $args ) {
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-	$html = '<input type="number" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" step="1" value="' . esc_attr( $value ) . '"/>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html = "\n" . '<input type="number" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" step="1" value="' . esc_attr( $value ) . '"/>' . "\n";
+
+	// Render description text directly to the right of the number box.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>' . "\n";
 
 	echo $html;
 }
-
 
 /**
  * Textbox callback function
@@ -363,8 +365,11 @@ function pib_text_callback( $args ) {
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-	$html = '<input type="text" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>';
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html = "\n" . '<input type="text" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>' . "\n";
+
+	// Render and style description text underneath if it exists.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<p class="description">' . $args['desc'] . '</p>' . "\n";
 
 	echo $html;
 }
