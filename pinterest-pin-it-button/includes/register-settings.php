@@ -88,7 +88,7 @@ function pib_register_settings() {
 		   'remove_div' => array(
 			  'id'   => 'remove_div',
 			  'name' => __( 'Remove DIV Container', 'pib' ),
-			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars('<div class="pin-it-btn-wrapper"></div>') . '</code>).',
+			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars('<div class="pin-it-btn-wrapper"></div>') . '</code>)',
 			  'type' => 'checkbox'
 		   ),
 		   'disable_css' => array(
@@ -155,7 +155,7 @@ function pib_register_settings() {
 	/* Add the Styles Settings section */
 	add_settings_section(
 		'pib_settings_styles',
-		__( 'Styles', 'pib' ),
+		__( 'Style Settings', 'pib' ),
 		'__return_false',
 		'pib_settings_styles'
 	);
