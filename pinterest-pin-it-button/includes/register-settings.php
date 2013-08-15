@@ -250,7 +250,10 @@ function pib_checkbox_callback( $args ) {
 
 	$checked = isset( $pib_options[$args['id']] ) ? checked( 1, $pib_options[$args['id']], false ) : '';
 	$html = "\n" . '<input type="checkbox" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="1" ' . $checked . '/>' . "\n";
-	$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>' . "\n";
+
+	// Render description text directly to the right in a label if it exists.
+	if ( ! empty( $args['desc'] ) )
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>' . "\n";
 
 	echo $html;
 }
@@ -346,7 +349,7 @@ function pib_number_callback( $args ) {
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 	$html = "\n" . '<input type="number" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" step="1" value="' . esc_attr( $value ) . '"/>' . "\n";
 
-	// Render description text directly to the right of the number box.
+	// Render description text directly to the right in a label if it exists.
 	if ( ! empty( $args['desc'] ) )
 		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . ']"> '  . $args['desc'] . '</label>' . "\n";
 
