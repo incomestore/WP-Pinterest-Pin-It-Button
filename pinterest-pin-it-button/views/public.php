@@ -145,7 +145,7 @@ function pib_render_content( $content ) {
 	   //archive pages besides categories (tag, author, date, search)
 	   //http://codex.wordpress.org/Conditional_Tags
 	   ( is_archive() && ( ! empty( $pib_options['post_page_types']['display_archives'] ) ) &&
-		  ( is_tag() || is_author() || is_date() || is_search() )
+		  ( is_tag() || is_author() || is_date() || is_search() || is_category() )
 	   )
 	  ) {
 	   if ( ! empty( $pib_options['post_page_placement']['display_above_content'] ) ) {
