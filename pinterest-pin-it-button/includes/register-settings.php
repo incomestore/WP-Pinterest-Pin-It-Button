@@ -15,89 +15,89 @@ if ( ! defined( 'ABSPATH' ) )
 function pib_register_settings() {
 	$pib_settings = array(
 
-	    /* General Settings */
-	    'general' => array(
-		   'button_type' => array(
-			  'id'      => 'button_type',
-			  'name'    => __( 'Button Type', 'pib' ),
-			  'desc'    => '',
-			  'type'    => 'radio',
-			  'std'     => 'no',
-			  'options' => array(
-				 'user_selects_image' => __( 'User selects image from popup (any image)', 'pib' ),
-				 'image_selected'     => __( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' )
-			  )
-		   ),
-		   'count_layout' => array(
-			  'id'      => 'count_layout',
-			  'name'    => __( 'Pin Count', 'pib' ),
-			  'desc'    => '',
-			  'type'    => 'select',
-			  'options' => array(
-				 'none'       => __( 'Not Shown', 'pib' ),
-				 'horizontal' => __( 'Beside the Button', 'pib' ),
-				 'vertical'   => __( 'Above the Button', 'pib' )
-			  )
-		   ),
-		   'uninstall_save_settings' => array(
-			  'id'      => 'uninstall_save_settings',
-			  'name'    => __( 'Save Settings', 'pib' ),
-			  'desc'    => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
-			  'type'    => 'checkbox'
-		   )
-	    ),
+		/* General Settings */
+		'general' => array(
+			'button_type' => array(
+				'id'      => 'button_type',
+				'name'    => __( 'Button Type', 'pib' ),
+				'desc'    => '',
+				'type'    => 'radio',
+				'std'     => 'no',
+				'options' => array(
+					'user_selects_image' => __( 'User selects image from popup (any image)', 'pib' ),
+					'image_selected'     => __( 'Image is pre-selected (one image -- defaults to first image in post)', 'pib' )
+				)
+			),
+			'count_layout' => array(
+				'id'      => 'count_layout',
+				'name'    => __( 'Pin Count', 'pib' ),
+				'desc'    => '',
+				'type'    => 'select',
+				'options' => array(
+					'none'       => __( 'Not Shown', 'pib' ),
+					'horizontal' => __( 'Beside the Button', 'pib' ),
+					'vertical'   => __( 'Above the Button', 'pib' )
+				)
+			),
+			'uninstall_save_settings' => array(
+				'id'   => 'uninstall_save_settings',
+				'name' => __( 'Save Settings', 'pib' ),
+				'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
+				'type' => 'checkbox'
+			)
+		),
 
-	    /* Post Visibility Settings */
-	    'post_visibility' => array(
-		   'post_page_types' => array(
-			  'id'      => 'post_page_types',
-			  'name'    => __( 'Post/Page Types', 'pib' ),
-			  'desc'    => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
-			  'type'    => 'multicheck',
-			  'options' => array(
-				 'display_home_page'  => __( 'Home Page (or latest posts page)', 'pib' ),
-				 'display_front_page' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
-				 'display_posts'      => __( 'Individual Posts', 'pib' ),
-				 'display_pages'      => __( 'Individual Pages (WordPress static pages)', 'pib' ),
-				 'display_archives'   => __( 'Archive Pages (includes Category, Tag, Author, and date-based pages)', 'pib' )
-			  )
-		   ),
-		   'post_page_placement' => array(
-			  'id'      => 'post_page_placement',
-			  'name'    => __( 'Post/Page Placement', 'pib' ),
-			  'desc'    => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
-						   sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
-			  'type'    => 'multicheck',
-			  'options' => array(
-				 'display_above_content'    => __( 'Above Content', 'pib' ),
-				 'display_below_content'    => __( 'Below Content', 'pib' ),
-				 'display_on_post_excerpts' => __( 'Include in Post Excerpts', 'pib' )
-			  )
-		   )
-	    ),
+		/* Post Visibility Settings */
+		'post_visibility' => array(
+			'post_page_types' => array(
+				'id'      => 'post_page_types',
+				'name'    => __( 'Post/Page Types', 'pib' ),
+				'desc'    => __( 'You may individually hide the "Pin It" button per post/page. This field is located towards the bottom of the post/page edit screen.', 'pib' ),
+				'type'    => 'multicheck',
+				'options' => array(
+					'display_home_page'  => __( 'Home Page (or latest posts page)', 'pib' ),
+					'display_front_page' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'pib' ),
+					'display_posts'      => __( 'Individual Posts', 'pib' ),
+					'display_pages'      => __( 'Individual Pages (WordPress static pages)', 'pib' ),
+					'display_archives'   => __( 'Archive Pages (includes Category, Tag, Author, and date-based pages)', 'pib' )
+				)
+			),
+			'post_page_placement' => array(
+				'id'      => 'post_page_placement',
+				'name'    => __( 'Post/Page Placement', 'pib' ),
+				'desc'    => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
+					sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
+				'type'    => 'multicheck',
+				'options' => array(
+					'display_above_content'    => __( 'Above Content', 'pib' ),
+					'display_below_content'    => __( 'Below Content', 'pib' ),
+					'display_on_post_excerpts' => __( 'Include in Post Excerpts', 'pib' )
+				)
+			)
+		),
 
-	    /* Styles Settings */
-	    'styles' => array(
-		   'custom_css' => array(
-			  'id'   => 'custom_css',
-			  'name' => __( 'Custom CSS', 'pib' ),
-			  'desc' => __( 'Custom CSS can be used to override other CSS style rules.', 'pib' ) . '<br />' .
-					    sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ),
-			  'type' => 'textarea'
-		   ),
-		   'remove_div' => array(
-			  'id'   => 'remove_div',
-			  'name' => __( 'Remove DIV Container', 'pib' ),
-			  'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars('<div class="pin-it-btn-wrapper"></div>') . '</code>)',
-			  'type' => 'checkbox'
-		   ),
-		   'disable_css' => array(
-			  'id'   => 'disable_css',
-			  'name' => __( 'Disable CSS File Reference', 'pib' ),
-			  'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
-			  'type' => 'checkbox'
-		   )
-	    )
+		/* Styles Settings */
+		'styles' => array(
+			'custom_css' => array(
+				'id'   => 'custom_css',
+				'name' => __( 'Custom CSS', 'pib' ),
+				'desc' => __( 'Custom CSS can be used to override other CSS style rules.', 'pib' ) . '<br />' .
+					sprintf( __( 'Visit the <a href="%s">Help Section</a> for CSS override examples.', 'pib' ), add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ),
+				'type' => 'textarea'
+			),
+			'remove_div' => array(
+				'id'   => 'remove_div',
+				'name' => __( 'Remove DIV Container', 'pib' ),
+				'desc' => __( 'Remove DIV tag surrounding regular button', 'pib' ) . '(<code>' . htmlspecialchars( '<div class="pin-it-btn-wrapper"></div>' ) . '</code>)',
+				'type' => 'checkbox'
+			),
+			'disable_css' => array(
+				'id'   => 'disable_css',
+				'name' => __( 'Disable CSS File Reference', 'pib' ),
+				'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
+				'type' => 'checkbox'
+			)
+		)
 	);
 	
 	/* If the options do not exist then create them for each section */
@@ -112,7 +112,6 @@ function pib_register_settings() {
 	if ( false == get_option( 'pib_settings_styles' ) ) {
 		add_option( 'pib_settings_styles' );
 	}
-	
 	
 	/* Add the General Settings section */
 	add_settings_section(
@@ -191,13 +190,13 @@ add_action( 'admin_init', 'pib_register_settings' );
 
 function pib_get_settings_field_args( $option, $section ) {
 	$settings_args = array(
-		'id' => $option['id'],
-		'desc' => $option['desc'],
-		'name' => $option['name'],
+		'id'      => $option['id'],
+		'desc'    => $option['desc'],
+		'name'    => $option['name'],
 		'section' => $section,
-		'size' => isset( $option['size'] ) ? $option['size'] : null,
+		'size'    => isset( $option['size'] ) ? $option['size'] : null,
 		'options' => isset( $option['options'] ) ? $option['options'] : '',
-		'std' => isset( $option['std'] ) ? $option['std'] : ''
+		'std'     => isset( $option['std'] ) ? $option['std'] : ''
 	);
 
 	// Link label to input using 'label_for' argument if text, textarea, password, select, or variations of.
