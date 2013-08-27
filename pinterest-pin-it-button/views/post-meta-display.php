@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 global $pib_options;
 
-$button_type = ( $pib_options['button_type'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
+$button_type_display = ( $pib_options['button_type'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 
 $pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
 $pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
@@ -23,15 +23,17 @@ $pib_description = get_post_meta( $post->ID, 'pib_description', true);
 ?>
 
 <p>
-	<?php _e( 'The button type is inherited from the main settings.', 'pib' ); ?>
-	<?php echo sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( '"Pin It" Button Settings', 'pib' ) ); ?>.
+	<?php _e( 'Individual post or page-level button settings will only take affect if the "Pin It" button type set in the main settings is <strong>"image pre-selected"</strong>.', 'pib' ); ?>
 </p>
 <p>
-	<?php _e( 'These 3 text fields will be used only if the button type is "image pre-selected".', 'pib' ); ?>
+	<?php _e( 'Current button type:', 'pib' ) ?> <strong><?php echo $button_type_display; ?></strong>
 </p>
-<p>
-	<?php _e( 'Current Button Type:', 'pib' ) ?> <strong><?php echo $button_type; ?></strong>
-</p>
+<?php if ( $pib_options['button_type'] == 'user_selects_image' ): ?>
+	<p>
+		<strong style="color: red;"><?php _e( 'The below settings will not take affects unless the button type is changed. ', 'pib' ); ?></strong>
+		<?php echo sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( 'Go to "Pin It" Button Settings', 'pib' ) ); ?>
+	</p>
+<?php endif; ?>
 <p>
 	<label for="pib_url_of_webpage"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label><br />
 	<input type="text" class="widefat" name="pib_url_of_webpage" id="pib_url_of_webpage" value="<?php echo $pib_url_of_webpage; ?>" />
