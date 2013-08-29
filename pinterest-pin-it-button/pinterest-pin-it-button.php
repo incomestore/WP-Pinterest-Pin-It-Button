@@ -23,7 +23,8 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
-require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
+if( ! class_exists( 'Pinterest_Pin_It_Button' ) )
+	require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
 register_activation_hook( __FILE__, array( 'Pinterest_Pin_It_Button', 'activate' ) );
