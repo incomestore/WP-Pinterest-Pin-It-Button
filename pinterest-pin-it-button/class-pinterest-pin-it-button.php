@@ -319,7 +319,7 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 *
 	 * @param   int  $post_id
-	 * @return  int  Post ID
+	 * @return  int  $post_id
 	 */
 	public function save_meta_data( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
@@ -364,7 +364,7 @@ class Pinterest_Pin_It_Button {
 	 * @since   2.0.0
 	 *
 	 * @param   array  $links  Default plugin action links.
-	 * @return  array          Amended plugin action links.
+	 * @return  array  $links  Amended plugin action links.
 	 */
 	public function settings_link( $links ) {
 		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
