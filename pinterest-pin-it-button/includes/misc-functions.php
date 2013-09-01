@@ -66,10 +66,14 @@ function pib_rss_news() {
 			// Loop through each feed item and display each item as a hyperlink.
 			foreach ( $rss_items as $item ): ?>
 				<?php $post_url = add_query_arg( array(
-									'utm_source'   => 'pib_lite_2',
-									'utm_medium'   => 'sidebar_link',
-									'utm_campaign' => 'blog_post_link'
-								), esc_url( $item->get_permalink() ) ); ?>
+					/************************
+					 * Unique campaign source
+					 ************************/
+					'utm_source'   => 'pib_lite_2',
+
+					'utm_medium'   => 'sidebar_link',
+					'utm_campaign' => 'blog_post_link'
+				), esc_url( $item->get_permalink() ) ); ?>
 
 				<li>
 					&raquo; <a href="<?php echo $post_url; ?>" target="_blank" class="pib-external-link"><?php echo esc_html( $item->get_title() ); ?></a>
