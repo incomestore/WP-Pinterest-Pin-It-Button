@@ -13,8 +13,8 @@
  * Plugin URI: http://pinterestplugin.com
  * Description: Add a Pinterest "Pin It" Button to your site and get your visitors to start pinning your awesome content!
  * Version: 2.0.0
- * Author: Phil Derksen and Nick Young
- * Author URI: http://pinterestplugin.com
+ * Author: Phil Derksen
+ * Author URI: http://philderksen.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
