@@ -55,3 +55,16 @@ if ( ! defined( 'ABSPATH' ) )
 		<?php pib_rss_news(); ?>
 	</div>
 </div>
+
+<?php if ( PIB_IS_WOO_COMMERCE_ACTIVE ): ?>
+<?php //if ( class_exists( 'WooCommerce' ) ): ?>
+
+<div class="sidebar-container">
+	<h4 class="sidebar-title-small"><?php _e( 'WooCommerce User Eh?', 'pib' ); ?></h4>
+
+	<div class="sidebar-content">
+		To Do...
+	</div>
+</div>
+
+<?php endif; ?>
