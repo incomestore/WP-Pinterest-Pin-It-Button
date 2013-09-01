@@ -53,15 +53,6 @@ class Pinterest_Pin_It_Button {
 	protected $plugin_screen_hook_suffix = null;
 
 	/**
-	 * Variable to check of the WooCommerce plugin is active.
-	 *
-	 * @since   2.0.0
-	 *
-	 * @var     boolean
-	 */
-	protected $is_woo_commerce_active = false;
-
-	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
 	 * @since     2.0.0
@@ -90,9 +81,6 @@ class Pinterest_Pin_It_Button {
 
 		// Add admin notice after plugin activation. Also check if should be hidden.
 		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
-
-		// Run actions based on specific plugins loaded.
-		add_action( 'plugins_loaded', array( $this, 'detect_other_plugins' ) );
 
 		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
@@ -139,10 +127,6 @@ class Pinterest_Pin_It_Button {
 		// Plugin folder URL.
 		if ( ! defined( 'PIB_PLUGIN_URL' ) )
 			define( 'PIB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-
-		// Check if WooCommerce plugin is active.
-		if ( ! defined( 'PIB_IS_WOO_COMMERCE_ACTIVE' ) )
-			define( 'PIB_IS_WOO_COMMERCE_ACTIVE', $this->is_woo_commerce_active );
 	}
 
 	/**
@@ -428,18 +412,5 @@ class Pinterest_Pin_It_Button {
 
 		// At this point show install notice.
 		include_once( 'views/admin-install-notice.php' );
-	}
-
-	// TODO Best way to check? Or simply function that returns class_exists?
-	// TODO Function comments.
-
-	public function detect_other_plugins() {
-		// Check if WooCommerce is active.
-		// Could also do:
-		// if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-
-		if ( class_exists( 'WooCommerce' ) ) {
-			$this->is_woo_commerce_active = true;
-		}
 	}
 }

@@ -56,8 +56,7 @@ if ( ! defined( 'ABSPATH' ) )
 	</div>
 </div>
 
-<?php if ( PIB_IS_WOO_COMMERCE_ACTIVE ): ?>
-<?php //if ( class_exists( 'WooCommerce' ) ): ?>
+<?php if ( is_woo_commerce_active() ): ?>
 
 <div class="sidebar-container">
 	<h4 class="sidebar-title-small"><?php _e( 'WooCommerce User Eh?', 'pib' ); ?></h4>

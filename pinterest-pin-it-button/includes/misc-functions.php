@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) )
  * @since     2.0.0
  *
  * @param   string  $medium  Google Analytics "medium" tracking value
- * @return  string           Full Google Analytics campaign URL
+ * @return  string  $url     Full Google Analytics campaign URL
  */
 function pib_pro_upgrade_url( $medium ) {
 	$base_url = 'http://pinterestplugin.com/pin-it-button-pro/';
@@ -34,18 +34,22 @@ function pib_pro_upgrade_url( $medium ) {
 	return $url;
 }
 
-// Render RSS items from pinterestplugin.com in unordered list.
-// http://codex.wordpress.org/Function_Reference/fetch_feed
+/**
+ * Render RSS items from pinterestplugin.com in unordered list.
+ * http://codex.wordpress.org/Function_Reference/fetch_feed
+ *
+ * @since   2.0.0
+ */
 
 function pib_rss_news() {
-	// Get RSS Feed(s)
+	// Get RSS Feed(s).
 	include_once( ABSPATH . WPINC . '/feed.php' );
 
 	// Get a SimplePie feed object from the specified feed source.
 	$rss = fetch_feed( 'http://pinterestplugin.com/feed/' );
 
 	if ( ! is_wp_error( $rss ) ) {
-		// Checks that the object is created correctly
+		// Checks that the object is created correctly.
 		// Figure out how many total items there are, but limit it to 5.
 		$maxitems = $rss->get_item_quantity( 3 );
 
@@ -75,4 +79,26 @@ function pib_rss_news() {
 	</ul>
 
 	<?php
+}
+
+/**
+ * Check if the WooCommerce plugin is active.
+ *
+ * @since   2.0.0
+ *
+ * @return  boolean
+ */
+function is_woo_commerce_active() {
+	return class_exists( 'WooCommerce' );
+
+	/*
+	 * Could also do:
+	 * if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	 *
+	 * References:
+	 * http://docs.woothemes.com/document/create-a-plugin/
+	 * http://www.wpmayor.com/articles/how-to-check-whether-a-plugin-is-active/
+	 * http://pippinsplugins.com/checking-dependent-plugin-active/
+	 */
+
 }
