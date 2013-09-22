@@ -16,7 +16,7 @@ class PIB_Widget extends WP_Widget {
 	
 	public function __construct() {
 		parent::__construct(
-			'pib-button-widget',
+			'pib_button',
 			__( 'Pinterest "Pin It" Button', 'pib' ),
 			array(
 				'classname'		=>	'pib-clearfix', // Wrap widget with "clear fix" CSS trick.
@@ -45,7 +45,7 @@ class PIB_Widget extends WP_Widget {
 		$count_layout           = empty( $instance['count_layout'] ) ? 'none' : $instance['count_layout'];
 		$align                  = empty( $instance['button_align'] ) ? 'none' : $instance['button_align'];
 		$pib_remove_div         = (bool) $instance['remove_div'];
-		$button_type            = $instance['button_type'];
+		$button_type            = empty ( $instance['button_type'] ) ? 'user_selects_image' : $instance['button_type'];
 		
 		// If the button type is set for users to select image then we need to overwrite any values from the widget that are used
 		// for displaying a a pre-selected image. These are not erased from the widget, but are just overwritten here.
