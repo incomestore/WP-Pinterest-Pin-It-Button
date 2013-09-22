@@ -15,8 +15,10 @@ if ( ! defined( 'ABSPATH' ) )
 function pib_register_admin_notices() {
 	// The first check will show message if general tab is updated. The additional check is if the plugin page is first clicked on and the 'tab' has not been set yet.
 	
+	$is_pib_settings_page = strpos( ( isset( $_GET['page'] ) ? $_GET['page'] : '' ), 'pinterest-pin-it-button' );  
+	
 	if ( ( isset( $_GET['tab'] ) && 'general' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] )
-			|| ( !isset( $_GET['tab'] ) && 'true' == isset( $_GET['settings-updated'] ) ) ) {
+			|| ( !isset( $_GET['tab'] ) && $is_pib_settings_page !== false  && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) ) {
 		add_settings_error( 'pib-notices', 'pib-general-updated', __( 'General settings updated.', 'pib' ), 'updated' );
 	}
 	
