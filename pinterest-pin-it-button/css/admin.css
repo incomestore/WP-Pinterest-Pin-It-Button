@@ -47,11 +47,12 @@ a.pib-external-link {
 	text-align: left;
 }
 
-#pib-settings-sidebar .sidebar-title-large {
+#pib-settings-sidebar .sidebar-title-large,
+#pib-settings-sidebar .sidebar-title-medium {
 	background-color: #34495e;
 	border-bottom: 1px solid #ebebeb;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 12px;
 	font-weight: 700;
 	line-height: 18px;
 	margin: 0;
@@ -60,6 +61,14 @@ a.pib-external-link {
 	-webkit-border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
+}
+
+#pib-settings-sidebar .sidebar-title-large {
+	font-size: 20px;
+}
+
+#pib-settings-sidebar .sidebar-title-medium {
+	font-size: 16px;
 }
 
 #pib-settings-sidebar .sidebar-title-small {
@@ -95,10 +104,6 @@ a.pib-external-link {
 #pib-settings-sidebar .sidebar-content p.last-blurb {
 	font-size: 17px;
 	margin-bottom: 25px;
-	text-align: center;
-}
-
-#pib-settings-sidebar .sidebar-content p.rating-text {
 	text-align: center;
 }
 

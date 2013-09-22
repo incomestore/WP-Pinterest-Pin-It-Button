@@ -18,13 +18,19 @@ if ( ! defined( 'ABSPATH' ) )
 
 	<div class="sidebar-content">
 		<ul>
-			<li><i class="fui-check"></i> <?php _e( 'Image Hover "Pin It" button', 'pib' ); ?></li>
+			<!--<li><i class="fui-check"></i> <?php _e( 'Image Hover "Pin It" button', 'pib' ); ?></li>-->
+			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons on image hover', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons under images', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Featured image support', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Custom post type support', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Add button under each image', 'pib' ); ?></li>
+
+			<?php if ( is_woo_commerce_active() ): ?>
+			<li><i class="fui-check"></i> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
+			<?php endif; ?>
+
 			<li><i class="fui-check"></i> <?php _e( 'Priority support & auto updates', 'pib' ); ?></li>
 		</ul>
 
@@ -37,10 +43,29 @@ if ( ! defined( 'ABSPATH' ) )
 	</div>
 </div>
 
+<?php if ( is_woo_commerce_active() ): ?>
+
+	<div class="sidebar-container">
+		<h4 class="sidebar-title-medium"><?php _e( 'WooCommerce Rich Pins', 'pib' ); ?></h4>
+
+		<div class="sidebar-content">
+			<p>
+				<?php _e( 'Running a WooCommerce store and want to give your pins a boost? There\'s a plugin for that.', 'pib' ); ?>
+			</p>
+
+			<!-- TODO campaign url -->
+
+			<a href="http://pinterestplugin.com/woocommerce-rich-pins/" class="btn btn-small btn-block btn-inverse" target="_blank">
+				<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?></a>
+		</div>
+	</div>
+
+<?php endif; ?>
+
 <div class="sidebar-container">
 	<div class="sidebar-content">
-		<p class="rating-text">
-			<?php _e( "Help us get noticed (and boost our egos) with a rating and short review.", 'pib' ); ?>
+		<p>
+			<?php _e( 'Help us get noticed (and boost our egos) with a rating and short review.', 'pib' ); ?>
 		</p>
 
 		<a href="http://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button" class="btn btn-small btn-block btn-inverse" target="_blank">
@@ -55,15 +80,3 @@ if ( ! defined( 'ABSPATH' ) )
 		<?php pib_rss_news(); ?>
 	</div>
 </div>
-
-<?php if ( is_woo_commerce_active() ): ?>
-
-<div class="sidebar-container">
-	<h4 class="sidebar-title-small"><?php _e( 'WooCommerce User Eh?', 'pib' ); ?></h4>
-
-	<div class="sidebar-content">
-		To Do...
-	</div>
-</div>
-
-<?php endif; ?>
