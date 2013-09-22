@@ -66,7 +66,7 @@ function pib_register_settings() {
 				'id'      => 'post_page_placement',
 				'name'    => __( 'Post/Page Placement', 'pib' ),
 				'desc'    => __( 'Only the button style <strong>"Image is pre-selected"</strong> will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
-					sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar or other sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
+					sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar or other widget area.', 'pib' ), admin_url( 'widgets.php' ) ),
 				'type'    => 'multicheck',
 				'options' => array(
 					'display_above_content'    => __( 'Above Content', 'pib' ),
