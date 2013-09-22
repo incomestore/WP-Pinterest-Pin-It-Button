@@ -65,8 +65,8 @@ function pib_register_settings() {
 			'post_page_placement' => array(
 				'id'      => 'post_page_placement',
 				'name'    => __( 'Post/Page Placement', 'pib' ),
-				'desc'    => __( 'Only the button style "image is pre-selected" will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
-					sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
+				'desc'    => __( 'Only the button style <strong>"Image is pre-selected"</strong> will use the individual post URL when a visitor pins from a post excerpt.', 'pib' ) . '<br />' .
+					sprintf( __( 'Go to Appearance &rarr; <a href="%s">Widgets</a> to add a "Pin It" button to your sidebar or other sidebar.', 'pib' ), admin_url( 'widgets.php' ) ),
 				'type'    => 'multicheck',
 				'options' => array(
 					'display_above_content'    => __( 'Above Content', 'pib' ),
@@ -99,20 +99,20 @@ function pib_register_settings() {
 			)
 		)
 	);
-	
+
 	/* If the options do not exist then create them for each section */
 	if ( false == get_option( 'pib_settings_general' ) ) {
 		add_option( 'pib_settings_general' );
 	}
-	
+
 	if ( false == get_option( 'pib_settings_post_visibility' ) ) {
 		add_option( 'pib_settings_post_visibility' );
 	}
-	
+
 	if ( false == get_option( 'pib_settings_styles' ) ) {
 		add_option( 'pib_settings_styles' );
 	}
-	
+
 	/* Add the General Settings section */
 	add_settings_section(
 		'pib_settings_general',
@@ -120,7 +120,7 @@ function pib_register_settings() {
 		'__return_false',
 		'pib_settings_general'
 	);
-	
+
 	foreach ( $pib_settings['general'] as $option ) {
 		add_settings_field(
 			'pib_settings_general[' . $option['id'] . ']',
@@ -131,7 +131,7 @@ function pib_register_settings() {
 			pib_get_settings_field_args( $option, 'general' )
 		);
 	}
-	
+
 	/* Add the Post Visibility Settings section */
 	add_settings_section(
 		'pib_settings_post_visibility',
@@ -139,7 +139,7 @@ function pib_register_settings() {
 		'__return_false',
 		'pib_settings_post_visibility'
 	);
-	
+
 	foreach ( $pib_settings['post_visibility'] as $option ) {
 		add_settings_field(
 			'pib_settings_post_visibility[' . $option['id'] . ']',
@@ -150,7 +150,7 @@ function pib_register_settings() {
 			pib_get_settings_field_args( $option, 'post_visibility' )
 		);
 	}
-	
+
 	/* Add the Styles Settings section */
 	add_settings_section(
 		'pib_settings_styles',
@@ -158,7 +158,7 @@ function pib_register_settings() {
 		'__return_false',
 		'pib_settings_styles'
 	);
-	
+
 	foreach ( $pib_settings['styles'] as $option ) {
 		add_settings_field(
 			'pib_settings_styles[' . $option['id'] . ']',
@@ -169,12 +169,12 @@ function pib_register_settings() {
 			pib_get_settings_field_args( $option, 'styles' )
 		);
 	}
-	
+
 	/* Register all settings or we will get an error when trying to save */
 	register_setting( 'pib_settings_general',         'pib_settings_general',         'pib_settings_sanitize' );
 	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility', 'pib_settings_sanitize' );
 	register_setting( 'pib_settings_styles',          'pib_settings_styles',          'pib_settings_sanitize' );
-	
+
 }
 add_action( 'admin_init', 'pib_register_settings' );
 
@@ -395,32 +395,32 @@ function pib_missing_callback( $args ) {
  * Function used to return an array of all of the plugin settings
  */
 function pib_get_settings() {
-	
+
 	// If this is the first time running we need to set the defaults
 	if ( !get_option( 'pib_upgrade_has_run' ) ) {
-		
+
 		// set default post visibility options
 		$post_visibility                                                 = get_option( 'pib_settings_post_visibility' );
 		$post_visibility['post_page_types']['display_posts']             = 1;
 		$post_visibility['post_page_placement']['display_below_content'] = 1;
-		
+
 		update_option( 'pib_settings_post_visibility', $post_visibility );
-		
+
 		// set default general settings options
 		$general                            = get_option( 'pib_settings_general' );
 		$general['button_type']             = 'user_selects_image';
 		$general['count_layout']            = 'none';
 		$general['uninstall_save_settings'] = 1;
-		
+
 		update_option( 'pib_settings_general', $general );
-		
+
 		// add an option to let us know the initial settings have been run and we don't run them again
 		add_option( 'pib_upgrade_has_run', 1 );
 	}
-	
+
 	$general_settings         = is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();
 	$post_visibility_settings =	is_array( get_option( 'pib_settings_post_visibility' ) ) ? get_option( 'pib_settings_post_visibility' )  : array();
 	$style_settings           = is_array( get_option( 'pib_settings_styles' ) ) ? get_option( 'pib_settings_styles' )  : array();
-	
+
 	return array_merge( $general_settings, $post_visibility_settings, $style_settings );
 }
