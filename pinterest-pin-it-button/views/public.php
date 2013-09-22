@@ -101,8 +101,8 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	return $link_html;
 }
 
-// Button HTML to render for pages, posts, and excerpts.
-function pib_button_html() {
+// Button HTML to render for pages, posts, and excerpts
+function pib_button_html( $image_url = '' ) {
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
@@ -113,11 +113,14 @@ function pib_button_html() {
 
 	//Set post url, image url and description from current post meta
 	$post_url = get_post_meta( $postID, 'pib_url_of_webpage', true );
-	$image_url = get_post_meta( $postID, 'pib_url_of_img', true );
 	$description = get_post_meta( $postID, 'pib_description', true );
+	//$post_meta_url = ;
+	
+	if( get_post_meta( $postID, 'pib_url_of_img', true ) )
+			$image_url = get_post_meta( $postID, 'pib_url_of_img', true );
 
 	$count_layout = $pib_options['count_layout'];
-
+	
 	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout );
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
