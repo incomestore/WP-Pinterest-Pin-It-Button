@@ -410,7 +410,8 @@ class Pinterest_Pin_It_Button {
 			return;
 		}
 
-		// At this point show install notice.
-		include_once( 'views/admin-install-notice.php' );
+		// At this point show install notice. Show it only on the plugin screen.
+		if( get_current_screen()->id == 'plugins' )
+			include_once( 'views/admin-install-notice.php' );
 	}
 }
