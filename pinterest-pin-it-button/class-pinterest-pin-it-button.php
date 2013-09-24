@@ -65,7 +65,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @var      string
 	 */
-	protected $presstrends_auth = 'aivd9nfwe7b2xhnb3qbeoidzilpgpa3qk';
+	protected $presstrends_auth = '0ebdi3uscgaztp99nnbam6rl6i2186qwo';
 	
 	private function __construct() {
 		// Setup constants.
