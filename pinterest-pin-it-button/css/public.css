@@ -14,6 +14,7 @@ div.pin-it-btn-wrapper-widget {
 
 div.pin-it-btn-wrapper {
     padding-bottom: 10px;
+	position: relative;
 }
 
 div.pin-it-btn-wrapper a,
