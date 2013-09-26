@@ -11,6 +11,9 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) )
 	exit;
 
+// Legacy category option not used anymore. Delete either way.
+delete_option( 'pib_category_fields_option' );
+
 $general = get_option( 'pib_settings_general' );
 
 // If the the option to save settings is checked then do nothing, otherwise delete all options and post meta
@@ -26,7 +29,7 @@ if ( $general['uninstall_save_settings'] ) {
 	delete_option( 'pib_version' );
 	delete_option( 'pib_show_admin_install_notice' );
 	
-	// delete widget options
+	// Delete widget options
 	delete_option( 'widget_pib_button' );
 	
 	// Delete post meta
