@@ -33,7 +33,7 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 // http://business.pinterest.com/widget-builder/#do_pin_it_button
 // Sample HTML from widget builder:
 /*
-<a href="//pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above">
+<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above">
 	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
 </a>
 */
@@ -41,7 +41,6 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
-	
 	
 	// Use updated backup button image URL from Pinterest.
 	$btn_img_url = '//assets.pinterest.com/images/pidgets/pin_it_button.png';
