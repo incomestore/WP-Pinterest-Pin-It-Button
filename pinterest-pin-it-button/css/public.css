@@ -4,7 +4,7 @@
 
 	/***
 	*
-	*	DIV surrounding button 
+	*	DIV surrounding button
 	*
 	***/
 div.pin-it-btn-wrapper,
@@ -15,13 +15,14 @@ div.pin-it-btn-wrapper-widget {
 div.pin-it-btn-wrapper {
     padding-bottom: 10px;
 	position: relative;
+	clear: both;
 }
 
 div.pin-it-btn-wrapper a,
 div.pin-it-btn-wrapper a:hover,
 div.pin-it-btn-wrapper-shortcode a,
-div.pin-it-btn-wrapper-shortcode a:hover, 
-div.pin-it-btn-wrapper-widget a, 
+div.pin-it-btn-wrapper-shortcode a:hover,
+div.pin-it-btn-wrapper-widget a,
 div.pin-it-btn-wrapper-widget a:hover {
 	background: none;
 	border: 0;
