@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) )
 			<li><i class="fui-check"></i> <?php _e( 'Featured image support', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Custom post type support', 'pib' ); ?></li>
 
-			<?php if ( is_woo_commerce_active() ): ?>
+			<?php if ( pib_is_woo_commerce_active() ): ?>
 			<li><i class="fui-check"></i> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 			<?php endif; ?>
 
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) )
 	</div>
 </div>
 
-<?php if ( is_woo_commerce_active() ): ?>
+<?php if ( pib_is_woo_commerce_active() ): ?>
 
 	<div class="sidebar-container">
 		<h4 class="sidebar-title-medium"><?php _e( 'WooCommerce Rich Pins', 'pib' ); ?></h4>

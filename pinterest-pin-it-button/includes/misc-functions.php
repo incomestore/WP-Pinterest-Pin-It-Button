@@ -92,7 +92,7 @@ function pib_rss_news() {
  *
  * @return  boolean
  */
-function is_woo_commerce_active() {
+function pib_is_woo_commerce_active() {
 	return class_exists( 'WooCommerce' );
 
 	/*
@@ -104,5 +104,4 @@ function is_woo_commerce_active() {
 	 * http://www.wpmayor.com/articles/how-to-check-whether-a-plugin-is-active/
 	 * http://pippinsplugins.com/checking-dependent-plugin-active/
 	 */
-
 }
