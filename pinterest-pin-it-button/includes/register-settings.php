@@ -409,6 +409,7 @@ function pib_get_settings() {
 
 		// set default post visibility options
 		$post_visibility                                                 = get_option( 'pib_settings_post_visibility' );
+		$post_visibility['post_page_types']['display_home_page']         = 1;
 		$post_visibility['post_page_types']['display_posts']             = 1;
 		$post_visibility['post_page_placement']['display_below_content'] = 1;
 
