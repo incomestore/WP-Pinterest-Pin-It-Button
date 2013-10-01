@@ -37,17 +37,15 @@ div.pin-it-btn-wrapper-widget a:hover {
 	border-radius: 0;
 }
 
-/* Latest "clear fix" method: http://css-tricks.com/snippets/css/clear-fix/ */
+/* Latest "clearfix" utility class from Bootstrap 3 */
 .pib-clearfix:before,
 .pib-clearfix:after {
-    content:"";
-    display: table;
+	display: table;
+	content: " ";
 }
+
 .pib-clearfix:after {
-    clear: both;
-}
-.pib-clearfix {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+	clear: both;
 }
 
 /* Align left/right/center options */
