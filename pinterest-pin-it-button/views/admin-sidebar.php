@@ -24,14 +24,14 @@ if ( ! defined( 'ABSPATH' ) )
 			<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Featured image support', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Custom post type support', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Use with featured images', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Use with custom post types', 'pib' ); ?></li>
 
 			<?php if ( pib_is_woo_commerce_active() ): ?>
 			<li><i class="fui-check"></i> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 			<?php endif; ?>
 
-			<li><i class="fui-check"></i> <?php _e( 'Priority support & auto updates', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Tech support & auto updates', 'pib' ); ?></li>
 		</ul>
 
 		<p class="last-blurb">
