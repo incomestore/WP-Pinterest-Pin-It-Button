@@ -150,27 +150,53 @@ if ( ! defined( 'ABSPATH' ) )
 				<?php _e( 'To override the CSS styles you may add your own CSS to the plugin\'s "Custom CSS" box or in your theme files.', 'pib' ); ?>
 				<?php _e( 'No !important tags are used in this plugin\'s CSS, but note that the embed code from Pinterest also renders some CSS (which may include !important tags).', 'pib' ); ?>
 			</p>
-			<p>
-				<?php _e( 'The main CSS classes for the button are:', 'pib' ); ?>
-			</p>
+
+			<h4><?php _e( 'Available CSS classes (Lite & Pro)', 'pib' ); ?></h4>
 
 			<ul class="ul-disc">
-				<li><code>div.pin-it-btn-wrapper</code> - <?php _e( 'Regular button wrapper', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper-shortcode</code> - <?php _e( 'Shortcode button wrapper', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper-widget</code> - <?php _e( 'Widget button wrapper', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper a</code> - <?php _e( 'Regular button tag', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper-shortcode a</code> - <?php _e( 'Shortcode button tag', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper-widget a</code> - <?php _e( 'Widget button tag', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper</code> - <?php _e( 'Regular button container', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper a</code> - <?php _e( 'Regular button link tag', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper-shortcode</code> - <?php _e( 'Shortcode button container', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper-shortcode a</code> - <?php _e( 'Shortcode button link tag', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper-widget</code> - <?php _e( 'Widget button container', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper-widget a</code> - <?php _e( 'Widget button link tag', 'pib' ); ?></li>
 			</ul>
 
 			<p>
 				<?php _e( 'There is also a <code>span</code> element nested inside the "Pin It" button <code>a</code> tag which contains the count bubble.', 'pib' ); ?>
 			</p>
 
+			<h4><?php _e( 'Available CSS classes (Pro Only)', 'pib' ); ?></h4>
+
+			<ul class="ul-disc">
+				<li><code>a.pib-hover-btn-link</code> - <?php _e( 'Hover button link tag', 'pib' ); ?></li>
+				<li><code>div.pib-img-under-wrapper</code> - <?php _e( 'Below image button container', 'pib' ); ?></li>
+				<li><code>div.pib-img-under-wrapper a</code> - <?php _e( 'Below image button link tag', 'pib' ); ?></li>
+
+				<li><code>div.pib-sharebar</code> - <?php _e( 'Share bar container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-pinterest</code> - <?php _e( 'Share bar: Pin It button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-facebook-share</code> - <?php _e( 'Share bar: Facebook Share button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-facebook</code> - <?php _e( 'Share bar: Facebook Like button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-twitter</code> - <?php _e( 'Share bar: Tweet button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-gplus-share</code> - <?php _e( 'Share bar: Google+ Share button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-gplus</code> - <?php _e( 'Share bar: Google +1 button container', 'pib' ); ?></li>
+				<li><code>li.pib-sharebar-linkedin</code> - <?php _e( 'Share bar: LinkedIn Share button container', 'pib' ); ?></li>
+			</ul>
+
+			<p>
+				<?php printf( __( 'Visit the <a href="%s" target="_blank">Knowledgebase</a> for additional help.', 'pib' ), 'http://pinterestplugin.com/support' ); ?>
+			</p>
+
 		</div><!-- #pib-settings-content -->
 
+		<?php // Always show sidebar on help page. Different for Lite & Pro. ?>
+
 		<div id="pib-settings-sidebar">
-			<?php include( 'admin-sidebar.php' ); ?>
+			<?php if ( class_exists( 'Pinterest_Pin_It_Button_Pro' ) ): ?>
+				<?php include( 'admin-sidebar-pro.php' ); ?>
+			<?php else: ?>
+				<?php include( 'admin-sidebar.php' ); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 
