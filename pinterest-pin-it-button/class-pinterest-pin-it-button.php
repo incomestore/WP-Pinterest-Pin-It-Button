@@ -124,7 +124,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since     2.0.0
 	 */
-	private function setup_constants() {
+	public function setup_constants() {
 		// Plugin slug.
 		if ( ! defined( 'PIB_PLUGIN_SLUG' ) )
 			define( 'PIB_PLUGIN_SLUG', $this->plugin_slug );
@@ -346,7 +346,7 @@ class Pinterest_Pin_It_Button {
 		);
 
 		// Record sharing disable
-		if ( isset( $_POST['post_type'] ) && ( 'post' == $_POST['post_type'] || 'page' == $_POST['post_type'] ) ) {
+		
 			if ( current_user_can( 'edit_post', $post_id ) ) {
 				if ( isset( $_POST['pib_sharing_status_hidden'] ) ) {
 					if ( !isset( $_POST['pib_enable_post_sharing'] ) ) {
@@ -366,7 +366,7 @@ class Pinterest_Pin_It_Button {
 					}
 				}
 			}
-		}
+		
 
 		return $post_id;
 	}
