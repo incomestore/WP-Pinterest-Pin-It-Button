@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) )
 
 	<div class="sidebar-content">
 		<ul>
-			<!--<li><i class="fui-check"></i> <?php _e( 'Image Hover "Pin It" button', 'pib' ); ?></li>-->
 			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons on image hover', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons under images', 'pib' ); ?></li>
 			<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
