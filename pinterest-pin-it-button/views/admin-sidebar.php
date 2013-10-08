@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) )
 			<li><i class="fui-check"></i> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 			<?php endif; ?>
 
-			<li><i class="fui-check"></i> <?php _e( 'Tech support & auto updates', 'pib' ); ?></li>
+			<li><i class="fui-check"></i> <?php _e( 'Customer support & auto updates', 'pib' ); ?></li>
 		</ul>
 
 		<p class="last-blurb">
