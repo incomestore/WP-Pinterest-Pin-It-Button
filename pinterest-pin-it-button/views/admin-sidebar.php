@@ -38,7 +38,8 @@ if ( ! defined( 'ABSPATH' ) )
 			<?php _e( 'Get all of these and more with Pinterest "Pin It" Button Pro!', 'pib' ); ?>
 		</p>
 
-		<a href="<?php echo pib_pro_upgrade_url( 'sidebar_link' ); ?>" class="btn btn-large btn-block btn-danger" target="_blank">
+		<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/pin-it-button-pro/', 'pib_lite_2', 'sidebar_link', 'pro_upgrade' ); ?>"
+		   class="btn btn-large btn-block btn-danger" target="_blank">
 			<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 	</div>
 </div>
@@ -53,9 +54,8 @@ if ( ! defined( 'ABSPATH' ) )
 				<?php _e( 'Running a WooCommerce store and want to give your pins a boost? There\'s a plugin for that.', 'pib' ); ?>
 			</p>
 
-			<!-- TODO campaign url -->
-
-			<a href="http://pinterestplugin.com/woocommerce-rich-pins/" class="btn btn-small btn-block btn-inverse" target="_blank">
+			<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/woocommerce-rich-pins/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
+			   class="btn btn-small btn-block btn-inverse" target="_blank">
 				<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?></a>
 		</div>
 	</div>

@@ -13,22 +13,24 @@ if ( ! defined( 'ABSPATH' ) )
 	exit;
 
 /**
- * Return URL for Pro plugin upgrade with Google Analytics campaign URL.
+ * Google Analytics campaign URL.
  *
  * @since     2.0.0
  *
- * @param   string  $medium  Google Analytics "medium" tracking value
+ * @param   string  $base_url Plain URL to navigate to
+ * @param   string  $source   GA "source" tracking value
+ * @param   string  $medium   GA "medium" tracking value
+ * @param   string  $campaign GA "campaign" tracking value
  * @return  string  $url     Full Google Analytics campaign URL
  */
-function pib_pro_upgrade_url( $medium ) {
-	$base_url = 'http://pinterestplugin.com/pin-it-button-pro/';
-
+function pib_ga_campaign_url( $base_url, $source, $medium, $campaign ) {
+	// $source is always 'pib_lite_2' for Pit It Button Lite 2.x
 	// $medium examples: 'sidebar_link', 'banner_image'
 
 	$url = add_query_arg( array(
-		'utm_source'   => 'pib_lite_2',
+		'utm_source'   => $source,
 		'utm_medium'   => $medium,
-		'utm_campaign' => 'pro_upgrade'
+		'utm_campaign' => $campaign
 	), $base_url );
 
 	return $url;
@@ -66,13 +68,12 @@ function pib_rss_news() {
 			// Loop through each feed item and display each item as a hyperlink.
 			foreach ( $rss_items as $item ): ?>
 				<?php $post_url = add_query_arg( array(
-					/************************
-					 * Unique campaign source
-					 ************************/
-					'utm_source'   => 'pib_lite_2',
 
+					// Google Analytics campaign URL
+					'utm_source'   => 'pib_lite_2',
 					'utm_medium'   => 'sidebar_link',
 					'utm_campaign' => 'blog_post_link'
+
 				), esc_url( $item->get_permalink() ) ); ?>
 
 				<li>
