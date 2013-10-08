@@ -73,6 +73,23 @@ if ( ! defined( 'ABSPATH' ) )
 </div>
 
 <div class="sidebar-container">
+	<div class="sidebar-content">
+		<ul>
+			<li>
+				<i class="fui-arrow-right"></i>
+				<a href="http://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
+					<?php _e( 'Community Support Forums', 'pib' ); ?></a>
+			</li>
+			<li>
+				<i class="fui-arrow-right"></i>
+				<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/support', 'pib_lite_2', 'sidebar_link', 'support' ); ?>" target="_blank">
+					<?php _e( 'Knowledgebase', 'pib' ); ?></a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="sidebar-container">
 	<h4 class="sidebar-title-small"><?php _e( 'Recent News from PinterestPlugin.com', 'pib' ); ?></h4>
 
 	<div class="sidebar-content pib-rss-news">
