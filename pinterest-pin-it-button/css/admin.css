@@ -85,7 +85,7 @@ a.pib-external-link {
 }
 
 #pib-settings-sidebar .sidebar-content ul {
-	margin-top: 0;
+	margin: 0;
 }
 
 #pib-settings-sidebar .sidebar-content ul li {
@@ -103,7 +103,7 @@ a.pib-external-link {
 
 #pib-settings-sidebar .sidebar-content p.last-blurb {
 	font-size: 17px;
-	margin-bottom: 25px;
+	margin: 10px 0 25px 0;
 	text-align: center;
 }
 
