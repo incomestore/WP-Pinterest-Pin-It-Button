@@ -40,6 +40,10 @@ if ( ! defined( 'ABSPATH' ) )
 		<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/pin-it-button-pro/', 'pib_lite_2', 'sidebar_link', 'pro_upgrade' ); ?>"
 		   class="btn btn-large btn-block btn-danger" target="_blank">
 			<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
+		<br/>
+		<p style="text-align: center;">
+			<?php _e( 'Enter discount code <strong>PRO10</strong> to get a <strong>10% discount</strong> until Oct 31!', 'pib' ); ?>
+		</p>
 	</div>
 </div>
 
