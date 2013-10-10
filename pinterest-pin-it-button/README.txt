@@ -82,6 +82,21 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Changelog ==
 
+= 2.0.0 =
+
+* Tested up to WordPress 3.6.1.
+* Now in full compliance with current "Pin It" button developer guidelines at http://developers.pinterest.com/pin_it/.
+* More extensive Help section, which was moved to a separate submenu item.
+* Updated CSS & JS output so they're much more "light weight" which should improve performance.
+* Removed all references to "!important" in public CSS to allow for more control of styles.
+* Implemented more standards from the WordPress Settings API. Settings pages should be more maintainable going forward.
+* Settings pages now using tabs to break up functionality.
+* Can now specify button type for shortcode and widget. No longer inherits from main settings.
+* Fixed so button now shows up on category pages.
+* Added is_main_query() check for "the_content" filter.
+* Removed show/hide button options on category edit screen (conflicted with post/page visibility changes).
+* Optional Presstrends anonymous usage tracking.
+
 = 1.4.3 =
 * Fixed bug where Create Pin popup wasn't working in some cases.
 
