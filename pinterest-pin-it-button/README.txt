@@ -37,6 +37,10 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
+Best of all, you don't need to copy and paste any code to get a "Pin It" button on your WordPress site.
+
+We do the code insertions for you, and in full compliance with the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
+
 ###Raves###
 
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
@@ -47,6 +51,10 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 [See a "Pin It" Button Pro Demo](http://bruisesandbandaids.com/2011/newborn-photography-props/) (shows off the share bar and image hover features)
 
 [Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+
+This plugin (and the Pro version) are in full compliance with current "Pin It" button developer guidelines at <http://developers.pinterest.com/pin_it/>.
+
+We will do our best to keep both plugins up to date with the official developer guidelines.
 
 == Installation ==
 
