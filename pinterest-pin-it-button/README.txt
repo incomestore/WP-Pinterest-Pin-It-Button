@@ -74,11 +74,13 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Screenshots ==
 
-1. Settings page
-2. Button display below a post
-3. Widget options
-4. Per page settings
-5. Advanced settings
+1. Button display with count bubble beside
+2. Button display with count bubble above
+3. General button settings
+4. Post visibility and placement settings
+5. Style/CSS settings
+6. Widget settings
+7. Individual post (post meta) settings
 
 == Changelog ==
 
