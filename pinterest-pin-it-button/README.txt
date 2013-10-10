@@ -74,7 +74,7 @@ You can install this plugin one of three ways:
 
 == Frequently Asked Questions ==
 
-= Troubleshooting =
+= General Troubleshooting =
 
 If the "Pin It" button doesn't get triggered on click (and your browser is redirected to a pinterest.com URL), please make sure that there is not extra code that is hijacking the click event (for example, a Google Analytics onclick event).
 
@@ -83,6 +83,8 @@ A popular known plugin that does this is **Google Analytics for WordPress**. Try
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
 [Full FAQ maintained here &raquo;](http://pinterestplugin.com/pin-it-button-faq)
+
+CSS styling and shortcode help available within the plugin admin.
 
 == Screenshots ==
 
