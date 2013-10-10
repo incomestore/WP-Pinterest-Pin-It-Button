@@ -52,7 +52,7 @@ We do all the code insertions for you, and in full compliance with the [official
 
 [Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
-This plugin (and the Pro version) are in full compliance with current "Pin It" button developer guidelines at <http://developers.pinterest.com/pin_it/>.
+This plugin (and the Pro version) are in full compliance with current ["Pin It" button developer guidelines](http://developers.pinterest.com/pin_it/).
 
 We will do our best to keep both plugins up to date with the official developer guidelines.
 
