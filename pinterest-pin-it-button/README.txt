@@ -15,15 +15,17 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 ###"Pin It" Button Lite Features###
 
-* Let the reader select an image when pinning or...
-* Pre-select an image for them to pin.
-* Default to the first image in the post or...
-* Specify a specific image to pin per post.
-* Hide the button on specific posts and pages.
-* Add a "Pin It" button to your sidebar or footer as a widget.
-* Place "Pin It" buttons anywhere using a shortcode.
+
+    * Let the reader select an image when pinning.
+    * Pre-select an image for the reader to pin.
+    * Default to the first image in the post.
+    * Specify a specific image to pin per post.
+    * Hide the "Pin It" button on specific posts and pages.
+    * Add a "Pin It" button to your sidebar or footer as a widget.
+    * Place "Pin It" buttons anywhere using shortcodes.
 
 ###Pro Version Features###
+
 
     * Add "Pin It" buttons on image hover (in any corner).
     * Add a "Pin It" button under each image.
@@ -37,11 +39,12 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
-Best of all, you don't need to copy and paste any code to get a "Pin It" button on your WordPress site.
+Best of all, you don't need to copy and paste any code to place "Pin It" buttons throughout your WordPress site.
 
-We do the code insertions for you, and in full compliance with the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
+We do all the code insertions for you, and in full compliance with the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
 
 ###Raves###
+
 
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
 * Top 10 Plugins for February 2012 (the only Pinterest one) -- [ManageWP](http://managewp.com/top-10-wordpress-plugins-of-the-month-february)
@@ -64,7 +67,7 @@ You can install this plugin one of three ways:
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `pin it button`.
 1. Find the plugin that's labeled `Pinterest "Pin It" Button` with "Pin It" in quotes.
-1. Look for the author names **Phil Derksen & Nick Young** on the plugin.
+1. Look for the author names `Phil Derksen & Nick Young` on the plugin.
 1. Click to install.
 1. Activate the plugin.
 1. A new menu item `Pin It Button` will appear in your Admin.
