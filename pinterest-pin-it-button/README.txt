@@ -64,7 +64,7 @@ You can install this plugin one of three ways:
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `pin it button`.
 1. Find the plugin that's labeled `Pinterest "Pin It" Button` with "Pin It" in quotes.
-1. Look for the author names `Phil Derksen & Nick Young` on the plugin.
+1. Look for the author names `Phil Derksen` on the plugin.
 1. Click to install.
 1. Activate the plugin.
 1. A new menu item `Pin It Button` will appear in your Admin.
