@@ -52,7 +52,7 @@ You can install this plugin one of three ways:
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `pin it button`.
 1. Find the plugin that's labeled `Pinterest "Pin It" Button` with "Pin It" in quotes.
-1. Look for the author names **Phil Derksen & Nick Young** on the plugin. *There are other "Pin It" button plugins which makes this confusing.*
+1. Look for the author names **Phil Derksen & Nick Young** on the plugin.
 1. Click to install.
 1. Activate the plugin.
 1. A new menu item `Pin It Button` will appear in your Admin.
@@ -82,7 +82,7 @@ A popular known plugin that does this is **Google Analytics for WordPress**. Try
 
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
-[Full FAQ maintained here &raquo;](http://pinterestplugin.com/pin-it-button-faq)
+[Visit the complete knowledgebase](http://pinterestplugin.com/pin-it-button-faq?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite) for additional help and troubleshooting tips.
 
 CSS styling and shortcode help available within the plugin admin.
 
