@@ -56,6 +56,8 @@ This plugin (and the Pro version) are in full compliance with current "Pin It" b
 
 We will do our best to keep both plugins up to date with the official developer guidelines.
 
+[Follow this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
+
 == Installation ==
 
 You can install this plugin one of three ways:
