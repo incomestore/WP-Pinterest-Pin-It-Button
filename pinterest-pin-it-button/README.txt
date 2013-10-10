@@ -13,7 +13,7 @@ Add a Pinterest "Pin It" Button to your site and get your visitors to start pinn
 
 Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
-=== "Pin It" Button Features ===
+###"Pin It" Button Lite Features###
 
 * Let the reader select an image when pinning or...
 * Pre-select an image for them to pin.
@@ -23,16 +23,19 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 * Add a "Pin It" button to your sidebar or footer as a widget.
 * Place "Pin It" buttons anywhere using a shortcode.
 
-###More Features Available in Pro Version:###
+###Pro Version Features###
 
-* 30 Custom "Pin It" Button Designs to choose from
-* Enable a Hover "Pin It" button over each image in any corner
-* Upload your own custom "Pin It" buttons
-* Facebook, Twitter, Google +1 & LinkedIn sharing buttons included
-* Allow featured images to be pre-selected when pinning
-* Automatic Upgrades & Priority Support
+* Add "Pin It" buttons on image hover (in any corner).
+* Add a "Pin It" button under each image.
+* Pick from 30 custom "Pin It" button designs.
+* Upload your own custom "Pin It" buttons.
+* Twitter, Facebook, Google+ & LinkedIn sharing buttons included.
+* Option to pin featured images.
+* Show or hide on custom post types.
+* WooCommerce compatibility
+* Customer support and automatic updates
 
-[Click Here to Upgrade to "Pin It" Button Pro! &raquo;](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+[Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
 ###Raves###
 
@@ -41,9 +44,9 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 * "If you want to make it easy for Pinterest users to pin your articles, consider using this 'Pin It' button plugin." -- [WP Tavern](http://www.wptavern.com/pin-it-is-the-new-bookmark)
 * "If you're looking for something simple and obtrusive, the Pinterest 'Pin It' Button will suit you." -- [WPMU.org](http://wpmu.org/pinterest-plugins-wordpress/)
 
-[See the "Pin It" Button in Action &raquo;](http://bruisesandbandaids.com/2011/newborn-photography-props/) (see bottom of post and image hover)
+[See a "Pin It" Button Pro Demo](http://bruisesandbandaids.com/2011/newborn-photography-props/) (shows off the share bar and image hover features)
 
-[Click Here to Upgrade to "Pin It" Button Pro! &raquo;](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+[Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
 == Installation ==
 
