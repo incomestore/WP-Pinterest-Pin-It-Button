@@ -46,19 +46,31 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 == Installation ==
 
-= Finding and installing through the WordPress admin: =
+You can install this plugin one of three ways:
 
-1. If searching for this plugin in your WordPress admin, search for "pin it button".
-1. Find the plugin that's labeled **Pinterest "Pin It" Button"** with "Pin It" in quotes.
-1. Also look for my name as the author (**Phil Derksen**). There are other "Pin It" button plugins which is why this can be confusing.
-1. Click "Install Now", then Activate, then head to the new menu item on the left labeled "Pin It Button".
+= 1. Admin Search =
+1. In your Admin, go to menu Plugins > Add.
+1. Search for `pin it button`.
+1. Find the plugin that's labeled `Pinterest "Pin It" Button` with "Pin It" in quotes.
+1. Look for the author names **Phil Derksen & Nick Young** on the plugin. *There are other "Pin It" button plugins which makes this confusing.*
+1. Click to install.
+1. Activate the plugin.
+1. A new menu item `Pin It Button` will appear in your Admin.
 
-= Alternative installation methods: =
+= 2. Download & Upload =
+1. Download the plugin (.zip file) on the right column of this page.
+1. In your Admin, go to menu Plugins > Add.
+1. Select the tab "Upload".
+1. Upload the .zip file you just downloaded.
+1. Activate the plugin.
+1. A new menu item `Pin It Button` will appear in your Admin.
 
-* Download this plugin, then upload through the WordPress admin (Plugins > Add New > Upload)
-* Download this plugin, unzip the contents, then FTP upload to the `/wp-content/plugins/` directory
-
-Note: If you overwrite the plugin using an FTP upload, you may lose some saved settings.
+= 3. FTP Upload =
+1. Download the plugin (.zip file) on the right column of this page.
+1. Unzip the zip file contents.
+1. Upload the `pinterest-pin-it-button` folder to the `/wp-content/plugins/` directory of your site.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
+1. A new menu item `Pin It Button` will appear in your Admin.
 
 == Frequently Asked Questions ==
 
