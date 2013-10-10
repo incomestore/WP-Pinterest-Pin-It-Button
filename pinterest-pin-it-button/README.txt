@@ -217,17 +217,3 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 0.1.0 =
 * Initial release
-
-== Upgrade Notice ==
-
-= 2.0.0 =
-
-Version 2.0.0 includes a few changes that may affect the appearance of the "Pin It" button on your website.
-
-It is now only providing features that are supported in the [official "Pin It" button](http://business.pinterest.com/widget-builder/#do_pin_it_button) from Pinterest.
-
-Additional features can be found in ["Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
-
-"Pin It" Button Lite has also been rewritten to be in full compliance with the current "Pin It" button developer guidelines at <http://developers.pinterest.com/pin_it/>.
-
-Finally, all references to "!important" in the public CSS to allow for more control of styles. You may need to add or remove custom CSS to improve the layout and styling of the button.
