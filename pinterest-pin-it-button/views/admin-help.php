@@ -33,14 +33,6 @@ if ( ! defined( 'ABSPATH' ) )
 				<?php _e( 'These fields are located towards the bottom of the post/page edit screen.', 'pib' ); ?>
 			</p>
 
-			<h4><?php _e( 'CSS Style Override Examples', 'pib' ); ?></h4>
-
-			<ul class="ul-disc">
-				<li><code>div.pin-it-btn-wrapper { padding-bottom: 50px; }</code> - <?php _e( 'Increase space under button', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper a { border: 1px solid red; }</code> - <?php _e( 'Add red border around button', 'pib' ); ?></li>
-				<li><code>div.pin-it-btn-wrapper-widget a { border: 1px solid red; }</code> - <?php _e( 'Add red border around widget button', 'pib' ); ?></li>
-			</ul>
-
 			<h3 class="title"><?php _e( 'Shortcode', 'pib' ); ?></h3>
 
 			<p>
@@ -181,6 +173,14 @@ if ( ! defined( 'ABSPATH' ) )
 				<li><code>li.pib-sharebar-gplus-share</code> - <?php _e( 'Share bar: Google+ Share button container', 'pib' ); ?></li>
 				<li><code>li.pib-sharebar-gplus</code> - <?php _e( 'Share bar: Google +1 button container', 'pib' ); ?></li>
 				<li><code>li.pib-sharebar-linkedin</code> - <?php _e( 'Share bar: LinkedIn Share button container', 'pib' ); ?></li>
+			</ul>
+
+			<h4><?php _e( 'CSS Style Override Examples', 'pib' ); ?></h4>
+
+			<ul class="ul-disc">
+				<li><code>div.pin-it-btn-wrapper { padding-bottom: 50px; }</code> - <?php _e( 'Increase space under button', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper a { border: 1px solid red; }</code> - <?php _e( 'Add red border around button', 'pib' ); ?></li>
+				<li><code>div.pin-it-btn-wrapper-widget a { border: 1px solid red; }</code> - <?php _e( 'Add red border around widget button', 'pib' ); ?></li>
 			</ul>
 
 			<p>
