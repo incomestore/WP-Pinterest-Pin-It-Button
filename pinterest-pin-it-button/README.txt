@@ -15,7 +15,6 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 ###"Pin It" Button Lite Features###
 
-
     * Let the reader select an image when pinning.
     * Pre-select an image for the reader to pin.
     * Default to the first image in the post.
@@ -25,7 +24,6 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
     * Place "Pin It" buttons anywhere using shortcodes.
 
 ###Pro Version Features###
-
 
     * Add "Pin It" buttons on image hover (in any corner).
     * Add a "Pin It" button under each image.
@@ -44,7 +42,6 @@ Best of all, you don't need to copy and paste any code to place "Pin It" buttons
 We do all the code insertions for you, and in full compliance with the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
 
 ###Raves###
-
 
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
 * Top 10 Plugins for February 2012 (the only Pinterest one) -- [ManageWP](http://managewp.com/top-10-wordpress-plugins-of-the-month-february)
