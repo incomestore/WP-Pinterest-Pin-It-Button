@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Presstrends tracking function.
+ *
+ * @package    PIB
+ * @subpackage Includes
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
+
 function pib_run_presstrends_tracking( $auth ) {
     // PressTrends Account API Key
     $api_key = 'qsu6mq75d69xqhpadhdz09rfqze9c6u499q6';
