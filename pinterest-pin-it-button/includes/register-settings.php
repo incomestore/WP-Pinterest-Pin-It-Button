@@ -109,7 +109,13 @@ function pib_register_settings() {
 		
 		/* Advanced Settings */
 		'advanced' => array(
-			
+			'no_pinit_js' => array(
+				'id'   => 'no_pinit_js',
+				'name' => __( 'Disable pinit.js', 'pib' ),
+				'desc' => __( 'Disable output of pinit.js, the JavaScript file for all widgets from Pinterest.', 'pib' ) . '<br />' .
+							'<em>' . __( 'Check this option if you are already including pinit.js in another plugin, widget or your theme. Including it more than once can cause conflicts.', 'pib' ) . '</em>',
+				'type' => 'checkbox'
+			),
 		)
 	);
 
