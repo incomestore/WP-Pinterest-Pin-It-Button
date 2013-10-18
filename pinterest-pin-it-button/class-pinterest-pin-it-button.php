@@ -263,8 +263,13 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function enqueue_scripts() {
-		// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-		wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+		global $pib_options;
+		
+		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
+		if( empty( $pib_options['no_pinit_js'] ) ) {
+			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
+			wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+		}
 	}
 
 	/**
