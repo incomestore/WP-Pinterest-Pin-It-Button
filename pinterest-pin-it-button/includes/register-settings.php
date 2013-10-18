@@ -105,6 +105,11 @@ function pib_register_settings() {
 				'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
 				'type' => 'checkbox'
 			)
+		),
+		
+		/* Advanced Settings */
+		'advanced' => array(
+			
 		)
 	);
 
@@ -119,6 +124,10 @@ function pib_register_settings() {
 
 	if ( false == get_option( 'pib_settings_styles' ) ) {
 		add_option( 'pib_settings_styles' );
+	}
+	
+	if( false == get_option( 'pib_settings_advanced' ) ){
+		add_option( 'pib_settings_advanced' );
 	}
 
 	/* Add the General Settings section */
@@ -177,11 +186,31 @@ function pib_register_settings() {
 			pib_get_settings_field_args( $option, 'styles' )
 		);
 	}
+	
+	/* Add the Advanced Settings section */
+	add_settings_section(
+		'pib_settings_advanced',
+		__( 'Advanced Settings', 'pib' ),
+		'__return_false',
+		'pib_settings_advanced'
+	);
+
+	foreach ( $pib_settings['advanced'] as $option ) {
+		add_settings_field(
+			'pib_settings_advanced[' . $option['id'] . ']',
+			$option['name'],
+			function_exists( 'pib_' . $option['type'] . '_callback' ) ? 'pib_' . $option['type'] . '_callback' : 'pib_missing_callback',
+			'pib_settings_advanced',
+			'pib_settings_advanced',
+			pib_get_settings_field_args( $option, 'advanced' )
+		);
+	}
 
 	/* Register all settings or we will get an error when trying to save */
 	register_setting( 'pib_settings_general',         'pib_settings_general',         'pib_settings_sanitize' );
 	register_setting( 'pib_settings_post_visibility', 'pib_settings_post_visibility', 'pib_settings_sanitize' );
 	register_setting( 'pib_settings_styles',          'pib_settings_styles',          'pib_settings_sanitize' );
+	register_setting( 'pib_settings_advanced',        'pib_settings_advanced',        'pib_settings_sanitize' );
 
 }
 add_action( 'admin_init', 'pib_register_settings' );

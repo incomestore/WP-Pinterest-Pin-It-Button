@@ -36,6 +36,8 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 					<?php echo $active_tab == 'post_visibility' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Post Visibility', 'pib' ); ?></a>
 				<a href="<?php echo add_query_arg( 'tab', 'styles', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
 					<?php echo $active_tab == 'styles' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Styles', 'pib' ); ?></a>
+				<a href="<?php echo add_query_arg( 'tab', 'advanced', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+					<?php echo $active_tab == 'advanced' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Advanced', 'pib' ); ?></a>
 			</h2>
 
 			<div id="tab_container">
@@ -51,6 +53,9 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 					} elseif ( $active_tab == 'styles' ) {
 						settings_fields( 'pib_settings_styles' );
 						do_settings_sections( 'pib_settings_styles' );
+					} elseif ( $active_tab == 'advanced' ) {
+						settings_fields( 'pib_settings_advanced' );
+						do_settings_sections( 'pib_settings_advanced' );
 					} else {
 						// Do nothing
 					}
