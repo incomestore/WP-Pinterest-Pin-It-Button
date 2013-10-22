@@ -20,7 +20,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @var     string
 	 */
-	protected $version = '2.0.0';
+	protected $version = '2.0.1';
 
 	/**
 	 * Unique identifier for your plugin.
