@@ -46,18 +46,15 @@ No need to copy and paste code throughout your WordPress site.
 * Pinterest has over [2.5 billion average monthly pageviews](http://readwrite.com/2013/05/09/why-pinterest-could-be-worth-far-more-than-25-billion)
 * Pinterest users spend an average of [98 minutes per month on Pinterest](http://rismedia.com/2013-05-23/pinterest-should-it-be-a-part-of-your-marketing-plan/)
 * The average amount per order that derives from Pinterest traffic is between [$140 and $180](http://www.richrelevance.com/blog/2013/04/direct-marketing-news-infographic-the-rising-king-of-social-sales/)
-
-Source: [Kissmetrics Blog](http://blog.kissmetrics.com/analytics-pinterest-marketing-strategy/), October 2013
-
-Oh, and Pinterest Drives More Traffic to Publishers Than Twitter, LinkedIn, Reddit Combined (source: [Mashable](http://mashable.com/2013/10/15/pinterest-referral-traffic/), October 2013)
+* Pinterest Drives More Traffic to Publishers Than [Twitter, LinkedIn, Reddit Combined](http://mashable.com/2013/10/15/pinterest-referral-traffic/)
 
 ###Raves on the Interwebs###
 
-* "If you want complete (and easy) control over your Pin It button, you should definitely take a look..." [The Next Web](http://thenextweb.com/socialmedia/2012/03/04/20-awesome-tools-which-will-have-you-pinteresting-like-a-pro/)
+* "If you want complete (and easy) control over your Pin It button, you should definitely take a look..." -- [The Next Web](http://thenextweb.com/socialmedia/2012/03/04/20-awesome-tools-which-will-have-you-pinteresting-like-a-pro/)
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
-* "This is the plugin that I found works best on my marketing blog for photographers." [ProBlogger](http://www.problogger.net/archives/2013/03/05/heavyweight-help-the-complete-guide-to-getting-started-on-pinterest/)
+* "This is the plugin that I found works best on my marketing blog for photographers." -- [ProBlogger](http://www.problogger.net/archives/2013/03/05/heavyweight-help-the-complete-guide-to-getting-started-on-pinterest/)
 * "If you want to make it easy for Pinterest users to pin your articles, consider using this 'Pin It' button plugin." -- [WP Tavern](http://www.wptavern.com/pin-it-is-the-new-bookmark)
-* "Discovery of the Week" [Social Media Examiner](http://www.socialmediaexaminer.com/pinterest-marketing-what-marketers-need-to-know-to-succeed/)
+* "Discovery of the Week" -- [Social Media Examiner](http://www.socialmediaexaminer.com/pinterest-marketing-what-marketers-need-to-know-to-succeed/)
 * "If you're looking for something simple and obtrusive, the Pinterest 'Pin It' Button will suit you." -- [WPMU.org](http://wpmu.org/pinterest-plugins-wordpress/)
 
 [See a "Pin It" Button Pro Demo](http://bruisesandbandaids.com/2011/newborn-photography-props/) (shows off the share bar and image hover features)
