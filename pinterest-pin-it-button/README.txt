@@ -39,7 +39,19 @@ No need to copy and paste code throughout your WordPress site.
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
-###Raves###
+###A Few Stats on Pinterest###
+
+* Pinterest has [70 million users](http://thenextweb.com/socialmedia/2013/07/10/semiocast-pinterest-now-has-70-million-users-and-is-steadily-gaining-momentum-outside-the-us/)
+* There are over [½ million verified business accounts on Pinterest](http://searchenginewatch.com/article/2282835/Pinterest-Tops-70-Million-Users-30-Pinned-Repinned-or-Liked-in-June-Study)
+* Pinterest has over [2.5 billion average monthly pageviews](http://readwrite.com/2013/05/09/why-pinterest-could-be-worth-far-more-than-25-billion)
+* Pinterest users spend an average of [98 minutes per month on Pinterest](http://rismedia.com/2013-05-23/pinterest-should-it-be-a-part-of-your-marketing-plan/)
+* The average amount per order that derives from Pinterest traffic is between [$140 and $180](http://www.richrelevance.com/blog/2013/04/direct-marketing-news-infographic-the-rising-king-of-social-sales/)
+
+Source: [Kissmetrics Blog](http://blog.kissmetrics.com/analytics-pinterest-marketing-strategy/), October 2013
+
+Oh, and Pinterest Drives More Traffic to Publishers Than Twitter, LinkedIn, Reddit Combined (source: [Mashable](http://mashable.com/2013/10/15/pinterest-referral-traffic/), October 2013)
+
+###Reviews on the Interwebs###
 
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
 * Top 10 Plugins for February 2012 (the only Pinterest one) -- [ManageWP](http://managewp.com/top-10-wordpress-plugins-of-the-month-february)
