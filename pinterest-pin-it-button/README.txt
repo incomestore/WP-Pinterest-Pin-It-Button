@@ -13,6 +13,8 @@ Add a Pinterest "Pin It" Button to your site and get your visitors to start pinn
 
 Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
+No need to copy and paste code throughout your WordPress site.
+
 ###"Pin It" Button Lite Features###
 
 * Let the reader select an image when pinning.
@@ -37,10 +39,6 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
-Best of all, you don't need to copy and paste any code to place "Pin It" buttons throughout your WordPress site.
-
-We do all the code insertions for you, and in full compliance with the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
-
 ###Raves###
 
 * "The Pinterest 'Pin It' Button is a painless solution for bloggers just getting started with this social network." -- [WP Jedi](http://www.wpjedi.com/pinterest-pin-it-button-for-wordpress/)
@@ -52,11 +50,11 @@ We do all the code insertions for you, and in full compliance with the [official
 
 [Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
-This plugin (and the Pro version) are in full compliance with current ["Pin It" button developer guidelines](http://developers.pinterest.com/pin_it/).
+This plugin (as well as the Pro version) is in full compliance with the [official "Pin It" button developer guidelines](http://developers.pinterest.com/pin_it/).
 
-We will do our best to keep both plugins up to date with the official developer guidelines.
+This plugin utilizes the code output from the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
 
-[Follow this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
+Want to take a peek at the source? [Check out this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
 
 == Installation ==
 
@@ -114,8 +112,8 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.1 =
 
-* Added Advanced settings tab.
-* Added an option to disable Pinterest's pinit.js JavaScript to avoid conflicts with other Pinterest plugins, themes and custom code.
+* Added an option to disable Pinterest's pinit.js JavaScript to avoid conflicts with other Pinterest plugins, themes and custom code (on new "Advanced" tab).
+* Tested up to WordPress 3.7.
 
 = 2.0.0 =
 
