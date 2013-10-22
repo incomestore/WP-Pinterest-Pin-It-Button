@@ -15,25 +15,25 @@ Add a simple Pinterest "Pin It" Button to your posts in 2 minutes!
 
 ###"Pin It" Button Lite Features###
 
-    * Let the reader select an image when pinning.
-    * Pre-select an image for the reader to pin.
-    * Default to the first image in the post.
-    * Specify a specific image to pin per post.
-    * Hide the "Pin It" button on specific posts and pages.
-    * Add a "Pin It" button to your sidebar or footer as a widget.
-    * Place "Pin It" buttons anywhere using shortcodes.
+* Let the reader select an image when pinning.
+* Pre-select an image for the reader to pin.
+* Default to the first image in the post.
+* Specify a specific image to pin per post.
+* Hide the "Pin It" button on specific posts and pages.
+* Add a "Pin It" button to your sidebar or footer as a widget.
+* Place "Pin It" buttons anywhere using shortcodes.
 
 ###Pro Version Features###
 
-    * Add "Pin It" buttons on image hover (in any corner).
-    * Add a "Pin It" button under each image.
-    * Pick from 30 custom "Pin It" button designs.
-    * Upload your own custom "Pin It" buttons.
-    * Twitter, Facebook, Google+ & LinkedIn sharing buttons included.
-    * Option to pin featured images.
-    * Show or hide on custom post types.
-    * WooCommerce compatibility
-    * Customer support and automatic updates
+* Add "Pin It" buttons on image hover (in any corner).
+* Add a "Pin It" button under each image.
+* Pick from 30 custom "Pin It" button designs.
+* Upload your own custom "Pin It" buttons.
+* Twitter, Facebook, Google+ & LinkedIn sharing buttons included.
+* Option to pin featured images.
+* Show or hide on custom post types.
+* WooCommerce compatibility
+* Customer support and automatic updates
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
