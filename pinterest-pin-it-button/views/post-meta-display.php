@@ -17,9 +17,9 @@ global $pib_options;
 $button_type_display = ( $pib_options['button_type'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 
 $pib_sharing_checked = get_post_meta( $post->ID, 'pib_sharing_disabled', 1 );
-$pib_url_of_webpage = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
-$pib_url_of_img = get_post_meta( $post->ID, 'pib_url_of_img', true);
-$pib_description = get_post_meta( $post->ID, 'pib_description', true);
+$pib_url_of_webpage  = get_post_meta( $post->ID, 'pib_url_of_webpage', true);
+$pib_url_of_img      = get_post_meta( $post->ID, 'pib_url_of_img', true);
+$pib_description     = get_post_meta( $post->ID, 'pib_description', true);
 ?>
 
 <p>
