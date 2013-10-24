@@ -57,7 +57,7 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since     2.0.0
 	 */
-	
+
 	/**
 	 * Presstrends API authorization
 	 *
@@ -66,7 +66,7 @@ class Pinterest_Pin_It_Button {
 	 * @var      string
 	 */
 	protected $presstrends_auth = '0ebdi3uscgaztp99nnbam6rl6i2186qwo';
-	
+
 	private function __construct() {
 		// Setup constants.
 		$this->setup_constants();
@@ -80,7 +80,7 @@ class Pinterest_Pin_It_Button {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
-		
+
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -98,7 +98,7 @@ class Pinterest_Pin_It_Button {
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
-		
+
 		// Finally, call presstrends tracking code.
 		add_action( 'admin_init', array( $this, 'use_presstrends_tracking' ) );
 	}
@@ -264,7 +264,7 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function enqueue_scripts() {
 		global $pib_options;
-		
+
 		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
 		if( empty( $pib_options['no_pinit_js'] ) ) {
 			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
@@ -287,7 +287,7 @@ class Pinterest_Pin_It_Button {
 			array( $this, 'display_plugin_admin_page' ),
 			plugins_url( 'assets/pinterest-icon-16.png', __FILE__ )
 		);
-		
+
 		// Add Help submenu page
 		$this->plugin_screen_hook_suffix[] = add_submenu_page(
 			$this->plugin_slug,
@@ -307,7 +307,7 @@ class Pinterest_Pin_It_Button {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
-	
+
 	public function display_admin_help_page() {
 		include_once( 'views/admin-help.php' );
 	}
@@ -321,16 +321,16 @@ class Pinterest_Pin_It_Button {
 		// Add the meta boxes for both posts and pages
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'post', 'advanced', 'high');
 		add_meta_box('pib-meta', '"Pin It" Button Settings', 'add_meta_form', 'page', 'advanced', 'high');
-	
+
 		// function to output the HTML for meta box
 		function add_meta_form( $post ) {
-			
+
 			wp_nonce_field( basename( __FILE__ ), 'pib_meta_nonce' );
-			
+
 			include_once( 'views/post-meta-display.php' );
 		}
 	}
-	
+
 	/**
 	 * Save the post meta for this plugin.
 	 *
@@ -342,7 +342,7 @@ class Pinterest_Pin_It_Button {
 	public function save_meta_data( $post_id ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
-		
+
 		// An array to hold all of our post meta ids so we can run them through a loop
 		$post_meta_fields = array(
 			'pib_url_of_webpage',
@@ -351,27 +351,27 @@ class Pinterest_Pin_It_Button {
 		);
 
 		// Record sharing disable
-		
-			if ( current_user_can( 'edit_post', $post_id ) ) {
-				if ( isset( $_POST['pib_sharing_status_hidden'] ) ) {
-					if ( !isset( $_POST['pib_enable_post_sharing'] ) ) {
-						update_post_meta( $post_id, 'pib_sharing_disabled', 1 );
-					}
-					else {
-						delete_post_meta( $post_id, 'pib_sharing_disabled' );
-					}
-					
-					// Loop through our array and make sure it is posted and not empty in order to update it, otherwise we delete it
-					foreach ( $post_meta_fields as $pmf ) {
-						if ( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
-							update_post_meta( $post_id, $pmf, $_POST[$pmf] );
-						} else {
-							delete_post_meta( $post_id, $pmf );
-						}
+
+		if ( current_user_can( 'edit_post', $post_id ) ) {
+			if ( isset( $_POST['pib_sharing_status_hidden'] ) ) {
+				if ( !isset( $_POST['pib_enable_post_sharing'] ) ) {
+					update_post_meta( $post_id, 'pib_sharing_disabled', 1 );
+				}
+				else {
+					delete_post_meta( $post_id, 'pib_sharing_disabled' );
+				}
+
+				// Loop through our array and make sure it is posted and not empty in order to update it, otherwise we delete it
+				foreach ( $post_meta_fields as $pmf ) {
+					if ( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
+						update_post_meta( $post_id, $pmf, $_POST[$pmf] );
+					} else {
+						delete_post_meta( $post_id, $pmf );
 					}
 				}
 			}
-		
+		}
+
 
 		return $post_id;
 	}
@@ -432,7 +432,7 @@ class Pinterest_Pin_It_Button {
 		if( get_current_screen()->id == 'plugins' )
 			include_once( 'views/admin-install-notice.php' );
 	}
-	
+
 	public function use_presstrends_tracking() {
 		global $pib_options;
 
