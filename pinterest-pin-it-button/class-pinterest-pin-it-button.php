@@ -20,6 +20,13 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @var     string
 	 */
+
+	/**************************************
+	 * UPDATE VERSION HERE
+	 * and main plugin file header comments
+	 * and README.txt changelog
+	 **************************************/
+	
 	protected $version = '2.0.1';
 
 	/**
