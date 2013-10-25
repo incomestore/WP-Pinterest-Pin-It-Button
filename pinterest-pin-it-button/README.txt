@@ -121,6 +121,8 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
+= 2.0.2 =
+
 = 2.0.1 =
 
 * Added an option to disable Pinterest's pinit.js JavaScript to avoid conflicts with other Pinterest plugins, themes and custom code (on new "Advanced" tab).
