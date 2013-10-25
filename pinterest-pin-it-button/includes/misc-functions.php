@@ -106,3 +106,14 @@ function pib_is_woo_commerce_active() {
 	 * http://pippinsplugins.com/checking-dependent-plugin-active/
 	 */
 }
+
+/**
+ * Check if the WooCommerce Rich Pins plugin is active.
+ *
+ * @since   2.0.2
+ *
+ * @return  boolean
+ */
+function pib_is_wc_rich_pins_active() {
+	return class_exists( 'WooCommerce_Rich_Pins' );
+}

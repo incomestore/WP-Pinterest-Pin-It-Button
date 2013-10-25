@@ -47,23 +47,30 @@ if ( ! defined( 'ABSPATH' ) )
 	</div>
 </div>
 
-<?php if ( pib_is_woo_commerce_active() ): ?>
+<?php 
+	// check if WooCommerce is active to show WC Rich Pins promotion
+	if ( pib_is_woo_commerce_active() ): 
+		// If WC Rich Pins is already activated then we don't need to show this
+		if ( ! pib_is_wc_rich_pins_active() ) : ?>
 
-<div class="sidebar-container">
-	<h4 class="sidebar-title-medium"><?php _e( 'WooCommerce Rich Pins', 'pib' ); ?></h4>
+			<div class="sidebar-container">
+				<h4 class="sidebar-title-medium"><?php _e( 'WooCommerce Rich Pins', 'pib' ); ?></h4>
 
-	<div class="sidebar-content">
-		<p>
-			<?php _e( 'Running a WooCommerce store and want to give your pins a boost? There\'s a plugin for that.', 'pib' ); ?>
-		</p>
+				<div class="sidebar-content">
+					<p>
+						<?php _e( 'Running a WooCommerce store and want to give your pins a boost? There\'s a plugin for that.', 'pib' ); ?>
+					</p>
 
-		<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/woocommerce-rich-pins/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
-		   class="btn btn-small btn-block btn-inverse" target="_blank">
-			<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?></a>
-	</div>
-</div>
+					<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/woocommerce-rich-pins/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
+					   class="btn btn-small btn-block btn-inverse" target="_blank">
+						<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?></a>
+				</div>
+			</div>
 
-<?php endif; ?>
+<?php 
+		endif; // End WC Rich Pins check
+	endif; // End WooCommerce check
+?>
 
 <div class="sidebar-container">
 	<div class="sidebar-content">
