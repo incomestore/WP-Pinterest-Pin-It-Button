@@ -401,6 +401,8 @@ function pib_number_callback( $args ) {
 
 /**
  * Textbox callback function
+ * Valid built-in size CSS class values:
+ * small-text, regular-text, large-text
  */
 function pib_text_callback( $args ) {
 	global $pib_options;
@@ -410,8 +412,8 @@ function pib_text_callback( $args ) {
 	else
 		$value = isset( $args['std'] ) ? $args['std'] : '';
 
-	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-	$html = "\n" . '<input type="text" class="' . $size . '-text" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>' . "\n";
+	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : '';
+	$html = "\n" . '<input type="text" class="' . $size . '" id="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" value="' . esc_attr( $value ) . '"/>' . "\n";
 
 	// Render and style description text underneath if it exists.
 	if ( ! empty( $args['desc'] ) )
