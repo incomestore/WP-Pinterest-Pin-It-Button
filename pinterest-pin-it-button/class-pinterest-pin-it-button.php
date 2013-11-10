@@ -153,8 +153,6 @@ class Pinterest_Pin_It_Button {
 	 * Fired when the plugin is activated.
 	 *
 	 * @since    2.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
 	public static function activate() {
 		update_option( 'pib_show_admin_install_notice', 1 );
