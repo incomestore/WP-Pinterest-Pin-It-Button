@@ -49,7 +49,7 @@ function pib_register_settings() {
 				'id'   => 'presstrends_tracking',
 				'name' => __( 'Allow Anonymous Usage Tracking', 'pib' ),
 				'desc' => __( 'If checked, this option will enable PressTrends, which is a simple usage tracker that allows us to see how our customers are using our plugins.', 'pib' ) . '<br/>' .
-					__( 'This anonymous data gives us insight on how we can improve our plugins for you. It will not track any user details, so your security and privacy are safe with us.', 'pib' ) . '<br/>' .
+					__( 'This anonymous data gives us insight on how we can improve our plugins for you. It will not track any user details, so your security and privacy are safe with us.', 'pib' ) .
 					'<p class="description">' . __( 'If you feel comfortable enabling this option we\'d appreciate your participation. Thanks!', 'pib' ) . '</p>',
 				'type' => 'checkbox'
 			)
@@ -114,7 +114,7 @@ function pib_register_settings() {
 				'name' => __( 'Disable <code>pinit.js</code>', 'pib' ),
 				'desc' => __( 'Disable output of <code>pinit.js</code>, the JavaScript file for all widgets from Pinterest.', 'pib' ) .
 					'<p class="description">' . __( 'Check this option if you have <code>pinit.js</code> referenced in another plugin, widget or your theme. ' .
-					'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
+						'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
 			),
 		)
@@ -132,7 +132,7 @@ function pib_register_settings() {
 	if ( false == get_option( 'pib_settings_styles' ) ) {
 		add_option( 'pib_settings_styles' );
 	}
-	
+
 	if( false == get_option( 'pib_settings_advanced' ) ){
 		add_option( 'pib_settings_advanced' );
 	}
@@ -193,7 +193,7 @@ function pib_register_settings() {
 			pib_get_settings_field_args( $option, 'styles' )
 		);
 	}
-	
+
 	/* Add the Advanced Settings section */
 	add_settings_section(
 		'pib_settings_advanced',
