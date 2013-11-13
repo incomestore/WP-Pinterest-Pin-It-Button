@@ -111,7 +111,7 @@ function pib_register_settings() {
 		'advanced' => array(
 			'no_pinit_js' => array(
 				'id'   => 'no_pinit_js',
-				'name' => __( 'Disable pinit.js', 'pib' ),
+				'name' => __( 'Disable <code>pinit.js</code>', 'pib' ),
 				'desc' => __( 'Disable output of <code>pinit.js</code>, the JavaScript file for all widgets from Pinterest.', 'pib' ) .
 					'<p class="description">' . __( 'Check this option if you have <code>pinit.js</code> referenced in another plugin, widget or your theme. ' .
 					'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
