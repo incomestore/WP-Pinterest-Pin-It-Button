@@ -23,10 +23,15 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
-if( ! class_exists( 'Pinterest_Pin_It_Button' ) )
-	require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
+if( ! class_exists( 'Pinterest_Pin_It_Button_Pro' ) ) {
+	if( ! class_exists( 'Pinterest_Pin_It_Button' ) )
+		require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
 
-// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
-register_activation_hook( __FILE__, array( 'Pinterest_Pin_It_Button', 'activate' ) );
+	// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
+	register_activation_hook( __FILE__, array( 'Pinterest_Pin_It_Button', 'activate' ) );
 
-Pinterest_Pin_It_Button::get_instance();
+	Pinterest_Pin_It_Button::get_instance();
+} else {
+	echo "You already have Pinterest Pin It Button Pro installed. To downgrade please deactivate and delete the Pro plugin first.";
+	die();
+}
