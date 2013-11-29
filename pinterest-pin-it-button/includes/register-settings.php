@@ -138,6 +138,12 @@ function pib_register_settings() {
 						'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
 			),
+			'use_async' => array(
+				'id'   => 'use_async',
+				'name' => __( 'Use async', 'pib' ),
+				'desc' => __( 'Use async pinit.js', 'pib' ) . '</p>',
+				'type' => 'checkbox'
+			)
 		)
 	);
 
