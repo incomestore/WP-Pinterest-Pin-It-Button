@@ -88,12 +88,18 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'?url='         . rawurlencode( $post_url ) .
 		'&media='       . rawurlencode( $image_url ) .
 		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
-
+	
+	
+	$data_pin_size  = ( $pib_options['data_pin_size'] == 'large' ? 'data-pin-height="28"' : '' );
+	$data_pin_color = $pib_options['data_pin_color'];
+	
 	// Full link html with data attributes.
 	// Add rel="nobox" to prevent lightbox popup.
 	$link_html = '<a href="' . $link_href . '" ' .
 		'data-pin-do="' . $data_pin_do . '" ' .
 		'data-pin-config="' . $data_pin_config . '" ' .
+		$data_pin_size .
+		'data-pin-color="' . $data_pin_color . '" ' .
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 

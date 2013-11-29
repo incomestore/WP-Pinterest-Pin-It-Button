@@ -39,6 +39,27 @@ function pib_register_settings() {
 					'vertical'   => __( 'Above the Button', 'pib' )
 				)
 			),
+			'data_pin_size' => array(
+				'id'      => 'data_pin_size',
+				'name'    => __( 'Button Size', 'pib' ),
+				'desc'    => '',
+				'type'    => 'select',
+				'options' => array(
+					'small'       => __( 'Small', 'pib' ),
+					'large'       => __( 'Large', 'pib' )
+				)
+			),
+			'data_pin_color' => array( 
+				'id'      => 'data_pin_color',
+				'name'    => __( 'Button Color', 'pib' ),
+				'desc'    => '',
+				'type'    => 'select',
+				'options' => array(
+					'gray'       => __( 'Gray', 'pib' ),
+					'red' => __( 'Red', 'pib' ),
+					'white'   => __( 'White', 'pib' )
+				)
+			),
 			'uninstall_save_settings' => array(
 				'id'   => 'uninstall_save_settings',
 				'name' => __( 'Save Settings', 'pib' ),
