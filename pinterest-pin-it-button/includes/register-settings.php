@@ -39,6 +39,12 @@ function pib_register_settings() {
 					'vertical'   => __( 'Above the Button', 'pib' )
 				)
 			),
+			'show_zero_count' => array(
+				'id'   => 'show_zero_count',
+				'name' => '',
+				'desc' => __( 'Show count bubble when there are zero pins.', 'pib' ),
+				'type' => 'checkbox'
+			),
 			'data_pin_size' => array(
 				'id'      => 'data_pin_size',
 				'name'    => __( 'Button Size', 'pib' ),

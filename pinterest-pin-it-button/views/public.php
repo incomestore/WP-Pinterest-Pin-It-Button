@@ -89,9 +89,12 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'&media='       . rawurlencode( $image_url ) .
 		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
 	
-	
+	// New options that were added to the widget builder on Pinterest
 	$data_pin_size  = ( $pib_options['data_pin_size'] == 'large' ? 'data-pin-height="28"' : '' );
 	$data_pin_color = $pib_options['data_pin_color'];
+	
+	// Use new data-pin-zero option to show count bubbles even on pages that have 0 pins
+	$show_zero_count = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true"' : '' );
 	
 	// Full link html with data attributes.
 	// Add rel="nobox" to prevent lightbox popup.
@@ -100,6 +103,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'data-pin-config="' . $data_pin_config . '" ' .
 		$data_pin_size .
 		'data-pin-color="' . $data_pin_color . '" ' .
+		$show_zero_count . ' ' .
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 
