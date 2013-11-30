@@ -37,7 +37,7 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
 </a>
 */
-function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout ) {
+function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color ) {
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
@@ -90,11 +90,11 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
 	
 	// New options that were added to the widget builder on Pinterest
-	$data_pin_size  = ( $pib_options['data_pin_size'] == 'large' ? 'data-pin-height="28"' : '' );
-	$data_pin_color = $pib_options['data_pin_color'];
+	$data_pin_size  = ( $size == 'large' ? 'data-pin-height="28" ' : ' ' );
+	$data_pin_color = ( ! empty( $color ) ? 'data-pin-color="' . $color . '" ' : ' ' );
 	
 	// Use new data-pin-zero option to show count bubbles even on pages that have 0 pins
-	$show_zero_count = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true"' : '' );
+	$show_zero_count = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true" ' : ' ' );
 	
 	// Full link html with data attributes.
 	// Add rel="nobox" to prevent lightbox popup.
@@ -102,8 +102,8 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'data-pin-do="' . $data_pin_do . '" ' .
 		'data-pin-config="' . $data_pin_config . '" ' .
 		$data_pin_size .
-		'data-pin-color="' . $data_pin_color . '" ' .
-		$show_zero_count . ' ' .
+		$data_pin_color .
+		$show_zero_count .
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 
@@ -129,8 +129,11 @@ function pib_button_html( $image_url = '' ) {
 		$image_url = get_post_meta( $postID, 'pib_url_of_img', true );
 
 	$count_layout = $pib_options['count_layout'];
+	
+	$size = ( ! empty( $pib_options['data_pin_size'] ) ? $pib_options['data_pin_size'] : '' );
+	$color = ( ! empty( $pib_options['data_pin_color'] ) ? $pib_options['data_pin_color'] : '' );
 
-	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout );
+	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout, $size, $color );
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
 	if ( ! empty( $pib_options['remove_div'] ) )

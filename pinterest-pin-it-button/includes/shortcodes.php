@@ -31,7 +31,9 @@ function pib_pinit_shortcode( $attr ) {
 					'description' => '',
 					'align'       => 'none',
 					'remove_div'  => false,
-					'button_type' => 'any'
+					'button_type' => 'any',
+					'size'        => '',
+					'color'       => ''
 				), $attr ) );
 
     if ( empty( $url ) ) {
