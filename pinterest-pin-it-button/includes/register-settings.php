@@ -48,22 +48,22 @@ function pib_register_settings() {
 			'data_pin_size' => array(
 				'id'      => 'data_pin_size',
 				'name'    => __( 'Button Size', 'pib' ),
-				'desc'    => '',
+				'desc'    => __( 'Official button size option from Pinterest (default: Small)', 'pib' ),
 				'type'    => 'select',
 				'options' => array(
-					'small'       => __( 'Small', 'pib' ),
-					'large'       => __( 'Large', 'pib' )
+					'small' => __( 'Small', 'pib' ),
+					'large' => __( 'Large', 'pib' )
 				)
 			),
 			'data_pin_color' => array( 
 				'id'      => 'data_pin_color',
 				'name'    => __( 'Button Color', 'pib' ),
-				'desc'    => '',
+				'desc'    => __( 'Official color button option from Pinterest (default: Grey)', 'pib' ),
 				'type'    => 'select',
 				'options' => array(
-					'gray'       => __( 'Gray', 'pib' ),
-					'red' => __( 'Red', 'pib' ),
-					'white'   => __( 'White', 'pib' )
+					'gray'  => __( 'Gray', 'pib' ),
+					'red'   => __( 'Red', 'pib' ),
+					'white' => __( 'White', 'pib' )
 				)
 			),
 			'uninstall_save_settings' => array(
