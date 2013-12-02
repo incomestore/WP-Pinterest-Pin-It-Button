@@ -90,7 +90,6 @@ class Pinterest_Pin_It_Button {
 
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 		// Enqueue public style and scripts.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -227,23 +226,6 @@ class Pinterest_Pin_It_Button {
 
 			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array( $this->plugin_slug .'-flat-ui' ), $this->version );
-		}
-	}
-
-	/**
-	 * Enqueue admin-specific JavaScript.
-	 *
-	 * @since     2.0.0
-	 *
-	 * @return    null    Return early if no settings page is registered.
-	 */
-	public function enqueue_admin_scripts() {
-
-		// No admin.js needed yet so commented out.
-
-		if ( $this->viewing_this_plugin() ) {
-			// Main plugin admin JS. Tackon plugin version.
-			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'js/admin.js', __FILE__ ), array( 'jquery' ), $this->version );
 		}
 	}
 
