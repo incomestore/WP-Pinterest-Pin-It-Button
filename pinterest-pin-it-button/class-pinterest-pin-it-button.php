@@ -269,8 +269,6 @@ class Pinterest_Pin_It_Button {
 	public function enqueue_scripts() {
 		global $pib_options;
 
-		
-		
 		if( ! empty( $pib_options['use_async'] ) ) {
 			//wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', plugins_url( 'js/pinit-async.js', __FILE__ ), array(), null, true );
 			add_action( 'wp_head', array( $this, 'use_async_pinit' ) );
@@ -290,15 +288,15 @@ class Pinterest_Pin_It_Button {
 	 */
 	
 	public function use_async_pinit() {
-		$script =  "<script type='text/javascript'>";
-		$script .= "(function(d){";
-		$script .= "var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');";
-		$script .= "p.type = 'text/javascript';";
-		$script .= "p.async = true;";
-		$script .= "p.src = '//assets.pinterest.com/js/pinit.js';";
-		$script .= "f.parentNode.insertBefore(p, f);";
-		$script .= "}(document));";
-		$script .= "</script>";
+		$script =  "<script type='text/javascript'>\n";
+		$script .= "(function(d){\n";
+		$script .= "var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');\n";
+		$script .= "p.type = 'text/javascript';\n";
+		$script .= "p.async = true;\n";
+		$script .= "p.src = '//assets.pinterest.com/js/pinit.js';\n";
+		$script .= "f.parentNode.insertBefore(p, f);\n";
+		$script .= "}(document));\n";
+		$script .= "</script>\n";
 		
 		echo $script;
 	}
