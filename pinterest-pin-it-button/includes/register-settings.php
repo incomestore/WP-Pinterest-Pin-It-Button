@@ -146,8 +146,8 @@ function pib_register_settings() {
 			),
 			'use_async' => array(
 				'id'   => 'use_async',
-				'name' => __( 'Use async', 'pib' ),
-				'desc' => __( 'Use async pinit.js', 'pib' ) . '</p>',
+				'name' => __( 'Load <code>pinit.js</code> asynchronously', 'pib' ),
+				'desc' => __( 'This may improve page load time by loading <code>pinit.js</code> independent of the rest of the page.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
 			)
 		)
