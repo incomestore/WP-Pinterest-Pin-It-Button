@@ -96,10 +96,10 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	// Use new data-pin-zero option to show count bubbles even on pages that have 0 pins
 	// check if show_zero_count parameter is set and turn on the zero count if it is true
 	if( $show_zero_count !== null ) {
-		$show_zero_count = ( $show_zero_count == true ? 'data-pin-zero="true" ' : ' ' );
+		$display_zero = ( ( $show_zero_count == 'true' ) ? 'data-pin-zero="true" ' : ' ' );
 	} else {
 		// Check main settings option and set accordingly
-		$show_zero_count = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true" ' : ' ' );
+		$display_zero = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true" ' : ' ' );
 	}
 	
 	
@@ -111,7 +111,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'data-pin-config="' . $data_pin_config . '" ' .
 		$data_pin_size .
 		$data_pin_color .
-		$show_zero_count .
+		$display_zero .
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 

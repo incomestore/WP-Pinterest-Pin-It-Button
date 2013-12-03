@@ -34,7 +34,7 @@ function pib_pinit_shortcode( $attr ) {
 					'button_type'       => 'any',
 					'size'              => 'small',
 					'color'             => 'gray',
-					'always_show_count' => false
+					'always_show_count' => 'false'
 				), $attr ) );
 
     if ( empty( $url ) ) {
