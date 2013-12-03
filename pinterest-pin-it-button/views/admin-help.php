@@ -81,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) )
 				</tr>
 				<tr>
 					<td>description</td>
-					<td><?php _e( 'Description of the pin', 'pib' ); ?></td>
+					<td><?php _e( 'Description of the pin. Ignored if button_type="any"', 'pib' ); ?></td>
 					<td><?php _e( 'Any string of text', 'pib' ); ?></td>
 					<td>Post/page title</td>
 				</tr>
