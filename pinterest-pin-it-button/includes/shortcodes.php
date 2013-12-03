@@ -25,15 +25,16 @@ function pib_pinit_shortcode( $attr ) {
     */
     
     extract( shortcode_atts( array(
-					'count'       => 'none',
-					'url'         => '',
-					'image_url'   => '',
-					'description' => '',
-					'align'       => 'none',
-					'remove_div'  => false,
-					'button_type' => 'any',
-					'size'        => '',
-					'color'       => ''
+					'count'             => 'none',
+					'url'               => '',
+					'image_url'         => '',
+					'description'       => '',
+					'align'             => 'none',
+					'remove_div'        => false,
+					'button_type'       => 'any',
+					'size'              => '',
+					'color'             => '',
+					'always_show_count' => false
 				), $attr ) );
 
     if ( empty( $url ) ) {
@@ -70,7 +71,7 @@ function pib_pinit_shortcode( $attr ) {
 	// set button_type to a correct parameter to be passed
 	$button_type = ( $button_type == 'one' ? 'image_selected' : 'user_selects_image' );
 	
-	$base_btn = pib_button_base( $button_type, $url, $image_url, $description, $count, $size, $color );
+	$base_btn = pib_button_base( $button_type, $url, $image_url, $description, $count, $size, $color, $always_show_count );
     
     //Don't wrap with div or set float class if "remove div" is checked
 	if ( $remove_div ) {
