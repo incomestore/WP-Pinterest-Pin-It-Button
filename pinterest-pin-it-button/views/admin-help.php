@@ -97,6 +97,24 @@ if ( ! defined( 'ABSPATH' ) )
 					<td>true, false</td>
 					<td>false</td>
 				</tr>
+				<tr>
+					<td>color</td>
+					<td><?php _e( 'Sets the color of the Pinterest button', 'pib' ); ?></td>
+					<td>gray, red, white</td>
+					<td>gray</td>
+				</tr>
+				<tr>
+					<td>size</td>
+					<td><?php _e( 'Sets the size of the Pinterest button', 'pib' ); ?></td>
+					<td>small, large</td>
+					<td>small</td>
+				</tr>
+				<tr>
+					<td>always_show_count</td>
+					<td><?php _e( 'Will always show the count bubble, even for pages with zero pins', 'pib' ); ?></td>
+					<td>true, false</td>
+					<td>false</td>
+				</tr>
 				</tbody>
 			</table>
 

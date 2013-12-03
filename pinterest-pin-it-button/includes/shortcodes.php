@@ -32,8 +32,8 @@ function pib_pinit_shortcode( $attr ) {
 					'align'             => 'none',
 					'remove_div'        => false,
 					'button_type'       => 'any',
-					'size'              => '',
-					'color'             => '',
+					'size'              => 'small',
+					'color'             => 'gray',
 					'always_show_count' => false
 				), $attr ) );
 
