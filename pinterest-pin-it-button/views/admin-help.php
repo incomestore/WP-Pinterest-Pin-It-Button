@@ -86,6 +86,18 @@ if ( ! defined( 'ABSPATH' ) )
 					<td>Post/page title</td>
 				</tr>
 				<tr>
+					<td>size</td>
+					<td><?php _e( '"Pin It" button size', 'pib' ); ?></td>
+					<td>small, large</td>
+					<td>small</td>
+				</tr>
+				<tr>
+					<td>color</td>
+					<td><?php _e( '"Pin It" button color', 'pib' ); ?></td>
+					<td>gray, red, white</td>
+					<td>gray</td>
+				</tr>
+				<tr>
 					<td>align</td>
 					<td><?php _e( 'Adds CSS to align button', 'pib' ); ?></td>
 					<td>none, left, right, center</td>
@@ -96,18 +108,6 @@ if ( ! defined( 'ABSPATH' ) )
 					<td><?php _e( 'If true removes surrounding div tag', 'pib' ); ?></td>
 					<td>true, false</td>
 					<td>false</td>
-				</tr>
-				<tr>
-					<td>color</td>
-					<td><?php _e( 'Sets the color of the Pinterest button', 'pib' ); ?></td>
-					<td>gray, red, white</td>
-					<td>gray</td>
-				</tr>
-				<tr>
-					<td>size</td>
-					<td><?php _e( 'Sets the size of the Pinterest button', 'pib' ); ?></td>
-					<td>small, large</td>
-					<td>small</td>
 				</tr>
 				<tr>
 					<td>always_show_count</td>
