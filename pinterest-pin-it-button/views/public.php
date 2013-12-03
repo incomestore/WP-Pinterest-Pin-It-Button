@@ -37,7 +37,7 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
 </a>
 */
-function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $show_zero_count = false ) {
+function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $show_zero_count = null ) {
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
@@ -94,7 +94,15 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	$data_pin_color = ( ! empty( $color ) ? 'data-pin-color="' . $color . '" ' : ' ' );
 	
 	// Use new data-pin-zero option to show count bubbles even on pages that have 0 pins
-	$show_zero_count = ( ( ! empty( $pib_options['show_zero_count'] ) || $show_zero_count ) ? 'data-pin-zero="true" ' : ' ' );
+	// check if show_zero_count parameter is set and turn on the zero count if it is true
+	if( $show_zero_count !== null ) {
+		$show_zero_count = ( $show_zero_count == true ? 'data-pin-zero="true" ' : ' ' );
+	} else {
+		// Check main settings option and set accordingly
+		$show_zero_count = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true" ' : ' ' );
+	}
+	
+	
 	
 	// Full link html with data attributes.
 	// Add rel="nobox" to prevent lightbox popup.
