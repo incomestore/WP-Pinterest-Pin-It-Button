@@ -375,7 +375,7 @@ class Pinterest_Pin_It_Button {
 				// Loop through our array and make sure it is posted and not empty in order to update it, otherwise we delete it
 				foreach ( $post_meta_fields as $pmf ) {
 					if ( isset( $_POST[$pmf] ) && !empty( $_POST[$pmf] ) ) {
-						update_post_meta( $post_id, $pmf, $_POST[$pmf] );
+						update_post_meta( $post_id, $pmf, esc_html( $_POST[$pmf] ) );
 					} else {
 						delete_post_meta( $post_id, $pmf );
 					}
