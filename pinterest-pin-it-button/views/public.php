@@ -90,7 +90,13 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
 	
 	// New options that were added to the widget builder on Pinterest
-	$data_pin_size  = ( $size == 'large' ? 'data-pin-height="28" ' : ' ' );
+	// the size is different depending on the shape of the button, so first we determine the shape and then set the size
+	if( $size == 'large' && $shape == 'circular' ) {
+		$data_pin_size = 'data-pin-height="32" ';
+	} else {
+		$data_pin_size  = ( $size == 'large' ? 'data-pin-height="28" ' : ' ' );
+	}
+	
 	$data_pin_color = ( ! empty( $color ) ? 'data-pin-color="' . $color . '" ' : ' ' );
 	$data_pin_shape = ( $shape == 'circular' ? 'data-pin-shape="round" ' : ' ' );
 	
