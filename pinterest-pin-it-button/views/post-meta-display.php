@@ -36,17 +36,17 @@ $pib_description     = get_post_meta( $post->ID, 'pib_description', true);
 <?php endif; ?>
 <p>
 	<label for="pib_url_of_webpage"><?php _e( 'URL of the web page to be pinned', 'pib' ); ?>:</label><br />
-	<input type="text" class="widefat" name="pib_url_of_webpage" id="pib_url_of_webpage" value="<?php echo $pib_url_of_webpage; ?>" /><br/>
+	<input type="text" class="widefat" name="pib_url_of_webpage" id="pib_url_of_webpage" value="<?php echo esc_attr( $pib_url_of_webpage ); ?>" /><br/>
 	<span class="description"><?php _e( 'Defaults to current post/page URL if left blank.', 'pib' ); ?></span>
 </p>
 <p>
 	<label for="pib_url_of_img"><?php _e( 'URL of the image to be pinned', 'pib' ); ?>:</label><br />
-	<input type="text" class="widefat" name="pib_url_of_img" id="pib_url_of_img" value="<?php echo $pib_url_of_img; ?>" /><br/>
+	<input type="text" class="widefat" name="pib_url_of_img" id="pib_url_of_img" value="<?php echo esc_attr( $pib_url_of_img ); ?>" /><br/>
 	<span class="description"><?php _e( 'Defaults to first image in post if left blank.', 'pib' ); ?></span>
 </p>
 <p>
 	<label for="pib_description"><?php _e( 'Description of the pin', 'pib' ); ?>:</label><br />
-	<input type="text" class="widefat" name="pib_description" id="pib_description" value="<?php echo $pib_description; ?>" /><br/>
+	<input type="text" class="widefat" name="pib_description" id="pib_description" value="<?php echo esc_attr( $pib_description ); ?>" /><br/>
 	<span class="description"><?php _e( 'Defaults to post title if left blank.', 'pib' ); ?></span>
 </p>
 <p>

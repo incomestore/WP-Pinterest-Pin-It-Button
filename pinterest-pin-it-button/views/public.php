@@ -138,11 +138,11 @@ function pib_button_html( $image_url = '' ) {
 
 	// Set post url, image url and description from current post meta.
 	// It'll leave them blank if there isn't any meta.
-	$post_url = htmlspecialchars_decode( get_post_meta( $postID, 'pib_url_of_webpage', true ) );
-	$description = htmlspecialchars_decode( get_post_meta( $postID, 'pib_description', true ) );
+	$post_url = get_post_meta( $postID, 'pib_url_of_webpage', true );
+	$description = get_post_meta( $postID, 'pib_description', true );
 
 	if( get_post_meta( $postID, 'pib_url_of_img', true ) )
-		$image_url = htmlspecialchars_decode( get_post_meta( $postID, 'pib_url_of_img', true ) );
+		$image_url = get_post_meta( $postID, 'pib_url_of_img', true );
 
 	$count_layout = $pib_options['count_layout'];
 	
