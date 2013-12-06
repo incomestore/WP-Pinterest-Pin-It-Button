@@ -2,7 +2,7 @@
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
 Requires at least: 3.5.2
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,12 @@ CSS styling and shortcode help available within the plugin admin.
 == Changelog ==
 
 = 2.0.2 =
+
+* Added options for new colors and sizes based on Pinterest's widget builder
+* Added an option to show count bubble even for zero count pins
+* Added option to load the async version of pinit.js
+* Minor bug fixes
+* Major bug fix for Lite and Pro version clashing when both get activated
 
 = 2.0.1 =
 
