@@ -92,6 +92,12 @@ if ( ! defined( 'ABSPATH' ) )
 					<td>small</td>
 				</tr>
 				<tr>
+					<td>shape</td>
+					<td><?php _e( '"Pin It" button shape', 'pib' ); ?></td>
+					<td>rectangular, circular</td>
+					<td>rectangular</td>
+				</tr>
+				<tr>
 					<td>color</td>
 					<td><?php _e( '"Pin It" button color', 'pib' ); ?></td>
 					<td>gray, red, white</td>
