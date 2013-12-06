@@ -48,17 +48,27 @@ function pib_register_settings() {
 			'data_pin_size' => array(
 				'id'      => 'data_pin_size',
 				'name'    => __( 'Button Size', 'pib' ),
-				'desc'    => __( 'Official button size option from Pinterest (default: Small)', 'pib' ),
+				'desc'    => '',
 				'type'    => 'select',
 				'options' => array(
 					'small' => __( 'Small', 'pib' ),
 					'large' => __( 'Large', 'pib' )
 				)
 			),
+			'data_pin_shape' => array(
+				'id'      => 'data_pin_shape',
+				'name'    => __( 'Button Shape', 'pib' ),
+				'desc'    => '',
+				'type'    => 'select',
+				'options' => array(
+					'rectangular' => __( 'Rectangular', 'pib' ),
+					'circular'    => __( 'Circular', 'pib' )
+				)
+			),
 			'data_pin_color' => array( 
 				'id'      => 'data_pin_color',
 				'name'    => __( 'Button Color', 'pib' ),
-				'desc'    => __( 'Official color button option from Pinterest (default: Grey)', 'pib' ),
+				'desc'    => __( 'Ignored if Button Shape is <strong>Circular</strong>', 'pib' ),
 				'type'    => 'select',
 				'options' => array(
 					'gray'  => __( 'Gray', 'pib' ),

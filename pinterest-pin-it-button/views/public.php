@@ -37,7 +37,7 @@ add_action( 'wp_head', 'pib_add_custom_css' );
 	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
 </a>
 */
-function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $show_zero_count = null ) {
+function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $shape, $show_zero_count = null ) {
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
@@ -92,6 +92,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	// New options that were added to the widget builder on Pinterest
 	$data_pin_size  = ( $size == 'large' ? 'data-pin-height="28" ' : ' ' );
 	$data_pin_color = ( ! empty( $color ) ? 'data-pin-color="' . $color . '" ' : ' ' );
+	$data_pin_shape = ( $shape == 'circular' ? 'data-pin-shape="round" ' : ' ' );
 	
 	// Use new data-pin-zero option to show count bubbles even on pages that have 0 pins
 	// check if show_zero_count parameter is set and turn on the zero count if it is true
@@ -112,6 +113,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		$data_pin_size .
 		$data_pin_color .
 		$display_zero .
+		$data_pin_shape .
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 
@@ -140,8 +142,9 @@ function pib_button_html( $image_url = '' ) {
 	
 	$size = ( ! empty( $pib_options['data_pin_size'] ) ? $pib_options['data_pin_size'] : '' );
 	$color = ( ! empty( $pib_options['data_pin_color'] ) ? $pib_options['data_pin_color'] : '' );
+	$shape = ( ! empty( $pib_options['data_pin_shape'] ) ? $pib_options['data_pin_shape'] : '' );
 
-	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout, $size, $color );
+	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout, $size, $color, $shape );
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
 	if ( ! empty( $pib_options['remove_div'] ) )
