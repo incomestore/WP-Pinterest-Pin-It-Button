@@ -38,7 +38,8 @@ a.pib-external-link {
 /* Sidebar container. Taken from Flat UI .tile & popover classes. */
 
 #pib-settings-sidebar .sidebar-container {
-	background-color: #edeff1;
+	background-color: #fff;
+	border: 1px solid #ccc;
 	border-radius: 6px;
 	font-size: 15px;
 	margin-bottom: 18px;
