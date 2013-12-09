@@ -110,3 +110,9 @@ a.pib-external-link {
 #pib-settings-sidebar .sidebar-content.pib-rss-news ul {
 	font-size: 14px;
 }
+
+/* Admin pages styles */
+.pib-checkbox-label { 
+	display: block;
+	padding-bottom: 10px;
+}
