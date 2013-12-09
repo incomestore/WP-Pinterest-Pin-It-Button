@@ -114,6 +114,7 @@ a.pib-external-link {
 
 /* Admin pages styles */
 .pib-checkbox-label { 
+	line-height: 1.4em;
+	margin: .25em 0 .5em!important;
 	display: block;
-	padding-bottom: 10px;
 }
