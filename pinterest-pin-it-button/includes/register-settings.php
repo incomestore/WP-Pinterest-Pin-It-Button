@@ -68,7 +68,7 @@ function pib_register_settings() {
 			'data_pin_color' => array( 
 				'id'      => 'data_pin_color',
 				'name'    => __( 'Button Color', 'pib' ),
-				'desc'    => __( 'Ignored if Button Shape is <strong>Circular</strong>', 'pib' ),
+				'desc'    => __( 'Color ignored if button shape is <strong>Circular</strong>.', 'pib' ),
 				'type'    => 'select',
 				'options' => array(
 					'gray'  => __( 'Gray', 'pib' ),
