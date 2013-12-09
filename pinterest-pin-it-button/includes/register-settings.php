@@ -315,9 +315,10 @@ function pib_radio_callback( $args ) {
 			$checked = true;
 		elseif ( isset( $args['std'] ) && $args['std'] == $key && ! isset( $pib_options[ $args['id'] ] ) )
 			$checked = true;
-
+		
+		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" class="pib-radio-label">';
 		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="radio" value="' . $key . '" ' . checked( true, $checked, false ) . '/>' . "\n";
-		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>' . "\n";
+		$html .= $option . '</label>';
 	}
 
 	// Render and style description text underneath if it exists.
@@ -363,8 +364,6 @@ function pib_multicheck_callback( $args ) {
 		$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" class="pib-checkbox-label">';
 		$html .= '<input name="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>' . "\n";
 		$html .= $option . '</label>';
-		
-		//$html .= '<label for="pib_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>' . "\n";
 	}
 
 	// Render and style description text underneath if it exists.
