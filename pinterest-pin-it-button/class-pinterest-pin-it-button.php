@@ -68,7 +68,7 @@ class Pinterest_Pin_It_Button {
 	/**
 	 * Presstrends API authorization
 	 *
-	 * @since    3.0.0
+	 * @since    2.0.0
 	 *
 	 * @var      string
 	 */
