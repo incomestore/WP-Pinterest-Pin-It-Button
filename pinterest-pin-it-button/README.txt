@@ -21,6 +21,7 @@ No need to copy and paste code throughout your WordPress site.
 * Pre-select an image for the reader to pin.
 * Default to the first image in the post.
 * Specify a specific image to pin per post.
+* Pick from official "Pin It" button colors and sizes.
 * Hide the "Pin It" button on specific posts and pages.
 * Add a "Pin It" button to your sidebar or footer as a widget.
 * Place "Pin It" buttons anywhere using shortcodes.
@@ -34,8 +35,8 @@ No need to copy and paste code throughout your WordPress site.
 * Twitter, Facebook, Google+ & LinkedIn sharing buttons included.
 * Option to pin featured images.
 * Show or hide on custom post types.
-* WooCommerce compatibility
-* Customer support and automatic updates
+* WooCommerce compatibility.
+* Customer support and automatic updates.
 
 [Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
