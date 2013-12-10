@@ -124,7 +124,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.2 =
 
-* Added options for colors, sizes. and shapes based on Pinterest's widget builder.
+* Added options for colors, sizes and shapes based on Pinterest's official widget builder.
 * Added an option to show count bubble even for zero count pins.
 * Added option to load the async version of pinit.js.
 * Minor bug fixes.
