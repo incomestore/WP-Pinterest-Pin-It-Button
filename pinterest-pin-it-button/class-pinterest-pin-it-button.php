@@ -251,13 +251,37 @@ class Pinterest_Pin_It_Button {
 	public function enqueue_scripts() {
 		global $pib_options;
 
-		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
-		if( empty( $pib_options['no_pinit_js'] ) ) {
-			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-			wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
-		}
+		/*if( ! empty( $pib_options['use_async'] ) ) {
+			//wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', plugins_url( 'js/pinit-async.js', __FILE__ ), array(), null, true );
+			add_action( 'wp_head', array( $this, 'use_async_pinit' ) );
+		} else {*/
+			// If this option is empty then it means we can load the pinit.js, otherwise do not load it
+			if( empty( $pib_options['no_pinit_js'] ) ) {
+				// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
+				wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+			}
+		//}
 	}
 	
+	/**
+	 * Use async version of pinit.js
+	 * 
+	 * @since 
+	 */
+	
+	/*public function use_async_pinit() {
+		$script =  "<script type='text/javascript'>\n";
+		$script .= "(function(d){\n";
+		$script .= "var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');\n";
+		$script .= "p.type = 'text/javascript';\n";
+		$script .= "p.async = true;\n";
+		$script .= "p.src = '//assets.pinterest.com/js/pinit.js';\n";
+		$script .= "f.parentNode.insertBefore(p, f);\n";
+		$script .= "}(document));\n";
+		$script .= "</script>\n";
+		
+		echo $script;
+	}*/
 
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.

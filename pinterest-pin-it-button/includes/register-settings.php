@@ -152,7 +152,13 @@ function pib_register_settings() {
 					'<p class="description">' . __( 'Check this option if you have <code>pinit.js</code> referenced in another plugin, widget or your theme. ' .
 						'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
-			)
+			)/*,
+-			'use_async' => array(
+-				'id'   => 'use_async',
+-				'name' => __( 'Load <code>pinit.js</code> asynchronously', 'pib' ),
+-				'desc' => __( 'This may improve page load time by loading <code>pinit.js</code> independent of the rest of the page.', 'pib' ) . '</p>',
+-				'type' => 'checkbox'
+			)*/
 		)
 	);
 
