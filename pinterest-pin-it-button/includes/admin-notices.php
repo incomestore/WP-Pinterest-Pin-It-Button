@@ -22,19 +22,19 @@ function pib_register_admin_notices() {
 		add_settings_error( 'pib-notices', 'pib-general-updated', __( 'General settings updated.', 'pib' ), 'updated' );
 	}
 	
-	if ( ( isset( $_GET['tab'] ) && 'post_visibility' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
+	if ( $is_pib_settings_page && ( isset( $_GET['tab'] ) && 'post_visibility' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
 		add_settings_error( 'pib-notices', 'pib-post_visibility-updated', __( 'Post Visibility settings updated.', 'pib' ), 'updated' );
 	}
 	
-	if ( ( isset( $_GET['tab'] ) && 'styles' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
+	if ( $is_pib_settings_page && ( isset( $_GET['tab'] ) && 'styles' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
 		add_settings_error( 'pib-notices', 'pib-styles-updated', __( 'Styles settings updated.', 'pib' ), 'updated' );
 	}
 	
-	if ( ( isset( $_GET['tab'] ) && 'misc' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
+	if ( $is_pib_settings_page && ( isset( $_GET['tab'] ) && 'misc' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
 		add_settings_error( 'pib-notices', 'pib-misc-updated', __( 'Misc settings updated.', 'pib' ), 'updated' );
 	}
 	
-	if ( ( isset( $_GET['tab'] ) && 'advanced' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
+	if ( $is_pib_settings_page && ( isset( $_GET['tab'] ) && 'advanced' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
 		add_settings_error( 'pib-notices', 'pib-advanced-updated', __( 'Advanced settings updated.', 'pib' ), 'updated' );
 	}
 	
