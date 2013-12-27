@@ -47,7 +47,6 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 
 	// Add "Pin It" title attribute.
 	// Also add our own data attribute to track pin it button images.
-	// TODO Will need to update this in PIB Lite.
 	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" data-pib-button="true" />';
 
 	// Set data attribute for button style.
