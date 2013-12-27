@@ -46,7 +46,9 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	$btn_img_url = '//assets.pinterest.com/images/pidgets/pin_it_button.png';
 
 	// Add "Pin It" title attribute.
-	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" />';
+	// Also add our own data attribute to track pin it button images.
+	// TODO Will need to update this in PIB Lite.
+	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" data-pib-button="true" />';
 
 	// Set data attribute for button style.
 	if ( $button_type == 'image_selected' )
@@ -108,9 +110,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		// Check main settings option and set accordingly
 		$display_zero = ( ! empty( $pib_options['show_zero_count'] ) ? 'data-pin-zero="true" ' : ' ' );
 	}
-	
-	
-	
+
 	// Full link html with data attributes.
 	// Add rel="nobox" to prevent lightbox popup.
 	$link_html = '<a href="' . $link_href . '" ' .
@@ -171,7 +171,7 @@ function pib_render_content( $content ) {
 	if (
 	   ( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
 	   ( is_front_page() && ( ! empty( $pib_options['post_page_types']['display_front_page'] ) ) ) ||
-		( is_single() && ( ! empty( $pib_options['post_page_types']['display_posts'] ) ) ) ||
+	   ( is_single() && ( ! empty( $pib_options['post_page_types']['display_posts'] ) ) ) ||
 	   ( is_page() && ( ! empty( $pib_options['post_page_types']['display_pages'] ) ) && !is_front_page() ) ||
 
 	   //archive pages besides categories (tag, author, date, search)
@@ -190,7 +190,7 @@ function pib_render_content( $content ) {
 
 	return $content;
 }
-add_filter( 'the_content', 'pib_render_content' );
+add_filter( 'the_content', 'pib_render_content', 100 );
 
 // Render button HTML on pages with excerpts if option checked.
 function pib_render_content_excerpt( $content ) {
@@ -217,4 +217,4 @@ function pib_render_content_excerpt( $content ) {
 
 	return $content;
 }
-add_filter( 'the_excerpt', 'pib_render_content_excerpt' );
+add_filter( 'the_excerpt', 'pib_render_content_excerpt', 100 );
