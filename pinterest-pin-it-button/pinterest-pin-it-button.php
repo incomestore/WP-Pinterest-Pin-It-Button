@@ -6,7 +6,7 @@
  * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  * @license   GPL-2.0+
  * @link      http://pinterestplugin.com
- * @copyright 2011-2013 Phil Derksen
+ * @copyright 2011-2014 Phil Derksen
  *
  * @wordpress-plugin
  * Plugin Name: Pinterest "Pin It" Button Lite
