@@ -126,7 +126,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 }
 
 // Button HTML to render for pages, posts, and excerpts.
-function pib_button_html( $image_url = '' ) {
+function pib_button_html( $image_url = '', $button_type = '' ) {
 	global $pib_options;
 	global $post;
 	$postID = $post->ID;
@@ -148,8 +148,12 @@ function pib_button_html( $image_url = '' ) {
 	$size = ( ! empty( $pib_options['data_pin_size'] ) ? $pib_options['data_pin_size'] : '' );
 	$color = ( ! empty( $pib_options['data_pin_color'] ) ? $pib_options['data_pin_color'] : '' );
 	$shape = ( ! empty( $pib_options['data_pin_shape'] ) ? $pib_options['data_pin_shape'] : '' );
+	
+	if( empty( $button_type  ) ) {
+		$button_type = $pib_options['button_type'];
+	}
 
-	$base_btn = pib_button_base( $pib_options['button_type'], $post_url, $image_url, $description, $count_layout, $size, $color, $shape );
+	$base_btn = pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $shape );
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
 	if ( ! empty( $pib_options['remove_div'] ) )
