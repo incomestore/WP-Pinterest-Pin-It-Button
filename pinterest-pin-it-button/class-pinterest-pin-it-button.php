@@ -258,7 +258,8 @@ class Pinterest_Pin_It_Button {
 			// If this option is empty then it means we can load the pinit.js, otherwise do not load it
 			if( empty( $pib_options['no_pinit_js'] ) ) {
 				// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-				wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+				// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
+				wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
 			}
 		//}
 	}
