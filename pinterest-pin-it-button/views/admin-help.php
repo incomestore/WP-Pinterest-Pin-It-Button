@@ -19,8 +19,7 @@ if ( ! defined( 'ABSPATH' ) )
 	<div id="pib-settings">
 		<div id="pib-settings-content">
 
-			<?php screen_icon( 'pinterest-32' ); ?>
-			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+			<h2><img src="<?php echo PIB_PLUGIN_URL; ?>/assets/pinterest-icon-32.png" style="vertical-align: bottom;" /> <?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<p>
 				<?php _e( 'Plugin version', 'pib' ); ?>: <strong><?php echo PIB_VERSION; ?></strong>
