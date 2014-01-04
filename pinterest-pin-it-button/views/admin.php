@@ -27,7 +27,7 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 		<div id="pib-settings-content">
 
 			
-			<h2><img src="<?php echo PIB_PLUGIN_URL; ?>/assets/pinterest-icon-32.png" style="vertical-align: bottom;" /> <?php echo esc_html( get_admin_page_title() ); ?></h2>
+			<h2><img src="<?php echo PIB_PLUGIN_URL; ?>assets/pinterest-icon-32.png" style="vertical-align: bottom;" /> <?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<h2 class="nav-tab-wrapper">
 				<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
