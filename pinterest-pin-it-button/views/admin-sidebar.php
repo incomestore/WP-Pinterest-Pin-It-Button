@@ -41,9 +41,6 @@ if ( ! defined( 'ABSPATH' ) )
 		   class="btn btn-large btn-block btn-danger" target="_blank">
 			<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 		<br/>
-		<p style="text-align: center;">
-			<?php _e( 'Enter discount code <strong>HOLIDAY2013</strong> to get a <strong>10% discount</strong> until Dec 31, 2013!', 'pib' ); ?>
-		</p>
 	</div>
 </div>
 
