@@ -12,6 +12,17 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+
+/* 
+ * Reusable variables
+ * 
+ * @since 2.0.3
+ */
+global $pib_vars;
+
+$pib_vars['cache_message'] = 'If you have caching enabled please empty it before viewing your changes.';
+
+
 /**
  * Google Analytics campaign URL.
  *
