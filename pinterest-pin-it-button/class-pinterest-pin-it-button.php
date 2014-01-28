@@ -79,8 +79,10 @@ class Pinterest_Pin_It_Button {
 		$this->setup_constants();
 
 		// Run our upgrade checks first and update our version option.
-		add_action( 'init', array( $this, 'upgrade_plugin' ), 0 );
-		update_option( 'pib_version', $this->version );
+		if( ! get_option( 'pib_upgrade_has_run' ) ) {
+			add_action( 'init', array( $this, 'upgrade_plugin' ), 0 );
+			update_option( 'pib_version', $this->version );
+		}
 
 		// Include required files.
 		add_action( 'init', array( $this, 'includes' ), 1 );
