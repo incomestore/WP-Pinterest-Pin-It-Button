@@ -30,10 +30,6 @@ function pib_register_admin_notices() {
 		add_settings_error( 'pib-notices', 'pib-styles-updated', __( 'Styles settings updated.', 'pib' ), 'updated' );
 	}
 	
-	if ( ( $is_pib_settings_page !== false ) && ( isset( $_GET['tab'] ) && 'misc' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
-		add_settings_error( 'pib-notices', 'pib-misc-updated', __( 'Misc settings updated.', 'pib' ), 'updated' );
-	}
-	
 	if ( ( $is_pib_settings_page !== false ) && ( isset( $_GET['tab'] ) && 'advanced' == $_GET['tab'] ) && ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) ) {
 		add_settings_error( 'pib-notices', 'pib-advanced-updated', __( 'Advanced settings updated.', 'pib' ), 'updated' );
 	}
