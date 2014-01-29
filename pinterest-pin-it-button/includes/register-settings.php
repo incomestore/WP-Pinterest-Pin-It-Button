@@ -12,6 +12,11 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+/**
+ *  Main function to register all of the plugin settings
+ *
+ * @since 2.0.0
+ */
 function pib_register_settings() {
 	$pib_settings = array(
 
@@ -152,13 +157,7 @@ function pib_register_settings() {
 					'<p class="description">' . __( 'Check this option if you have <code>pinit.js</code> referenced in another plugin, widget or your theme. ' .
 						'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
-			)/*,
--			'use_async' => array(
--				'id'   => 'use_async',
--				'name' => __( 'Load <code>pinit.js</code> asynchronously', 'pib' ),
--				'desc' => __( 'This may improve page load time by loading <code>pinit.js</code> independent of the rest of the page.', 'pib' ) . '</p>',
--				'type' => 'checkbox'
-			)*/
+			)
 		)
 	);
 
@@ -273,7 +272,6 @@ add_action( 'admin_init', 'pib_register_settings' );
  * @param   string  $section  Section of settings apge.
  * @return  array             $args parameter to use with add_settings_field call.
  */
-
 function pib_get_settings_field_args( $option, $section ) {
 	$settings_args = array(
 		'id'      => $option['id'],
@@ -296,6 +294,9 @@ function pib_get_settings_field_args( $option, $section ) {
 
 /*
  * Radio button callback function
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_radio_callback( $args ) {
 	global $pib_options;
@@ -330,6 +331,9 @@ function pib_radio_callback( $args ) {
 
 /*
  * Single checkbox callback function
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_checkbox_callback( $args ) {
 	global $pib_options;
@@ -346,8 +350,10 @@ function pib_checkbox_callback( $args ) {
 
 /*
  * Multiple checkboxes callback function
+ * 
+ * @since 2.0.0
+ * 
  */
-
 function pib_multicheck_callback( $args ) {
 	global $pib_options;
 
@@ -375,6 +381,9 @@ function pib_multicheck_callback( $args ) {
 
 /*
  * Select box callback function
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_select_callback( $args ) {
 	global $pib_options;
@@ -403,6 +412,9 @@ function pib_select_callback( $args ) {
 
 /*
  * Textarea callback function
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_textarea_callback( $args ) {
 	global $pib_options;
@@ -424,6 +436,9 @@ function pib_textarea_callback( $args ) {
 
 /**
  * Number callback function
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_number_callback( $args ) {
 	global $pib_options;
@@ -447,6 +462,9 @@ function pib_number_callback( $args ) {
  * Textbox callback function
  * Valid built-in size CSS class values:
  * small-text, regular-text, large-text
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_text_callback( $args ) {
 	global $pib_options;
@@ -468,6 +486,9 @@ function pib_text_callback( $args ) {
 
 /*
  * Function we can use to sanitize the input data and return it when saving options
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_settings_sanitize( $input ) {
 	add_settings_error( 'pib-notices', '', '', '' );
@@ -476,6 +497,9 @@ function pib_settings_sanitize( $input ) {
 
 /*
  *  Default callback function if correct one does not exist
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_missing_callback( $args ) {
 	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'pib' ), $args['id'] );
@@ -483,6 +507,9 @@ function pib_missing_callback( $args ) {
 
 /*
  * Function used to return an array of all of the plugin settings
+ * 
+ * @since 2.0.0
+ * 
  */
 function pib_get_settings() {
 

@@ -12,6 +12,7 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+// Need to first check if there is currently a version option stored to compare it later
 if ( ! get_option( 'pib_version' ) ) {
 	add_option( 'pib_version', $this->version );
 } else {
@@ -34,6 +35,11 @@ if ( version_compare( get_option( 'pib_old_version' ), $this->version, '<' ) ) {
 	delete_option( 'pib_old_version' );
 }
 
+/**
+ *  Check and run through all necessary upgrades
+ *
+ * @since 2.0.0
+ */
 function pib_do_all_upgrades() {
 	
 	$current_version = get_option( 'pib_old_version' );
@@ -46,6 +52,11 @@ function pib_do_all_upgrades() {
 	
 }
 
+/**
+ *  Run all needed upgrades for users coming from pre-2.0.0 
+ *
+ * @since 2.0.0
+ */
 function pib_v2_upgrade() {
 	// Add code here to transfer all the options to new tab layout
 
@@ -99,5 +110,4 @@ function pib_v2_upgrade() {
 		}
 	}
 }
-
 pib_do_all_upgrades();

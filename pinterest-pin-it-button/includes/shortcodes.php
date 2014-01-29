@@ -12,6 +12,11 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+/**
+ *  Function to process [pinit] shortcodes
+ *
+ * @since 2.0.0
+ */
 function pib_pinit_shortcode( $attr ) {
 	global $pib_options;
 	global $post;
@@ -95,5 +100,4 @@ function pib_pinit_shortcode( $attr ) {
 		return '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
 	}
 }
-
 add_shortcode( 'pinit', 'pib_pinit_shortcode' );

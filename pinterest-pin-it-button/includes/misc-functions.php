@@ -53,7 +53,6 @@ function pib_ga_campaign_url( $base_url, $source, $medium, $campaign ) {
  *
  * @since   2.0.0
  */
-
 function pib_rss_news() {
 	// Get RSS Feed(s).
 	include_once( ABSPATH . WPINC . '/feed.php' );

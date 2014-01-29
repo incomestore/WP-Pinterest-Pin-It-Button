@@ -12,6 +12,11 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+/**
+ *  Register admin notices that are used when plugin settings are saved
+ *
+ * @since 2.0.0
+ */
 function pib_register_admin_notices() {
 	
 	global $pib_vars;

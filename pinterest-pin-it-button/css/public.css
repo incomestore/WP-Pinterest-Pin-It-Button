@@ -2,11 +2,7 @@
 
 /* Pinterest "Pin It" Button Public CSS */
 
-	/***
-	*
-	*	DIV surrounding button
-	*
-	***/
+/* Styles for the Pin It Button wrapper DIV */
 div.pin-it-btn-wrapper,
 div.pin-it-btn-wrapper-shortcode,
 div.pin-it-btn-wrapper-widget {
@@ -49,7 +45,6 @@ div.pin-it-btn-wrapper-widget a:hover {
 }
 
 /* Align left/right/center options */
-
 .pib-align-left {
 	text-align: left;
 }

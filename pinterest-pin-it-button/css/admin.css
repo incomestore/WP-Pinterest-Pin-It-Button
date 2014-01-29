@@ -4,17 +4,15 @@
 	background: transparent url('../assets/pinterest-icon-32.png') no-repeat;
 }
 
-/* This icon is taken from the Flat Social Media Icons fromk Designmodo at
+/* This icon is taken from the Flat Social Media Icons from Designmodo at
  * http://designmodo.com/flat-social-icons/
  */
-
 a.pib-external-link {
 	background: transparent url('../assets/icon-external-link.gif') center right no-repeat;
 	padding-right: 17px;
 }
 
 /* Layout the page similar to the built-in post edit screen. */
-
 #pib-settings {
 	margin-right: 310px;
 }
@@ -36,7 +34,6 @@ a.pib-external-link {
 }
 
 /* Sidebar container. Taken from Flat UI .tile & popover classes. */
-
 #pib-settings-sidebar .sidebar-container {
 	background-color: #fff;
 	border: 1px solid #ccc;

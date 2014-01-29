@@ -73,7 +73,14 @@ class Pinterest_Pin_It_Button {
 	 * @var      string
 	 */
 	protected $presstrends_auth = '0ebdi3uscgaztp99nnbam6rl6i2186qwo';
-
+	
+	
+	/**
+	 * Initialize main plugin functions and add appropriate hooks/filter calls
+	 *
+	 * @since 2.0.0
+	 * 
+	 */
 	private function __construct() {
 		// Setup constants.
 		$this->setup_constants();
@@ -253,38 +260,13 @@ class Pinterest_Pin_It_Button {
 	public function enqueue_scripts() {
 		global $pib_options;
 
-		/*if( ! empty( $pib_options['use_async'] ) ) {
-			//wp_enqueue_script( $this->plugin_slug . '-pinterest-pinit', plugins_url( 'js/pinit-async.js', __FILE__ ), array(), null, true );
-			add_action( 'wp_head', array( $this, 'use_async_pinit' ) );
-		} else {*/
-			// If this option is empty then it means we can load the pinit.js, otherwise do not load it
-			if( empty( $pib_options['no_pinit_js'] ) ) {
-				// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-				// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
-				wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
-			}
-		//}
+		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
+		if( empty( $pib_options['no_pinit_js'] ) ) {
+			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
+			// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
+			wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+		}
 	}
-	
-	/**
-	 * Use async version of pinit.js
-	 * 
-	 * @since 
-	 */
-	
-	/*public function use_async_pinit() {
-		$script =  "<script type='text/javascript'>\n";
-		$script .= "(function(d){\n";
-		$script .= "var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');\n";
-		$script .= "p.type = 'text/javascript';\n";
-		$script .= "p.async = true;\n";
-		$script .= "p.src = '//assets.pinterest.com/js/pinit.js';\n";
-		$script .= "f.parentNode.insertBefore(p, f);\n";
-		$script .= "}(document));\n";
-		$script .= "</script>\n";
-		
-		echo $script;
-	}*/
 
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
@@ -446,7 +428,12 @@ class Pinterest_Pin_It_Button {
 		if( get_current_screen()->id == 'plugins' )
 			include_once( 'views/admin-install-notice.php' );
 	}
-
+	
+	/**
+	 * Add call to PressTrends tracking code if the user opts in
+	 *
+	 * @since 2.0.0
+	 */
 	public function use_presstrends_tracking() {
 		global $pib_options;
 

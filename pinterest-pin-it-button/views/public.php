@@ -12,7 +12,12 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
-// Add Custom CSS.
+
+/**
+ * Add Custom CSS.
+ *
+ * @since 2.0.0
+ */
 function pib_add_custom_css() {
 	global $pib_options;
 
@@ -28,15 +33,18 @@ function pib_add_custom_css() {
 }
 add_action( 'wp_head', 'pib_add_custom_css' );
 
-// Function for rendering "Pin It" button base html.
-// HTML comes from Pinterest Widget Builder 7/10/2013.
-// http://business.pinterest.com/widget-builder/#do_pin_it_button
-// Sample HTML from widget builder:
-/*
-<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above">
-	<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
-</a>
-*/
+
+/**
+ * Function for rendering "Pin It" button base html.
+ * HTML comes from Pinterest Widget Builder 7/10/2013.
+ * http://business.pinterest.com/widget-builder/#do_pin_it_button
+ * Sample HTML from widget builder:
+ * <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="above">
+ *		<img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
+ * </a>
+ *
+ * @since 2.0.0
+ */
 function pib_button_base( $button_type, $post_url, $image_url, $description, $count_layout, $size, $color, $shape, $show_zero_count = null ) {
 	global $pib_options;
 	global $post;
@@ -125,7 +133,12 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	return $link_html;
 }
 
-// Button HTML to render for pages, posts, and excerpts.
+/**
+ * Button HTML to render for pages, posts, and excerpts.
+ *
+ * @since 2.0.0
+ * 
+ */
 function pib_button_html( $image_url = '', $button_type = '' ) {
 	global $pib_options;
 	global $post;
@@ -162,7 +175,12 @@ function pib_button_html( $image_url = '', $button_type = '' ) {
 		return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
 }
 
-//Render button HTML on pages with regular content.
+/**
+ * Render button HTML on pages with regular content.
+ *
+ * @since 2.0.0
+ * 
+ */
 function pib_render_content( $content ) {
 	global $pib_options;
 	global $post;
@@ -195,7 +213,12 @@ function pib_render_content( $content ) {
 }
 add_filter( 'the_content', 'pib_render_content', 100 );
 
-// Render button HTML on pages with excerpts if option checked.
+/**
+ * Render button HTML on pages with excerpts if option checked.
+ *
+ * @since 2.0.0
+ * 
+ */
 function pib_render_content_excerpt( $content ) {
 	global $pib_options;
 	global $post;

@@ -12,6 +12,11 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+/**
+ *  Function to enable PressTrends tracking if the user has it enabled
+ *
+ * @since 2.0.0
+ */
 function pib_run_presstrends_tracking( $auth ) {
     // PressTrends Account API Key
     $api_key = 'qsu6mq75d69xqhpadhdz09rfqze9c6u499q6';

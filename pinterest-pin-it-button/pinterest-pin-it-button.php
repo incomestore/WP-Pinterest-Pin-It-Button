@@ -23,6 +23,7 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
+// Run a check for Pro first since these 2 plugins cannot be installed at the same time to avoid issues and crashes
 if( ! class_exists( 'Pinterest_Pin_It_Button_Pro' ) ) {
 	if( ! class_exists( 'Pinterest_Pin_It_Button' ) )
 		require_once( plugin_dir_path( __FILE__ ) . 'class-pinterest-pin-it-button.php' );
