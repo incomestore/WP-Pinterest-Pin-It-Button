@@ -36,3 +36,5 @@ if( ! class_exists( 'Pinterest_Pin_It_Button_Pro' ) ) {
 	echo "You already have Pinterest Pin It Button Pro installed. To downgrade please deactivate and delete the Pro plugin first.";
 	die();
 }
+
+define( 'PIB_MAIN_FILE', __FILE__ );
