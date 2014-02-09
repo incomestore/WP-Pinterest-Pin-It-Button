@@ -86,13 +86,6 @@ function pib_register_settings() {
 				'name' => __( 'Save Settings', 'pib' ),
 				'desc' => __( 'Save your settings when uninstalling this plugin. Useful when upgrading or re-installing.', 'pib' ),
 				'type' => 'checkbox'
-			),
-			'presstrends_tracking' => array(
-				'id'   => 'presstrends_tracking',
-				'name' => __( 'Allow Anonymous Usage Tracking', 'pib' ),
-				'desc' => __( 'If checked, this option will enable PressTrends, which is a simple usage tracker that allows us to see how our customers are using our plugins.', 'pib' ) . '<br/>' .
-					__( 'This anonymous data gives us insight on how we can improve our plugins for you. It will not track any user details, so your security and privacy are safe with us.', 'pib' ),
-				'type' => 'checkbox'
 			)
 		),
 

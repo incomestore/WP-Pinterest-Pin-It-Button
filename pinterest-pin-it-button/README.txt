@@ -122,6 +122,10 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
+= 2.0.3 =
+
+* Removed PressTrends integration
+
 = 2.0.2 =
 
 * Added options for colors, sizes and shapes based on Pinterest's official widget builder.

@@ -27,7 +27,7 @@ class Pinterest_Pin_It_Button {
 	 * and README.txt changelog
 	 **************************************/
 
-	protected $version = '2.0.2';
+	protected $version = '2.0.3';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -64,16 +64,6 @@ class Pinterest_Pin_It_Button {
 	 *
 	 * @since     2.0.0
 	 */
-
-	/**
-	 * Presstrends API authorization
-	 *
-	 * @since    2.0.0
-	 *
-	 * @var      string
-	 */
-	protected $presstrends_auth = '0ebdi3uscgaztp99nnbam6rl6i2186qwo';
-	
 	
 	/**
 	 * Initialize main plugin functions and add appropriate hooks/filter calls
@@ -113,9 +103,6 @@ class Pinterest_Pin_It_Button {
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
-
-		// Finally, call presstrends tracking code.
-		add_action( 'admin_init', array( $this, 'use_presstrends_tracking' ) );
 		
 		// Check WP version
 		add_action( 'admin_init', array( $this, 'check_wp_version' ) );
@@ -446,20 +433,5 @@ class Pinterest_Pin_It_Button {
 		// At this point show install notice. Show it only on the plugin screen.
 		if( get_current_screen()->id == 'plugins' )
 			include_once( 'views/admin-install-notice.php' );
-	}
-	
-	/**
-	 * Add call to PressTrends tracking code if the user opts in
-	 *
-	 * @since 2.0.0
-	 */
-	public function use_presstrends_tracking() {
-		global $pib_options;
-
-		// Include tracking if option checked.
-		if( ! empty( $pib_options['presstrends_tracking'] ) && ( 1 == $pib_options['presstrends_tracking'] ) ) {
-			include( 'includes/presstrends.php' );
-			pib_run_presstrends_tracking( $this->presstrends_auth );
-		}
 	}
 }
