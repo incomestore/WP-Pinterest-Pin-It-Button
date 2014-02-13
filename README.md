@@ -1,7 +1,7 @@
-Pinterest "Pin It" Button Lite WordPress Plugin
-===============================================
+Pinterest "Pin It" Button Lite for WordPress
+============================================
 
-Easily add a Pinterest "Pin It" Button to your WordPress site.
+Easily add a Pinterest "Pin It" Button to your WordPress site with this plugin.
 
 Refactored from existing 1.x plugin at http://wordpress.org/plugins/pinterest-pin-it-button/
 
