@@ -66,7 +66,7 @@ This plugin (as well as the Pro version) is in full compliance with the [officia
 
 This plugin utilizes the code output from the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
 
-Want to take a peek at the source? [Check out this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
+[Follow this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
 
 == Installation ==
 
