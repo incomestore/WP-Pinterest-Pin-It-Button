@@ -12,7 +12,7 @@
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
-global $pib_options, $post;
+global $pib_options, $post, $pib_vars;
 
 $button_type_display = ( $pib_options['button_type'] == 'user_selects_image' ) ? __( 'User selects image', 'pib' ) : __( 'Image pre-selected', 'pib' );
 
@@ -51,7 +51,7 @@ $pib_description     = get_post_meta( $post->ID, 'pib_description', true);
 </p>
 <p>
 	<input type="checkbox" name="pib_enable_post_sharing" id="pib_enable_post_sharing" <?php checked( empty( $pib_sharing_checked ) || ($pib_sharing_checked === false) ); ?> />
-	<label for="pib_enable_post_sharing"><?php _e( 'Show "Pin It" button on this post/page', 'pib' ); ?></label>
+	<label for="pib_enable_post_sharing"><?php _e( 'Show "Pin It" button ' . $pib_vars['post_meta_message'] . ' on this post/page', 'pib' ); ?></label>
 </p>
 <p class="description">
 	<?php _e( 'If checked displays the button for this post (if Individual Posts selected) or this page (if Individual Pages selected) in the main "Pin It" button settings.', 'pib' ); ?>

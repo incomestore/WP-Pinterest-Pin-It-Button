@@ -20,7 +20,8 @@ if ( ! defined( 'ABSPATH' ) )
  */
 global $pib_vars;
 
-$pib_vars['cache_message'] = 'If you have caching enabled please empty it before viewing your changes.';
+$pib_vars['cache_message']     = 'If you have caching enabled please empty it before viewing your changes.';
+$pib_vars['post_meta_message'] = '';
 
 
 /**
