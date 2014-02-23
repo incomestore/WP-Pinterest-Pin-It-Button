@@ -81,7 +81,7 @@ function pib_pinit_shortcode( $attr ) {
     
     //Don't wrap with div or set float class if "remove div" is checked
 	if ( $remove_div ) {
-		return $base_btn;
+		$html = $base_btn;
 	}
 	else {
 		//Surround with div tag
@@ -97,7 +97,16 @@ function pib_pinit_shortcode( $attr ) {
 			$align_class = 'pib-align-center';
 		}
 	
-		return '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
+		$html = '<div class="pin-it-btn-wrapper-shortcode ' . $align_class . '">' . $base_btn . '</div>';
 	}
+	
+	$before_html = '';
+	$after_html ='';
+	
+	$before_html = apply_filters( 'pib_shortcode_before', $before_html );
+	$html        = apply_filters( 'pib_shortcode_html' , $html );
+	$after_html  = apply_filters( 'pib_shortcode_after', $after_html );
+	
+	return $before_html . $html . $after_html;
 }
 add_shortcode( 'pinit', 'pib_pinit_shortcode' );

@@ -82,7 +82,7 @@ class PIB_Widget extends WP_Widget {
         }
 		
 		if ( $pib_remove_div ) {
-			echo $base_btn;
+			$html = $base_btn;
 		}
 		else {
 			
@@ -99,8 +99,14 @@ class PIB_Widget extends WP_Widget {
 			}
 			
 			// Surround with div tag
-			echo '<div class="pin-it-btn-wrapper-widget ' . $align_class . '">' . $base_btn . '</div>';
+			$html = '<div class="pin-it-btn-wrapper-widget ' . $align_class . '">' . $base_btn . '</div>';
 		}
+		
+		do_action( 'pib_widget_before' );
+		
+		echo apply_filters( 'pib_widget_html', $html );
+		
+		do_action( 'pib_widget_after' );
 		
 		echo $after_widget;
 	}

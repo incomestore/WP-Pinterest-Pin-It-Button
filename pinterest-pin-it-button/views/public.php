@@ -130,7 +130,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 
-	return $link_html;
+	return apply_filters( 'pib_base_link_html', $link_html );
 }
 
 /**
@@ -170,9 +170,20 @@ function pib_button_html( $image_url = '', $button_type = '' ) {
 
 	// Don't wrap with div if using other sharing buttons or "remove div" is checked.
 	if ( ! empty( $pib_options['remove_div'] ) )
-		return $base_btn;
+		$html = $base_btn;
 	else
-		return '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
+		$html = '<div class="pin-it-btn-wrapper">' . $base_btn . '</div>'; // Surround with div tag
+	
+	
+	$before_html = '';
+	$after_html  = '';
+	
+	$before_html = apply_filters( 'pib_button_before', $before_html );
+	$html        = apply_filters( 'pib_button_html', $html );
+	$after_html  = apply_filters( 'pib_button_after', $after_html );
+	
+	
+	return $before_html . $html . $after_html;
 }
 
 /**
