@@ -130,7 +130,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		'rel="nobox">' .
 		$inner_btn_html . '</a>';
 
-	return apply_filters( 'pib_base_link_html', $link_html );
+	return $link_html;
 }
 
 /**
