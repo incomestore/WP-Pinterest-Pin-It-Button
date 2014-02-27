@@ -124,7 +124,8 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.3 =
 
-* Removed PressTrends integration
+* Removed PressTrends integration.
+* Added action and filter hooks for extensibility.
 
 = 2.0.2 =
 
