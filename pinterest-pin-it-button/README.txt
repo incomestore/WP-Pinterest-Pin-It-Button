@@ -1,7 +1,7 @@
 === Pinterest "Pin It" Button ===
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
-Requires at least: 3.5.2
+Requires at least: 3.6.1
 Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
@@ -127,6 +127,7 @@ CSS styling and shortcode help available within the plugin admin.
 * Removed PressTrends integration.
 * Added action and filter hooks for extensibility.
 * Fixed a bug with upgrade code being called multiple times.
+* Tested up to WordPress 3.9.
 
 = 2.0.2 =
 
