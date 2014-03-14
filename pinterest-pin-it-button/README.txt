@@ -124,9 +124,9 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.3 =
 
-* Removed PressTrends integration.
 * Added action and filter hooks for extensibility.
 * Fixed a bug with upgrade code being called multiple times.
+* Removed PressTrends integration.
 * Tested up to WordPress 3.9.
 
 = 2.0.2 =
