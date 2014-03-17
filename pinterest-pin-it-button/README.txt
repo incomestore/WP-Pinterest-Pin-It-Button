@@ -122,6 +122,10 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
+= 2.0.4 =
+
+* Updated minimum required WordPress version to 3.6.1
+
 = 2.0.3 =
 
 * Added action and filter hooks for extensibility.

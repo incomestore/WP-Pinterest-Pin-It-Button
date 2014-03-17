@@ -27,7 +27,7 @@ class Pinterest_Pin_It_Button {
 	 * and README.txt changelog
 	 **************************************/
 
-	protected $version = '2.0.3';
+	protected $version = '2.0.4';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -115,7 +115,7 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function check_wp_version() {
 		global $wp_version;
-		$required_wp_version = '3.5.2';
+		$required_wp_version = '3.6.1';
 		
 		if ( version_compare( $wp_version, $required_wp_version, '<' ) ) {
 			deactivate_plugins( PIB_MAIN_FILE ); 
