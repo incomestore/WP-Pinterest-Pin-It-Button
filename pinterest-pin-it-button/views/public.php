@@ -200,18 +200,7 @@ function pib_render_content( $content ) {
 		return $content;
 	
 	//Determine if button displayed on current page from main admin settings
-	if (
-	   ( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
-	   ( is_front_page() && ( ! empty( $pib_options['post_page_types']['display_front_page'] ) ) ) ||
-	   ( is_single() && ( ! empty( $pib_options['post_page_types']['display_posts'] ) ) ) ||
-	   ( is_page() && ( ! empty( $pib_options['post_page_types']['display_pages'] ) ) && !is_front_page() ) ||
-
-	   //archive pages besides categories (tag, author, date, search)
-	   //http://codex.wordpress.org/Conditional_Tags
-	   ( is_archive() && ( ! empty( $pib_options['post_page_types']['display_archives'] ) ) &&
-		  ( is_tag() || is_author() || is_date() || is_search() || is_category() )
-	   )
-	  ) {
+	if ( pib_render_button() ) {
 	   if ( ! empty( $pib_options['post_page_placement']['display_above_content'] ) ) {
 		  $content = pib_button_html() . $content;
 	   }
@@ -255,3 +244,6 @@ function pib_render_content_excerpt( $content ) {
 	return $content;
 }
 add_filter( 'the_excerpt', 'pib_render_content_excerpt', 100 );
+
+
+

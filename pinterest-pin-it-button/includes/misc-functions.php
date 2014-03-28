@@ -139,3 +139,36 @@ function pib_is_article_rich_pins_active() {
 function pib_is_wc_rich_pins_active() {
 	return class_exists( 'WooCommerce_Rich_Pins' );
 }
+
+
+/**
+ * Check if we should render the Pinterest button
+ * 
+ * returns tru if we should and false if not
+ *
+ * @since   2.0.2
+ *
+ * @return  boolean
+ */
+function pib_render_button() {
+	global $pib_options;
+	
+	//Determine if button displayed on current page from main admin settings
+	if (
+			( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
+			( is_front_page() && ( ! empty( $pib_options['post_page_types']['display_front_page'] ) ) ) ||
+			( is_single() && ( ! empty( $pib_options['post_page_types']['display_posts'] ) ) ) ||
+			( is_page() && ( ! empty( $pib_options['post_page_types']['display_pages'] ) ) && !is_front_page() ) ||
+
+			//archive pages besides categories (tag, author, date, search)
+			//http://codex.wordpress.org/Conditional_Tags
+			( is_archive() && ( ! empty( $pib_options['post_page_types']['display_archives'] ) ) &&
+			   ( is_tag() || is_author() || is_date() || is_search() || is_category() )
+			)
+		) {
+			//pib_load_scripts();
+			return true;
+		}
+	
+	return false;
+}
