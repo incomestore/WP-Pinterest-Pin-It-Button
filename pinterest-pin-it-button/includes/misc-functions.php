@@ -144,14 +144,14 @@ function pib_is_wc_rich_pins_active() {
 /**
  * Check if we should render the Pinterest button
  * 
- * returns tru if we should and false if not
+ * returns true if we should and false if not
  *
  * @since   2.0.2
  *
  * @return  boolean
  */
 function pib_render_button() {
-	global $pib_options;
+	global $pib_options, $post;
 	
 	//Determine if button displayed on current page from main admin settings
 	if (
@@ -166,9 +166,18 @@ function pib_render_button() {
 			   ( is_tag() || is_author() || is_date() || is_search() || is_category() )
 			)
 		) {
-			//pib_load_scripts();
 			return true;
 		}
+		
+	// Check if a shortcode exists
+	if( has_shortcode( $post->post_content, 'pinit' ) ) {
+		return true;
+	}
+	
+	// Check if there is a widget
+	if( is_active_widget( false, false, 'pib_button', false ) ) {
+		return true;
+	}
 	
 	return false;
 }
