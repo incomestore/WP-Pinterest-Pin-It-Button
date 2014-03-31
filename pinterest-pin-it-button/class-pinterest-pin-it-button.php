@@ -250,10 +250,9 @@ class Pinterest_Pin_It_Button {
 	 * @since    2.0.0
 	 */
 	public function enqueue_styles() {
+		global $pib_options;
 		
 		if( pib_render_button() ) {
-			global $pib_options;
-
 			// Check to see if setting to disable is true first.
 			if ( empty( $pib_options['disable_css'] ) ) {
 				wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
@@ -269,12 +268,14 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function enqueue_scripts() {
 		global $pib_options;
-
-		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
-		if( empty( $pib_options['no_pinit_js'] ) ) {
-			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-			// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
-			wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+		
+		if( pib_render_button() ) {
+			// If this option is empty then it means we can load the pinit.js, otherwise do not load it
+			if( empty( $pib_options['no_pinit_js'] ) ) {
+				// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
+				// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
+				wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
+			}
 		}
 	}
 
