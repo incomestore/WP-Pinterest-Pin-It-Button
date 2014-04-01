@@ -20,15 +20,17 @@ if ( ! defined( 'ABSPATH' ) )
  */
 function pib_add_custom_css() {
 	global $pib_options;
+	
+	if( pib_render_button() ) {
+		// Only add the custom CSS if it actually exists.
+		if ( ! empty( $pib_options['custom_css'] ) ) {
+			$custom_css = trim( $pib_options['custom_css'] );
 
-	// Only add the custom CSS if it actually exists.
-	if ( ! empty( $pib_options['custom_css'] ) ) {
-		$custom_css = trim( $pib_options['custom_css'] );
-
-		echo "\n" .
-			'<style type="text/css">' . "\n" .
-			$custom_css . "\n" . // Render custom CSS.
-			'</style>' . "\n";
+			echo "\n" .
+				'<style type="text/css">' . "\n" .
+				$custom_css . "\n" . // Render custom CSS.
+				'</style>' . "\n";
+		}
 	}
 }
 add_action( 'wp_head', 'pib_add_custom_css' );

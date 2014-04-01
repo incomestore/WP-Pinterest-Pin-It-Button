@@ -166,7 +166,11 @@ function pib_render_button() {
 			   ( is_tag() || is_author() || is_date() || is_search() || is_category() )
 			)
 		) {
-			return true;
+			// Make sure the button is enabled for this post via post meta setting
+			if( ! ( get_post_meta( $post->ID, 'pib_sharing_disabled', 1 ) ) ) {
+				return true;
+			}
+			
 		}
 		
 	// Check if a shortcode exists
