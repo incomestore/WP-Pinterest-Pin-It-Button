@@ -168,19 +168,19 @@ function pib_render_button() {
 		) {
 			// Make sure the button is enabled for this post via post meta setting
 			if( ! ( get_post_meta( $post->ID, 'pib_sharing_disabled', 1 ) ) ) {
-				return true;
+				return 'button';
 			}
 			
 		}
 		
 	// Check if a shortcode exists
 	if( has_shortcode( $post->post_content, 'pinit' ) ) {
-		return true;
+		return 'shortocde';
 	}
 	
 	// Check if there is a widget
 	if( is_active_widget( false, false, 'pib_button', false ) ) {
-		return true;
+		return 'widget';
 	}
 	
 	return false;
