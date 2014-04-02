@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) )
 function pib_add_custom_css() {
 	global $pib_options;
 	
-	if( false !== pib_render_button() ) {
+	if( ! in_array( 'empty', pib_render_button() ) ) {
 		// Only add the custom CSS if it actually exists.
 		if ( ! empty( $pib_options['custom_css'] ) ) {
 			$custom_css = trim( $pib_options['custom_css'] );
@@ -202,7 +202,7 @@ function pib_render_content( $content ) {
 		return $content;
 	
 	//Determine if button displayed on current page from main admin settings
-	if ( 'button' == pib_render_button() ) {
+	if ( in_array( 'button', pib_render_button() ) ) {
 	   if ( ! empty( $pib_options['post_page_placement']['display_above_content'] ) ) {
 		  $content = pib_button_html() . $content;
 	   }
