@@ -9,8 +9,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) )
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
 
 // Need to first check if there is currently a version option stored to compare it later
 if ( ! get_option( 'pib_version' ) ) {
