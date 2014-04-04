@@ -38,7 +38,7 @@ No need to copy and paste code throughout your WordPress site.
 * WooCommerce compatibility.
 * Customer support and automatic updates.
 
-[Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+[Start Getting Pinned Like Crazy with "Pin It" Button Pro!](http://pinplugins.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
 ###A Few Stats on Pinterest###
 
@@ -60,7 +60,7 @@ No need to copy and paste code throughout your WordPress site.
 
 [See a "Pin It" Button Pro Demo](http://bruisesandbandaids.com/2011/newborn-photography-props/) (shows off the share bar and image hover features)
 
-[Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinterestplugin.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
+[Setup an Eye-Catching Button in Minutes with "Pin It" Button Pro!](http://pinplugins.com/pin-it-button-pro/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite)
 
 This plugin (as well as the Pro version) is in full compliance with the [official "Pin It" button developer guidelines](http://developers.pinterest.com/pin_it/).
 
@@ -106,7 +106,7 @@ A popular known plugin that does this is **Google Analytics for WordPress**. Try
 
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
-[Visit the complete knowledgebase](http://pinterestplugin.com/pin-it-button-faq?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite) for additional help and troubleshooting tips.
+[Visit the complete knowledgebase](http://pinplugins.com/pin-it-button-faq?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite) for additional help and troubleshooting tips.
 
 CSS styling and shortcode help available within the plugin admin.
 

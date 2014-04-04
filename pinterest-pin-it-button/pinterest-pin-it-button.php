@@ -6,12 +6,12 @@
  * @package   PIB
  * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  * @license   GPL-2.0+
- * @link      http://pinterestplugin.com
+ * @link      http://pinplugins.com
  * @copyright 2011-2014 Phil Derksen
  *
  * @wordpress-plugin
  * Plugin Name: Pinterest "Pin It" Button Lite
- * Plugin URI: http://pinterestplugin.com/pin-it-button-pro/
+ * Plugin URI: http://pinplugins.com/pin-it-button-pro/
  * Description: Add a Pinterest "Pin It" Button to your site and get your visitors to start pinning your awesome content!
  * Version: 2.0.4
  * Author: Phil Derksen

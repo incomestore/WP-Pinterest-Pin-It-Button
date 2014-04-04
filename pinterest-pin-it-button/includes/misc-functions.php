@@ -49,7 +49,7 @@ function pib_ga_campaign_url( $base_url, $source, $medium, $campaign ) {
 }
 
 /**
- * Render RSS items from pinterestplugin.com in unordered list.
+ * Render RSS items from pinplugins.com in unordered list.
  * http://codex.wordpress.org/Function_Reference/fetch_feed
  *
  * @since   2.0.0
@@ -59,7 +59,7 @@ function pib_rss_news() {
 	include_once( ABSPATH . WPINC . '/feed.php' );
 
 	// Get a SimplePie feed object from the specified feed source.
-	$rss = fetch_feed( 'http://pinterestplugin.com/feed/' );
+	$rss = fetch_feed( PINPLUGIN_BASE_URL . 'feed/' );
 
 	if ( ! is_wp_error( $rss ) ) {
 		// Checks that the object is created correctly.

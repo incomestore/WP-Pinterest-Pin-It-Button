@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) )
 			<?php _e( 'Get all of these and more with Pinterest "Pin It" Button Pro!', 'pib' ); ?>
 		</p>
 
-		<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/pin-it-button-pro/', 'pib_lite_2', 'sidebar_link', 'pro_upgrade' ); ?>"
+		<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'pin-it-button-pro/', 'pib_lite_2', 'sidebar_link', 'pro_upgrade' ); ?>"
 		   class="btn btn-large btn-block btn-danger" target="_blank">
 			<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 		<br/>
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) )
 					<?php _e( 'Running a WooCommerce store and want to give your product pins a boost? There\'s a plugin for that.', 'pib' ); ?>
 				</p>
 				<p>
-					<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/plugins/product-rich-pins-for-woocommerce/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
+					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'plugins/product-rich-pins-for-woocommerce/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
 					   class="btn btn-small btn-block btn-inverse" target="_blank">
 						<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?>
 					</a>
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) )
 					<?php _e( 'Want give your pins a boost with <strong>Article Rich Pins</strong>? There\'s a plugin for that.', 'pib' ); ?>
 				</p>
 				<p>
-					<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/plugins/article-rich-pins/', 'pib_lite_2', 'sidebar_link', 'article_rich_pins' ); ?>"
+					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'plugins/article-rich-pins/', 'pib_lite_2', 'sidebar_link', 'article_rich_pins' ); ?>"
 					   class="btn btn-small btn-block btn-inverse" target="_blank">
 						<?php _e( 'Check out Article Rich Pins', 'pib' ); ?>
 					</a>
@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) )
 			</li>
 			<li>
 				<i class="fui-arrow-right"></i>
-				<a href="<?php echo pib_ga_campaign_url( 'http://pinterestplugin.com/support', 'pib_lite_2', 'sidebar_link', 'support' ); ?>" target="_blank">
+				<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'support', 'pib_lite_2', 'sidebar_link', 'support' ); ?>" target="_blank">
 					<?php _e( 'Knowledgebase', 'pib' ); ?></a>
 			</li>
 		</ul>

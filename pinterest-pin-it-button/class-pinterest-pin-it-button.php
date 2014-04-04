@@ -147,20 +147,28 @@ class Pinterest_Pin_It_Button {
 	 */
 	public function setup_constants() {
 		// Plugin slug.
-		if ( ! defined( 'PIB_PLUGIN_SLUG' ) )
+		if ( ! defined( 'PIB_PLUGIN_SLUG' ) ) {
 			define( 'PIB_PLUGIN_SLUG', $this->plugin_slug );
+		}
 
 		// Plugin version.
-		if ( ! defined( 'PIB_VERSION' ) )
+		if ( ! defined( 'PIB_VERSION' ) ) {
 			define( 'PIB_VERSION', $this->version );
+		}
 
 		// Plugin title.
-		if ( ! defined( 'PIB_PLUGIN_TITLE' ) )
+		if ( ! defined( 'PIB_PLUGIN_TITLE' ) ) {
 			define( 'PIB_PLUGIN_TITLE', $this->get_plugin_title() );
+		}
 
 		// Plugin folder URL.
-		if ( ! defined( 'PIB_PLUGIN_URL' ) )
+		if ( ! defined( 'PIB_PLUGIN_URL' ) ) {
 			define( 'PIB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+		}
+		
+		if( ! defined( 'PINPLUGIN_BASE_URL' ) ) {
+			define( 'PINPLUGIN_BASE_URL', 'http://pinplugins.com/' );
+		}
 	}
 
 	/**
