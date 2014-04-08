@@ -178,7 +178,7 @@ function pib_render_button() {
 		
 	// Check if a shortcode exists
 	if( has_shortcode( $post->post_content, 'pinit' ) ) {
-		$return[] = 'shortocde';
+		$return[] = 'shortcode';
 	}
 	
 	// Check if there is a widget
