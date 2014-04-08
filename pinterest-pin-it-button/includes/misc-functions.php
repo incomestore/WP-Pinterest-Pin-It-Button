@@ -182,7 +182,7 @@ function pib_render_button() {
 	}
 	
 	// Check if there is a widget
-	if( is_active_widget( false, false, 'pib_button', false ) ) {
+	if( is_active_widget( false, false, 'pib_button', true ) ) {
 		$return[] = 'widget';
 	}
 	
