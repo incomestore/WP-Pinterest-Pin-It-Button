@@ -365,6 +365,8 @@ class Pinterest_Pin_It_Button {
 			'pib_url_of_img',
 			'pib_description'
 		);
+		
+		$post_meta_fields = apply_filters( 'pib_post_meta_fields', $post_meta_fields );
 
 		// Record sharing disable
 

@@ -61,4 +61,9 @@ $pib_description     = get_post_meta( $post->ID, 'pib_description', true);
 	<?php _e( 'If unchecked the button ' . $pib_vars['post_meta_message'] . ' will always be hidden for this post/page.', 'pib' ); ?>
 </p>
 
+<?php 
+	// Now using an action to easily add more post meta options
+	do_action( 'pib_post_meta_options' );
+?>
+
 <input type="hidden" name="pib_sharing_status_hidden" value="1" />
