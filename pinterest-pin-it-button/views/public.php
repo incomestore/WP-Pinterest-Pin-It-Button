@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function pib_add_custom_css() {
 	global $pib_options;
 	
-	if( ! in_array( 'empty', pib_render_button() ) ) {
+	if( ! in_array( 'no_buttons', pib_render_button() ) ) {
 		// Only add the custom CSS if it actually exists.
 		if ( ! empty( $pib_options['custom_css'] ) ) {
 			$custom_css = trim( $pib_options['custom_css'] );
@@ -93,11 +93,21 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	// Set description to post title if still blank.
 	if ( empty( $description ) )
 		$description = get_the_title( $postID );
+	
+	$utm = '';
+	$utm_meta = get_post_meta( $post->ID, 'pib_utm_meta', true );
+	
+	if( ! empty( $utm_meta ) ) {
+		$utm = clean_and_encode_utm( $post_url, $utm_meta );
+	} else if( ! empty( $pib_options['utm_string'] ) ) {
+		$utm = clean_and_encode_utm( $post_url, $pib_options['utm_string'] );
+	}
+	
 
 	// Link href always needs all the parameters in it for the count bubble to work.
 	// Pinterest points out to use protocol-agnostic URL for popup.
 	$link_href = '//www.pinterest.com/pin/create/button/' .
-		'?url='         . rawurlencode( $post_url ) .
+		'?url='         . rawurlencode( $post_url ) . $utm .
 		'&media='       . rawurlencode( $image_url ) .
 		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
 	
