@@ -17,7 +17,7 @@ delete_option( 'pib_category_fields_option' );
 $general = get_option( 'pib_settings_general' );
 
 // If the the option to save settings is checked then do nothing, otherwise delete all options and post meta
-if ( $general['uninstall_save_settings'] ) {
+if ( ! empty( $general['uninstall_save_settings'] ) ) {
 	// Do nothing
 } else {
 	
