@@ -144,8 +144,6 @@ function pib_is_wc_rich_pins_active() {
 
 /**
  * Check if we should render the Pinterest button
- * 
- * returns true if we should and false if not
  *
  * @since   2.0.2
  *
@@ -187,9 +185,8 @@ function pib_render_button() {
 	}
 	
 	if( empty( $return ) ) {
-		$return[] = 'empty';
+		$return[] = 'no_buttons';
 	}
 	
 	return $return;
-	
 }
