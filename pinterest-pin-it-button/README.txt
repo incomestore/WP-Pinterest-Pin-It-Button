@@ -124,7 +124,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.4 =
 
-* Updated minimum required WordPress version to 3.6.1
+* Various performance enhancements.
 
 = 2.0.3 =
 
