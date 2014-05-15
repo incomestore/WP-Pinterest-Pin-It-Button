@@ -105,6 +105,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<ul>
 			<li>
 				<i class="fui-arrow-right"></i>
+				<a href="<?php echo add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ); ?>">
+					<?php _e( 'Shortcode & CSS Help', 'pib' ); ?></a>
+			</li>
+			<li>
+				<i class="fui-arrow-right"></i>
 				<a href="http://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
 					<?php _e( 'Community Support Forums', 'pib' ); ?></a>
 			</li>

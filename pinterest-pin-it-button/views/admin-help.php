@@ -26,14 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php _e( 'Plugin version', 'pib' ); ?>: <strong><?php echo PIB_VERSION; ?></strong>
 			</p>
 
-			<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
-
-			<p>
-				<?php _e( 'You may individually override what website address (URL), image and description will be pinned for each post or page.', 'pib' ); ?>
-				<?php _e( 'These fields are located towards the bottom of the post/page edit screen.', 'pib' ); ?>
-			</p>
-
-			<h3 class="title"><?php _e( 'Shortcode', 'pib' ); ?></h3>
+			<h3 class="title"><?php _e( 'Shortcode Options', 'pib' ); ?></h3>
 
 			<p>
 				<?php _e( 'Use the shortcode', 'pib' ); ?> <code>[pinit]</code> <?php _e( 'to display the button within your content.', 'pib' ); ?>
@@ -206,6 +199,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<li><code>div.pin-it-btn-wrapper a { border: 1px solid red; }</code> - <?php _e( 'Add red border around button', 'pib' ); ?></li>
 				<li><code>div.pin-it-btn-wrapper-widget a { border: 1px solid red; }</code> - <?php _e( 'Add red border around widget button', 'pib' ); ?></li>
 			</ul>
+			
+			<h3 class="title"><?php _e( 'Individual Post/Page Overrides', 'pib' ); ?></h3>
+
+			<p>
+				<?php _e( 'You may individually override what website address (URL), image and description will be pinned for each post or page.', 'pib' ); ?>
+				<?php _e( 'These fields are located towards the bottom of the post/page edit screen.', 'pib' ); ?>
+			</p>
 
 			<p>
 				<?php printf( __( 'Need more widgets? Check out our free <a href="%s">Pinterest Widgets</a> plugin.', 'pib' ),
