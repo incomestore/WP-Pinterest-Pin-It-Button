@@ -109,7 +109,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	$link_href = '//www.pinterest.com/pin/create/button/' .
 		'?url='         . rawurlencode( $post_url ) . $utm .
 		'&media='       . rawurlencode( $image_url ) .
-		'&description=' . rawurlencode( wp_strip_all_tags( $description ) );
+		'&description=' . esc_attr( $description );
 	
 	// New options that were added to the widget builder on Pinterest
 	// the size is different depending on the shape of the button, so first we determine the shape and then set the size
