@@ -122,6 +122,9 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
+= 2.0.5 =
+
+
 = 2.0.4 =
 
 * Various performance enhancements.
