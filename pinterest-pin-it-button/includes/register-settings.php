@@ -151,6 +151,13 @@ function pib_register_settings() {
 					'<p class="description">' . __( 'Check this option if you have <code>pinit.js</code> referenced in another plugin, widget or your theme. ' .
 						'Ouputting <code>pinit.js</code> more than once on a page can cause conflicts.', 'pib' ) . '</p>',
 				'type' => 'checkbox'
+			),
+			'force_protocol' => array(
+				'id'   => 'force_protocol',
+				'name' => __( 'Force Protocol', 'pib' ),
+				'desc' => __( 'Force links to Pinterest to start with "http://" or "https://" instead of no protocol.', 'pib' ) .
+					'<p class="description">' . __( 'Pinterest suggests leaving out the protocol but this option may fix popups or security issues for some sites.', 'pib' ) . '</p>',
+				'type' => 'checkbox'
 			)
 		)
 	);

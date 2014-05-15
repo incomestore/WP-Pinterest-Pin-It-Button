@@ -190,3 +190,25 @@ function pib_render_button() {
 	
 	return $return;
 }
+
+
+/*
+ * Function to get a URL prefix in case it is forced
+ * 
+ * @since 2.0.5
+ */
+function pib_get_url_prefix() {
+	global $pib_options;
+	
+	$prefix = '';
+	
+	if( ! empty( $pib_options['force_protocol'] ) ) {
+		if( is_ssl() ) {
+			$prefix = 'https:';
+		} else {
+			$prefix = 'http:';
+		}
+	}
+	
+	return $prefix;
+}

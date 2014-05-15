@@ -106,7 +106,10 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 
 	// Link href always needs all the parameters in it for the count bubble to work.
 	// Pinterest points out to use protocol-agnostic URL for popup.
-	$link_href = '//www.pinterest.com/pin/create/button/' .
+	
+	
+	
+	$link_href = pib_get_url_prefix() . '//www.pinterest.com/pin/create/button/' .
 		'?url='         . rawurlencode( $post_url ) . $utm .
 		'&media='       . rawurlencode( $image_url ) .
 		'&description=' . esc_attr( $description );
