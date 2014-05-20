@@ -125,8 +125,7 @@ CSS styling and shortcode help available within the plugin admin.
 = 2.0.5 =
 
 * Fixed a bug with shortcode buttons not enqueueing CSS & JS correctly.
-* Admin help page updates.
-* Fixed a bug with character's showing up encoded in the description box.
+* Fixed a bug with some characters (such as single quotes) rendering HTML codes in the pin description.
 
 = 2.0.4 =
 
