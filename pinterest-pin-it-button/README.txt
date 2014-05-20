@@ -124,6 +124,10 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.5 =
 
+* Added a new setting option to force the URL protocol.
+* Fixed a bug with shortcode buttons not enqueueing CSS & JS correctly.
+* Admin help page updates.
+* Fixed a bug with character's showing up encoded in the description box.
 
 = 2.0.4 =
 
