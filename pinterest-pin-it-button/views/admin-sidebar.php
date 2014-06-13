@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</p>
 
 		<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'pin-it-button-pro/', 'pib_lite_2', 'sidebar_link', 'pro_upgrade' ); ?>"
-		   class="btn btn-large btn-block btn-danger" target="_blank">
+		   class="button-primary" target="_blank">
 			<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 		<br/>
 	</div>
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				<p>
 					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'plugins/product-rich-pins-for-woocommerce/', 'pib_lite_2', 'sidebar_link', 'wc_rich_pins' ); ?>"
-					   class="btn btn-small btn-block btn-inverse" target="_blank">
+					   class="button-primary" target="_blank">
 						<?php _e( 'Check out Rich Pins for WooCommerce', 'pib' ); ?>
 					</a>
 				</p>
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				<p>
 					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'plugins/article-rich-pins/', 'pib_lite_2', 'sidebar_link', 'article_rich_pins' ); ?>"
-					   class="btn btn-small btn-block btn-inverse" target="_blank">
+					   class="button-primary" target="_blank">
 						<?php _e( 'Check out Article Rich Pins', 'pib' ); ?>
 					</a>
 				</p>
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php _e( 'Help us get noticed (and boost our egos) with a rating and short review.', 'pib' ); ?>
 		</p>
 
-		<a href="http://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button" class="btn btn-small btn-block btn-inverse" target="_blank">
+		<a href="http://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button" class="button-primary" target="_blank">
 			<?php _e( 'Rate this plugin on WordPress.org', 'pib' ); ?></a>
 	</div>
 </div>
