@@ -19,19 +19,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="sidebar-content">
 		<ul>
-			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons on image hover', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Add "Pin It" buttons under images', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Use with featured images', 'pib' ); ?></li>
-			<li><i class="fui-check"></i> <?php _e( 'Use with custom post types', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Add "Pin It" buttons on image hover', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Add "Pin It" buttons under images', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( '30 custom "Pin It" button designs', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Upload your own button designs', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Twitter, Facebook & G+ buttons', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Use with featured images', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Use with custom post types', 'pib' ); ?></li>
 
 			<?php if ( pib_is_woo_commerce_active() ): ?>
-			<li><i class="fui-check"></i> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
+			<div class="dashicons dashicons-yes"></div> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 			<?php endif; ?>
 
-			<li><i class="fui-check"></i> <?php _e( 'Customer support & auto updates', 'pib' ); ?></li>
+			<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Customer support & auto updates', 'pib' ); ?></li>
 		</ul>
 
 		<p class="last-blurb">
@@ -104,17 +104,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="sidebar-content">
 		<ul>
 			<li>
-				<i class="fui-arrow-right"></i>
+				<div class="dashicons dashicons-arrow-right-alt2"></div>
 				<a href="<?php echo add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ); ?>">
 					<?php _e( 'Shortcode & CSS Help', 'pib' ); ?></a>
 			</li>
 			<li>
-				<i class="fui-arrow-right"></i>
+				<div class="dashicons dashicons-arrow-right-alt2"></div>
 				<a href="http://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
 					<?php _e( 'Community Support Forums', 'pib' ); ?></a>
 			</li>
 			<li>
-				<i class="fui-arrow-right"></i>
+				<div class="dashicons dashicons-arrow-right-alt2"></div>
 				<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'support', 'pib_lite_2', 'sidebar_link', 'support' ); ?>" target="_blank">
 					<?php _e( 'Knowledgebase', 'pib' ); ?></a>
 			</li>
