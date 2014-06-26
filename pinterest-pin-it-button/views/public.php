@@ -92,7 +92,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 
 	// Set description to post title if still blank.
 	if ( empty( $description ) )
-		$description = get_the_title( $postID );
+		$description = get_post_field( 'post_title', $postID, 'raw' );
 	
 	$utm = '';
 	$utm_meta = get_post_meta( $post->ID, 'pib_utm_meta', true );
@@ -112,7 +112,7 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	$link_href = '//www.pinterest.com/pin/create/button/' .
 		'?url='         . rawurlencode( $post_url ) . $utm .
 		'&media='       . rawurlencode( $image_url ) .
-		'&description=' . esc_attr( $description );
+		'&description=' . rawurlencode( $description );
 	
 	// New options that were added to the widget builder on Pinterest
 	// the size is different depending on the shape of the button, so first we determine the shape and then set the size
