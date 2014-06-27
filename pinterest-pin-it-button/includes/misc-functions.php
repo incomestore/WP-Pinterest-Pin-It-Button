@@ -89,7 +89,8 @@ function pib_rss_news() {
 				), esc_url( $item->get_permalink() ) ); ?>
 
 				<li>
-					&raquo; <a href="<?php echo $post_url; ?>" target="_blank" class="pib-external-link"><?php echo esc_html( $item->get_title() ); ?></a>
+					<div class="dashicons dashicons-arrow-right-alt2"></div>
+					<a href="<?php echo $post_url; ?>" target="_blank" class="pib-external-link"><?php echo esc_html( $item->get_title() ); ?></a>
 				</li>
 			<?php endforeach; ?>
 		<?php endif; ?>
