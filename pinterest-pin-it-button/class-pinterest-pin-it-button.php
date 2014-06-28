@@ -28,7 +28,7 @@ class Pinterest_Pin_It_Button {
 	 * and README.txt changelog
 	 **************************************/
 
-	protected $version = '2.0.5';
+	protected $version = '2.0.6';
 
 	/**
 	 * Unique identifier for your plugin.
