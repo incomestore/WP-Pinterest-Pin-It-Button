@@ -24,34 +24,32 @@ a.pib-external-link {
 
 #pib-settings-sidebar {
 	float: right;
-	margin-top: 9px;
 	margin-right: -310px;
 	width: 290px;
 }
 
 #pib-settings-sidebar .centered {
-    text-align: center;
+	text-align: center;
 }
 
 #pib-settings-sidebar .button-large {
-    font-size: 17px;
-    line-height: 30px;
-    height: 32px;
+	font-size: 17px;
+	line-height: 30px;
+	height: 32px;
 }
 
 #pib-settings-sidebar .last-blurb {
-    font-size: 17px;
+	font-size: 17px;
 }
 
 /* postbox overrides */
 #pib-settings-sidebar .sidebar-container .postbox .inside,
 #pib-settings-sidebar .sidebar-container .postbox .inside ul {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 /* Admin pages styles */
-.pib-checkbox-label, .pib-radio-label { 
-	line-height: 1.4em;
-	margin: .25em 0 .5em!important;
+.pib-checkbox-label, .pib-radio-label {
+	margin: .25em 0 .5em !important;
 	display: block;
 }
