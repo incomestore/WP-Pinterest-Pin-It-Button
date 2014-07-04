@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- Use some built-in WP admin theme styles. -->
 <div class="sidebar-container metabox-holder">
-
 	<div class="postbox">
 		<h3 class="wp-ui-primary"><span><?php _e( 'Need More Options?', 'pib' ); ?></span></h3>
 		<div class="inside">
@@ -46,7 +45,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					   class="button-primary button-large" target="_blank">
 						<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -108,11 +106,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="postbox">
 		<div class="inside">
 			<p>
-				<?php _e( 'Help us get noticed (and boost our egos) with a rating and short review.', 'pib' ); ?>
+				<?php _e( 'Now accepting 5-star reviews! It only takes seconds and means a lot.', 'pib' ); ?>
 			</p>
 			<div class="centered">
 				<a href="http://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button" class="button-primary" target="_blank">
-					<?php _e( 'Rate this plugin on WordPress.org', 'pib' ); ?></a>
+					<?php _e( 'Rate this Plugin Now', 'pib' ); ?></a>
 			</div>
 		</div>
 	</div>
