@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="dashicons dashicons-yes"></div> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 					<?php endif; ?>
 
-					<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Customer support & auto updates', 'pib' ); ?></li>
+					<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Automatic updates & email support', 'pib' ); ?></li>
 				</ul>
 
 				<p class="last-blurb centered">
