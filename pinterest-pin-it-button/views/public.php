@@ -96,7 +96,10 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	}
 	
 	// Replace instances of &quot; in the description string
-	$description = str_replace( '&quot;', '"', $description );
+	$entities = array( '&quot;', '&amp;' );
+	$replace  = array( '"', '&' );
+	
+	$description = str_replace( $entities, $replace, $description );
 	
 	$utm = '';
 	$utm_meta = get_post_meta( $post->ID, 'pib_utm_meta', true );
