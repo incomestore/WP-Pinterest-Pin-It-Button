@@ -61,22 +61,26 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 	$inner_btn_html = '<img src="' . $btn_img_url . '" title="Pin It" data-pib-button="true" />';
 
 	// Set data attribute for button style.
-	if ( $button_type == 'image_selected' )
+	if ( $button_type == 'image_selected' ) {
 		$data_pin_do = 'buttonPin'; // image pre-selected
-	else
+	}
+	else {
 		$data_pin_do = 'buttonBookmark'; // user selects image (default)
+	}
 
 	// Set data attribute for count bubble style.
-	if ( $count_layout == 'horizontal' )
+	if ( $count_layout == 'horizontal' ) {
 		$data_pin_config = 'beside';
-	elseif ( $count_layout == 'vertical' )
+	} elseif ( $count_layout == 'vertical' ) {
 		$data_pin_config = 'above';
-	else
+	} else {
 		$data_pin_config = 'none';
-	
+	}
+
 	// Set post url to current post if still blank.
-	if ( empty( $post_url ) )
+	if ( empty( $post_url ) ) {
 		$post_url = get_permalink( $postID );
+	}
 
 	// Set image url to first image if still blank.
 	if ( empty( $image_url ) ) {
@@ -107,11 +111,38 @@ function pib_button_base( $button_type, $post_url, $image_url, $description, $co
 		$utm = clean_and_encode_utm( $post_url, $pib_options['utm_string'] );
 	}
 	
+	$dom = new simple_html_dom();
+	
+	$dom->load( $post->post_content, true, false );
+	
+	$img = '';
+	$has_full = false;
+	
+	$img = $dom->find('img[src="' . $image_url . '"]');
+	
+	foreach( $img as $i ) {
+		$imgParent = $i->parent();
+
+		if( $imgParent->tag == 'a' ) {
+			// We want to make sure the parent <a> tag is linking to an image so we get its filetype
+			$href = wp_check_filetype( $imgParent->href );
+
+			// Only show if the filetype being linked to comes back as any "image" MIME type
+			// Should work with NextGen galleries also.
+			if( strpos( $href['type'], 'image' ) !== false ) {
+				$has_full = true;
+				$img = $imgParent->href;
+			}
+		}
+	}
+	
+	if( $has_full ) {
+		$image_url = $img;
+	}
+	
 
 	// Link href always needs all the parameters in it for the count bubble to work.
 	// Pinterest points out to use protocol-agnostic URL for popup.
-	
-	
 	
 	$link_href = '//www.pinterest.com/pin/create/button/' .
 		'?url='         . rawurlencode( $post_url ) . $utm .

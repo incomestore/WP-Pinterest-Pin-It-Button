@@ -125,6 +125,7 @@ CSS styling and shortcode help available within the plugin admin.
 = 2.0.7 =
 
 * Tested with WordPress 4.0
+* Button will now pin full size image instead of thumbnail.
 
 = 2.0.6 =
 

@@ -201,6 +201,11 @@ class Pinterest_Pin_It_Button {
 
 		// Include the file to register all of the plugin settings.
 		include_once( 'includes/register-settings.php' );
+		
+		// Include simplehtmldom
+		if( ! class_exists( 'simple_html_dom_node' ) ) {
+			include_once( 'includes/simple_html_dom.php' );
+		}
 
 		// Load global options settings.
 		$pib_options = pib_get_settings();
