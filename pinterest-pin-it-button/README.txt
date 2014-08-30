@@ -1,7 +1,7 @@
 === Pinterest "Pin It" Button ===
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
-Requires at least: 3.6.1
+Requires at least: 3.7.4
 Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
