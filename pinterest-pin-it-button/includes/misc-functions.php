@@ -90,7 +90,7 @@ function pib_rss_news() {
 
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
-					<a href="<?php echo $post_url; ?>" target="_blank" class="pib-external-link"><?php echo esc_html( $item->get_title() ); ?></a>
+					<a href="<?php echo $post_url; ?>" target="_blank"><?php echo esc_html( $item->get_title() ); ?></a>
 				</li>
 			<?php endforeach; ?>
 		<?php endif; ?>
