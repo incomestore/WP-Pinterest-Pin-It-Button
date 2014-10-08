@@ -1,7 +1,7 @@
 === Pinterest "Pin It" Button ===
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
-Requires at least: 3.6.1
+Requires at least: 3.7.4
 Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
@@ -79,7 +79,7 @@ You can install this plugin one of three ways:
 1. Look for the author name `Phil Derksen` on the plugin.
 1. Click to install.
 1. Activate the plugin.
-1. A new menu item `Pin It Button` will appear in your Admin.
+1. A new menu item `Pin It Button` will appear in the main menu.
 
 = 2. Download & Upload =
 1. Download the plugin (a zip file) on the right column of this page.
@@ -87,14 +87,14 @@ You can install this plugin one of three ways:
 1. Select the tab "Upload".
 1. Upload the .zip file you just downloaded.
 1. Activate the plugin.
-1. A new menu item `Pin It Button` will appear in your Admin.
+1. A new menu item `Pin It Button` will appear in the main menu.
 
 = 3. FTP Upload =
 1. Download the plugin (.zip file) on the right column of this page.
 1. Unzip the zip file contents.
 1. Upload the `pinterest-pin-it-button` folder to the `/wp-content/plugins/` directory of your site.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. A new menu item `Pin It Button` will appear in your Admin.
+1. A new menu item `Pin It Button` will appear in the main menu.
 
 == Frequently Asked Questions ==
 
@@ -124,7 +124,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 = 2.0.7 =
 
-* Tested with WordPress 4.0
+* Tested with WordPress 4.0.
 * Button will now pin full size image instead of thumbnail.
 
 = 2.0.6 =

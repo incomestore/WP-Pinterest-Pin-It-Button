@@ -4,14 +4,6 @@
 	background: transparent url('../assets/pinterest-icon-32.png') no-repeat;
 }
 
-/* This icon is taken from the Flat Social Media Icons from Designmodo at
- * http://designmodo.com/flat-social-icons/
- */
-a.pib-external-link {
-	background: transparent url('../assets/icon-external-link.gif') center right no-repeat;
-	padding-right: 17px;
-}
-
 /* Layout the page similar to the built-in post edit screen. */
 #pib-settings {
 	margin-right: 310px;
@@ -49,7 +41,8 @@ a.pib-external-link {
 }
 
 /* Admin pages styles */
-.pib-checkbox-label, .pib-radio-label {
+.pib-checkbox-label,
+.pib-radio-label {
 	margin: .25em 0 .5em !important;
 	display: block;
 }
