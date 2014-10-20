@@ -108,10 +108,22 @@ class Pinterest_Pin_It_Button {
 		// Add upgrade link (if not already in Pro).
 		if ( ! class_exists( 'Pinterest_Pin_It_Button_Pro' ) ) {
 			add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'purchase_pro_link' ) );
+			add_action( 'init', array( $this, 'admin_upgrade_link' ) );
 		}
 		
 		// Check WP version
 		add_action( 'admin_init', array( $this, 'check_wp_version' ) );
+	}
+	
+	/**
+	 * Add "Upgrade to Pro" submenu link
+	 * 
+	 * @since 
+	 */
+	function admin_upgrade_link() {
+		if( is_admin() ) {
+			include_once( 'includes/upgrade-link.php' );
+		}
 	}
 	
 	/**
