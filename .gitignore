@@ -44,3 +44,8 @@ Thumbs.db
 # Netbeans IDE *
 ################
 /pinterest-pin-it-button/nbproject/*
+
+# i18n Files *
+################
+pib.pot
+pib.mo
