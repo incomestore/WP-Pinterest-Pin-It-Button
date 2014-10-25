@@ -75,6 +75,9 @@ class Pinterest_Pin_It_Button {
 	private function __construct() {
 		// Setup constants.
 		$this->setup_constants();
+		
+		// Load plugin text domain
+		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
 
 		// Run our upgrade checks first and update our version option.
 		if( ! get_option( 'pib_upgrade_has_run' ) ) {
@@ -481,5 +484,16 @@ class Pinterest_Pin_It_Button {
 		// At this point show install notice. Show it only on the plugin screen.
 		if( get_current_screen()->id == 'plugins' )
 			include_once( 'views/admin-install-notice.php' );
+	}
+	
+	/**
+	 * Loads plugin text domain for i18n
+	 */
+	function plugin_textdomain() {
+		load_plugin_textdomain(
+			'pib',
+			false,
+			dirname( plugin_basename( PIB_MAIN_FILE ) ) . '/languages/'
+		);
 	}
 }
