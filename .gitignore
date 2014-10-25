@@ -47,5 +47,5 @@ Thumbs.db
 
 # i18n Files *
 ################
-pib.pot
-pib.mo
+/*.pot
+/*.mo
