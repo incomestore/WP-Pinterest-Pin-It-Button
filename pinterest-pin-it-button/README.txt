@@ -125,7 +125,7 @@ CSS styling and shortcode help available within the plugin admin.
 = 2.0.8 =
 
 * Tested with WordPress 4.1.
-* Made i18n ready.
+* Improved translation (i18n) readiness.
 
 = 2.0.7 =
 
