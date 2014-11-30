@@ -247,8 +247,13 @@ function pib_render_content( $content ) {
 	global $pib_options;
 	global $post;
 	
-	if( ! is_main_query() )
+	if( ! is_main_query() ) {
 		return $content;
+	}
+	
+	if( ! ( get_post_type_object( get_post_type( $post->ID ) )->_builtin ) ) {
+		return $content;
+	}
 	
 	//Determine if button displayed on current page from main admin settings
 	if ( in_array( 'button', pib_render_button() ) ) {
