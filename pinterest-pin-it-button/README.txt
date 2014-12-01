@@ -126,6 +126,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 * Tested up to WordPress 4.1.
 * Improved translation (i18n) readiness.
+* Fixed bug with button showing up on WooCommerce Products.
 
 = 2.0.7 =
 
