@@ -45,11 +45,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					   class="button-primary button-large" target="_blank">
 						<?php _e( 'Upgrade to Pro Now', 'pib' ); ?></a>
 				</div>
-
-				<!-- Black Friday 2014 Promo -->
-				<div class="centered">
-					<h3>Use the Black Friday discount code <span style="color:red;">BF2014</span> to get 30% off any license. Expires Friday, Dec. 5.</h3>
-				</div>
 			</div>
 		</div>
 	</div>
