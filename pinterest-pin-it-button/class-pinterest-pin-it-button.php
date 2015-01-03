@@ -95,8 +95,8 @@ class Pinterest_Pin_It_Button {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 
 		// Enqueue public style and scripts.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'init', array( $this, 'enqueue_styles' ) );
+		add_action( 'init', array( $this, 'enqueue_scripts' ) );
 
 		// Add admin notice after plugin activation. Also check if should be hidden.
 		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
@@ -116,6 +116,30 @@ class Pinterest_Pin_It_Button {
 		
 		// Check WP version
 		add_action( 'admin_init', array( $this, 'check_wp_version' ) );
+		
+		// Load scripts when posts load so we know if we need to include them or not
+		add_filter( 'the_posts', array( $this, 'load_scripts' ) );
+	}
+	
+	function load_scripts( $posts ) {
+
+		if ( empty( $posts ) ) {
+			return $posts;
+		}
+
+		foreach ( $posts as $post ) {
+			if ( strpos( $post->post_content, '[pinit' ) !== false ) {
+				// Load CSS
+				wp_enqueue_style( $this->plugin_slug . '-plugin-styles' );
+				
+				// Load JS
+				wp_enqueue_script( 'pinterest-pinit-js' );
+				
+				break;
+			}
+		}
+
+		return $posts;
 	}
 	
 	/**
@@ -280,13 +304,10 @@ class Pinterest_Pin_It_Button {
 	public function enqueue_styles() {
 		global $pib_options;
 		
-		if( ! in_array( 'no_buttons', pib_render_button() ) ) {
-			// Check to see if setting to disable is true first.
-			if ( empty( $pib_options['disable_css'] ) ) {
-				wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
-			}
+		// Check to see if setting to disable is true first.
+		if ( empty( $pib_options['disable_css'] ) ) {
+			wp_register_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), $this->version );
 		}
-		
 	}
 
 	/**
@@ -297,13 +318,11 @@ class Pinterest_Pin_It_Button {
 	public function enqueue_scripts() {
 		global $pib_options;
 		
-		if( ! in_array( 'no_buttons', pib_render_button() ) ) {
-			// If this option is empty then it means we can load the pinit.js, otherwise do not load it
-			if( empty( $pib_options['no_pinit_js'] ) ) {
-				// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
-				// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
-				wp_enqueue_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
-			}
+		// If this option is empty then it means we can load the pinit.js, otherwise do not load it
+		if( empty( $pib_options['no_pinit_js'] ) ) {
+			// Enqueue Pinterest JS plugin boilerplate style. Don't tack on plugin version.
+			// We DO NOT include the plugin slug here. This is so that this can be uniform across all of our plugins
+			wp_register_script( 'pinterest-pinit-js', '//assets.pinterest.com/js/pinit.js', array(), null, true );
 		}
 	}
 

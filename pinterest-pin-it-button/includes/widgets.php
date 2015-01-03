@@ -36,6 +36,19 @@ class PIB_Widget extends WP_Widget {
 			// Widen widget admin area.
 			array( 'width' => 400 )
 		);
+		
+		if ( is_active_widget( false, false, $this->id_base ) ) {
+			// Call action to load CSS for widget
+            add_action( 'wp_enqueue_scripts', array( $this, 'pib_widget_add_styles' ) );
+
+			// Load JS
+			wp_enqueue_script( 'pinterest-pinit-js' );
+		}
+	}
+	
+	function pib_widget_add_styles() { 
+		// Load CSS
+		wp_enqueue_style( 'pinterest-pin-it-button-plugin-styles' );
 	}
 	
 	/**
