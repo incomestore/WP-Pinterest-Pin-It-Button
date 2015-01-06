@@ -150,9 +150,14 @@ function pib_is_wc_rich_pins_active() {
  *
  * @return  boolean
  */
-function pib_render_button() {
-	global $pib_options, $post;
+function pib_render_button( $post = null ) {
+	global $pib_options;
 	
+	// If $post parameter is not sent then we load the global $post object
+	if( $post === null ) {
+		global $post;
+	}
+
 	$return = array();
 	
 	//Determine if button displayed on current page from main admin settings

@@ -128,7 +128,7 @@ class Pinterest_Pin_It_Button {
 		}
 
 		foreach ( $posts as $post ) {
-			if ( strpos( $post->post_content, '[pinit' ) !== false ) {
+			if ( ! in_array( 'no_buttons', pib_render_button( $post ) ) ) {
 				// Load CSS
 				wp_enqueue_style( $this->plugin_slug . '-plugin-styles' );
 				
