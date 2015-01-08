@@ -125,6 +125,7 @@ CSS styling and shortcode help available within the plugin admin.
 = 2.0.9 =
 
 * Fixed bug with button showing up on WooCommerce Products.
+* Scripts and styles now only enqueued on posts and pages where required.
 
 = 2.0.8 =
 
