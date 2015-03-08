@@ -136,8 +136,8 @@ function pib_register_settings() {
 			),
 			'disable_css' => array(
 				'id'   => 'disable_css',
-				'name' => __( 'Disable CSS File Reference', 'pib' ),
-				'desc' => __( 'Advanced. Will prevent the plugin\'s CSS file from being referenced. Custom CSS above will still be included.', 'pib' ),
+				'name' => __( 'Disable Plugin CSS', 'pib' ),
+				'desc' => __( 'If this option is checked, this plugin\'s CSS file will not be referenced. The custom CSS above will still be included.', 'pib' ),
 				'type' => 'checkbox'
 			)
 		),
