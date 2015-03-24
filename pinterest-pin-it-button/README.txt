@@ -1,8 +1,8 @@
 === Pinterest "Pin It" Button ===
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
-Requires at least: 3.8.5
-Tested up to: 4.1
+Requires at least: 3.9.3
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -126,6 +126,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 * Fixed bug with button showing up on WooCommerce Products.
 * Scripts and styles now only enqueued on posts and pages where required.
+* Tested up to WordPress 4.2.
 
 = 2.0.8 =
 
