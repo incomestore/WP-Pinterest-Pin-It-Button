@@ -122,10 +122,10 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
-= 2.0.9 =
+= 2.0.9 - TODO =
 
 * Fixed bug with button showing up on WooCommerce Products.
-* Scripts and styles now only enqueued on posts and pages where required.
+* TODO Added option to always enqueue scripts & styles (enabled by default).
 * Tested up to WordPress 4.2.
 
 = 2.0.8 =

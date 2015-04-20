@@ -145,6 +145,13 @@ function pib_register_settings() {
 
 		/* Advanced Settings */
 		'advanced' => array(
+			'always_enqueue' => array(
+				'id'   => 'always_enqueue',
+				'name' => __( 'Always Enqueue Scripts & Styles', 'pib' ),
+				'desc' => __( 'Enqueue this plugin\'s scripts and styles on every post and page.', 'pib' ) . '<br/>' .
+				          '<p class="description">' . __( 'Useful if using shortcodes in widgets or other non-standard locations.', 'pib' ) . '</p>',
+				'type' => 'checkbox'
+			),
 			'no_pinit_js' => array(
 				'id'   => 'no_pinit_js',
 				'name' => __( 'Disable <code>pinit.js</code>', 'pib' ),
@@ -524,6 +531,7 @@ function pib_get_settings() {
 		$general['button_type']             = 'user_selects_image';
 		$general['count_layout']            = 'none';
 		$general['uninstall_save_settings'] = 1;
+		$general['always_enqueue']          = 1;
 
 		update_option( 'pib_settings_general', $general );
 
