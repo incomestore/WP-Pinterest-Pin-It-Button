@@ -106,11 +106,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="postbox">
 		<div class="inside">
 			<p>
-				<?php _e( 'Now accepting 5-star reviews! It only takes seconds and means a lot.', 'pib' ); ?>
+				<?php _e( 'Your review helps more folks find our plugin. Thanks so much!', 'pib' ); ?>
 			</p>
 			<div class="centered">
-				<a href="http://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button" class="button-primary" target="_blank">
-					<?php _e( 'Rate this Plugin Now', 'pib' ); ?></a>
+				<a href="https://wordpress.org/support/view/plugin-reviews/pinterest-pin-it-button#postform" class="button-primary" target="_blank">
+					<?php _e( 'Review this Plugin Now', 'pib' ); ?></a>
 			</div>
 		</div>
 	</div>
@@ -127,8 +127,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
-					<a href="http://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
-						<?php _e( 'Community Support Forums', 'pib' ); ?></a>
+					<a href="https://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
+						<?php _e( 'Community support forums', 'pib' ); ?></a>
 				</li>
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
