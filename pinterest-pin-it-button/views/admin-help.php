@@ -209,11 +209,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p>
 				<?php printf( __( 'Need more widgets? Check out our free <a href="%s">Pinterest Widgets</a> plugin.', 'pib' ),
-					add_query_arg( array(
+					esc_url( add_query_arg( array(
 						'tab'  => 'search',
 						'type' => 'term',
 						's'    => urlencode('pinterest widgets')
-					), admin_url( 'plugin-install.php' ) )
+					), admin_url( 'plugin-install.php' ) ) )
 				); ?>
 			</p>
 			<p>

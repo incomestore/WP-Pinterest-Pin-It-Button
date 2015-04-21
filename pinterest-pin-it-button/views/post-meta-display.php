@@ -32,7 +32,7 @@ $pib_description     = get_post_meta( $post->ID, 'pib_description', true);
 <?php if ( $pib_options['button_type'] == 'user_selects_image' ): ?>
 	<p>
 		<strong style="color: red;"><?php _e( 'The below settings will not take affects unless the button type is changed. ', 'pib' ); ?></strong>
-		<?php echo sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( 'Go to "Pin It" Button Settings', 'pib' ) ); ?>
+		<?php echo sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( 'page', PIB_PLUGIN_SLUG, admin_url( 'admin.php' ) ), __( 'Go to "Pin It" Button Settings', 'pib' ) ) ); ?>
 	</p>
 <?php endif; ?>
 <p>

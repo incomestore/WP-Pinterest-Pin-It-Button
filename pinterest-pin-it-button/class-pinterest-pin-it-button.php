@@ -450,7 +450,7 @@ class Pinterest_Pin_It_Button {
 	 * @return  array  $links  Amended plugin action links.
 	 */
 	public function settings_link( $links ) {
-		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ), __( 'Settings', 'pib' ) );
+		$setting_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ) ), __( 'Settings', 'pib' ) );
 		array_unshift( $links, $setting_link );
 
 		return $links;

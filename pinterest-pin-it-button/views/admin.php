@@ -31,13 +31,13 @@ $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
 			<h2><img src="<?php echo PIB_PLUGIN_URL; ?>assets/pinterest-icon-32.png" style="vertical-align: bottom;" /> <?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<h2 class="nav-tab-wrapper">
-				<a href="<?php echo add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+				<a href="<?php echo esc_url( add_query_arg( 'tab', 'general', remove_query_arg( 'settings-updated' ) ) ); ?>" class="nav-tab
 					<?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'pib' ); ?></a>
-				<a href="<?php echo add_query_arg( 'tab', 'post_visibility', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+				<a href="<?php echo esc_url( add_query_arg( 'tab', 'post_visibility', remove_query_arg( 'settings-updated' ) ) ); ?>" class="nav-tab
 					<?php echo $active_tab == 'post_visibility' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Post Visibility', 'pib' ); ?></a>
-				<a href="<?php echo add_query_arg( 'tab', 'styles', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+				<a href="<?php echo esc_url( add_query_arg( 'tab', 'styles', remove_query_arg( 'settings-updated' ) ) ); ?>" class="nav-tab
 					<?php echo $active_tab == 'styles' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Styles', 'pib' ); ?></a>
-				<a href="<?php echo add_query_arg( 'tab', 'advanced', remove_query_arg( 'settings-updated' )); ?>" class="nav-tab
+				<a href="<?php echo esc_url( add_query_arg( 'tab', 'advanced', remove_query_arg( 'settings-updated' ) ) ); ?>" class="nav-tab
 					<?php echo $active_tab == 'advanced' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Advanced', 'pib' ); ?></a>
 			</h2>
 

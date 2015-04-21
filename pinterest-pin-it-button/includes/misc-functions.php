@@ -40,11 +40,11 @@ function pib_ga_campaign_url( $base_url, $source, $medium, $campaign ) {
 	// $source is always 'pib_lite_2' for Pit It Button Lite 2.x
 	// $medium examples: 'sidebar_link', 'banner_image'
 
-	$url = add_query_arg( array(
+	$url = esc_url( add_query_arg( array(
 		'utm_source'   => $source,
 		'utm_medium'   => $medium,
 		'utm_campaign' => $campaign
-	), $base_url );
+	), $base_url ) );
 
 	return $url;
 }
@@ -79,14 +79,14 @@ function pib_rss_news() {
 			<?php
 			// Loop through each feed item and display each item as a hyperlink.
 			foreach ( $rss_items as $item ): ?>
-				<?php $post_url = add_query_arg( array(
+				<?php $post_url = esc_url( add_query_arg( array(
 
 					// Google Analytics campaign URL
 					'utm_source'   => 'pib_lite_2',
 					'utm_medium'   => 'sidebar_link',
 					'utm_campaign' => 'blog_post_link'
 
-				), esc_url( $item->get_permalink() ) ); ?>
+				), esc_url( $item->get_permalink() ) ) ); ?>
 
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>

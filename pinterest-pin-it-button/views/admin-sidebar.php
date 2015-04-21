@@ -122,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<ul>
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
-					<a href="<?php echo add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ); ?>">
+					<a href="<?php echo esc_url( add_query_arg( 'page', PIB_PLUGIN_SLUG . '_help', admin_url( 'admin.php' ) ) ); ?>">
 						<?php _e( 'Shortcode & CSS Help', 'pib' ); ?></a>
 				</li>
 				<li>
