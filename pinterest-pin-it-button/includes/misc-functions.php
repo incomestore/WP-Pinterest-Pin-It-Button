@@ -86,7 +86,7 @@ function pib_rss_news() {
 					'utm_medium'   => 'sidebar_link',
 					'utm_campaign' => 'blog_post_link'
 
-				), esc_url( $item->get_permalink() ) ) ); ?>
+				), $item->get_permalink() ) ); ?>
 
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
