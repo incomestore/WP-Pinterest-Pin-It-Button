@@ -78,7 +78,13 @@ class Pinterest_Pin_It_Button {
 		
 		// Load plugin text domain
 		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
-
+		
+		$old = get_option( 'pib_version' );
+		
+		if( version_compare( $old, $this->version, '<' ) ) {
+			delete_option( 'pib_upgrade_has_run' );
+		}
+		
 		// Run our upgrade checks first and update our version option.
 		if( ! get_option( 'pib_upgrade_has_run' ) ) {
 			add_action( 'init', array( $this, 'upgrade_plugin' ), 0 );
