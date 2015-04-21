@@ -66,7 +66,7 @@ This plugin (as well as the Pro version) is in full compliance with the [officia
 
 This plugin utilizes the code output from the [official "Pin It" button widget builder](http://business.pinterest.com/widget-builder/#do_pin_it_button).
 
-[Follow this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button).
+[Follow this project on Github](https://github.com/pderksen/WP-Pinterest-Pin-It-Button)
 
 == Installation ==
 
@@ -122,10 +122,11 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
-= 2.0.9 - TODO =
+= 2.0.9 - April 21, 2015 =
 
+* Updated calls to add_query_arg to prevent any possible XSS attacks.
 * Fixed bug with button showing up on WooCommerce Products.
-* TODO Added option to always enqueue scripts & styles (enabled by default).
+* Added option to always enqueue scripts & styles (enabled by default).
 * Tested up to WordPress 4.2.
 
 = 2.0.8 =
