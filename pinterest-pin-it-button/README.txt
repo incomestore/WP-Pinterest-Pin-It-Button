@@ -122,7 +122,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
-= 2.0.9 - April 21, 2015 =
+= 2.0.9 - April 22, 2015 =
 
 * Updated calls to add_query_arg to prevent any possible XSS attacks.
 * Fixed bug with button showing up on WooCommerce Products.
