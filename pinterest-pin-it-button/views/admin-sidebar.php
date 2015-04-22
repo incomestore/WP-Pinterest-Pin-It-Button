@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Use with custom post types', 'pib' ); ?></li>
 
 					<?php if ( pib_is_woo_commerce_active() ): ?>
-						<div class="dashicons dashicons-yes"></div> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
+						<li><div class="dashicons dashicons-yes"></div> <?php _e( 'WooCommerce support', 'pib' ); ?></li>
 					<?php endif; ?>
 
 					<li><div class="dashicons dashicons-yes"></div> <?php _e( 'Automatic updates & email support', 'pib' ); ?></li>
