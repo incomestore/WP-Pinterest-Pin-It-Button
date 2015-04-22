@@ -282,7 +282,8 @@ function pib_get_settings_field_args( $option, $section ) {
 		'section' => $section,
 		'size'    => isset( $option['size'] ) ? $option['size'] : null,
 		'options' => isset( $option['options'] ) ? $option['options'] : '',
-		'std'     => isset( $option['std'] ) ? $option['std'] : ''
+		'std'     => isset( $option['std'] ) ? $option['std'] : '',
+		'product' => isset( $option['product'] ) ? $option['product'] : '',
 	);
 
 	// Link label to input using 'label_for' argument if text, textarea, password, select, or variations of.
