@@ -463,7 +463,7 @@ class Pinterest_Pin_It_Button {
 	}
 	
 	public function purchase_pro_link( $links ) {
-		$pro_link = sprintf( '<a href="%s">%s</a>', pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'pin-it-button-pro/', 'pib_lite_2', 'plugin_listing', 'pro_upgrade' ), __( 'Purchase Pro', 'sc' ) );
+		$pro_link = sprintf( '<a href="%s">%s</a>', pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'pin-it-button-pro/', 'pib_lite_2', 'plugin_listing', 'pro_upgrade' ), __( 'Purchase Pro', 'pib' ) );
 		array_push( $links, $pro_link );
 		
 		return $links;
