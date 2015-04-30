@@ -1,9 +1,9 @@
 === Pinterest "Pin It" Button ===
 Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
-Requires at least: 3.9.3
+Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 2.0.9
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,10 @@ CSS styling and shortcode help available within the plugin admin.
 7. Individual post (post meta) settings
 
 == Changelog ==
+
+= 2.1.0 - TODO =
+
+* Fixed plugin CSS not getting enqueued in some cases.
 
 = 2.0.9 - April 22, 2015 =
 
