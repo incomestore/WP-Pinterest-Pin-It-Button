@@ -160,6 +160,19 @@ function pib_render_button( $post = null ) {
 
 	$return = array();
 	
+	// Check individual post meta option
+	$disable = get_post_meta( $post->ID, 'pib_sharing_disabled', true );
+	
+	if( $disable && ! isset( $pib_options['always_enqueue'] ) ) {
+		$return[] = 'no_buttons';
+		
+		return $return;
+	}
+	
+	if ( isset( $pib_options['always_enqueue'] ) ) {
+		$return[] = 'always_enqueue';
+	}
+	
 	//Determine if button displayed on current page from main admin settings
 	if (
 			( is_home() && ( ! empty( $pib_options['post_page_types']['display_home_page'] ) ) ) ||
