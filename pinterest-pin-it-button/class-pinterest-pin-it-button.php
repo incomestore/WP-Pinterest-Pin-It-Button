@@ -92,7 +92,7 @@ class Pinterest_Pin_It_Button {
 		}
 
 		// Include required files.
-		add_action( 'init', array( $this, 'includes' ), 1 );
+		$this->includes();
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
