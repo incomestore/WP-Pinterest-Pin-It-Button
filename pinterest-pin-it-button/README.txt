@@ -122,7 +122,7 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
-= 2.1.0 - TODO =
+= 2.1.0 - May 4, 2015 =
 
 * Fixed plugin CSS not getting enqueued in some cases.
 
