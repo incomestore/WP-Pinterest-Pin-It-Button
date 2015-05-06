@@ -3,7 +3,7 @@ Contributors: pderksen, nickyoung87
 Tags: pinterest, pin it button, social, social media, image, images, photo, photos, pinterest pin it button, pin it, social button
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 2.1.0
+Stable tag: 2.1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,12 @@ CSS styling and shortcode help available within the plugin admin.
 7. Individual post (post meta) settings
 
 == Changelog ==
+
+= 2.1.0.1 - TODO =
+
+* Fixed bug with 2.0.9 upgrade routine.
+* Added always enqueue scripts option enabled as default for fresh installs.
+* Fixed bug with options getting reset to defaults on upgrade.
 
 = 2.1.0 - May 4, 2015 =
 

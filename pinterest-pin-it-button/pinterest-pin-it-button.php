@@ -13,7 +13,7 @@
  * Plugin Name: Pinterest "Pin It" Button Lite
  * Plugin URI: http://pinplugins.com/pin-it-button-pro/
  * Description: Add a Pinterest "Pin It" Button to your site and get your visitors to start pinning your awesome content!
- * Version: 2.1.0
+ * Version: 2.1.0.1
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
  * License: GPL-2.0+
