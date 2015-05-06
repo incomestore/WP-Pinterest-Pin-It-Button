@@ -59,7 +59,7 @@ function pib_v209_upgrade() {
 	
 	$advanced_options['always_enqueue'] = 1;
 	
-	update_option( 'pib_settings_general', $advanced_options );
+	update_option( 'pib_settings_advanced', $advanced_options );
 			
 }
 pib_do_all_upgrades();

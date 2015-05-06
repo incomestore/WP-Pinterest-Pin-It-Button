@@ -28,7 +28,7 @@ class Pinterest_Pin_It_Button {
 	 * and README.txt changelog
 	 **************************************/
 
-	protected $version = '2.1.0';
+	protected $version = '2.2.0';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -80,6 +80,12 @@ class Pinterest_Pin_It_Button {
 		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
 		
 		$old = get_option( 'pib_version' );
+		
+		// If $old exists then we know this plugin has been run already so we just update this here to 
+		// avoid complications from this point forward (5/6/2015)
+		if ( ! ( false === $old ) ) {
+			update_option( 'pib_has_run', 1 );
+		}
 		
 		if( version_compare( $old, $this->version, '<' ) ) {
 			delete_option( 'pib_upgrade_has_run' );
@@ -259,6 +265,8 @@ class Pinterest_Pin_It_Button {
 
 		// Load global options settings.
 		$pib_options = pib_get_settings();
+		
+		
 
 		// Include widgets file if on widgets admin or public.
 		include_once( dirname( __FILE__ ) . '/includes/widgets.php' );

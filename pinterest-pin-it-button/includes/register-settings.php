@@ -517,7 +517,7 @@ function pib_missing_callback( $args ) {
 function pib_get_settings() {
 
 	// If this is the first time running we need to set the defaults
-	if ( !get_option( 'pib_upgrade_has_run' ) ) {
+	if ( false === get_option( 'pib_has_run' ) ) {
 
 		// set default post visibility options
 		$post_visibility                                                 = get_option( 'pib_settings_post_visibility' );
@@ -532,12 +532,16 @@ function pib_get_settings() {
 		$general['button_type']             = 'user_selects_image';
 		$general['count_layout']            = 'none';
 		$general['uninstall_save_settings'] = 1;
-		$general['always_enqueue']          = 1;
 
 		update_option( 'pib_settings_general', $general );
+		
+		$advanced                   = get_option( 'pib_settings_advanced' );
+		$advanced['always_enqueue'] = 1;
+		
+		update_option( 'pib_settings_advanced', $advanced );
 
 		// add an option to let us know the initial settings have been run and we don't run them again
-		add_option( 'pib_upgrade_has_run', 1 );
+		add_option( 'pib_has_run', 1 );
 	}
 
 	$general_settings         = is_array( get_option( 'pib_settings_general' ) ) ? get_option( 'pib_settings_general' )  : array();

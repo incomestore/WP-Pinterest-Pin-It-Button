@@ -28,6 +28,7 @@ if ( ! empty( $general['uninstall_save_settings'] ) ) {
 	delete_option( 'pib_settings_styles' );
 	delete_option( 'pib_settings_misc' );
 	delete_option( 'pib_upgrade_has_run' );
+	delete_option( 'pib_has_run' );
 	delete_option( 'pib_version' );
 	delete_option( 'pib_show_admin_install_notice' );
 	delete_option( 'pib_settings_advanced' );
