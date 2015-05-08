@@ -122,11 +122,9 @@ CSS styling and shortcode help available within the plugin admin.
 
 == Changelog ==
 
-= 2.1.0.1 - TODO =
+= 2.1.0.1 - May 8, 2015 =
 
-* Fixed bug with 2.0.9 upgrade routine.
-* Added always enqueue scripts option enabled as default for fresh installs.
-* Fixed bug with options getting reset to defaults on upgrade.
+* Fixed bug with some options getting reset to defaults after an upgrade.
 
 = 2.1.0 - May 4, 2015 =
 
