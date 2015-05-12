@@ -217,7 +217,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				); ?>
 			</p>
 			<p>
-				<?php printf( __( 'Visit the <a href="%s" target="_blank">Knowledgebase</a> for additional help.', 'pib' ), PINPLUGIN_BASE_URL . 'support' ); ?>
+				<?php printf( __( 'Visit our <a href="%s" target="_blank">Docs</a> for additional help.', 'pib' ),
+					pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'docs/', 'pib_either', 'help_tab', 'support' ) ); ?>
 			</p>
 
 		</div><!-- #pib-settings-content -->

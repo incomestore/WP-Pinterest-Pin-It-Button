@@ -127,13 +127,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
-					<a href="https://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
-						<?php _e( 'Community support forums', 'pib' ); ?></a>
+					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'docs/', 'pib_lite_2', 'sidebar_link', 'docs' ); ?>" target="_blank">
+						<?php _e( 'Documentation', 'pib' ); ?></a>
 				</li>
 				<li>
 					<div class="dashicons dashicons-arrow-right-alt2"></div>
-					<a href="<?php echo pib_ga_campaign_url( PINPLUGIN_BASE_URL . 'support', 'pib_lite_2', 'sidebar_link', 'support' ); ?>" target="_blank">
-						<?php _e( 'Knowledgebase', 'pib' ); ?></a>
+					<a href="https://wordpress.org/support/plugin/pinterest-pin-it-button" target="_blank">
+						<?php _e( 'Community support forums', 'pib' ); ?></a>
 				</li>
 			</ul>
 		</div>

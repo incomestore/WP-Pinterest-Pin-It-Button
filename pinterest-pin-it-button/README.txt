@@ -106,7 +106,7 @@ A popular known plugin that does this is **Google Analytics for WordPress**. Try
 
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
-[Visit the complete knowledgebase](http://pinplugins.com/pin-it-button-faq?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite) for additional help and troubleshooting tips.
+[Visit the docs](http://pinplugins.com/docs/?utm_source=wordpress_org&utm_medium=link&utm_campaign=pin_it_button_lite) for additional help and troubleshooting tips.
 
 CSS styling and shortcode help available within the plugin admin.
 
